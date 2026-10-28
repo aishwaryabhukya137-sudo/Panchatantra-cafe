@@ -127,13 +127,14 @@ header {
 }
 
 .header-inner {
-  width: min(1240px, 92%);
+  width: 96%;
+  max-width: 1400px;
   margin: auto;
-  padding: 18px 30px;
+  padding: 10px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 22px;
+  gap: 20px;
 }
 
 /* LOGO IMAGE - ONLY ADDITION */
@@ -143,14 +144,14 @@ header {
   align-items: center;
   flex-shrink: 0;
   Justify-content:flex-start;
-  Margin-right:auto;
+  Margin-right: 0;
 }
 
 .logo img {
   display: block;
-  width: 290px;
-  height: 140px;
-  max-width: 290px;
+  width: 320px;
+  height: 150px;
+  max-width: none;
   object-fit: contain;
   Object-position: left center;
   mix-blend-mode: multiply;
@@ -160,8 +161,9 @@ nav {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 19px;
-  flex-wrap: wrap;
+  gap: 16px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
 }
 
 nav a {
@@ -522,8 +524,8 @@ footer {
 
 @media (max-width: 900px) {
   .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
+    width: 96%;
+    gap: 12px;
   }
   
   nav {
@@ -551,8 +553,8 @@ footer {
   }
 
   .logo img {
-  width: 230px;
-  height: 105px;
+  width: 22px;
+  height: 110px;
   max-width: 230px;
   object-position: left center;
 }
