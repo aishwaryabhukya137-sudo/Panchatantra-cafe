@@ -90,16 +90,6 @@ nav .order {
   background: var(--terracotta); color: white; padding: 12px 19px; border-radius: 40px;
   transition: transform .3s ease, box-shadow .3s ease, background .3s ease;
 }
-nav .nav-links { display: flex; align-items: center; justify-content: flex-end; gap: 16px; }
-nav .nav-actions { display: flex; align-items: center; justify-content: flex-end; gap: 10px; }
-
-
-/* Navigation groups: links stay beside the logo on phones; action buttons sit underneath. */
-@media (min-width: 601px) {
-  nav { display: flex; align-items: center; justify-content: flex-end; gap: 16px; }
-  nav .nav-links { display: flex; align-items: center; justify-content: flex-end; gap: 16px; }
-  nav .nav-actions { display: flex; align-items: center; justify-content: flex-end; gap: 10px; }
-}
 
 /* GENERAL IMAGE FRAME */
 .image-frame {
@@ -252,7 +242,6 @@ footer { background: var(--brown); color: #f9eee2; padding: 40px 0 20px; }
   .header-inner { gap: 14px; }
   .logo img { width: 260px; height: 125px; }
   nav { gap: 11px; }
-  nav .nav-links { gap: 11px; }
   nav a { font-size: 13px; }
   nav .order { padding: 11px 14px; }
   nav .btn { padding: 11px 14px; }
@@ -261,8 +250,6 @@ footer { background: var(--brown); color: #f9eee2; padding: 40px 0 20px; }
   .header-inner { width: 96%; gap: 12px; }
   .logo img { width: 220px; height: 110px; }
   nav { justify-content: flex-end; gap: 10px; }
-  nav .nav-links { gap: 10px; }
-  nav .nav-actions { gap: 8px; }
   nav a { font-size: 12px; }
   nav .order, nav .btn { padding: 10px 12px; }
   .menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -271,25 +258,18 @@ footer { background: var(--brown); color: #f9eee2; padding: 40px 0 20px; }
   .container { width: 90%; }
   section { padding: 48px 0; }
   .header-inner {
-    width: 96%; padding: 12px 0 15px; gap: 10px 8px;
-    display: grid; grid-template-columns: 72px minmax(0, 1fr); align-items: center;
+    width: 96%; padding: 12px 0 18px; gap: 8px;
+    flex-direction: column; align-items: center;
   }
-  /* Keep the existing logo file, cropping its blank white space with CSS only. */
-  .logo { grid-column: 1; grid-row: 1; width: 72px; height: 76px; overflow: hidden; justify-content: center; align-items: center; margin: 0; }
-  .logo img { width: 180px; height: 180px; max-width: none; flex-shrink: 0; object-fit: contain; object-position: center; }
-  nav { display: contents; }
-  nav .nav-links {
-    grid-column: 2; grid-row: 1; display: flex; flex-wrap: wrap;
-    justify-content: flex-start; align-content: center; align-items: center;
-    gap: 13px 17px; white-space: normal; min-width: 0;
+  .logo { width: 100%; justify-content: center; margin-right: 0; }
+  .logo img { width: 320px; height: 150px; max-width: 100%; object-fit: contain; object-position: center; }
+  nav {
+    width: 100%; display: flex; flex-direction: row; flex-wrap: wrap;
+    justify-content: center; align-items: center; gap: 12px; white-space: normal;
   }
-  nav .nav-links a { font-size: 13px; line-height: 1.25; text-align: left; }
-  nav .nav-actions {
-    grid-column: 1 / -1; grid-row: 2; display: flex; justify-content: center;
-    align-items: center; flex-wrap: wrap; gap: 10px; padding-top: 5px;
-  }
-  nav .nav-actions a { font-size: 13px; text-align: center; }
-  nav .order, nav .btn { padding: 11px 16px; }
+  nav a { font-size: 13px; text-align: center; }
+  nav .order { padding: 11px 16px; }
+  nav .btn { padding: 11px 16px; }
   .hero { padding: 42px 0 48px; }
   .hero h1 { font-size: clamp(43px, 12vw, 62px); letter-spacing: -1px; }
   .hero-eyebrow { font-size: 9px; letter-spacing: 1.3px; padding: 9px 12px; }
@@ -389,17 +369,13 @@ nav a:hover { transform: translateY(-2px); }
       <img src="logooo.jpg" alt="Panchatantra Café Logo">
     </a>
     <nav aria-label="Main navigation">
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#menu">Menu</a>
-        <a href="#cafe">The Café</a>
-        <a href="Event.html">Events &amp; Workshops</a>
-        <a href="#visit">Visit</a>
-      </div>
-      <div class="nav-actions">
-        <a class="order" href="https://dinein.petpooja.com/qr/jzxh1v2054/B1" target="_blank" rel="noopener noreferrer">Order Online</a>
-        <a class="btn" href="https://wa.me/918516923456?text=Hi%20Panchatantra%20Cafe!%20I%27d%20like%20to%20reserve%20a%20table." target="_blank" rel="noopener noreferrer">Reserve a Table</a>
-      </div>
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#cafe">The Café</a>
+      <a href="Event.html">Events &amp; Workshops</a>
+      <a href="#visit">Visit</a>
+      <a class="order" href="https://dinein.petpooja.com/qr/jzxh1v2054/B1" target="_blank" rel="noopener noreferrer">Order Online</a>
+      <a class="btn" href="https://wa.me/918516923456?text=Hi%20Panchatantra%20Cafe!%20I%27d%20like%20to%20reserve%20a%20table." target="_blank" rel="noopener noreferrer">Reserve a Table</a>
     </nav>
   </div>
 </header>
