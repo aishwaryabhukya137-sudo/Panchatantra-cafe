@@ -90,6 +90,16 @@ nav .order {
   background: var(--terracotta); color: white; padding: 12px 19px; border-radius: 40px;
   transition: transform .3s ease, box-shadow .3s ease, background .3s ease;
 }
+nav .nav-links { display: flex; align-items: center; justify-content: flex-end; gap: 16px; }
+nav .nav-actions { display: flex; align-items: center; justify-content: flex-end; gap: 10px; }
+
+
+/* Navigation groups: links stay beside the logo on phones; action buttons sit underneath. */
+@media (min-width: 601px) {
+  nav { display: flex; align-items: center; justify-content: flex-end; gap: 16px; }
+  nav .nav-links { display: flex; align-items: center; justify-content: flex-end; gap: 16px; }
+  nav .nav-actions { display: flex; align-items: center; justify-content: flex-end; gap: 10px; }
+}
 
 /* GENERAL IMAGE FRAME */
 .image-frame {
@@ -242,6 +252,7 @@ footer { background: var(--brown); color: #f9eee2; padding: 40px 0 20px; }
   .header-inner { gap: 14px; }
   .logo img { width: 260px; height: 125px; }
   nav { gap: 11px; }
+  nav .nav-links { gap: 11px; }
   nav a { font-size: 13px; }
   nav .order { padding: 11px 14px; }
   nav .btn { padding: 11px 14px; }
@@ -250,6 +261,8 @@ footer { background: var(--brown); color: #f9eee2; padding: 40px 0 20px; }
   .header-inner { width: 96%; gap: 12px; }
   .logo img { width: 220px; height: 110px; }
   nav { justify-content: flex-end; gap: 10px; }
+  nav .nav-links { gap: 10px; }
+  nav .nav-actions { gap: 8px; }
   nav a { font-size: 12px; }
   nav .order, nav .btn { padding: 10px 12px; }
   .menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -258,18 +271,25 @@ footer { background: var(--brown); color: #f9eee2; padding: 40px 0 20px; }
   .container { width: 90%; }
   section { padding: 48px 0; }
   .header-inner {
-    width: 96%; padding: 12px 0 18px; gap: 8px;
-    flex-direction: column; align-items: center;
+    width: 96%; padding: 12px 0 15px; gap: 10px 8px;
+    display: grid; grid-template-columns: 72px minmax(0, 1fr); align-items: center;
   }
-  .logo { width: 100%; justify-content: center; margin-right: 0; }
-  .logo img { width: 320px; height: 150px; max-width: 100%; object-fit: contain; object-position: center; }
-  nav {
-    width: 100%; display: flex; flex-direction: row; flex-wrap: wrap;
-    justify-content: center; align-items: center; gap: 12px; white-space: normal;
+  /* Keep the existing logo file, cropping its blank white space with CSS only. */
+  .logo { grid-column: 1; grid-row: 1; width: 72px; height: 76px; overflow: hidden; justify-content: center; align-items: center; margin: 0; }
+  .logo img { width: 180px; height: 180px; max-width: none; flex-shrink: 0; object-fit: contain; object-position: center; }
+  nav { display: contents; }
+  nav .nav-links {
+    grid-column: 2; grid-row: 1; display: flex; flex-wrap: wrap;
+    justify-content: flex-start; align-content: center; align-items: center;
+    gap: 13px 17px; white-space: normal; min-width: 0;
   }
-  nav a { font-size: 13px; text-align: center; }
-  nav .order { padding: 11px 16px; }
-  nav .btn { padding: 11px 16px; }
+  nav .nav-links a { font-size: 13px; line-height: 1.25; text-align: left; }
+  nav .nav-actions {
+    grid-column: 1 / -1; grid-row: 2; display: flex; justify-content: center;
+    align-items: center; flex-wrap: wrap; gap: 10px; padding-top: 5px;
+  }
+  nav .nav-actions a { font-size: 13px; text-align: center; }
+  nav .order, nav .btn { padding: 11px 16px; }
   .hero { padding: 42px 0 48px; }
   .hero h1 { font-size: clamp(43px, 12vw, 62px); letter-spacing: -1px; }
   .hero-eyebrow { font-size: 9px; letter-spacing: 1.3px; padding: 9px 12px; }
@@ -349,10 +369,159 @@ body.intro-playing { overflow: hidden; }
 nav a { transition: color .35s ease, transform .35s ease, background .35s ease; }
 nav a:hover { transform: translateY(-2px); }
 .hero-image { overflow: hidden; }
-.hero-image img { animation: ptHeroImage 1.8s cubic-bezier(.16,1,.3,1) 3.6s both; }
+.hero-image img { animation: ptHeroImage 1.8s cubic-bezier(.16,1,.3,1) 4.3s both; }
 @keyframes ptHeroImage { from { clip-path: inset(0 100% 0 0 round 22px); transform: scale(1.12); } to { clip-path: inset(0 0 0 0 round 22px); transform: scale(1); } }
 @media (max-width: 600px) { #pt-intro .intro-caption { top: calc(50% + 115px); font-size: 8px; letter-spacing: .18em; } #pt-intro .intro-mark { width:min(300px,72vw); } }
 @media (prefers-reduced-motion: reduce) { #pt-intro { display:none !important; } body.intro-playing { overflow:auto; } .hero-image img { animation:none !important; } .reveal, .reveal .section-heading, .reveal .center, .reveal .about-grid, .reveal .menu-grid, .reveal .cafe-grid, .reveal .gallery-grid, .reveal .event-grid, .reveal .review-grid, .reveal .visit-grid { opacity:1; transform:none; } }
+
+
+/* PANCHANTANTRA TYPOGRAPHIC INTRO — no logo image; layered text transitions */
+#pt-intro .intro-wordmark {
+  position: relative; z-index: 4; width: min(900px, 92vw); padding: 20px 12px;
+  text-align: center; color: var(--brown); perspective: 1000px;
+  animation: ptWordmarkEntrance 6.2s cubic-bezier(.16,1,.3,1) .15s both;
+}
+#pt-intro .intro-title {
+  display: block; font-family: "Playfair Display", serif;
+  font-size: clamp(42px, 10vw, 100px); font-weight: 600; line-height: 1.04;
+  letter-spacing: -.055em; transform-origin: center; white-space: nowrap;
+  text-shadow: 0 12px 28px rgba(57,39,31,.08); animation: ptTitleChaos 5.8s cubic-bezier(.16,1,.3,1) .2s both; transform-style:preserve-3d;
+}
+#pt-intro .intro-dot { color: var(--terracotta); display: inline-block; animation: ptDotPulse .8s ease-in-out 1.6s 4, ptDotFlash 1.4s ease-in-out 0.8s 3; }
+#pt-intro .intro-underline {
+  display: block; width: min(220px, 38vw); height: 3px; margin: 20px auto 15px;
+  background: var(--terracotta); border-radius: 5px; transform: scaleX(0); transform-origin: center;
+  animation: ptLineDraw 1.15s cubic-bezier(.16,1,.3,1) 2.7s forwards;
+}
+#pt-intro .intro-subtitle {
+  display: block; color: var(--muted); font-family: "DM Sans", sans-serif;
+  font-size: clamp(10px, 2.3vw, 15px); text-transform: uppercase;
+  letter-spacing: .22em; line-height: 1.8; opacity: 0; transform: translateY(18px);
+  animation: ptSubtitleRise 1s ease 3.25s forwards;
+}
+#pt-intro .intro-caption {
+  top: calc(50% + clamp(105px, 17vw, 145px)); width: 90%; text-align: center;
+  letter-spacing: .16em; line-height: 1.8; opacity: 0;
+  animation: ptCaption .9s ease 3.8s forwards;
+}
+#pt-intro .intro-orbit { animation: ptOrbit 3.2s cubic-bezier(.16,1,.3,1) .2s forwards, ptOrbitFloat 3.2s ease-in-out 3.4s infinite alternate, ptOrbitPulse 2.4s ease-in-out 1.2s infinite; }
+#pt-intro .intro-orbit:before { animation: ptInnerOrbit 8s linear infinite; }
+#pt-intro .intro-orbit:after { animation: ptInnerOrbit 12s linear infinite reverse; }
+#pt-intro.is-leaving .intro-wordmark { animation: ptWordmarkExit 1s cubic-bezier(.7,0,.2,1) forwards; }
+#pt-intro.is-leaving .intro-orbit { animation: ptOrbitExit .9s ease-in forwards; }
+#pt-intro.is-leaving .intro-caption { animation: ptCaptionExit .45s ease forwards; }
+@keyframes ptWordmarkEntrance {
+  0% { opacity:0; transform:translateY(70px) scale(.38) rotateX(-75deg) rotateY(-35deg); filter:blur(22px); }
+  12% { opacity:1; transform:translateY(-18px) scale(1.12) rotateX(20deg) rotateY(12deg); filter:blur(0); }
+  22% { transform:translateY(8px) scale(.88) rotateX(-15deg) rotateY(-12deg); }
+  34% { transform:translateY(-5px) scale(1.08) rotateX(8deg) rotateY(6deg); }
+  46% { transform:translateY(0) scale(.96) rotateX(-4deg) rotateY(-4deg); }
+  58% { transform:translateY(0) scale(1.04) rotateX(0) rotateY(0); }
+  70% { transform:translateY(0) scale(.99) rotateX(0) rotateY(0); }
+  82%,100% { opacity:1; transform:translateY(0) scale(1) rotateX(0) rotateY(0); filter:blur(0); }
+}
+@keyframes ptTitleChaos {
+  0% { letter-spacing:-.22em; transform:translateX(-80px) rotate(-9deg) skewX(-18deg) scaleX(.5); filter:blur(18px); opacity:0; }
+  10% { letter-spacing:-.02em; transform:translateX(14px) rotate(5deg) skewX(8deg) scaleX(1.08); filter:blur(0); opacity:1; }
+  19% { transform:translateX(-10px) rotate(-3deg) skewX(-5deg) scaleX(.94); }
+  29% { transform:translateY(-13px) rotateX(55deg) rotateZ(2deg) scale(1.06); }
+  39% { transform:translateY(5px) rotateX(-35deg) rotateZ(-2deg) scale(.96); }
+  49% { transform:translateY(0) rotateX(0) rotateZ(0) scale(1.04); text-shadow:0 0 0 rgba(57,39,31,0); }
+  58% { transform:scale(1) rotate(0); text-shadow:0 12px 28px rgba(57,39,31,.08); }
+  66% { transform:scale(1.07) rotate(1deg); }
+  74% { transform:scale(.97) rotate(-.7deg); }
+  82%,100% { transform:scale(1) rotate(0); letter-spacing:-.055em; filter:blur(0); }
+}
+@keyframes ptWordmarkExit { to { opacity:0; transform:translateY(-28px) scale(1.12); filter:blur(10px); } }
+@keyframes ptLineDraw { to { transform:scaleX(1); } }
+@keyframes ptSubtitleRise { to { opacity:1; transform:translateY(0); } }
+@keyframes ptDotPulse { 0%,100% { transform:scale(1) rotate(0); } 45% { transform:scale(1.85) rotate(18deg); } }
+@keyframes ptDotFlash { 0%,100% { filter:brightness(1); } 50% { filter:brightness(1.8); } }
+@keyframes ptOrbitPulse { 0%,100% { border-color:rgba(185,103,69,.18); } 50% { border-color:rgba(185,103,69,.55); } }
+@keyframes ptOrbitExit { to { opacity:0; transform:scale(1.5) rotate(28deg); filter:blur(8px); } }
+@keyframes ptOrbitFloat { to { transform:scale(1.06) rotate(9deg); } }
+@keyframes ptInnerOrbit { to { transform:rotate(360deg); } }
+@keyframes ptCaptionExit { to { opacity:0; transform:translateY(-10px); } }
+@media (max-width:600px) {
+  #pt-intro .intro-wordmark { width:94vw; }
+  #pt-intro .intro-title { font-size:clamp(38px, 10.4vw, 62px); letter-spacing:-.06em; }
+  #pt-intro .intro-subtitle { letter-spacing:.12em; font-size:9px; }
+  #pt-intro .intro-caption { top:calc(50% + 100px); font-size:8px; letter-spacing:.1em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #pt-intro .intro-wordmark, #pt-intro .intro-title, #pt-intro .intro-dot, #pt-intro .intro-underline,
+  #pt-intro .intro-subtitle, #pt-intro .intro-orbit, #pt-intro .intro-orbit:before,
+  #pt-intro .intro-orbit:after { animation:none !important; opacity:1; transform:none; filter:none; }
+}
+
+/* FINAL MOBILE HEADER FIX — force the requested logo-left layout */
+@media screen and (max-width: 600px) {
+  header .header-inner {
+    width: 94% !important;
+    padding: 14px 0 16px !important;
+    display: grid !important;
+    grid-template-columns: 64px minmax(0, 1fr) !important;
+    grid-template-rows: auto auto !important;
+    column-gap: 12px !important;
+    row-gap: 12px !important;
+    align-items: center !important;
+  }
+  header .logo {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    width: 64px !important;
+    height: 66px !important;
+    display: flex !important;
+    overflow: hidden !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+  }
+  header .logo img {
+    width: 170px !important;
+    height: 170px !important;
+    max-width: none !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    flex-shrink: 0 !important;
+  }
+  header nav {
+    display: contents !important;
+  }
+  header nav .nav-links {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    align-content: center !important;
+    gap: 10px 14px !important;
+    min-width: 0 !important;
+    white-space: normal !important;
+  }
+  header nav .nav-links a {
+    font-size: 12px !important;
+    line-height: 1.25 !important;
+    white-space: normal !important;
+  }
+  header nav .nav-actions {
+    grid-column: 1 / -1 !important;
+    grid-row: 2 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 9px !important;
+    padding-top: 0 !important;
+  }
+  header nav .nav-actions a {
+    font-size: 12px !important;
+    padding: 10px 14px !important;
+    white-space: nowrap !important;
+  }
+}
 
 </style>
 </head>
@@ -360,8 +529,12 @@ nav a:hover { transform: translateY(-2px); }
 <div id="pt-intro" aria-label="Panchatantra Café intro animation">
   <div class="intro-orbit" aria-hidden="true"></div>
   <div class="intro-panel top-left" aria-hidden="true"></div><div class="intro-panel top-right" aria-hidden="true"></div><div class="intro-panel bottom-left" aria-hidden="true"></div><div class="intro-panel bottom-right" aria-hidden="true"></div>
-  <div class="intro-mark"><img src="logooo.jpg" alt="Panchatantra Café"></div>
-  <p class="intro-caption">Where every bite tells a story</p>
+  <div class="intro-wordmark" aria-label="Panchatantra Café">
+    <span class="intro-title">Panchatantra<span class="intro-dot">.</span></span>
+    <span class="intro-underline" aria-hidden="true"></span>
+    <span class="intro-subtitle">Where Every Bite Tells a Story</span>
+  </div>
+  <p class="intro-caption">A little world of stories · Begumpet, Hyderabad</p>
 </div>
 <header>
   <div class="header-inner">
@@ -369,13 +542,17 @@ nav a:hover { transform: translateY(-2px); }
       <img src="logooo.jpg" alt="Panchatantra Café Logo">
     </a>
     <nav aria-label="Main navigation">
-      <a href="#about">About</a>
-      <a href="#menu">Menu</a>
-      <a href="#cafe">The Café</a>
-      <a href="Event.html">Events &amp; Workshops</a>
-      <a href="#visit">Visit</a>
-      <a class="order" href="https://dinein.petpooja.com/qr/jzxh1v2054/B1" target="_blank" rel="noopener noreferrer">Order Online</a>
-      <a class="btn" href="https://wa.me/918516923456?text=Hi%20Panchatantra%20Cafe!%20I%27d%20like%20to%20reserve%20a%20table." target="_blank" rel="noopener noreferrer">Reserve a Table</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#cafe">The Café</a>
+        <a href="Event.html">Events &amp; Workshops</a>
+        <a href="#visit">Visit</a>
+      </div>
+      <div class="nav-actions">
+        <a class="order" href="https://dinein.petpooja.com/qr/jzxh1v2054/B1" target="_blank" rel="noopener noreferrer">Order Online</a>
+        <a class="btn" href="https://wa.me/918516923456?text=Hi%20Panchatantra%20Cafe!%20I%27d%20like%20to%20reserve%20a%20table." target="_blank" rel="noopener noreferrer">Reserve a Table</a>
+      </div>
     </nav>
   </div>
 </header>
@@ -538,11 +715,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (intro && !reduceMotion && !seenIntro) {
     sessionStorage.setItem("panchatantraIntroSeen", "yes");
-    window.setTimeout(() => intro.classList.add("is-leaving"), 4900);
+    window.setTimeout(() => intro.classList.add("is-leaving"), 6900);
     window.setTimeout(() => {
       intro.classList.add("is-gone");
       document.body.classList.remove("intro-playing");
-    }, 6100);
+    }, 8200);
   } else {
     if (intro) intro.remove();
     document.body.classList.remove("intro-playing");
