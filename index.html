@@ -274,8 +274,154 @@ footer{background:#2e241d;color:#fff5e8;padding:38px 0 18px}
 }
 </style>
 
+<style id="clean-premium-finish">
+/* Keep the original Panchatantra palette; add detail without visual clutter. */
+:root{--cream:#fbf7f1;--cream2:#f4ece1;--ink:#39271f;--muted:#786b62;--orange:#b96745;--line:#dfd2c3;--white:#fffdf9}
+.logo{width:220px;height:78px;overflow:visible;flex-shrink:0}
+.logo img{width:100%;height:100%;object-fit:contain;object-position:left center;background:transparent;mix-blend-mode:multiply;filter:contrast(1.06)}
+/* Identical photo dimensions: no uneven hero cards. */
+.carousel{align-items:stretch;justify-content:center;gap:16px;padding:14px 8px 22px}
+.slide,.slide:nth-child(2){flex:0 0 29%;width:29%;height:clamp(230px,27vw,320px);min-height:0;max-height:none;aspect-ratio:4/5;transform:none;opacity:1;padding:6px;border:1px solid var(--line);border-radius:23px;background:var(--white);box-shadow:0 12px 28px rgba(57,39,31,.09)}
+.slide img{width:100%;height:100%;object-fit:cover;object-position:center;border-radius:17px}
+.slide:hover{transform:translateY(-5px);box-shadow:0 17px 32px rgba(57,39,31,.14)}
+/* A small row of hand-drawn food and coffee icons. */
+.doodle-row{width:min(420px,76%);margin:-8px auto 8px;display:flex;justify-content:space-around;align-items:center;gap:16px;opacity:.68}
+.doodle-row svg{width:32px;height:32px;fill:none;stroke:var(--orange);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s ease,stroke .3s ease}
+.doodle-row svg:nth-child(even){stroke:#8b6b45}
+.doodle-row svg:hover{transform:translateY(-4px) rotate(-5deg);stroke:var(--ink)}
+/* Consistent photo treatment throughout the page. */
+.about-photo{height:auto;aspect-ratio:4/3;min-height:0}
+.about-photo img{width:100%;height:100%;min-height:0;object-fit:cover}
+.feature-tile{height:auto;aspect-ratio:16/9}
+.feature-stack .feature-tile{height:auto;aspect-ratio:2.2/1}
+.menu-photo{height:auto;aspect-ratio:4/3}
+.menu-photo img{width:100%;height:100%;object-fit:cover}
+.photo-frame{width:100%;aspect-ratio:4/3;padding:8px;border-radius:24px;overflow:hidden}
+.photo-frame img{width:100%;height:100%;object-fit:cover;border-radius:17px}
+.gallery-grid img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+/* Gentle editorial transitions, not excessive animation. */
+.menu-card,.feature-tile,.photo-frame,.gallery-grid img{transition:transform .35s ease,box-shadow .35s ease}
+.menu-card:hover{transform:translateY(-5px)}
+.feature-tile:hover{transform:translateY(-3px)}
+.btn{transition:background .25s ease,transform .25s ease,box-shadow .25s ease}
+@media(max-width:760px){
+ .header-inner{gap:8px}
+ .logo{width:190px;height:72px;margin:0 auto}
+ .logo img{object-position:center}
+ .carousel{justify-content:flex-start;gap:12px;padding:12px 5% 20px}
+ .slide,.slide:nth-child(2){flex:0 0 82%;width:82%;height:280px;aspect-ratio:auto}
+ .doodle-row{margin:0 auto 5px;gap:15px}
+ .doodle-row svg{width:31px;height:31px}
+ .about-photo{aspect-ratio:4/3;height:auto}
+ .feature-mosaic{grid-template-columns:1fr}
+ .feature-tile{aspect-ratio:16/9;height:auto}
+ .feature-stack .feature-tile{aspect-ratio:2/1;height:auto}
+ .photo-frame{aspect-ratio:4/3;height:auto}
+ .photo-frame img{height:100%}
+ .gallery-grid img{height:auto;aspect-ratio:4/3}
+}
+@media(min-width:761px) and (max-width:1050px){.logo{width:190px}}
+@media(prefers-reduced-motion:reduce){.doodle-row svg,.menu-card,.feature-tile,.photo-frame,.gallery-grid img{transition:none}}
+</style>
+
+<style id="screenshot-colour-palette">
+/* Palette sampled from the Panchatantra reference screenshot */
+:root{
+  --cream:#fbf8f1;       /* warm page background */
+  --cream2:#f4ece1;      /* soft beige panels */
+  --ink:#39261f;         /* deep coffee brown */
+  --muted:#786d64;       /* warm grey-brown text */
+  --orange:#ba6745;      /* terracotta buttons and accents */
+  --line:#e5d9c9;        /* soft beige borders */
+  --white:#fffdf8;
+  --shadow:0 18px 45px rgba(57,38,31,.10);
+}
+body{background:var(--cream);color:var(--ink)}
+header{background:rgba(251,248,241,.96);border-color:var(--line)}
+nav .order,.btn{background:var(--orange);border-color:var(--orange);color:#fffdf8}
+nav .order:hover,.btn:hover{background:var(--ink);border-color:var(--ink);color:#fffdf8}
+nav .reserve{border-color:var(--line);color:var(--ink)}
+.menu-section,.gallery-section,.reviews{background:#f4ece1}
+footer{background:#39261f}
+.stars{color:var(--orange)}
+.doodle-row svg{stroke:var(--orange)}
+.slide,.photo-frame,.gallery-grid img{border-color:var(--line)}
+.logo img{background:transparent;mix-blend-mode:multiply}
+</style>
+
+
+<style id="panchatantra-previous-intro-and-site-doodles">
+/* The original clean wordmark intro: no food illustrations on this screen. */
+#pt-intro{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;overflow:hidden;background:var(--cream);isolation:isolate;transition:opacity .85s ease,visibility .85s ease}
+#pt-intro:before{content:"";position:absolute;inset:18px;border:1px solid #ba674530;pointer-events:none}
+#pt-intro .intro-panel{position:absolute;width:51%;height:51%;background:var(--cream2);z-index:-1;transition:transform 1.05s cubic-bezier(.77,0,.18,1)}
+#pt-intro .panel-a{top:0;left:0;border-right:1px solid #ba674520;border-bottom:1px solid #ba674520}
+#pt-intro .panel-b{top:0;right:0;border-left:1px solid #ba674520;border-bottom:1px solid #ba674520}
+#pt-intro .panel-c{bottom:0;left:0;border-right:1px solid #ba674520;border-top:1px solid #ba674520}
+#pt-intro .panel-d{bottom:0;right:0;border-left:1px solid #ba674520;border-top:1px solid #ba674520}
+#pt-intro .intro-wordmark{position:relative;z-index:2;width:min(92%,760px);text-align:center;animation:none}
+#pt-intro .intro-name{display:block;font:700 clamp(40px,9vw,94px)/1.05 'Playfair Display',serif;letter-spacing:-.06em;color:var(--ink);transform-origin:center;animation:ptBouncyName 2.15s cubic-bezier(.16,1,.3,1) .12s both}
+#pt-intro .intro-name span{color:var(--orange);display:inline-block;animation:ptDotPop .75s ease-out 1.45s both}
+#pt-intro .intro-line{display:block;width:min(220px,38vw);height:3px;background:var(--orange);margin:20px auto 14px;transform-origin:center;animation:lineIn .8s .45s both}
+#pt-intro .intro-tag{display:block;color:var(--muted);font-size:clamp(10px,1.8vw,14px);font-weight:700;letter-spacing:.18em;text-transform:uppercase;opacity:0;animation:ptTagRise .75s ease-out 1.15s forwards}
+#pt-intro .intro-caption{position:absolute;bottom:34px;color:#9b8170;font-size:9px;letter-spacing:.2em;font-weight:700;opacity:0;animation:ptTagRise .65s ease-out 1.65s forwards}
+#pt-intro.is-leaving{opacity:0;visibility:hidden;pointer-events:none}
+#pt-intro.is-leaving .panel-a{transform:translate(-110%,-110%)}#pt-intro.is-leaving .panel-b{transform:translate(110%,-110%)}#pt-intro.is-leaving .panel-c{transform:translate(-110%,110%)}#pt-intro.is-leaving .panel-d{transform:translate(110%,110%)}
+#pt-intro.is-gone{display:none}
+@keyframes introIn{from{opacity:0;transform:translateY(24px) scale(.94);filter:blur(8px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes lineIn{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+/* Colourful, hand-drawn café doodles live around the website content, not in the intro. */
+.site-doodle{position:absolute;z-index:2;width:66px;height:66px;pointer-events:none;opacity:.82;filter:drop-shadow(0 3px 2px rgba(57,38,31,.05));animation:siteDoodleFloat 6s ease-in-out infinite}
+.site-doodle svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
+.site-doodle.orange{color:#ba6745}.site-doodle.green{color:#66866a}.site-doodle.gold{color:#d39b45}.site-doodle.coral{color:#d77b65}.site-doodle.brown{color:#8b6045}
+.site-doodle.small{width:42px;height:42px}.site-doodle.large{width:78px;height:78px}
+.hero{position:relative;isolation:isolate}
+.hero-doodle-bean{position:absolute;width:18px;height:11px;border-radius:50%;background:linear-gradient(135deg,#b96745,#39261f);box-shadow:inset 2px 1px 2px #fff8;z-index:2;pointer-events:none;animation:beanDrift 5s ease-in-out infinite}
+.hero-doodle-bean:after{content:"";position:absolute;left:48%;top:1px;width:2px;height:9px;background:#e5b28e;transform:rotate(22deg)}
+.hero-doodle-bean.bean-a{left:7%;top:38%;transform:rotate(-25deg)}.hero-doodle-bean.bean-b{right:8%;top:23%;transform:rotate(25deg);animation-delay:-2s}
+.about-card,.feature-mosaic,.menu-section,.cafe-grid,.gallery-section,.event-grid,.reviews,.visit-grid{position:relative;isolation:isolate}
+.about-card .site-doodle{right:18px;bottom:14px;width:58px;height:58px}
+.menu-section .menu-doodle-left{position:absolute;left:1.5%;top:48%;width:52px;height:52px;opacity:.68}
+.menu-section .menu-doodle-right{position:absolute;right:1.5%;top:15%;width:70px;height:70px}
+.cafe-doodle{position:absolute;right:-5px;top:2px;width:64px;height:64px}
+.gallery-section .gallery-bean{position:absolute;right:4%;top:11%;width:46px;height:46px}
+.event-grid .event-sparkle{position:absolute;right:2%;top:4%;width:46px;height:46px}
+.visit-grid .visit-cup{position:absolute;right:3%;top:0;width:54px;height:54px}
+.doodle-row svg{animation:doodleFloat 5.5s ease-in-out infinite;transform-origin:center}
+.doodle-row svg:nth-child(2){animation-delay:-1.4s}.doodle-row svg:nth-child(3){animation-delay:-2.7s}.doodle-row svg:nth-child(4){animation-delay:-3.8s}
+@keyframes siteDoodleFloat{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-7px) rotate(3deg)}}
+@keyframes beanDrift{0%,100%{translate:0 0}50%{translate:7px -10px}}
+@keyframes doodleFloat{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-5px) rotate(1deg)}}
+@media(max-width:760px){#pt-intro:before{inset:10px}#pt-intro .intro-caption{font-size:7px;letter-spacing:.13em;bottom:24px}.site-doodle{width:45px;height:45px;opacity:.68}.site-doodle.small{width:32px;height:32px}.site-doodle.large{width:55px;height:55px}.hero-doodle-bean.bean-a{left:3%;top:35%}.hero-doodle-bean.bean-b{right:3%;top:20%}.about-card .site-doodle{right:8px;bottom:8px;width:40px;height:40px}.menu-section .menu-doodle-left{left:-5px;top:23%;width:42px;height:42px}.menu-section .menu-doodle-right{right:-4px;top:8%;width:45px;height:45px}.cafe-doodle{right:0;width:42px;height:42px}.gallery-section .gallery-bean{right:2%;top:7%;width:32px;height:32px}.event-grid .event-sparkle{right:0;width:32px;height:32px}.visit-grid .visit-cup{right:0;width:38px;height:38px}}
+@media(prefers-reduced-motion:reduce){#pt-intro{display:none!important}.site-doodle,.hero-doodle-bean,.doodle-row svg{animation:none!important}}
+
+/* The familiar bouncy wordmark intro, with a calm finish. */
+#pt-intro .intro-line{animation:lineIn .8s .65s both}
+#pt-intro.is-leaving .intro-wordmark{animation:ptIntroExit .65s ease-in both}
+#pt-intro.is-leaving .intro-caption{opacity:0;transition:opacity .25s ease}
+#pt-intro .intro-panel{transition:transform 1.05s cubic-bezier(.77,0,.18,1)}
+#pt-intro.is-leaving .panel-a{transform:translate(-110%,-110%)}
+#pt-intro.is-leaving .panel-b{transform:translate(110%,-110%)}
+#pt-intro.is-leaving .panel-c{transform:translate(-110%,110%)}
+#pt-intro.is-leaving .panel-d{transform:translate(110%,110%)}
+@keyframes ptBouncyName{0%{opacity:0;transform:translateY(58px) scale(.62) rotateX(-28deg);filter:blur(10px);letter-spacing:-.18em}58%{opacity:1;transform:translateY(-11px) scale(1.07) rotateX(5deg);filter:blur(0);letter-spacing:-.045em}73%{transform:translateY(5px) scale(.97)}86%{transform:translateY(-2px) scale(1.015)}100%{opacity:1;transform:none;filter:blur(0);letter-spacing:-.06em}}
+@keyframes ptDotPop{0%{opacity:0;transform:scale(0) rotate(-70deg)}70%{opacity:1;transform:scale(1.35) rotate(12deg)}100%{transform:scale(1) rotate(0)}}
+@keyframes ptTagRise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes ptIntroExit{to{opacity:0;transform:translateY(-14px) scale(.92);filter:blur(4px)}}
+@media(max-width:760px){#pt-intro .intro-caption{bottom:24px}}
+</style>
+
 </head>
 <body>
+
+<div id="pt-intro" aria-label="Panchatantra Café opening animation">
+  <div class="intro-panel panel-a" aria-hidden="true"></div><div class="intro-panel panel-b" aria-hidden="true"></div>
+  <div class="intro-panel panel-c" aria-hidden="true"></div><div class="intro-panel panel-d" aria-hidden="true"></div>
+  <div class="intro-wordmark"><span class="intro-name">Panchatantra<span>.</span></span><span class="intro-line" aria-hidden="true"></span><span class="intro-tag">Where Every Bite Tells a Story</span></div>
+  <p class="intro-caption">A little world of stories · Begumpet, Hyderabad</p>
+</div>
+
 <header><div class="header-inner">
 <a href="#home" class="logo"><img src="logooo.jpg" alt="Panchatantra Café"></a>
 <nav aria-label="Main navigation">
@@ -285,6 +431,7 @@ footer{background:#2e241d;color:#fff5e8;padding:38px 0 18px}
 </nav></div></header>
 <main>
 <section class="hero" id="home">
+<span class="hero-doodle-bean bean-a" aria-hidden="true"></span><span class="hero-doodle-bean bean-b" aria-hidden="true"></span>
 <div class="rating">Google Reviews <strong>★★★★★</strong> <span>(5.0)</span></div>
 <h1>A little world of stories.</h1>
 <p class="hero-sub">Good food, lovely coffee and conversations that stay with you.</p>
@@ -299,8 +446,16 @@ footer{background:#2e241d;color:#fff5e8;padding:38px 0 18px}
 </div>
 </section>
 
+<div class="doodle-row" aria-hidden="true">
+  <svg viewBox="0 0 64 64"><path d="M13 24h34l-3 25H18zM47 29h5a8 8 0 0 1 0 16h-7M20 17c-4-5 4-6 0-12M32 17c-4-5 4-6 0-12M43 17c-4-5 4-6 0-12"/><path d="M22 34h16"/></svg>
+  <svg viewBox="0 0 64 64"><path d="M8 22h48l-4 8H12zM12 31h40l-4 23H16zM18 18l-3-8M30 18l-1-9M42 18l2-9"/><path d="M22 38h20M24 45h16"/></svg>
+  <svg viewBox="0 0 64 64"><path d="M9 28c0-9 10-16 23-16s23 7 23 16H9zM10 32h44M13 38c3 8 9 12 19 12s16-4 19-12H13z"/><path d="M18 25h28M22 34l4 2 4-2 4 2 4-2 4 2"/></svg>
+  <svg viewBox="0 0 64 64"><path d="M8 48 29 10c2-4 5-4 7 0l20 38c2 4 0 7-5 5L11 53c-4-1-5-2-3-5z"/><path d="m17 43 30 9M27 29l5 3M37 43l5 2"/><circle cx="31" cy="23" r="2"/><circle cx="39" cy="38" r="2"/></svg>
+</div>
+
 <section id="about" style="padding-top:18px">
 <div class="about-card">
+
 <div class="about-photo"><img src="sitting spot.jpg" alt="A warm and welcoming café interior"></div>
 <div class="about-copy">
 <p class="eyebrow">A little about us</p><h2>We love good food. And good stories.</h2>
@@ -317,7 +472,10 @@ footer{background:#2e241d;color:#fff5e8;padding:38px 0 18px}
 <a class="feature-tile" href="Event.html"><img src="awards.jpg" alt="Events and experiences"><span>experiences ↗</span></a>
 </div></div></section>
 
-<section class="menu-section" id="menu"><div class="container">
+<section class="menu-section" id="menu">
+<div class="site-doodle gold menu-doodle-left" aria-hidden="true"><svg viewBox="0 0 80 80"><path d="M13 49 34 12c2-4 6-4 8 0l25 40c2 4-1 7-5 6L17 55c-5-1-6-2-4-6z"/><path d="m22 47 35 8M31 29l5 3m10 8 5 3"/><circle cx="38" cy="23" r="3"/><circle cx="48" cy="43" r="3"/></svg></div>
+
+<div class="container">
 <div class="section-head"><p class="eyebrow">Something for every mood</p><h2 class="section-title">A menu made for good moments.</h2><p>Comforting favourites, refreshing drinks and sweet little endings.</p></div>
 <div class="menu-grid">
 <article class="menu-card"><div class="menu-photo"><img src="food.jpg" alt="Food at Panchatantra Café" loading="lazy"></div><h3>Food</h3><p>Comforting favourites and dishes made to be enjoyed.</p><a class="menu-link" href="https://dinein.petpooja.com/qr/jzxh1v2054/B1" target="_blank" rel="noopener">View Menu →</a></article>
@@ -352,4 +510,18 @@ footer{background:#2e241d;color:#fff5e8;padding:38px 0 18px}
 </div></section>
 </main>
 <footer><div class="container"><div class="footer-top"><div><div class="footer-brand">Panchatantra Café.</div><p>Where Every Bite Tells a Story.<br>Begumpet, Hyderabad</p></div><div class="footer-links"><a href="#about">About</a><a href="#menu">Menu</a><a href="#cafe">The Café</a><a href="Event.html">Events</a><a href="#visit">Visit</a><a href="https://www.instagram.com/panchatantrahyd/" target="_blank" rel="noopener">Instagram</a></div></div><div class="footer-bottom">© 2026 Panchatantra Café. All rights reserved.</div></div></footer>
+
+<script>
+(()=>{
+  const intro=document.getElementById('pt-intro');
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const seen=sessionStorage.getItem('panchatantraIntroSeen');
+  if(!intro)return;
+  if(reduce||seen){intro.remove();return;}
+  sessionStorage.setItem('panchatantraIntroSeen','yes');
+  window.setTimeout(()=>intro.classList.add('is-leaving'),4600);
+  window.setTimeout(()=>{intro.classList.add('is-gone');intro.remove();},5800);
+})();
+</script>
+
 </body></html>
