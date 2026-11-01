@@ -18,6 +18,7 @@
     --muted: #8b796b;
     --line: #e5d9c9;
     --accent: #a77b5c;
+    --soft: #eee2d3;
 }
 
 * {
@@ -26,9 +27,7 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
     background: var(--cream);
@@ -37,9 +36,7 @@ body {
     overflow-x: hidden;
 }
 
-body.loading {
-    overflow: hidden;
-}
+body.loading { overflow: hidden; }
 
 a {
     text-decoration: none;
@@ -57,9 +54,7 @@ img {
     margin: auto;
 }
 
-.serif {
-    font-family: 'Playfair Display', serif;
-}
+.serif { font-family: 'Playfair Display', serif; }
 
 .eyebrow {
     font-size: 10px;
@@ -103,7 +98,7 @@ h2 {
     padding-bottom: 5px;
 }
 
-/* INTRO SCREEN */
+/* INTRO */
 
 .intro-screen {
     position: fixed;
@@ -127,7 +122,6 @@ h2 {
 .intro-icon {
     font-size: 45px;
     margin-bottom: 18px;
-    display: inline-block;
     animation: cupBounce 1.2s ease infinite alternate;
 }
 
@@ -159,13 +153,8 @@ h2 {
     to { transform: translateY(7px) rotate(7deg); }
 }
 
-@keyframes fadeIn {
-    to { opacity: 1; }
-}
-
-@keyframes lineGrow {
-    to { width: 110px; }
-}
+@keyframes fadeIn { to { opacity: 1; } }
+@keyframes lineGrow { to { width: 110px; } }
 
 @keyframes introExit {
     0% { opacity: 1; transform: scale(1); }
@@ -229,9 +218,7 @@ header {
     transition: .3s;
 }
 
-.nav-links a:hover {
-    color: var(--accent);
-}
+.nav-links a:hover { color: var(--accent); }
 
 .menu-toggle {
     display: none;
@@ -241,11 +228,106 @@ header {
     font-size: 25px;
 }
 
+/* UNIVERSAL CREATIVE IMAGE FRAMES */
+
+.image-frame {
+    position: relative;
+    isolation: isolate;
+    padding: 11px;
+    background: #f4eadc;
+    border: 1px solid #dfcdb9;
+    border-radius: 5px 45px 5px 45px;
+    box-shadow: 12px 14px 0 rgba(167,123,92,.10);
+}
+
+.image-frame::before {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border: 1px solid rgba(167,123,92,.35);
+    border-radius: 3px 39px 3px 39px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.image-frame::after {
+    content: "✳";
+    position: absolute;
+    top: -19px;
+    right: 17px;
+    font-size: 27px;
+    color: var(--accent);
+    z-index: 3;
+}
+
+.image-frame img {
+    width: 100%;
+    height: 100%;
+    border-radius: 3px 34px 3px 34px;
+    object-fit: cover;
+    transition: transform .8s ease;
+}
+
+.image-frame:hover img {
+    transform: scale(1.035);
+}
+
+.frame-small {
+    border-radius: 35px 5px 35px 5px;
+    box-shadow: -10px 12px 0 rgba(167,123,92,.10);
+}
+
+.frame-small::before {
+    border-radius: 29px 3px 29px 3px;
+}
+
+.frame-small img {
+    border-radius: 29px 3px 29px 3px;
+}
+
+.frame-round {
+    border-radius: 50% 50% 5px 5px;
+    box-shadow: 10px 12px 0 rgba(167,123,92,.10);
+}
+
+.frame-round::before {
+    border-radius: 50% 50% 3px 3px;
+}
+
+.frame-round img {
+    border-radius: 50% 50% 3px 3px;
+}
+
+.frame-simple {
+    border-radius: 5px;
+}
+
+.frame-simple::before {
+    border-radius: 2px;
+}
+
+.frame-simple img {
+    border-radius: 2px;
+}
+
+.frame-caption {
+    position: absolute;
+    left: 50%;
+    bottom: -17px;
+    transform: translateX(-50%);
+    background: var(--cream);
+    border: 1px solid var(--line);
+    padding: 9px 17px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    white-space: nowrap;
+    font-size: 13px;
+    z-index: 4;
+}
+
 /* HERO */
 
-.hero {
-    padding: 70px 0 45px;
-}
+.hero { padding: 65px 0 45px; }
 
 .hero-grid {
     display: grid;
@@ -262,9 +344,7 @@ header {
     margin: 22px 0;
 }
 
-.hero-text h1 em {
-    color: var(--accent);
-}
+.hero-text h1 em { color: var(--accent); }
 
 .hero-text p {
     max-width: 390px;
@@ -280,9 +360,11 @@ header {
     margin-top: 30px;
 }
 
+/* OUTLINE GIRL */
+
 .hero-visual {
     position: relative;
-    min-height: 470px;
+    min-height: 430px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -290,7 +372,7 @@ header {
 
 .girl-svg {
     width: 100%;
-    max-width: 500px;
+    max-width: 440px;
     animation: gentleFloat 5s ease-in-out infinite;
 }
 
@@ -301,8 +383,8 @@ header {
 
 .hero-sticker {
     position: absolute;
-    top: 12%;
-    right: 5%;
+    top: 8%;
+    right: 2%;
     font-family: 'Playfair Display', serif;
     font-style: italic;
     color: var(--accent);
@@ -321,34 +403,60 @@ header {
     color: var(--muted);
 }
 
-/* HOMEPAGE CAFE PHOTO */
+/* HOMEPAGE IMAGE FIRST */
 
 .home-photo {
-    padding: 40px 0 100px;
+    padding: 35px 0 90px;
 }
 
 .home-photo-frame {
     position: relative;
-    height: 510px;
-    overflow: hidden;
+    padding: 15px;
+    background: #f2e8da;
+    border: 1px solid #dfcbb5;
+    box-shadow: 0 20px 45px rgba(68,51,41,.09);
+    border-radius: 7px 75px 7px 75px;
+}
+
+.home-photo-frame::before {
+    content: "";
+    position: absolute;
+    inset: 7px;
+    border: 1px solid rgba(167,123,92,.45);
+    border-radius: 4px 67px 4px 67px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.home-photo-frame::after {
+    content: "A LITTLE PLACE FULL OF STORIES";
+    position: absolute;
+    top: 27px;
+    left: 30px;
+    background: var(--cream);
+    padding: 12px 17px;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--brown);
+    z-index: 3;
 }
 
 .home-photo-frame img {
-    height: 100%;
-    transition: transform 1.2s;
-}
-
-.home-photo-frame:hover img {
-    transform: scale(1.04);
+    height: 530px;
+    border-radius: 3px 62px 3px 62px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .photo-label {
     position: absolute;
-    left: 35px;
-    bottom: 30px;
+    left: 40px;
+    bottom: 35px;
     background: var(--cream);
     padding: 22px 28px;
     max-width: 310px;
+    z-index: 4;
+    box-shadow: 5px 7px 18px rgba(68,51,41,.10);
 }
 
 .photo-label h3 {
@@ -381,8 +489,6 @@ header {
     margin: auto;
 }
 
-/* ILLUSTRATION DIVIDERS */
-
 .doodle {
     width: 100px;
     height: 80px;
@@ -404,32 +510,26 @@ header {
 }
 
 .about-image {
+    height: 450px;
     position: relative;
 }
 
-.about-image img {
-    height: 440px;
-}
+.about-image img { height: 100%; }
 
 .about-image::after {
     content: "♡";
     position: absolute;
-    bottom: -20px;
-    right: -15px;
-    font-size: 60px;
+    bottom: -32px;
+    right: -22px;
+    font-size: 65px;
     color: var(--accent);
     font-family: Georgia, serif;
 }
 
-.about-text h2 {
-    margin: 20px 0;
-}
+.about-text h2 { margin: 20px 0; }
+.about-text p { margin-bottom: 25px; }
 
-.about-text p {
-    margin-bottom: 25px;
-}
-
-/* EXPERIENCE */
+/* MENU */
 
 .experience {
     padding: 100px 0;
@@ -441,9 +541,7 @@ header {
     margin-bottom: 55px;
 }
 
-.center-heading h2 {
-    margin: 17px auto;
-}
+.center-heading h2 { margin: 17px auto; }
 
 .center-heading p {
     margin: auto;
@@ -452,37 +550,46 @@ header {
 
 .menu-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+    align-items: start;
 }
 
 .menu-card {
     text-align: center;
+    padding: 12px 12px 25px;
+    background: #f7f0e6;
+    border: 1px solid var(--line);
+    position: relative;
+    transition: transform .4s;
 }
 
-.menu-card img {
-    height: 270px;
-    transition: transform .7s;
-}
+.menu-card:nth-child(2) { margin-top: 35px; }
+.menu-card:nth-child(3) { margin-top: 0; }
 
-.menu-card:hover img {
-    transform: scale(1.035);
+.menu-card:hover { transform: translateY(-8px); }
+
+.menu-card .image-frame {
+    height: 280px;
+    padding: 9px;
 }
 
 .menu-card h3 {
     font-family: 'Playfair Display', serif;
     font-size: 26px;
     font-weight: 500;
-    margin: 22px 0 10px;
+    margin: 30px 0 10px;
 }
 
 .menu-card p {
     color: var(--muted);
     font-size: 12px;
     line-height: 1.8;
+    max-width: 260px;
+    margin: auto;
 }
 
-/* HAND DRAWN COFFEE SECTION */
+/* COFFEE STORY */
 
 .coffee-story {
     padding: 90px 0;
@@ -501,13 +608,8 @@ header {
     max-width: 480px;
 }
 
-.coffee-story h2 {
-    margin: 20px 0;
-}
-
-.coffee-story p {
-    margin-bottom: 25px;
-}
+.coffee-story h2 { margin: 20px 0; }
+.coffee-story p { margin-bottom: 25px; }
 
 /* CAFE */
 
@@ -526,22 +628,17 @@ header {
 .cafe-images {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 14px;
+    gap: 20px;
     align-items: center;
 }
 
-.cafe-images img:first-child {
-    height: 340px;
+.cafe-images .image-frame { height: 340px; }
+.cafe-images .image-frame:last-child {
+    height: 280px;
+    margin-top: 55px;
 }
 
-.cafe-images img:last-child {
-    height: 270px;
-    margin-top: 45px;
-}
-
-.cafe-text h2 {
-    margin: 20px 0;
-}
+.cafe-text h2 { margin: 20px 0; }
 
 .cafe-list {
     list-style: none;
@@ -560,7 +657,7 @@ header {
     margin-right: 12px;
 }
 
-/* BOOKS AND FRIENDS */
+/* FRIENDSHIP */
 
 .moments {
     padding: 100px 0;
@@ -574,17 +671,11 @@ header {
     align-items: center;
 }
 
-.moments-grid img {
-    height: 410px;
-}
+.moments-image { height: 430px; }
+.moments-image img { height: 100%; }
 
-.moments-text h2 {
-    margin: 20px 0;
-}
-
-.moments-text p {
-    margin-bottom: 25px;
-}
+.moments-text h2 { margin: 20px 0; }
+.moments-text p { margin-bottom: 25px; }
 
 /* GALLERY */
 
@@ -595,26 +686,33 @@ header {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: 1.2fr 1fr 1fr;
-    grid-template-rows: 220px 220px;
-    gap: 15px;
+    grid-template-columns: 1.15fr 1fr 1fr;
+    grid-template-rows: 230px 230px;
+    gap: 23px;
+    align-items: stretch;
 }
 
-.gallery-grid img {
+.gallery-item {
+    position: relative;
+    min-width: 0;
+    min-height: 0;
+}
+
+.gallery-item .image-frame {
     height: 100%;
-    transition: .6s;
+    padding: 8px;
 }
 
-.gallery-grid img:hover {
-    transform: scale(1.025);
-}
+.gallery-item:nth-child(1) { grid-row: span 2; }
+.gallery-item:nth-child(5) { grid-column: span 2; }
 
-.gallery-grid img:first-child {
-    grid-row: span 2;
-}
+.gallery-item:nth-child(2) { transform: translateY(12px); }
+.gallery-item:nth-child(4) { transform: translateY(-8px); }
 
-.gallery-grid img:last-child {
-    grid-column: span 2;
+.gallery-item .image-frame::after {
+    content: "♡";
+    font-size: 22px;
+    top: -15px;
 }
 
 /* EVENTS */
@@ -631,19 +729,13 @@ header {
     align-items: center;
 }
 
-.events-grid img {
-    height: 390px;
-}
+.events-image { height: 410px; }
+.events-image img { height: 100%; }
 
-.events-text h2 {
-    margin: 20px 0;
-}
+.events-text h2 { margin: 20px 0; }
+.events-text p { margin-bottom: 25px; }
 
-.events-text p {
-    margin-bottom: 25px;
-}
-
-/* REVIEW */
+/* REVIEWS */
 
 .reviews {
     padding: 90px 0;
@@ -656,7 +748,20 @@ header {
     padding: 45px 30px;
     max-width: 730px;
     margin: auto;
+    background: #f8f1e7;
+    position: relative;
 }
+
+.review-box::before,
+.review-box::after {
+    content: "✳";
+    position: absolute;
+    color: var(--accent);
+    font-size: 25px;
+}
+
+.review-box::before { top: 12px; left: 15px; }
+.review-box::after { bottom: 12px; right: 15px; }
 
 .stars {
     color: var(--accent);
@@ -666,7 +771,7 @@ header {
 
 .review-box blockquote {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(23px, 3vw, 34px);
+    font-size: clamp(23px,3vw,34px);
     line-height: 1.5;
     font-style: italic;
 }
@@ -684,9 +789,7 @@ header {
     gap: 60px;
 }
 
-.visit h2 {
-    margin: 20px 0;
-}
+.visit h2 { margin: 20px 0; }
 
 .visit-details {
     display: grid;
@@ -752,7 +855,7 @@ footer {
     font-size: 10px;
 }
 
-/* SCROLL ANIMATIONS */
+/* REVEAL */
 
 .reveal {
     opacity: 0;
@@ -765,11 +868,9 @@ footer {
     transform: translateY(0);
 }
 
-/* FLOATING DECORATION */
+/* DECORATION */
 
-.floating-star {
-    animation: starFloat 4s ease-in-out infinite;
-}
+.floating-star { animation: starFloat 4s ease-in-out infinite; }
 
 @keyframes starFloat {
     0%,100% { transform: translateY(0) rotate(0); }
@@ -789,27 +890,25 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .hero-visual {
-        min-height: 350px;
-    }
+    .hero-visual { min-height: 340px; }
 
-    .menu-grid {
-        gap: 15px;
-    }
+    .home-photo-frame img { height: 400px; }
 
-    .menu-card img {
-        height: 210px;
+    .menu-grid { gap: 18px; }
+
+    .menu-card .image-frame { height: 220px; }
+
+    .cafe-images .image-frame { height: 300px; }
+
+    .gallery-grid {
+        grid-template-rows: 200px 200px;
     }
 }
 
 @media(max-width:600px) {
-    header {
-        height: 70px;
-    }
+    header { height: 70px; }
 
-    .menu-toggle {
-        display: block;
-    }
+    .menu-toggle { display: block; }
 
     .nav-links {
         display: none;
@@ -825,71 +924,90 @@ footer {
         gap: 22px;
     }
 
-    .nav-links.active {
-        display: flex;
-    }
+    .nav-links.active { display: flex; }
 
-    .hero {
-        padding-top: 50px;
-    }
+    .nav > .text-link { display: none; }
 
-    .hero-text h1 {
-        font-size: 58px;
-    }
+    .hero { padding-top: 45px; }
 
-    .hero-visual {
-        min-height: 280px;
-    }
+    .hero-text h1 { font-size: 58px; }
+
+    .hero-visual { min-height: 270px; }
 
     .hero-bottom {
         flex-direction: column;
         gap: 12px;
     }
 
+    .home-photo { padding: 25px 0 65px; }
+
     .home-photo-frame {
-        height: 340px;
+        padding: 9px;
+        border-radius: 5px 35px 5px 35px;
+    }
+
+    .home-photo-frame::before {
+        border-radius: 3px 29px 3px 29px;
+    }
+
+    .home-photo-frame img {
+        height: 330px;
+        border-radius: 3px 25px 3px 25px;
+    }
+
+    .home-photo-frame::after {
+        top: 18px;
+        left: 17px;
+        font-size: 7px;
+        padding: 9px;
     }
 
     .photo-label {
-        left: 15px;
-        bottom: 15px;
-        padding: 15px;
+        left: 17px;
+        bottom: 18px;
+        padding: 13px 15px;
+        max-width: 250px;
     }
+
+    .photo-label h3 { font-size: 20px; }
 
     .menu-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 35px;
     }
 
-    .menu-card img {
-        height: 260px;
+    .menu-card:nth-child(2) { margin-top: 0; }
+
+    .menu-card .image-frame { height: 260px; }
+
+    .about-image { height: 330px; }
+
+    .cafe-images {
+        gap: 12px;
     }
 
-    .cafe-images img:first-child {
-        height: 250px;
-    }
+    .cafe-images .image-frame { height: 245px; }
 
-    .cafe-images img:last-child {
+    .cafe-images .image-frame:last-child {
         height: 210px;
+        margin-top: 35px;
     }
+
+    .moments-image,
+    .events-image { height: 290px; }
 
     .gallery-grid {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 180px 180px 180px;
+        gap: 14px;
     }
 
-    .gallery-grid img:first-child {
-        grid-row: span 1;
-    }
+    .gallery-item:nth-child(1) { grid-row: span 1; }
+    .gallery-item:nth-child(5) { grid-column: span 2; }
+    .gallery-item:nth-child(2),
+    .gallery-item:nth-child(4) { transform: none; }
 
-    .gallery-grid img:last-child {
-        grid-column: span 2;
-    }
-
-    .moments-grid img,
-    .events-grid img {
-        height: 280px;
-    }
+    .gallery-item .image-frame { padding: 6px; }
 
     .footer-top,
     .footer-bottom {
@@ -897,9 +1015,9 @@ footer {
         gap: 20px;
     }
 
-    .visit-details {
-        gap: 20px;
-    }
+    .visit-details { gap: 20px; }
+
+    .image-frame { padding: 7px; }
 }
 
 @media(prefers-reduced-motion: reduce) {
@@ -914,7 +1032,7 @@ footer {
 
 <body class="loading">
 
-<!-- INTRO ANIMATION -->
+<!-- INTRO -->
 
 <div class="intro-screen" id="introScreen">
     <div class="intro-icon">☕</div>
@@ -922,7 +1040,6 @@ footer {
     <div class="intro-subtitle">WHERE EVERY BITE TELLS A STORY</div>
     <div class="intro-line"></div>
 </div>
-
 
 <!-- HEADER -->
 
@@ -948,15 +1065,12 @@ footer {
         <li><a href="#visit">Visit</a></li>
     </ul>
 
-    <a href="https://wa.me/918516923456" class="text-link">
-        SAY HELLO ↗
-    </a>
+    <a href="https://wa.me/918516923456" class="text-link">SAY HELLO ↗</a>
 
 </div>
 </header>
 
-
-<!-- HERO -->
+<!-- HERO TEXT -->
 
 <section class="hero">
 <div class="container">
@@ -983,130 +1097,138 @@ footer {
         </div>
     </div>
 
-
-    <!-- GIRL ILLUSTRATION -->
+    <!-- OUTLINE-ONLY COFFEE GIRL -->
 
     <div class="hero-visual reveal">
 
     <svg class="girl-svg" viewBox="0 0 500 440"
     xmlns="http://www.w3.org/2000/svg">
 
-        <circle cx="250" cy="220" r="185"
-        fill="#f2e9dc"/>
+        <circle cx="250" cy="220" r="180"
+        fill="none" stroke="#dfcdb9"
+        stroke-width="1.5" stroke-dasharray="3 8"/>
 
-        <circle cx="250" cy="220" r="165"
-        fill="none" stroke="#bca58e"
-        stroke-dasharray="3 8"/>
+        <!-- Hair outline -->
 
-        <!-- Hair -->
-
-        <path d="M165 150 Q140 35 260 45
-        Q370 40 350 165 L355 300
-        Q250 365 155 290Z"
-        fill="#4b382d"/>
-
-        <!-- Body -->
-
-        <path d="M150 400 Q145 260 205 235
-        Q255 210 305 240 Q365 280 360 400Z"
-        fill="#e6d8c8" stroke="#49352c" stroke-width="4"/>
-
-        <!-- Neck -->
-
-        <path d="M220 210 L220 260
-        Q250 285 280 250 L280 205"
-        fill="#edc8a8" stroke="#49352c" stroke-width="3"/>
+        <path d="M165 165 Q130 40 250 43
+        Q375 38 345 170 L350 290
+        Q330 350 250 355 Q170 350 150 290Z"
+        fill="none" stroke="#49352c"
+        stroke-width="4" stroke-linecap="round"/>
 
         <!-- Face -->
 
-        <ellipse cx="250" cy="155" rx="75" ry="90"
-        fill="#edc8a8" stroke="#49352c" stroke-width="4"/>
+        <path d="M178 145 Q175 75 250 72
+        Q325 75 322 145
+        L312 205 Q300 255 250 260
+        Q200 255 188 205Z"
+        fill="none" stroke="#49352c"
+        stroke-width="3.5"/>
 
-        <!-- Hair fringe -->
+        <!-- Fringe -->
 
-        <path d="M175 145 Q160 50 255 60
-        Q350 55 325 145 Q290 105 255 115
-        Q210 125 175 145Z"
-        fill="#4b382d"/>
+        <path d="M180 140 Q175 70 245 75
+        Q300 65 320 130
+        Q285 100 260 110
+        Q220 115 180 140Z"
+        fill="none" stroke="#49352c"
+        stroke-width="3.5" stroke-linecap="round"/>
 
-        <path d="M180 130 Q155 185 185 230"
-        fill="none" stroke="#4b382d"
-        stroke-width="16" stroke-linecap="round"/>
+        <!-- Hair strands -->
 
-        <path d="M320 130 Q350 185 320 230"
-        fill="none" stroke="#4b382d"
-        stroke-width="16" stroke-linecap="round"/>
+        <path d="M180 150 Q155 205 175 260
+        M320 150 Q345 205 325 260"
+        fill="none" stroke="#49352c"
+        stroke-width="4" stroke-linecap="round"/>
 
         <!-- Eyes -->
 
-        <path d="M215 155 Q230 145 242 155
-        M260 155 Q275 145 290 155"
+        <path d="M210 170 Q225 158 240 170
+        M260 170 Q275 158 290 170"
         fill="none" stroke="#49352c"
         stroke-width="3" stroke-linecap="round"/>
 
-        <circle cx="230" cy="162" r="3" fill="#49352c"/>
-        <circle cx="276" cy="162" r="3" fill="#49352c"/>
+        <!-- Nose and smile -->
 
-        <path d="M242 195 Q258 205 274 194"
-        fill="none" stroke="#9c6655" stroke-width="3"/>
+        <path d="M248 178 Q242 195 252 198"
+        fill="none" stroke="#49352c" stroke-width="2"/>
 
-        <circle cx="210" cy="183" r="9" fill="#d99b8a" opacity=".5"/>
-        <circle cx="295" cy="183" r="9" fill="#d99b8a" opacity=".5"/>
+        <path d="M230 220 Q250 235 270 220"
+        fill="none" stroke="#49352c"
+        stroke-width="2.5" stroke-linecap="round"/>
 
-        <!-- Arm -->
+        <!-- Neck -->
 
-        <path d="M305 265 Q365 275 370 325"
-        fill="none" stroke="#edc8a8"
-        stroke-width="22" stroke-linecap="round"/>
+        <path d="M225 255 L225 285
+        Q250 305 275 285 L275 255"
+        fill="none" stroke="#49352c" stroke-width="3"/>
+
+        <!-- Dress -->
+
+        <path d="M225 280 Q175 285 155 330
+        L130 405 Q250 425 370 405
+        L345 330 Q325 285 275 280"
+        fill="none" stroke="#49352c" stroke-width="4"/>
+
+        <!-- Collar -->
+
+        <path d="M215 285 L250 325 L285 285"
+        fill="none" stroke="#a77b5c" stroke-width="3"/>
+
+        <!-- Arm holding cup -->
+
+        <path d="M295 300 Q350 290 365 255"
+        fill="none" stroke="#49352c"
+        stroke-width="17" stroke-linecap="round"/>
+
+        <path d="M295 300 Q350 290 365 255"
+        fill="none" stroke="#fbf7ef"
+        stroke-width="10" stroke-linecap="round"/>
 
         <!-- Cup -->
 
-        <path d="M345 260 L410 260 L400 320
-        Q375 335 350 320Z"
-        fill="#fbf7ef" stroke="#49352c" stroke-width="4"/>
+        <path d="M330 225 L405 225 L397 290
+        Q365 305 338 290Z"
+        fill="#fbf7ef" stroke="#49352c" stroke-width="3.5"/>
 
-        <path d="M405 270 Q440 265 425 305
-        Q415 315 400 305"
-        fill="none" stroke="#49352c" stroke-width="4"/>
+        <path d="M402 238 Q438 230 426 270
+        Q418 287 397 275"
+        fill="none" stroke="#49352c" stroke-width="3.5"/>
 
-        <path d="M350 280 L405 280"
+        <path d="M340 242 H400"
         stroke="#a77b5c" stroke-width="3"/>
 
         <!-- Steam -->
 
-        <path d="M365 240 Q350 220 370 205
-        M390 240 Q410 220 390 205"
+        <path d="M350 210 Q335 192 350 175
+        M375 210 Q390 192 375 175"
+        fill="none" stroke="#a77b5c"
+        stroke-width="2.5" stroke-linecap="round"/>
+
+        <!-- Little details -->
+
+        <path d="M90 130 L97 145 L112 150
+        L97 155 L90 170 L85 155
+        L70 150 L85 145Z"
         fill="none" stroke="#a77b5c" stroke-width="2"/>
 
-        <!-- Table -->
+        <path d="M410 100 L415 112 L428 117
+        L415 122 L410 135 L405 122
+        L392 117 L405 112Z"
+        fill="none" stroke="#a77b5c" stroke-width="2"/>
 
-        <path d="M65 405 H440"
-        stroke="#49352c" stroke-width="4"/>
+        <circle cx="105" cy="260" r="4" fill="#a77b5c"/>
+        <circle cx="420" cy="330" r="4" fill="#a77b5c"/>
 
-        <!-- Book -->
+        <!-- Small book -->
 
-        <path d="M70 370 Q110 350 150 375
-        L150 400 Q110 380 70 400Z"
-        fill="#e2cdb5" stroke="#49352c" stroke-width="3"/>
+        <path d="M65 350 Q95 335 125 355
+        L125 390 Q95 372 65 390Z"
+        fill="none" stroke="#49352c" stroke-width="2.5"/>
 
-        <path d="M150 375 Q180 350 210 370
-        L210 400 Q180 380 150 400Z"
-        fill="#f5eee3" stroke="#49352c" stroke-width="3"/>
-
-        <!-- Stars -->
-
-        <path d="M420 95 L425 110 L440 115
-        L425 120 L420 135 L415 120
-        L400 115 L415 110Z"
-        fill="#a77b5c"/>
-
-        <path d="M80 150 L84 162 L96 166
-        L84 170 L80 182 L76 170
-        L64 166 L76 162Z"
-        fill="#a77b5c"/>
-
-        <circle cx="420" cy="185" r="4" fill="#a77b5c"/>
-        <circle cx="100" cy="260" r="4" fill="#a77b5c"/>
+        <path d="M125 355 Q150 335 175 350
+        L175 390 Q150 372 125 390Z"
+        fill="none" stroke="#49352c" stroke-width="2.5"/>
 
     </svg>
 
@@ -1124,26 +1246,26 @@ footer {
 </div>
 </section>
 
-
-<!-- REAL CAFE PHOTO ON HOMEPAGE -->
+<!-- HOMEPAGE PHOTO: FIRST MAIN IMAGE -->
 
 <section class="home-photo reveal">
 <div class="container">
 
     <div class="home-photo-frame">
-        <img src="exterior.jpg"
-        alt="Panchatantra Café in Begumpet">
+
+        <img src="homepage.jpg"
+        alt="Welcome to Panchatantra Café">
 
         <div class="photo-label">
             <span class="eyebrow">WELCOME TO OUR LITTLE WORLD</span>
             <h3>Meet you at Panchatantra?</h3>
             <p>Good food, coffee and conversations await.</p>
         </div>
+
     </div>
 
 </div>
 </section>
-
 
 <!-- INTRODUCTION -->
 
@@ -1173,14 +1295,14 @@ footer {
 </div>
 </section>
 
-
 <!-- ABOUT -->
 
 <section class="about" id="about">
 <div class="container about-grid">
 
-    <div class="about-image reveal">
+    <div class="about-image image-frame reveal">
         <img src="friendship.jpg" alt="Friends enjoying Panchatantra Café">
+        <span class="frame-caption">Moments worth remembering ♡</span>
     </div>
 
     <div class="about-text reveal">
@@ -1209,7 +1331,6 @@ footer {
 </div>
 </section>
 
-
 <!-- MENU -->
 
 <section class="experience" id="menu">
@@ -1228,19 +1349,25 @@ footer {
     <div class="menu-grid">
 
         <div class="menu-card reveal">
-            <img src="food.jpg" alt="Food at Panchatantra Café">
+            <div class="image-frame frame-simple">
+                <img src="food.jpg" alt="Food at Panchatantra Café">
+            </div>
             <h3>Food & Favourites</h3>
             <p>Comforting favourites, freshly prepared and made to be enjoyed.</p>
         </div>
 
         <div class="menu-card reveal">
-            <img src="drink.jpg" alt="Drinks at Panchatantra Café">
+            <div class="image-frame frame-round">
+                <img src="drink.jpg" alt="Drinks at Panchatantra Café">
+            </div>
             <h3>Sips & Smiles</h3>
             <p>Refreshing drinks and café favourites for every kind of mood.</p>
         </div>
 
         <div class="menu-card reveal">
-            <img src="dessert.jpg" alt="Desserts at Panchatantra Café">
+            <div class="image-frame frame-simple">
+                <img src="dessert.jpg" alt="Desserts at Panchatantra Café">
+            </div>
             <h3>Sweet Little Things</h3>
             <p>A little sweetness to make your café moment complete.</p>
         </div>
@@ -1255,8 +1382,7 @@ footer {
 </div>
 </section>
 
-
-<!-- COFFEE ILLUSTRATION STORY -->
+<!-- COFFEE STORY -->
 
 <section class="coffee-story">
 <div class="container coffee-story-grid">
@@ -1266,30 +1392,22 @@ footer {
     <svg class="coffee-doodle" viewBox="0 0 480 380">
 
         <circle cx="240" cy="185" r="160"
-        fill="#f2e9dc"/>
-
-        <!-- Coffee cup -->
+        fill="none" stroke="#dfcdb9"
+        stroke-width="2" stroke-dasharray="4 9"/>
 
         <path d="M130 145 H330 L310 290
         Q230 325 150 290Z"
-        fill="#fbf7ef" stroke="#49352c" stroke-width="5"/>
+        fill="none" stroke="#49352c" stroke-width="5"/>
 
         <path d="M325 165 Q425 140 390 235
         Q375 270 315 250"
         fill="none" stroke="#49352c" stroke-width="5"/>
 
-        <path d="M155 185 H310"
-        stroke="#a77b5c" stroke-width="5"/>
-
-        <!-- Coffee -->
-
         <ellipse cx="230" cy="150" rx="100" ry="20"
-        fill="#b18a6d" stroke="#49352c" stroke-width="4"/>
+        fill="none" stroke="#49352c" stroke-width="4"/>
 
         <ellipse cx="230" cy="150" rx="65" ry="11"
-        fill="#f2e9dc"/>
-
-        <!-- Steam -->
+        fill="none" stroke="#a77b5c" stroke-width="3"/>
 
         <path d="M190 110 Q160 75 195 45
         M230 110 Q260 70 230 40
@@ -1297,28 +1415,24 @@ footer {
         fill="none" stroke="#a77b5c"
         stroke-width="4" stroke-linecap="round"/>
 
-        <!-- Coffee beans -->
-
         <ellipse cx="100" cy="290" rx="13" ry="23"
         transform="rotate(35 100 290)"
-        fill="#a77b5c" stroke="#49352c" stroke-width="2"/>
+        fill="none" stroke="#49352c" stroke-width="2"/>
 
         <path d="M90 270 Q110 290 105 310"
         fill="none" stroke="#49352c" stroke-width="2"/>
 
         <ellipse cx="380" cy="320" rx="13" ry="23"
         transform="rotate(-35 380 320)"
-        fill="#a77b5c" stroke="#49352c" stroke-width="2"/>
+        fill="none" stroke="#49352c" stroke-width="2"/>
 
         <path d="M390 300 Q370 320 375 340"
         fill="none" stroke="#49352c" stroke-width="2"/>
 
-        <!-- Stars -->
-
         <path d="M80 90 L86 105 L102 110
         L86 115 L80 130 L74 115
         L58 110 L74 105Z"
-        fill="#a77b5c"/>
+        fill="none" stroke="#a77b5c" stroke-width="2"/>
 
     </svg>
 
@@ -1343,15 +1457,21 @@ footer {
 </div>
 </section>
 
-
 <!-- CAFE -->
 
 <section class="cafe" id="cafe">
 <div class="container cafe-grid">
 
     <div class="cafe-images reveal">
-        <img src="sitting spot.jpg" alt="Panchatantra Café seating">
-        <img src="exterior.jpg" alt="Panchatantra Café exterior">
+
+        <div class="image-frame">
+            <img src="sitting spot.jpg" alt="Panchatantra Café seating">
+        </div>
+
+        <div class="image-frame frame-small">
+            <img src="exterior.jpg" alt="Panchatantra Café exterior">
+        </div>
+
     </div>
 
     <div class="cafe-text reveal">
@@ -1376,7 +1496,6 @@ footer {
 
 </div>
 </section>
-
 
 <!-- FRIENDSHIP -->
 
@@ -1404,13 +1523,12 @@ footer {
         </svg>
     </div>
 
-    <div class="reveal">
+    <div class="moments-image image-frame frame-round reveal">
         <img src="people.jpg" alt="People enjoying Panchatantra Café">
     </div>
 
 </div>
 </section>
-
 
 <!-- GALLERY -->
 
@@ -1427,23 +1545,48 @@ footer {
     </div>
 
     <div class="gallery-grid reveal">
-        <img src="coffee.jpg" alt="Coffee">
-        <img src="coffe croissant.jpg" alt="Coffee and croissant">
-        <img src="food.jpg" alt="Food">
-        <img src="dessert.jpg" alt="Desserts">
-        <img src="sitting spot.jpg" alt="Café seating">
+
+        <div class="gallery-item">
+            <div class="image-frame">
+                <img src="coffee.jpg" alt="Coffee">
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <div class="image-frame frame-small">
+                <img src="coffe croissant.jpg" alt="Coffee and croissant">
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <div class="image-frame frame-round">
+                <img src="food.jpg" alt="Food">
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <div class="image-frame frame-small">
+                <img src="dessert.jpg" alt="Desserts">
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <div class="image-frame frame-simple">
+                <img src="sitting spot.jpg" alt="Café seating">
+            </div>
+        </div>
+
     </div>
 
 </div>
 </section>
-
 
 <!-- EVENTS -->
 
 <section class="events" id="events">
 <div class="container events-grid">
 
-    <div class="reveal">
+    <div class="events-image image-frame reveal">
         <img src="awards.jpg" alt="Panchatantra Café special moments">
     </div>
 
@@ -1465,8 +1608,7 @@ footer {
 </div>
 </section>
 
-
-<!-- REVIEW -->
+<!-- REVIEWS -->
 
 <section class="reviews">
 <div class="container">
@@ -1488,7 +1630,6 @@ footer {
 
 </div>
 </section>
-
 
 <!-- VISIT -->
 
@@ -1548,7 +1689,6 @@ footer {
 </div>
 </section>
 
-
 <!-- FOOTER -->
 
 <footer>
@@ -1580,18 +1720,19 @@ footer {
 </div>
 </footer>
 
-
 <script>
 
-// INTRO SCREEN
+// INTRO
 
 window.addEventListener("load", function() {
     setTimeout(() => {
         document.body.classList.remove("loading");
-        document.getElementById("introScreen").remove();
+
+        const intro = document.getElementById("introScreen");
+        if (intro) intro.remove();
+
     }, 4300);
 });
-
 
 // MOBILE MENU
 
@@ -1604,7 +1745,6 @@ document.querySelectorAll(".nav-links a").forEach(link => {
         document.getElementById("navLinks").classList.remove("active");
     });
 });
-
 
 // SCROLL REVEAL
 
