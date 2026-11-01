@@ -3,26 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#f7f5ed">
+<meta name="theme-color" content="#fbf7f1">
 <meta name="description" content="Discover Panchatantra Café in Begumpet, Hyderabad.">
 <title>Panchatantra Café | A Little World of Stories</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
 
 <style>
 :root {
-    --olive: #596348;
-    --olive-dark: #343d2e;
-    --cream: #f7f5ed;
-    --paper: #eeeade;
-    --terracotta: #b66f50;
-    --ink: #302f28;
-    --muted: #77776a;
-    --line: #d9d5c7;
-    --white: #fffefa;
+    --cream: #fbf7f1;
+    --beige: #f4ece1;
+    --brown: #39271f;
+    --muted: #786b62;
+    --terracotta: #b96745;
+    --border: #e5d9c9;
+    --white: #fffdf9;
+    --shadow: 0 12px 35px rgba(57,39,31,.08);
 }
 
 * {
@@ -33,12 +32,12 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 90px;
+    scroll-padding-top: 85px;
 }
 
 body {
     background: var(--cream);
-    color: var(--ink);
+    color: var(--brown);
     font-family: 'DM Sans', sans-serif;
     overflow-x: hidden;
 }
@@ -54,70 +53,67 @@ a {
 }
 
 .container {
-    width: min(1280px, 90%);
+    width: min(1200px, 90%);
     margin: auto;
 }
 
 section {
-    padding: 115px 0;
+    padding: 95px 0;
 }
 
 .eyebrow {
-    text-transform: uppercase;
     color: var(--terracotta);
     font-size: 10px;
-    letter-spacing: 3px;
     font-weight: 700;
-    margin-bottom: 22px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 17px;
 }
 
 .heading {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(42px, 5.5vw, 76px);
-    line-height: 1.08;
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: 1.15;
     font-weight: 500;
-    letter-spacing: -2px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .heading em {
-    color: var(--olive);
+    color: var(--terracotta);
     font-weight: 500;
 }
 
 .description {
-    font-size: 14px;
     color: var(--muted);
-    line-height: 2;
-    max-width: 490px;
+    font-size: 14px;
+    line-height: 1.9;
 }
 
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    background: var(--olive);
+    gap: 10px;
+    padding: 14px 25px;
+    background: var(--terracotta);
+    border: 1px solid var(--terracotta);
     color: white;
-    padding: 16px 25px;
     font-size: 11px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
     font-weight: 600;
-    transition: .35s;
-    border: 1px solid var(--olive);
+    letter-spacing: .7px;
+    transition: .3s;
 }
 
 .btn:hover {
-    background: var(--terracotta);
-    border-color: var(--terracotta);
+    background: var(--brown);
+    border-color: var(--brown);
     transform: translateY(-3px);
 }
 
 .btn-outline {
     background: transparent;
-    color: var(--olive);
-    border-color: var(--olive);
+    color: var(--brown);
+    border-color: var(--border);
 }
 
 .btn-outline:hover {
@@ -130,38 +126,36 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(247,245,237,.96);
-    border-bottom: 1px solid var(--line);
-    backdrop-filter: blur(15px);
+    background: rgba(251,247,241,.96);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
 }
 
 .navbar {
     width: 92%;
-    max-width: 1400px;
-    min-height: 90px;
+    max-width: 1350px;
+    min-height: 76px;
     margin: auto;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    gap: 30px;
+    align-items: center;
+    gap: 25px;
 }
 
 .logo img {
-    width: 155px;
-    height: 70px;
+    width: 150px;
+    height: 65px;
     object-fit: contain;
 }
 
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 28px;
+    gap: 25px;
 }
 
 .nav-links a {
     font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
     font-weight: 600;
     transition: .3s;
 }
@@ -172,57 +166,48 @@ header {
 
 .nav-buttons {
     display: flex;
-    gap: 10px;
+    gap: 9px;
 }
 
 .nav-buttons .btn {
-    padding: 13px 17px;
+    padding: 12px 16px;
     font-size: 10px;
 }
 
 /* HERO */
 
 .hero {
-    padding: 0;
-    min-height: 720px;
-    display: flex;
-    align-items: center;
+    padding: 70px 0 65px;
+    text-align: center;
     background: var(--cream);
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-layout {
-    width: min(1350px, 92%);
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1.1fr;
-    align-items: center;
-    gap: 40px;
-    padding: 75px 0;
 }
 
 .hero-content {
-    position: relative;
-    z-index: 2;
-    padding-left: 35px;
+    max-width: 800px;
+    margin: auto;
+    padding: 0 15px;
 }
 
-.hero-kicker {
-    font-size: 10px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
+.hero-rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 22px;
+}
+
+.hero-rating span {
     color: var(--terracotta);
-    margin-bottom: 30px;
+    letter-spacing: 3px;
 }
 
 .hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(85px, 11vw, 155px);
-    line-height: .78;
-    font-weight: 600;
-    letter-spacing: -5px;
-    color: var(--olive-dark);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(48px, 7vw, 88px);
+    line-height: 1.06;
+    font-weight: 500;
+    letter-spacing: -2px;
 }
 
 .hero h1 em {
@@ -231,130 +216,73 @@ header {
 }
 
 .hero-description {
+    color: var(--muted);
     font-family: 'Playfair Display', serif;
-    font-size: 20px;
+    font-size: 19px;
     font-style: italic;
-    margin: 35px 0 25px;
+    margin: 18px 0 32px;
 }
 
-.hero-content .btn {
-    margin-top: 10px;
+.hero-gallery {
+    width: min(1150px, 90%);
+    margin: 55px auto 0;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 15px;
+    align-items: stretch;
 }
 
-.hero-image-wrap {
-    position: relative;
-    height: 550px;
-    padding: 0 30px 30px 0;
-}
-
-.hero-image-wrap:before {
-    content: "";
-    position: absolute;
-    inset: 35px 0 0 45px;
-    border: 1px solid var(--terracotta);
-}
-
-.hero-image {
-    position: relative;
-    height: 100%;
+.hero-photo {
+    height: 310px;
     overflow: hidden;
-    z-index: 1;
+    background: var(--beige);
+    border-radius: 3px;
 }
 
-.hero-image img {
+.hero-photo:nth-child(even) {
+    margin-top: 25px;
+}
+
+.hero-photo img {
+    width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
+    transition: transform .6s;
 }
 
-.hero-side-note {
-    position: absolute;
-    right: -5px;
-    bottom: 0;
-    writing-mode: vertical-rl;
-    font-size: 9px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--muted);
-}
-
-.hero-stamp {
-    position: absolute;
-    width: 115px;
-    height: 115px;
-    border-radius: 50%;
-    background: var(--terracotta);
-    color: white;
-    display: grid;
-    place-items: center;
-    text-align: center;
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 17px;
-    line-height: 1.2;
-    z-index: 3;
-    left: -45px;
-    bottom: 35px;
-    transform: rotate(-12deg);
+.hero-photo:hover img {
+    transform: scale(1.06);
 }
 
 .hero-bottom {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: var(--olive);
-    color: white;
-    padding: 19px 4%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    margin-top: 55px;
 }
 
 .hero-bottom p {
-    font-size: 9px;
-    letter-spacing: 3px;
-}
-
-.hero-bottom a {
     font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border-bottom: 1px solid #ffffff80;
-    padding-bottom: 5px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    margin-bottom: 20px;
 }
 
 /* ABOUT */
 
 .about-section {
-    background: var(--paper);
+    background: var(--beige);
 }
 
-.about-grid {
+.about-card {
     display: grid;
-    grid-template-columns: 1.1fr .9fr;
-    align-items: center;
-    gap: 100px;
-}
-
-.about-image-wrap {
-    position: relative;
-    padding: 0 35px 35px 0;
-}
-
-.about-image-wrap:after {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 70%;
-    height: 75%;
-    background: var(--olive);
+    grid-template-columns: 1fr 1fr;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    align-items: stretch;
 }
 
 .about-image {
-    height: 560px;
-    position: relative;
-    z-index: 1;
+    min-height: 480px;
+    overflow: hidden;
 }
 
 .about-image img {
@@ -362,134 +290,145 @@ header {
     object-fit: cover;
 }
 
-.about-number {
-    position: absolute;
-    z-index: 2;
-    bottom: -20px;
-    left: -30px;
-    background: var(--terracotta);
-    color: white;
-    width: 105px;
-    height: 105px;
-    display: grid;
-    place-items: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    font-style: italic;
+.about-copy {
+    padding: 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .about-copy .btn {
-    margin-top: 35px;
+    align-self: flex-start;
+    margin-top: 28px;
 }
 
-/* SECTION DIVIDER */
+/* FEATURE MOSAIC */
 
-.section-divider {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 65px;
+.feature-section {
+    background: var(--cream);
 }
 
-.section-divider span {
-    height: 1px;
-    flex: 1;
-    background: var(--line);
+.section-title {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
 }
 
-.section-divider p {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 18px;
-    color: var(--terracotta);
+.feature-grid {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    grid-template-rows: 250px 250px;
+    gap: 18px;
+}
+
+.feature-image {
+    overflow: hidden;
+    position: relative;
+}
+
+.feature-image:first-child {
+    grid-row: span 2;
+}
+
+.feature-image img {
+    height: 100%;
+    object-fit: cover;
+    transition: .6s;
+}
+
+.feature-image:hover img {
+    transform: scale(1.05);
+}
+
+.feature-image:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent, rgba(30,20,15,.2));
 }
 
 /* MENU */
 
 .menu-section {
-    background: var(--cream);
+    background: var(--beige);
 }
 
-.menu-intro {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    gap: 30px;
-    margin-bottom: 60px;
-}
-
-.menu-intro .description {
-    margin-bottom: 10px;
-}
-
-.menu-list {
-    border-top: 1px solid var(--line);
-}
-
-.menu-item {
+.menu-grid {
     display: grid;
-    grid-template-columns: 100px 1fr 1fr 50px;
-    align-items: center;
-    gap: 35px;
-    padding: 28px 15px;
-    border-bottom: 1px solid var(--line);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.menu-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 13px;
     transition: .35s;
 }
 
-.menu-item:hover {
-    background: var(--paper);
-    padding-left: 28px;
+.menu-card:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--shadow);
 }
 
-.menu-item-image {
-    height: 95px;
+.menu-photo {
+    height: 260px;
     overflow: hidden;
+    background: var(--beige);
 }
 
-.menu-item-image img {
+.menu-photo img {
     height: 100%;
     object-fit: cover;
-    transition: .5s;
+    transition: .6s;
 }
 
-.menu-item:hover img {
-    transform: scale(1.1);
+.menu-card:hover img {
+    transform: scale(1.06);
 }
 
-.menu-item h3 {
+.menu-card-content {
+    padding: 23px 12px 15px;
+}
+
+.menu-card h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 29px;
+    font-size: 25px;
     font-weight: 500;
+    margin-bottom: 10px;
 }
 
-.menu-item p {
-    font-size: 12px;
+.menu-card p {
     color: var(--muted);
+    font-size: 12px;
     line-height: 1.8;
 }
 
-.menu-arrow {
-    font-size: 25px;
+.menu-link {
+    display: inline-block;
+    margin-top: 18px;
     color: var(--terracotta);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
-/* CAFE FEATURE */
+/* CAFE */
 
 .cafe-section {
-    background: var(--olive-dark);
-    color: white;
-    padding: 0;
+    background: var(--cream);
 }
 
 .cafe-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    min-height: 650px;
+    align-items: center;
+    gap: 75px;
 }
 
 .cafe-image {
-    height: 100%;
-    min-height: 650px;
+    height: 490px;
+    overflow: hidden;
 }
 
 .cafe-image img {
@@ -497,99 +436,57 @@ header {
     object-fit: cover;
 }
 
-.cafe-copy {
-    padding: 100px 12%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.cafe-copy .heading {
-    color: white;
-}
-
-.cafe-copy .heading em {
-    color: #c5b88e;
-}
-
-.cafe-copy .description {
-    color: #d2d3c7;
-}
-
 .cafe-points {
     list-style: none;
-    margin-top: 30px;
+    margin-top: 22px;
 }
 
 .cafe-points li {
-    border-bottom: 1px solid #ffffff35;
-    padding: 16px 0;
-    color: #e4e2d8;
-    font-size: 12px;
-    letter-spacing: .5px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--muted);
 }
 
 .cafe-points li:before {
-    content: "✳";
-    color: #c5b88e;
-    margin-right: 15px;
+    content: "✦";
+    color: var(--terracotta);
+    margin-right: 12px;
 }
 
 /* GALLERY */
 
 .gallery-section {
-    background: var(--paper);
-}
-
-.gallery-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    gap: 30px;
-    margin-bottom: 55px;
-}
-
-.gallery-heading .description {
-    max-width: 350px;
+    background: var(--beige);
 }
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: 1.2fr .8fr 1fr;
-    grid-template-rows: 270px 270px;
-    gap: 15px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: 270px;
+    gap: 17px;
 }
 
 .gallery-item {
-    position: relative;
     overflow: hidden;
-}
-
-.gallery-item:nth-child(1) {
-    grid-row: span 2;
-}
-
-.gallery-item:nth-child(4) {
-    grid-column: span 2;
+    background: var(--white);
+    padding: 7px;
 }
 
 .gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: .7s;
+    transition: .5s;
 }
 
 .gallery-item:hover img {
-    transform: scale(1.07);
+    transform: scale(1.05);
 }
 
-.gallery-item:after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(transparent, #1e241b45);
-    pointer-events: none;
+.gallery-item:nth-child(2),
+.gallery-item:nth-child(5) {
+    margin-top: 25px;
 }
 
 /* EVENTS */
@@ -598,16 +495,16 @@ header {
     background: var(--cream);
 }
 
-.event-layout {
+.event-grid {
     display: grid;
-    grid-template-columns: .9fr 1.1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
     align-items: center;
-    gap: 80px;
 }
 
 .event-image {
-    height: 530px;
-    position: relative;
+    height: 450px;
+    overflow: hidden;
 }
 
 .event-image img {
@@ -615,104 +512,68 @@ header {
     object-fit: cover;
 }
 
-.event-image:after {
-    content: "";
-    position: absolute;
-    border: 1px solid var(--terracotta);
-    inset: 18px -18px -18px 18px;
-    z-index: -1;
-}
-
 .event-copy .btn {
-    margin-top: 35px;
+    margin-top: 28px;
 }
 
 /* REVIEWS */
 
 .reviews {
-    background: var(--terracotta);
-    color: white;
+    background: var(--brown);
+    color: var(--cream);
     text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.reviews:before,
-.reviews:after {
-    content: "“";
-    position: absolute;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 300px;
-    line-height: 1;
-    color: #ffffff15;
-}
-
-.reviews:before {
-    top: 0;
-    left: 5%;
-}
-
-.reviews:after {
-    content: "”";
-    bottom: -100px;
-    right: 5%;
 }
 
 .reviews .eyebrow {
-    color: #f0d5c8;
+    color: #d9a58c;
 }
 
 .reviews .heading {
-    color: white;
+    color: var(--cream);
 }
 
 .review-card {
-    max-width: 800px;
-    margin: 45px auto 0;
-    position: relative;
-    z-index: 1;
+    max-width: 780px;
+    margin: 35px auto 0;
+    padding: 45px 35px;
+    background: #49352b;
+    border: 1px solid #ffffff20;
 }
 
 .stars {
+    color: #d9a58c;
+    letter-spacing: 6px;
     font-size: 20px;
-    letter-spacing: 7px;
-    color: #f3dfad;
-    margin-bottom: 30px;
+    margin-bottom: 22px;
 }
 
 .review-card p {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(25px, 4vw, 42px);
+    font-size: clamp(22px, 3vw, 32px);
     line-height: 1.5;
     font-style: italic;
 }
 
 .review-card .menu-link {
-    display: inline-block;
-    margin-top: 35px;
-    border-bottom: 1px solid #ffffff90;
-    padding-bottom: 6px;
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    color: #e0ad93;
 }
 
 /* VISIT */
 
 .visit-section {
-    background: var(--paper);
+    background: var(--beige);
 }
 
 .visit-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    gap: 65px;
     align-items: center;
 }
 
 .visit-image {
-    height: 540px;
-    position: relative;
+    height: 450px;
+    overflow: hidden;
 }
 
 .visit-image img {
@@ -720,36 +581,22 @@ header {
     object-fit: cover;
 }
 
-.visit-image:before {
-    content: "";
-    position: absolute;
-    inset: -15px 15px 15px -15px;
-    border: 1px solid var(--olive);
-    z-index: 0;
-}
-
 .visit-details {
-    margin: 35px 0;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-}
-
-.visit-details div {
-    border-top: 1px solid var(--line);
-    padding-top: 15px;
+    gap: 20px;
+    margin: 28px 0;
 }
 
 .visit-details strong {
     display: block;
     font-family: 'Playfair Display', serif;
-    font-size: 19px;
+    font-size: 17px;
     font-weight: 500;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .visit-details span {
-    font-size: 11px;
+    font-size: 12px;
     color: var(--muted);
     line-height: 1.8;
 }
@@ -763,67 +610,60 @@ header {
 /* FOOTER */
 
 footer {
-    background: var(--olive-dark);
-    color: white;
-    padding: 85px 0 25px;
+    background: var(--brown);
+    color: var(--cream);
+    padding: 65px 0 22px;
 }
 
 .footer-top {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: start;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
 }
 
 .footer-brand {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 65px;
-    line-height: 1;
-    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 12px;
 }
 
 .footer-top p {
     font-size: 12px;
+    color: #d9c9bd;
     line-height: 2;
-    color: #d0d1c6;
 }
 
 .footer-links {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    padding-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    max-width: 450px;
 }
 
 .footer-links a {
     font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #e3e3d9;
     transition: .3s;
 }
 
 .footer-links a:hover {
-    color: #d7a27e;
+    color: #d9a58c;
 }
 
 .footer-bottom {
-    border-top: 1px solid #ffffff30;
-    margin-top: 65px;
-    padding-top: 25px;
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    color: #c5c8bb;
-    font-size: 10px;
-    letter-spacing: 1px;
+    border-top: 1px solid #ffffff25;
+    margin-top: 45px;
+    padding-top: 20px;
+    text-align: center;
+    color: #d9c9bd;
+    font-size: 11px;
 }
 
-/* ANIMATIONS */
+/* REVEAL ANIMATION */
 
 .reveal {
     opacity: 0;
-    transform: translateY(35px);
+    transform: translateY(25px);
     transition: opacity .8s ease, transform .8s ease;
 }
 
@@ -833,13 +673,13 @@ footer {
 }
 
 .fade-up {
-    animation: fadeUp 1s ease both;
+    animation: fadeUp .9s ease both;
 }
 
 @keyframes fadeUp {
     from {
         opacity: 0;
-        transform: translateY(35px);
+        transform: translateY(25px);
     }
     to {
         opacity: 1;
@@ -849,66 +689,60 @@ footer {
 
 /* TABLET */
 
-@media(max-width:1000px) {
+@media(max-width:950px) {
 
     .navbar {
-        gap: 15px;
+        gap: 12px;
     }
 
     .nav-links {
-        gap: 15px;
+        gap: 13px;
     }
 
     .nav-links a {
-        font-size: 9px;
+        font-size: 10px;
     }
 
-    .hero-layout {
-        gap: 20px;
+    .nav-buttons .btn {
+        padding: 11px;
     }
 
-    .hero-content {
-        padding-left: 10px;
+    .about-copy {
+        padding: 35px;
     }
 
-    .hero-image-wrap {
-        height: 450px;
+    .hero-photo {
+        height: 260px;
     }
 
-    .about-grid,
-    .event-layout,
-    .visit-grid {
-        gap: 45px;
-    }
-
-    .menu-item {
-        gap: 20px;
-    }
-
-    .cafe-copy {
-        padding: 75px 8%;
+    .menu-photo {
+        height: 210px;
     }
 }
 
 /* MOBILE */
 
-@media(max-width:700px) {
+@media(max-width:650px) {
 
     section {
-        padding: 75px 0;
+        padding: 65px 0;
     }
 
     .navbar {
-        min-height: auto;
-        padding: 12px 0 15px;
+        padding: 10px 0 14px;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 12px;
+        gap: 10px;
+    }
+
+    .logo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 
     .logo img {
-        height: 55px;
-        margin: auto;
+        height: 52px;
     }
 
     .nav-links {
@@ -919,7 +753,7 @@ footer {
     }
 
     .nav-links a {
-        font-size: 9px;
+        font-size: 10px;
     }
 
     .nav-buttons {
@@ -927,190 +761,139 @@ footer {
     }
 
     .nav-buttons .btn {
-        padding: 11px 13px;
+        padding: 10px 13px;
         font-size: 9px;
     }
 
     .hero {
-        min-height: auto;
-        padding-bottom: 55px;
-    }
-
-    .hero-layout {
-        width: 88%;
-        grid-template-columns: 1fr;
-        gap: 45px;
-        padding: 70px 0 40px;
-    }
-
-    .hero-content {
-        padding-left: 0;
+        padding: 55px 0 45px;
     }
 
     .hero h1 {
-        font-size: clamp(85px, 19vw, 125px);
+        font-size: clamp(45px, 12vw, 70px);
     }
 
-    .hero-image-wrap {
-        height: 380px;
-        margin-left: 15px;
+    .hero-description {
+        font-size: 16px;
     }
 
-    .hero-stamp {
-        width: 85px;
-        height: 85px;
-        font-size: 13px;
-        left: -20px;
+    .hero-gallery {
+        width: 90%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 35px;
     }
 
-    .hero-side-note {
-        right: -12px;
+    .hero-photo {
+        height: 220px;
+        margin: 0 !important;
+    }
+
+    .hero-photo:last-child {
+        grid-column: 1 / -1;
+        height: 250px;
     }
 
     .hero-bottom {
-        position: relative;
-        flex-direction: column;
-        gap: 12px;
-        text-align: center;
-        padding: 18px;
+        margin-top: 35px;
     }
 
     .hero-bottom p {
         font-size: 8px;
+        letter-spacing: 2px;
     }
 
-    .about-grid,
-    .event-layout,
-    .visit-grid {
+    .about-card {
         grid-template-columns: 1fr;
-        gap: 55px;
     }
 
     .about-image {
-        height: 390px;
+        min-height: 300px;
+        height: 300px;
     }
 
-    .about-number {
-        width: 80px;
-        height: 80px;
-        font-size: 28px;
-        left: -10px;
+    .about-copy {
+        padding: 35px 25px;
     }
 
-    .menu-intro,
-    .gallery-heading {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .menu-item {
-        grid-template-columns: 75px 1fr 25px;
-        gap: 15px;
-        padding: 20px 5px;
-    }
-
-    .menu-item-image {
-        height: 75px;
-    }
-
-    .menu-item h3 {
-        font-size: 20px;
-    }
-
-    .menu-item p {
-        font-size: 10px;
-    }
-
-    .menu-arrow {
-        font-size: 19px;
-    }
-
-    .cafe-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .cafe-image {
-        min-height: 350px;
-        height: 350px;
-    }
-
-    .cafe-copy {
-        padding: 65px 8%;
-    }
-
-    .gallery-grid {
+    .feature-grid {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 220px 180px 180px;
+        grid-template-rows: 220px 180px;
         gap: 10px;
     }
 
-    .gallery-item:nth-child(1) {
+    .feature-image:first-child {
         grid-row: span 2;
     }
 
-    .gallery-item:nth-child(4) {
-        grid-column: span 2;
-    }
-
-    .event-image {
-        height: 350px;
-        margin-right: 15px;
-    }
-
-    .visit-image {
-        height: 350px;
-        margin-left: 15px;
-    }
-
-    .visit-details {
+    .menu-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
 
-    .review-card p {
-        font-size: 25px;
+    .menu-photo {
+        height: 260px;
+    }
+
+    .cafe-grid,
+    .event-grid,
+    .visit-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .cafe-image {
+        height: 330px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: 190px;
+        gap: 10px;
+    }
+
+    .gallery-item:nth-child(2),
+    .gallery-item:nth-child(5) {
+        margin-top: 0;
+    }
+
+    .event-image,
+    .visit-image {
+        height: 320px;
+    }
+
+    .review-card {
+        padding: 35px 20px;
     }
 
     .footer-top {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .footer-brand {
-        font-size: 52px;
+        flex-direction: column;
     }
 
     .footer-links {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
+        gap: 18px;
     }
 }
 
 @media(max-width:380px) {
-    .hero h1 {
-        font-size: 75px;
+
+    .hero-photo {
+        height: 180px;
     }
 
-    .hero-image-wrap {
-        height: 300px;
+    .hero-photo:last-child {
+        height: 210px;
     }
 
     .heading {
-        font-size: 39px;
-    }
-
-    .menu-item h3 {
-        font-size: 17px;
+        font-size: 37px;
     }
 }
 
 @media(prefers-reduced-motion:reduce) {
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
         animation-duration: .01ms !important;
         transition-duration: .01ms !important;
         scroll-behavior: auto !important;
@@ -1130,7 +913,7 @@ footer {
 <div class="navbar">
 
 <a href="#home" class="logo">
-    <img src="./logooo.jpg" alt="Panchatantra Café Logo">
+<img src="./logooo.jpg" alt="Panchatantra Café Logo">
 </a>
 
 <nav class="nav-links">
@@ -1156,15 +939,16 @@ footer {
 
 <section class="hero" id="home">
 
-<div class="hero-layout">
-
 <div class="hero-content fade-up">
 
-<p class="hero-kicker">A LITTLE WORLD OF STORIES · BEGUMPET</p>
+<div class="hero-rating">
+<span>★★★★★</span>
+A LITTLE WORLD OF STORIES · BEGUMPET
+</div>
 
 <h1>
-A Little<br>
-World of <em>Stories.</em>
+A Little World<br>
+of <em>Stories.</em>
 </h1>
 
 <p class="hero-description">
@@ -1175,25 +959,32 @@ World of <em>Stories.</em>
 
 </div>
 
-<div class="hero-image-wrap fade-up">
+<div class="hero-gallery">
 
-<div class="hero-image">
+<div class="hero-photo">
 <img src="coffee.jpg" alt="Coffee at Panchatantra Café">
 </div>
 
-<div class="hero-stamp">
-Made with<br>love & coffee
+<div class="hero-photo">
+<img src="friendship.jpg" alt="Friendship at Panchatantra Café">
 </div>
 
-<div class="hero-side-note">FOOD · COFFEE · BOOKS · CONVERSATIONS</div>
+<div class="hero-photo">
+<img src="exterior.jpg" alt="Panchatantra Café exterior">
+</div>
 
+<div class="hero-photo">
+<img src="food.jpg" alt="Food at Panchatantra Café">
+</div>
+
+<div class="hero-photo">
+<img src="sitting spot.jpg" alt="Panchatantra Café seating">
 </div>
 
 </div>
 
 <div class="hero-bottom">
 <p>FOOD · COFFEE · BOOKS · CONVERSATIONS</p>
-<a href="#about">Discover our world ↓</a>
 </div>
 
 </section>
@@ -1202,16 +993,15 @@ Made with<br>love & coffee
 
 <section class="about-section" id="about">
 
-<div class="container about-grid">
+<div class="container">
 
-<div class="about-image-wrap reveal">
+<div class="about-card reveal">
+
 <div class="about-image">
 <img src="friendship.jpg" alt="Friendship at Panchatantra Café">
 </div>
-<div class="about-number">01</div>
-</div>
 
-<div class="about-copy reveal">
+<div class="about-copy">
 
 <p class="eyebrow">A LITTLE ABOUT US</p>
 
@@ -1230,6 +1020,48 @@ Panchatantra Café is a place where stories unfold over good food and conversati
 
 </div>
 
+</div>
+
+</section>
+
+<!-- FEATURE MOSAIC -->
+
+<section class="feature-section">
+
+<div class="container">
+
+<div class="section-title reveal">
+
+<p class="eyebrow">LITTLE MOMENTS, BIG MEMORIES</p>
+
+<h2 class="heading">
+A little world of <em>togetherness.</em>
+</h2>
+
+<p class="description">
+A welcoming space for coffee dates, quiet afternoons and conversations that last a little longer.
+</p>
+
+</div>
+
+<div class="feature-grid">
+
+<div class="feature-image reveal">
+<img src="exterior.jpg" alt="Café exterior">
+</div>
+
+<div class="feature-image reveal">
+<img src="coffe croissant.jpg" alt="Coffee and croissant">
+</div>
+
+<div class="feature-image reveal">
+<img src="time.jpg" alt="Café moments">
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 <!-- MENU -->
@@ -1238,21 +1070,13 @@ Panchatantra Café is a place where stories unfold over good food and conversati
 
 <div class="container">
 
-<div class="section-divider">
-<span></span>
-<p>Something delicious awaits</p>
-<span></span>
-</div>
+<div class="section-title reveal">
 
-<div class="menu-intro reveal">
-
-<div>
 <p class="eyebrow">MADE WITH LOVE</p>
 
 <h2 class="heading">
 A little taste of <em>happiness.</em>
 </h2>
-</div>
 
 <p class="description">
 From comforting favourites to refreshing drinks and irresistible sweet endings, discover little things that make your day better.
@@ -1260,66 +1084,79 @@ From comforting favourites to refreshing drinks and irresistible sweet endings, 
 
 </div>
 
-<div class="menu-list">
+<div class="menu-grid">
 
-<article class="menu-item reveal">
+<article class="menu-card reveal">
 
-<div class="menu-item-image">
+<div class="menu-photo">
 <img src="food.jpg" alt="Food favourites">
 </div>
+
+<div class="menu-card-content">
 
 <h3>Food & Favourites</h3>
 
 <p>Comforting favourites, freshly prepared and made to be enjoyed.</p>
 
-<a class="menu-arrow" href="https://dinein.petpooja.com/qr/jzxh1v2054/B1" target="_blank" rel="noopener">↗</a>
+<a class="menu-link" href="https://dinein.petpooja.com/qr/jzxh1v2054/B1" target="_blank" rel="noopener">Explore Menu ↗</a>
+
+</div>
 
 </article>
 
-<article class="menu-item reveal">
+<article class="menu-card reveal">
 
-<div class="menu-item-image">
+<div class="menu-photo">
 <img src="drink.jpg" alt="Refreshing café drinks">
 </div>
+
+<div class="menu-card-content">
 
 <h3>Sips & Smiles</h3>
 
 <p>Refreshing drinks and café favourites for every kind of mood.</p>
 
-<a class="menu-arrow" href="https://dinein.petpooja.com/qr/jzxh1v2054/B1" target="_blank" rel="noopener">↗</a>
+<a class="menu-link" href="https://dinein.petpooja.com/qr/jzxh1v2054/B1" target="_blank" rel="noopener">Explore Menu ↗</a>
+
+</div>
 
 </article>
 
-<article class="menu-item reveal">
+<article class="menu-card reveal">
 
-<div class="menu-item-image">
+<div class="menu-photo">
 <img src="dessert.jpg" alt="Desserts">
 </div>
+
+<div class="menu-card-content">
 
 <h3>Sweet Little Things</h3>
 
 <p>A little sweetness to make your café moment complete.</p>
 
-<a class="menu-arrow" href="https://dinein.petpooja.com/qr/jzxh1v2054/B1" target="_blank" rel="noopener">↗</a>
+<a class="menu-link" href="https://dinein.petpooja.com/qr/jzxh1v2054/B1" target="_blank" rel="noopener">Explore Menu ↗</a>
+
+</div>
 
 </article>
 
 </div>
 
 </div>
+
 </section>
 
 <!-- THE CAFE -->
 
 <section id="cafe" class="cafe-section">
 
-<div class="cafe-grid">
+<div class="container cafe-grid">
 
 <div class="cafe-image reveal">
 <img src="sitting spot.jpg" alt="Panchatantra Café seating">
 </div>
 
-<div class="cafe-copy reveal">
+<div class="reveal">
 
 <p class="eyebrow">MORE THAN JUST COFFEE</p>
 
@@ -1350,15 +1187,13 @@ From books and games to shared laughter, Panchatantra is designed for more than 
 
 <div class="container">
 
-<div class="gallery-heading reveal">
+<div class="section-title reveal">
 
-<div>
 <p class="eyebrow">LITTLE MOMENTS, BIG MEMORIES</p>
 
 <h2 class="heading">
 Life looks better <em>over coffee.</em>
 </h2>
-</div>
 
 <p class="description">
 A welcoming space for coffee dates, quiet afternoons and conversations that last a little longer.
@@ -1395,13 +1230,14 @@ A welcoming space for coffee dates, quiet afternoons and conversations that last
 </div>
 
 </div>
+
 </section>
 
 <!-- EVENTS -->
 
 <section id="events" class="event-section">
 
-<div class="container event-layout">
+<div class="container event-grid">
 
 <div class="event-copy reveal">
 
@@ -1424,6 +1260,7 @@ From workshops and flea markets to community gatherings, discover experiences th
 </div>
 
 </div>
+
 </section>
 
 <!-- REVIEWS -->
@@ -1449,6 +1286,7 @@ From workshops and flea markets to community gatherings, discover experiences th
 </div>
 
 </div>
+
 </section>
 
 <!-- VISIT -->
@@ -1457,7 +1295,7 @@ From workshops and flea markets to community gatherings, discover experiences th
 
 <div class="container visit-grid">
 
-<div class="visit-copy reveal">
+<div class="reveal">
 
 <p class="eyebrow">COME SAY HELLO</p>
 
@@ -1503,6 +1341,7 @@ Drop by for a meal, a coffee, a book or simply a little time away from the rush.
 </div>
 
 </div>
+
 </section>
 
 </main>
@@ -1541,8 +1380,7 @@ Drop by for a meal, a coffee, a book or simply a little time away from the rush.
 </div>
 
 <div class="footer-bottom">
-<span>© 2026 Panchatantra Café. All rights reserved.</span>
-<span>FOOD · COFFEE · BOOKS · CONVERSATIONS</span>
+© 2026 Panchatantra Café. All rights reserved.
 </div>
 
 </div>
