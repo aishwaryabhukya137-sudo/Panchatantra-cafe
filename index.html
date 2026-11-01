@@ -3,281 +3,1250 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#fbf7f1">
-<meta name="description" content="Discover Panchatantra Café in Begumpet, Hyderabad — comforting food, coffee, books, conversations, events and lovely moments.">
-<title>Panchatantra Café | Begumpet</title>
+<meta name="theme-color" content="#f9e9e9">
+<meta name="description" content="Discover Panchatantra Café in Begumpet, Hyderabad.">
+<title>Panchatantra Café | A Little World of Stories</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+
 <style>
-:root{--cream:#fbf7f1;--cream2:#f4ece1;--brown:#39271f;--muted:#786b62;--terracotta:#b96745;--border:#dfd2c3;--white:#fffdf9;--shadow:0 18px 45px rgba(57,39,31,.10);--ease-out:cubic-bezier(.22,.8,.25,1)}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:25px}
-body{background:var(--cream);color:var(--brown);font-family:'DM Sans',sans-serif;overflow-x:hidden}
-img{display:block;max-width:100%}
-a{color:inherit;text-decoration:none}
-.container{width:min(1120px,90%);margin:auto}
-section{padding:68px 0;position:relative}
-section:not(.hero)::before{content:"";position:absolute;top:0;left:50%;width:min(1120px,90%);height:1px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,var(--border),transparent);opacity:.65}
-.eyebrow{color:var(--terracotta);text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:700;margin-bottom:13px}
-.heading{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,56px);line-height:1.15;font-weight:500;margin-bottom:16px}
-.description{color:var(--muted);font-size:16px;line-height:1.8}
-.center{text-align:center;max-width:680px;margin:0 auto 35px}
-.btn{display:inline-flex;justify-content:center;align-items:center;padding:13px 23px;border-radius:40px;background:var(--terracotta);color:white;font-weight:600;border:1px solid var(--terracotta);transition:.3s;position:relative;overflow:hidden;isolation:isolate}
-.btn:hover{background:var(--brown);border-color:var(--brown);transform:translateY(-3px);box-shadow:0 10px 25px #39271f26}
-.btn-light{background:transparent;color:var(--brown);border-color:var(--border)}
-.btn::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(255,255,255,.16);transform:translateX(-105%) skewX(-18deg);transition:transform .55s var(--ease-out)}
-.btn:hover::before{transform:translateX(105%) skewX(-18deg)}
-header{background:rgba(251,247,241,.98);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:box-shadow .35s,background .35s}
-header.scrolled{box-shadow:0 8px 28px rgba(57,39,31,.09);background:rgba(251,247,241,.94)}
-.header-inner{width:94%;max-width:1400px;margin:auto;padding:8px 0;display:flex;justify-content:space-between;align-items:center;gap:24px}
-.logo{display:flex;align-items:center;justify-content:flex-start;flex:0 0 250px;min-width:0;height:112px;overflow:visible}
-.logo img{width:100%;height:100%;max-width:250px;object-fit:contain;object-position:left center;mix-blend-mode:multiply}
-nav,.nav-links,.nav-actions{display:flex;align-items:center;justify-content:flex-end;gap:17px}
-nav a{font-size:14px;font-weight:600;transition:.3s;white-space:nowrap}
-nav a:hover{color:var(--terracotta);transform:translateY(-2px)}
-.nav-links a{position:relative}
-.nav-links a:not([href^="http"])::after{content:"";position:absolute;left:0;right:100%;bottom:-6px;height:2px;background:var(--terracotta);transition:right .35s var(--ease-out)}
-.nav-links a:hover::after{right:0}
-nav .order{background:var(--terracotta);color:white;padding:12px 19px;border-radius:40px}
-.hero{padding:22px 0 58px;text-align:center}
-.hero-shell{width:min(1240px,94%);margin:auto;position:relative;min-height:610px;overflow:hidden;background:var(--cream2);border:1px solid #39271f12;padding:30px clamp(18px,4vw,52px) 38px;isolation:isolate;animation:heroEnter 1s var(--ease-out) both}
-.hero-shell:before{content:'';position:absolute;inset:0;z-index:-1;opacity:.45;background-image:radial-gradient(#b9674540 .8px,transparent .8px);background-size:17px 17px;mask-image:linear-gradient(90deg,transparent,black)}
-.hero-topline{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:5;gap:15px;text-align:left;animation:softDrop .8s .15s both}
-.hero-brand{font-family:'Playfair Display',serif;font-size:clamp(18px,2vw,25px);font-weight:800;letter-spacing:-1px}
-.hero-mini-nav{display:flex;gap:clamp(10px,2vw,25px);align-items:center;font-size:11px;font-weight:700}
-.hero-mini-nav a:hover{color:var(--terracotta)}
-.hero-mini-nav .shop{background:var(--terracotta);color:white;padding:9px 17px;border-radius:30px}
-.hero-kicker{display:block;margin:52px auto 0;position:relative;z-index:3;color:var(--terracotta);font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;animation:softRise .8s .25s both}
-.hero h1{position:relative;z-index:2;margin:4px auto 0;font-family:'Playfair Display',serif;font-size:clamp(58px,11vw,142px);font-weight:800;line-height:.86;letter-spacing:-.075em;max-width:1100px;animation:headline 1.2s both}
-.hero h1 .line{display:block;white-space:nowrap}
-.hero h1 .accent{color:var(--terracotta);display:inline-block}
-.hero-art{position:relative;z-index:3;width:min(490px,62vw);height:clamp(210px,31vw,350px);margin:-3px auto 0;animation:softRise 1s .35s both}
-.hero-art img{height:100%;width:100%;object-fit:contain;object-position:center;mix-blend-mode:multiply;filter:drop-shadow(0 24px 20px #39271f29);transform:rotate(-3deg);animation:float 5s ease-in-out infinite}
-.hero-art:before{content:'';position:absolute;z-index:-1;width:75%;height:76%;left:12%;top:15%;border-radius:50%;background:radial-gradient(ellipse,#b9674524,transparent 70%)}
-.bean{position:absolute;z-index:4;width:20px;height:12px;border-radius:50%;background:linear-gradient(130deg,#7b351f,#3c1c13);box-shadow:inset 2px 1px 2px #ffffff33;animation:bean 4.8s ease-in-out infinite}
-.bean:after{content:'';position:absolute;left:48%;top:1px;height:10px;width:2px;border-radius:100%;background:#c58b67;transform:rotate(22deg)}
-.b1{top:28%;left:12%}.b2{top:47%;right:12%;width:26px;height:15px;animation-delay:-2.2s}.b3{top:67%;left:20%;width:15px;height:9px}.b4{top:24%;right:22%;width:16px;height:10px}.b5{bottom:8%;right:24%}.b6{top:58%;right:5%;width:15px;height:9px}
-.hero-note{position:absolute;z-index:5;left:clamp(18px,5vw,64px);bottom:76px;text-align:left;width:150px}
-.hero-note strong{font-family:'Playfair Display',serif;font-size:17px;display:block;margin-bottom:7px}
-.hero-note p{font-size:12px;line-height:1.6;color:var(--muted)}
-.hero-stamp{position:absolute;z-index:5;right:clamp(18px,7vw,90px);bottom:45px;width:112px;height:112px;display:grid;place-items:center;text-align:center;background:var(--terracotta);color:white;border-radius:50%;font-family:'Playfair Display',serif;font-size:19px;line-height:1.05;font-weight:800;transform:rotate(10deg);box-shadow:0 12px 20px #39271f24;transition:transform .45s var(--ease-out),box-shadow .45s}
-.hero-stamp:before{content:'';position:absolute;inset:7px;border:1px dashed #ffffffa6;border-radius:50%}
-.hero-stamp:hover{transform:rotate(0) scale(1.06);box-shadow:0 18px 30px #39271f30}
-.hero-note:hover{transform:translateY(-5px)}
-.hero-bottom{position:relative;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:14px}
-.hero-bottom p{font-size:12px;color:var(--muted);letter-spacing:.06em}
-.image-frame{width:100%;padding:9px;background:var(--white);border:1px solid var(--border);border-radius:23px;overflow:hidden;transition:transform .5s var(--ease-out),box-shadow .5s}
-.image-frame img{width:100%;height:auto;object-fit:contain;border-radius:15px;transition:transform .75s var(--ease-out),filter .6s}
-.image-frame:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
-.image-frame:hover img{transform:scale(1.035);filter:saturate(1.06)}
-.about-grid,.cafe-grid,.event-grid,.visit-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:42px}
-.about-copy .description,.cafe-copy .description,.event-copy .description{margin-bottom:24px}
-.menu-section,.gallery-section,.reviews{background:var(--cream2)}
-.menu-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:stretch}
-.menu-card{min-width:0;background:var(--cream);border:1px solid var(--border);border-radius:24px;padding:16px;overflow:hidden;transition:transform .5s var(--ease-out),box-shadow .5s,border-color .4s;display:flex;flex-direction:column}
-.menu-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--terracotta)}
-/* FINAL FIX: all three menu photos use the same frame size and fill it evenly. */
-.menu-photo{width:100%;height:220px;padding:8px;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:17px;background:#eee3d5;border:1px solid #e3d5c5;position:relative}
-.menu-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;border-radius:11px;transition:transform .75s var(--ease-out)}
-.menu-photo:after{content:"";position:absolute;inset:8px;border:1px solid #ffffff80;border-radius:11px;pointer-events:none}
-.menu-card:hover .menu-photo img{transform:scale(1.045)}
-.menu-card h3{font-family:'Playfair Display',serif;font-size:29px;font-weight:500;margin:19px 3px 8px}
-.menu-card p{color:var(--muted);line-height:1.7;font-size:15px;margin:0 3px}
-.menu-link{display:inline-block;color:var(--terracotta);font-weight:700;margin:18px 3px 7px;transition:letter-spacing .3s,color .3s}
-.menu-link:hover{letter-spacing:.04em;color:var(--brown)}
-.cafe-points{list-style:none;display:grid;gap:12px;color:var(--muted);line-height:1.65}
-.cafe-points li{padding-left:22px;position:relative}
-.cafe-points li:before{content:'✦';color:var(--terracotta);position:absolute;left:0}
-.gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;align-items:start}
-.gallery-item{padding:7px;border-radius:19px;background:var(--white);border:1px solid var(--border);overflow:hidden;position:relative;transition:transform .5s var(--ease-out),box-shadow .5s}
-.gallery-item img{width:100%;height:230px;object-fit:cover;border-radius:13px;transition:transform .75s var(--ease-out),filter .6s}
-.gallery-item:hover img{transform:scale(1.035);filter:saturate(1.06)}
-.gallery-item:after{content:"";position:absolute;inset:7px;border:1px solid rgba(255,255,255,.45);border-radius:13px;pointer-events:none;opacity:0;transition:opacity .4s}
-.gallery-item:hover:after{opacity:1}
-.reviews{text-align:center}
-.review-card{max-width:720px;margin:auto;padding:30px;background:var(--cream);border:1px solid var(--border);border-radius:23px;transition:transform .5s,box-shadow .5s}
-.review-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
-.stars{color:var(--terracotta);letter-spacing:5px;margin-bottom:14px}
-.review-card p{font-family:'Playfair Display',serif;font-size:clamp(21px,3vw,28px);line-height:1.55}
-.review-card a{display:inline-block;margin-top:17px;color:var(--terracotta);font-weight:700}
-.visit-details{display:grid;gap:15px;margin:23px 0}
-.visit-details strong{display:block;margin-bottom:4px}
-.visit-details span{color:var(--muted);line-height:1.7;overflow-wrap:anywhere}
-.visit-buttons{display:flex;flex-wrap:wrap;gap:10px}
-footer{background:var(--brown);color:#f9eee2;padding:40px 0 20px}
-.footer-top{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}
-.footer-brand{font-family:'Playfair Display',serif;font-size:29px;margin-bottom:8px}
-.footer-top p{color:#d7c6b8;line-height:1.8}
-.footer-links{display:flex;flex-wrap:wrap;gap:17px}
-.footer-links a{transition:color .25s,transform .25s}
-.footer-links a:hover{color:#e3a17e;transform:translateY(-3px)}
-.footer-bottom{border-top:1px solid #ffffff2e;margin-top:28px;padding-top:17px;color:#d7c6b8;text-align:center;font-size:13px}
-.reveal{opacity:0;transform:translateY(34px);filter:blur(3px);transition:opacity .85s var(--ease-out),transform .85s var(--ease-out),filter .85s}
-.reveal.visible{opacity:1;transform:translateY(0);filter:blur(0)}
-.reveal .menu-card,.reveal .gallery-item{opacity:0;transform:translateY(22px)}
-.reveal.visible .menu-card,.reveal.visible .gallery-item{animation:cardReveal .65s var(--ease-out) both}
-.reveal.visible .menu-card:nth-child(2),.reveal.visible .gallery-item:nth-child(2){animation-delay:.1s}
-.reveal.visible .menu-card:nth-child(3),.reveal.visible .gallery-item:nth-child(3){animation-delay:.2s}
-.reveal.visible .gallery-item:nth-child(4){animation-delay:.3s}
-.reveal.visible .gallery-item:nth-child(5){animation-delay:.4s}
-.reveal.visible .gallery-item:nth-child(6){animation-delay:.5s}
-@keyframes headline{from{opacity:0;transform:translateY(35px)}to{opacity:1;transform:none}}
-@keyframes float{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-9px) rotate(-1deg)}}
-@keyframes bean{0%,100%{translate:0 0;rotate:0deg}50%{translate:7px -10px;rotate:25deg}}
-@keyframes heroEnter{from{opacity:0;transform:translateY(18px) scale(.99)}to{opacity:1;transform:none}}
-@keyframes softDrop{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
-@keyframes softRise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
-@keyframes cardReveal{to{opacity:1;transform:translateY(0)}}
-
-/* Opening animation */
-body.intro-playing{overflow:hidden}
-#pt-intro{position:fixed;inset:0;z-index:99999;display:grid;place-items:center;overflow:hidden;background:var(--cream);opacity:1;transition:opacity 1.2s}
-#pt-intro .intro-panel{position:absolute;width:50.5%;height:50.5%;background:var(--cream2);z-index:2;border:1px solid #b9674525;transition:transform 1.2s cubic-bezier(.77,0,.18,1)}
-#pt-intro .top-left{top:0;left:0}#pt-intro .top-right{top:0;right:0}#pt-intro .bottom-left{bottom:0;left:0}#pt-intro .bottom-right{bottom:0;right:0}
-#pt-intro.is-leaving .top-left{transform:translate(-110%,-110%)}
-#pt-intro.is-leaving .top-right{transform:translate(110%,-110%)}
-#pt-intro.is-leaving .bottom-left{transform:translate(-110%,110%)}
-#pt-intro.is-leaving .bottom-right{transform:translate(110%,110%)}
-#pt-intro .intro-wordmark{position:relative;z-index:3;width:94vw;text-align:center;animation:introBounce 5.8s both}
-#pt-intro .intro-title{display:block;font-family:'Playfair Display',serif;font-size:clamp(40px,10vw,100px);font-weight:700;letter-spacing:-.06em;line-height:1.08;white-space:nowrap;color:var(--brown)}
-#pt-intro .intro-dot{color:var(--terracotta)}
-#pt-intro .intro-line{display:block;width:min(220px,40vw);height:3px;margin:20px auto 14px;background:var(--terracotta);transform:scaleX(0);animation:introLine 1s ease 2.7s forwards}
-#pt-intro .intro-subtitle{display:block;color:var(--muted);font:600 clamp(9px,2vw,14px)/1.8 'DM Sans',sans-serif;letter-spacing:.18em;text-transform:uppercase;opacity:0;animation:introSub 1s ease 3s forwards}
-#pt-intro .intro-caption{position:absolute;z-index:4;top:calc(50% + clamp(100px,17vw,145px));width:90%;text-align:center;color:var(--terracotta);font:600 9px 'DM Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;opacity:0;animation:introSub .8s ease 3.5s forwards}
-#pt-intro.is-leaving .intro-wordmark{animation:ptFinalZoomOut 1.2s ease forwards}
-#pt-intro.is-leaving{opacity:0;pointer-events:none}
-@keyframes introBounce{0%{opacity:0;transform:translateY(50px) scale(.5);filter:blur(10px)}20%{opacity:1;transform:translateY(-8px) scale(1.06);filter:blur(0)}40%{transform:translateY(4px) scale(.97)}65%,100%{opacity:1;transform:scale(1)}}
-@keyframes introLine{to{transform:scaleX(1)}}@keyframes introSub{to{opacity:1}}
-@keyframes ptFinalZoomOut{to{opacity:0;transform:scale(.55);filter:blur(5px)}}
-
-@media(max-width:1100px){.header-inner{gap:14px}.logo{flex-basis:190px;height:95px}.logo img{max-width:190px}nav,.nav-links,.nav-actions{gap:10px}nav a{font-size:12px}nav .order,nav .btn{padding:10px 13px}}
-@media(max-width:900px){.logo{flex-basis:145px;height:85px}.logo img{max-width:145px}nav,.nav-links,.nav-actions{gap:8px}nav a{font-size:11px}.menu-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-shell{min-height:560px}.hero-stamp{width:95px;height:95px;font-size:17px}}
-@media(max-width:600px){
- section{padding:48px 0}
- header{position:relative}
- .header-inner{width:94%;padding:10px 0 14px;display:grid;grid-template-columns:90px minmax(0,1fr);grid-template-rows:auto auto;gap:10px 12px}
- .logo{grid-column:1;grid-row:1;width:90px;height:82px;flex:none;overflow:visible}
- .logo img{width:100%;height:100%;max-width:none;object-fit:contain;object-position:center}
- nav{display:contents}
- .nav-links{grid-column:2;grid-row:1;display:flex;flex-wrap:wrap;justify-content:flex-start;gap:10px 13px;min-width:0}
- .nav-links a{font-size:12px;line-height:1.3;white-space:normal}
- .nav-actions{grid-column:1/-1;grid-row:2;display:flex;justify-content:center;flex-wrap:wrap;gap:9px}
- .nav-actions a{font-size:12px;padding:11px 15px}
- .hero{padding:12px 0 38px}
- .hero-shell{width:94%;min-height:590px;padding:20px 15px 24px}
- .hero-brand{font-size:19px}.hero-mini-nav{gap:10px;font-size:10px}.hero-mini-nav a:nth-child(1),.hero-mini-nav a:nth-child(3){display:none}
- .hero-kicker{margin-top:48px;font-size:9px;letter-spacing:.14em}
- .hero h1{font-size:clamp(49px,12.1vw,75px);margin-top:9px}
- .hero-art{width:min(340px,78vw);height:clamp(190px,55vw,260px);margin:12px auto 0}
- .hero-note{left:17px;bottom:22px;width:125px}.hero-note strong{font-size:15px}.hero-note p{font-size:10px}
- .hero-stamp{right:15px;bottom:19px;width:82px;height:82px;font-size:15px}
- .hero-bottom{margin-top:14px;align-items:flex-start;flex-direction:column;gap:12px}
- .hero-bottom p{font-size:10px}.hero-bottom .btn{font-size:13px;padding:12px 18px}
- .about-grid,.cafe-grid,.event-grid,.visit-grid{grid-template-columns:1fr;gap:23px}
- .menu-grid{grid-template-columns:1fr;gap:18px}
- .menu-card{padding:14px}
- .menu-photo{height:220px;max-width:100%;margin:0;padding:8px}
- .menu-photo img{width:100%;height:100%;object-fit:cover;object-position:center}
- .gallery-grid{grid-template-columns:1fr 1fr;gap:11px}
- .gallery-item{padding:5px}.gallery-item img{height:160px}
- .center{margin-bottom:27px}.description{font-size:15px;line-height:1.75}
- .review-card{padding:23px 17px}.visit-buttons .btn{flex:1 1 135px;padding:12px}
- .footer-top{flex-direction:column}
- #pt-intro .intro-title{font-size:clamp(36px,10.2vw,62px)}
- #pt-intro .intro-subtitle{font-size:8px;letter-spacing:.1em}
- #pt-intro .intro-caption{font-size:7px;letter-spacing:.1em}
- .reveal{transform:translateY(22px);filter:none}
- .image-frame:hover,.review-card:hover{transform:none}
+:root {
+    --pink: #f5dfe1;
+    --pink-dark: #d99da6;
+    --cream: #fff9f3;
+    --peach: #efd0c4;
+    --brown: #563c38;
+    --muted: #927b76;
+    --white: #ffffff;
+    --border: #ead5d1;
+    --shadow: 0 15px 40px rgba(86,60,56,.09);
 }
-@media(prefers-reduced-motion:reduce){
- *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
- #pt-intro{display:none!important}
- body.intro-playing{overflow:auto}
- .reveal,.reveal .menu-card,.reveal .gallery-item{opacity:1;transform:none;filter:none}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    background: var(--cream);
+    color: var(--brown);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(1150px, 90%);
+    margin: auto;
+}
+
+section {
+    padding: 95px 0;
+}
+
+.eyebrow {
+    color: var(--pink-dark);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 17px;
+}
+
+.heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.12;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.heading em {
+    color: var(--pink-dark);
+    font-weight: 500;
+}
+
+.description {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--pink-dark);
+    color: white;
+    padding: 15px 27px;
+    border-radius: 40px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: .35s;
+    border: 1px solid var(--pink-dark);
+}
+
+.btn:hover {
+    background: var(--brown);
+    border-color: var(--brown);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--brown);
+    border-color: var(--border);
+}
+
+/* NAVIGATION */
+
+header {
+    background: rgba(255,249,243,.95);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(15px);
+}
+
+.navbar {
+    width: 92%;
+    max-width: 1350px;
+    margin: auto;
+    min-height: 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 29px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--pink-dark);
+}
+
+.logo img {
+    max-width: 180px;
+    max-height: 75px;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+}
+
+.nav-links a {
+    font-size: 13px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--pink-dark);
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.nav-buttons .btn {
+    padding: 12px 19px;
+}
+
+/* HERO */
+
+.hero {
+    padding: 35px 0 75px;
+}
+
+.hero-box {
+    width: 94%;
+    max-width: 1400px;
+    min-height: 650px;
+    margin: auto;
+    background: var(--pink);
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    padding: 35px 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-box:before {
+    content: "✿";
+    position: absolute;
+    top: 80px;
+    left: 8%;
+    font-size: 100px;
+    color: #ffffff70;
+    transform: rotate(-20deg);
+}
+
+.hero-box:after {
+    content: "✿";
+    position: absolute;
+    bottom: 65px;
+    right: 8%;
+    font-size: 120px;
+    color: #ffffff70;
+    transform: rotate(25deg);
+}
+
+.hero-top {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    right: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-top span {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.hero-top a {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-kicker {
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--brown);
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(75px, 12vw, 155px);
+    line-height: .83;
+    font-weight: 600;
+    letter-spacing: -5px;
+}
+
+.hero h1 em {
+    color: white;
+    font-weight: 500;
+}
+
+.hero-image {
+    width: min(430px, 75%);
+    height: 260px;
+    margin: 28px auto 15px;
+    position: relative;
+}
+
+.hero-image img {
+    height: 100%;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    filter: drop-shadow(0 20px 15px #563c3820);
+    animation: float 5s ease-in-out infinite;
+}
+
+.hero-description {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-style: italic;
+    margin-top: 8px;
+}
+
+.hero-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 23px;
+}
+
+.hero-bottom p {
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+/* ABOUT */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 75px;
+    align-items: center;
+}
+
+.about-image {
+    height: 470px;
+    padding: 12px;
+    background: var(--pink);
+    border-radius: 180px 180px 10px 10px;
+    overflow: hidden;
+}
+
+.about-image img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 170px 170px 5px 5px;
+}
+
+.about-copy .btn {
+    margin-top: 25px;
+}
+
+/* MENU */
+
+.menu-section {
+    background: #faeeee;
+}
+
+.section-title {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 55px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 27px;
+}
+
+.menu-card {
+    background: var(--cream);
+    padding: 14px;
+    border: 1px solid var(--border);
+    transition: .4s;
+}
+
+.menu-card:hover {
+    transform: translateY(-9px);
+    box-shadow: var(--shadow);
+}
+
+.menu-photo {
+    height: 270px;
+    overflow: hidden;
+    background: var(--pink);
+}
+
+.menu-photo img {
+    height: 100%;
+    object-fit: cover;
+    transition: .6s;
+}
+
+.menu-card:hover img {
+    transform: scale(1.06);
+}
+
+.menu-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    font-weight: 500;
+    margin: 22px 8px 10px;
+}
+
+.menu-card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 0 8px;
+}
+
+.menu-link {
+    display: inline-block;
+    color: var(--pink-dark);
+    font-size: 13px;
+    font-weight: 700;
+    margin: 18px 8px 12px;
+}
+
+/* CAFE */
+
+.cafe-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.cafe-image {
+    height: 480px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.cafe-image img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.cafe-points {
+    list-style: none;
+    margin-top: 25px;
+}
+
+.cafe-points li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.cafe-points li:before {
+    content: "✿";
+    color: var(--pink-dark);
+    margin-right: 12px;
+}
+
+/* GALLERY */
+
+.gallery-section {
+    background: #faeeee;
+}
+
+.gallery-grid {
+    columns: 3;
+    column-gap: 18px;
+}
+
+.gallery-item {
+    margin-bottom: 18px;
+    break-inside: avoid;
+    padding: 8px;
+    background: white;
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+.gallery-item img {
+    transition: .5s;
+    height: auto;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.04);
+}
+
+/* EVENTS */
+
+.event-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 65px;
+    align-items: center;
+}
+
+.event-image {
+    height: 430px;
+    overflow: hidden;
+}
+
+.event-image img {
+    height: 100%;
+    object-fit: cover;
+}
+
+/* REVIEWS */
+
+.reviews {
+    background: var(--pink);
+    text-align: center;
+}
+
+.review-card {
+    max-width: 750px;
+    margin: auto;
+    background: var(--cream);
+    padding: 50px 35px;
+    border-radius: 5px;
+}
+
+.stars {
+    color: #d99da6;
+    letter-spacing: 6px;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.review-card p {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 3vw, 32px);
+    line-height: 1.5;
+    font-style: italic;
+}
+
+/* VISIT */
+
+.visit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 65px;
+    align-items: center;
+}
+
+.visit-image {
+    height: 450px;
+    overflow: hidden;
+}
+
+.visit-image img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.visit-details {
+    margin: 25px 0;
+    display: grid;
+    gap: 18px;
+}
+
+.visit-details strong {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.visit-details span {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.visit-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--brown);
+    color: var(--cream);
+    padding: 55px 0 20px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.footer-top p {
+    color: #e8d5d1;
+    font-size: 13px;
+    line-height: 2;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.footer-links a {
+    font-size: 13px;
+    transition: .3s;
+}
+
+.footer-links a:hover {
+    color: var(--pink-dark);
+}
+
+.footer-bottom {
+    border-top: 1px solid #ffffff30;
+    margin-top: 40px;
+    padding-top: 20px;
+    text-align: center;
+    color: #e8d5d1;
+    font-size: 12px;
+}
+
+/* ANIMATIONS */
+
+@keyframes float {
+    0%,100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.fade-up {
+    animation: fadeUp 1s ease both;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: .8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* MOBILE */
+
+@media(max-width:900px) {
+    .nav-links {
+        gap: 13px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .about-grid,
+    .cafe-grid,
+    .event-grid,
+    .visit-grid {
+        gap: 35px;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width:650px) {
+
+    section {
+        padding: 65px 0;
+    }
+
+    .navbar {
+        padding: 15px 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 13px 17px;
+    }
+
+    .nav-buttons {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-buttons .btn {
+        padding: 11px 15px;
+        font-size: 11px;
+    }
+
+    .hero {
+        padding-top: 15px;
+    }
+
+    .hero-box {
+        min-height: 550px;
+        padding: 25px 15px;
+    }
+
+    .hero-top {
+        top: 18px;
+        left: 15px;
+        right: 15px;
+    }
+
+    .hero-top span {
+        font-size: 17px;
+    }
+
+    .hero-top a {
+        font-size: 10px;
+    }
+
+    .hero-kicker {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .hero h1 {
+        font-size: clamp(65px, 16vw, 95px);
+        letter-spacing: -3px;
+    }
+
+    .hero-image {
+        width: 85%;
+        height: 210px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-bottom {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .about-grid,
+    .cafe-grid,
+    .event-grid,
+    .visit-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image {
+        height: 360px;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-photo {
+        height: 260px;
+    }
+
+    .gallery-grid {
+        columns: 2;
+        column-gap: 10px;
+    }
+
+    .gallery-item {
+        margin-bottom: 10px;
+        padding: 5px;
+    }
+
+    .cafe-image,
+    .event-image,
+    .visit-image {
+        height: 330px;
+    }
+
+    .review-card {
+        padding: 35px 20px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+    }
+
+    .footer-links {
+        gap: 15px;
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    *,*::before,*::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
 }
 </style>
 </head>
-<body class="intro-playing">
-<div id="pt-intro" aria-label="Panchatantra Café opening animation">
- <div class="intro-panel top-left" aria-hidden="true"></div><div class="intro-panel top-right" aria-hidden="true"></div>
- <div class="intro-panel bottom-left" aria-hidden="true"></div><div class="intro-panel bottom-right" aria-hidden="true"></div>
- <div class="intro-wordmark"><span class="intro-title">Panchatantra<span class="intro-dot">.</span></span><span class="intro-line"></span><span class="intro-subtitle">Where Every Bite Tells a Story</span></div>
- <p class="intro-caption">A little world of stories · Begumpet, Hyderabad</p>
-</div>
+
+<body>
+
 <header>
- <div class="header-inner">
-  <a href="#home" class="logo" aria-label="Panchatantra Café home"><img src="./logooo.jpg" alt="Panchatantra Café Logo"></a>
-  <nav aria-label="Main navigation">
-   <div class="nav-links"><a href="#about">About</a><a href="#moments">Moments</a><a href="#menu">Menu</a><a href="#cafe">The Café</a><a href="Event.html">Events</a><a href="#visit">Visit</a></div>
-   <div class="nav-actions"><a class="order" href="https://dinein.petpooja.com/qr/jzxh1v2054/B1" target="_blank" rel="noopener noreferrer">Order Online</a><a class="btn" href="https://wa.me/918516923456?text=Hi%20Panchatantra%20Cafe!%20I%27d%20like%20to%20reserve%20a%20table." target="_blank" rel="noopener noreferrer">Reserve a Table</a></div>
-  </nav>
- </div>
+<div class="navbar">
+
+<a href="#home" class="logo">
+    <img src="./logooo.jpg" alt="Panchatantra Café Logo">
+</a>
+
+<nav class="nav-links">
+<a href="#about">About</a>
+<a href="#moments">Moments</a>
+<a href="#menu">Menu</a>
+<a href="#cafe">The Café</a>
+<a href="Event.html">Events</a>
+<a href="#visit">Visit</a>
+</nav>
+
+<div class="nav-buttons">
+<a class="btn" href="https://dinein.petpooja.com/qr/jzxh1v2054/B1" target="_blank">Order Online</a>
+<a class="btn btn-outline" href="https://wa.me/918516923456?text=Hi%20Panchatantra%20Cafe!%20I%27d%20like%20to%20reserve%20a%20table." target="_blank">Reserve</a>
+</div>
+
+</div>
 </header>
+
 <main>
-<section class="hero" id="home"><div class="hero-shell">
- <div class="hero-topline"><a href="#home" class="hero-brand">panchatantra<span style="color:var(--terracotta)">.</span></a><div class="hero-mini-nav"><a href="#about">Our Story</a><a href="#menu">Menu</a><a href="#cafe">The Café</a><a class="shop" href="https://dinein.petpooja.com/qr/jzxh1v2054/B1" target="_blank" rel="noopener noreferrer">Explore ↗</a></div></div>
- <p class="hero-kicker">A little world of stories · Begumpet, Hyderabad</p>
- <h1><span class="line">A Little</span><span class="line">World of <span class="accent">Stories.</span></span></h1>
- <div class="hero-art"><img src="coffee.jpg" alt="Coffee at Panchatantra Café" fetchpriority="high"></div>
- <span class="bean b1"></span><span class="bean b2"></span><span class="bean b3"></span><span class="bean b4"></span><span class="bean b5"></span><span class="bean b6"></span>
- <div class="hero-note"><strong>Good food.<br>Good stories.</strong><p>Comforting bites, coffee and moments worth remembering.</p></div>
- <a class="hero-stamp" href="https://dinein.petpooja.com/qr/jzxh1v2054/B1" target="_blank" rel="noopener noreferrer">Order<br>something<br>lovely ↗</a>
- </div><div class="hero-bottom container"><p>FOOD · COFFEE · BOOKS · CONVERSATIONS</p><a class="btn" href="#menu">Discover the Menu ↗</a></div>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-box">
+
+<div class="hero-top">
+<span>panchatantra.</span>
+<a href="#menu">DISCOVER OUR MENU ↗</a>
+</div>
+
+<div class="hero-content fade-up">
+
+<p class="hero-kicker">A LITTLE WORLD OF STORIES · BEGUMPET</p>
+
+<h1>
+A Little<br>
+World of <em>Stories.</em>
+</h1>
+
+<div class="hero-image">
+<img src="coffee.jpg" alt="Coffee at Panchatantra Café">
+</div>
+
+<p class="hero-description">
+"Where every bite tells a story."
+</p>
+
+</div>
+</div>
+
+<div class="container hero-bottom">
+<p>FOOD · COFFEE · BOOKS · CONVERSATIONS</p>
+<a href="#menu" class="btn">Explore Our Menu ↗</a>
+</div>
+
 </section>
-<section id="about"><div class="container about-grid"><div class="about-copy"><p class="eyebrow">Our Story</p><h2 class="heading">More than just a café.</h2><p class="description">Panchatantra Café is a place where stories unfold over good food and conversations. Whether you're catching up with friends, enjoying a quiet moment with a book, or discovering something new, there's always a little space for you here.</p><a href="#cafe" class="btn">Explore the Café</a></div><div class="image-frame"><img src="friendship.jpg" alt="Friendship and shared moments at Panchatantra Café" loading="lazy"></div></div></section>
-<section class="menu-section" id="menu"><div class="container"><div class="center"><p class="eyebrow">A Taste of Panchatantra</p><h2 class="heading">Say Cheese &amp; Curated Indulgence.</h2><p class="description">From comforting favourites to refreshing drinks and irresistible sweet endings, discover little things that make your day better.</p></div>
- <div class="menu-grid">
-  <article class="menu-card"><div class="menu-photo"><img src="food.jpg" alt="Food favourites at Panchatantra Café" loading="lazy"></div><h3>Food &amp; Favourites.</h3><p>Comforting favourites, freshly prepared and made to be enjoyed.</p><a class="menu-link" href="https://dinein.petpooja.com/qr/jzxh1v2054/B1" target="_blank" rel="noopener noreferrer">View Menu →</a></article>
-  <article class="menu-card"><div class="menu-photo"><img src="drink.jpg" alt="A refreshing café drink" loading="lazy"></div><h3>Sips &amp; Smiles.</h3><p>Refreshing drinks and café favourites for every kind of mood.</p><a class="menu-link" href="https://dinein.petpooja.com/qr/jzxh1v2054/B1" target="_blank" rel="noopener noreferrer">View Menu →</a></article>
-  <article class="menu-card"><div class="menu-photo"><img src="dessert.jpg" alt="Dessert at Panchatantra Café" loading="lazy"></div><h3>Sweet Little Things.</h3><p>A little sweetness to make your café moment complete.</p><a class="menu-link" href="https://dinein.petpooja.com/qr/jzxh1v2054/B1" target="_blank" rel="noopener noreferrer">View Menu →</a></article>
- </div></div></section>
-<section id="cafe"><div class="container cafe-grid"><div class="image-frame"><img src="sitting spot.jpg" alt="A cosy seating corner" loading="lazy"></div><div class="cafe-copy"><p class="eyebrow">Explore &amp; Enjoy</p><h2 class="heading">A café with a little extra.</h2><p class="description">From books and games to shared laughter, Panchatantra is designed for more than just a quick coffee stop.</p><ul class="cafe-points"><li>Pick a book and enjoy a slower moment.</li><li>Challenge your friends to a game.</li><li>Spend time together over your café favourites.</li><li>Discover workshops and community events.</li></ul></div></div></section>
-<section class="gallery-section" id="moments"><div class="container"><div class="center"><p class="eyebrow">Moments Made Fresh</p><h2 class="heading">Come in, make yourself at home.</h2><p class="description">A welcoming space for coffee dates, quiet afternoons and conversations that last a little longer.</p></div><div class="gallery-grid"><div class="gallery-item"><img src="exterior.jpg" alt="Panchatantra Café exterior" loading="lazy"></div><div class="gallery-item"><img src="coffee.jpg" alt="Coffee at Panchatantra Café" loading="lazy"></div><div class="gallery-item"><img src="coffe croissant.jpg" alt="Coffee and croissant" loading="lazy"></div><div class="gallery-item"><img src="coffe beans.jpg" alt="Coffee beans" loading="lazy"></div><div class="gallery-item"><img src="time.jpg" alt="A moment at the café" loading="lazy"></div><div class="gallery-item"><img src="awards.jpg" alt="Café recognition" loading="lazy"></div></div></div></section>
-<section id="events"><div class="container event-grid"><div class="image-frame"><img src="people.jpg" alt="People and community at Panchatantra Café" loading="lazy"></div><div class="event-copy"><p class="eyebrow">Gather, Create, Connect</p><h2 class="heading">Something is always happening.</h2><p class="description">From workshops and flea markets to community gatherings, discover experiences that bring people together.</p><a class="btn" href="Event.html">Explore Events &amp; Workshops</a></div></div></section>
-<section class="reviews"><div class="container"><p class="eyebrow">The Café Experience</p><h2 class="heading">Your stories matter to us.</h2><div class="review-card"><div class="stars" aria-label="Five stars">★★★★★</div><p>Every visit, every conversation and every shared moment is part of the Panchatantra story.</p><a href="https://www.google.com/maps/search/?api=1&amp;query=Panchatantra+Cafe+Begumpet+Hyderabad" target="_blank" rel="noopener noreferrer">Find us on Google →</a></div></div></section>
-<section id="visit"><div class="container visit-grid"><div><p class="eyebrow">Find Your Way Here</p><h2 class="heading">Your table is waiting.</h2><p class="description">Drop by for a meal, a coffee, a book or simply a little time away from the rush.</p><div class="visit-details"><div><strong>Address</strong><span>House 1-10-290/1, Sai Nilayam, Circle 30, Begumpet, Hyderabad, Telangana</span></div><div><strong>Opening Hours</strong><span>Daily · 11:00 AM – 11:00 PM</span></div><div><strong>Call Us</strong><span>+91 85169 23456</span></div></div><div class="visit-buttons"><a class="btn" href="https://maps.app.goo.gl/RJKehn9R445dQgz3A" target="_blank" rel="noopener noreferrer">Get Directions</a><a class="btn btn-light" href="https://wa.me/918516923456" target="_blank" rel="noopener noreferrer">WhatsApp Us</a></div></div><div class="image-frame"><img src="exterior.jpg" alt="Panchatantra Café in Begumpet" loading="lazy"></div></div></section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="container about-grid">
+
+<div class="about-copy reveal">
+
+<p class="eyebrow">A LITTLE ABOUT US</p>
+
+<h2 class="heading">
+A place to pause,<br>
+connect & <em>belong.</em>
+</h2>
+
+<p class="description">
+Panchatantra Café is a place where stories unfold over good food and conversations. Whether you're catching up with friends, enjoying a quiet moment with a book, or discovering something new, there's always a little space for you here.
+</p>
+
+<a href="#cafe" class="btn">Discover Our Story ↗</a>
+
+</div>
+
+<div class="about-image reveal">
+<img src="friendship.jpg" alt="Friendship at Panchatantra Café">
+</div>
+
+</div>
+
+</section>
+
+<!-- MENU -->
+
+<section class="menu-section" id="menu">
+
+<div class="container">
+
+<div class="section-title reveal">
+
+<p class="eyebrow">MADE WITH LOVE</p>
+
+<h2 class="heading">
+A little taste of <em>happiness.</em>
+</h2>
+
+<p class="description">
+From comforting favourites to refreshing drinks and irresistible sweet endings, discover little things that make your day better.
+</p>
+
+</div>
+
+<div class="menu-grid">
+
+<article class="menu-card reveal">
+
+<div class="menu-photo">
+<img src="food.jpg" alt="Food favourites">
+</div>
+
+<h3>Food & Favourites</h3>
+
+<p>Comforting favourites, freshly prepared and made to be enjoyed.</p>
+
+<a class="menu-link" href="https://dinein.petpooja.com/qr/jzxh1v2054/B1" target="_blank">Explore Menu ↗</a>
+
+</article>
+
+<article class="menu-card reveal">
+
+<div class="menu-photo">
+<img src="drink.jpg" alt="Refreshing café drinks">
+</div>
+
+<h3>Sips & Smiles</h3>
+
+<p>Refreshing drinks and café favourites for every kind of mood.</p>
+
+<a class="menu-link" href="https://dinein.petpooja.com/qr/jzxh1v2054/B1" target="_blank">Explore Menu ↗</a>
+
+</article>
+
+<article class="menu-card reveal">
+
+<div class="menu-photo">
+<img src="dessert.jpg" alt="Desserts">
+</div>
+
+<h3>Sweet Little Things</h3>
+
+<p>A little sweetness to make your café moment complete.</p>
+
+<a class="menu-link" href="https://dinein.petpooja.com/qr/jzxh1v2054/B1" target="_blank">Explore Menu ↗</a>
+
+</article>
+
+</div>
+</div>
+</section>
+
+<!-- THE CAFE -->
+
+<section id="cafe">
+
+<div class="container cafe-grid">
+
+<div class="cafe-image reveal">
+<img src="sitting spot.jpg" alt="Panchatantra Café seating">
+</div>
+
+<div class="reveal">
+
+<p class="eyebrow">MORE THAN JUST COFFEE</p>
+
+<h2 class="heading">
+Your little corner of <em>comfort.</em>
+</h2>
+
+<p class="description">
+From books and games to shared laughter, Panchatantra is designed for more than just a quick coffee stop.
+</p>
+
+<ul class="cafe-points">
+<li>Pick a book and enjoy a slower moment.</li>
+<li>Challenge your friends to a game.</li>
+<li>Spend time together over your café favourites.</li>
+<li>Discover workshops and community events.</li>
+</ul>
+
+</div>
+
+</div>
+</section>
+
+<!-- GALLERY -->
+
+<section class="gallery-section" id="moments">
+
+<div class="container">
+
+<div class="section-title reveal">
+
+<p class="eyebrow">LITTLE MOMENTS, BIG MEMORIES</p>
+
+<h2 class="heading">
+Life looks better <em>over coffee.</em>
+</h2>
+
+<p class="description">
+A welcoming space for coffee dates, quiet afternoons and conversations that last a little longer.
+</p>
+
+</div>
+
+<div class="gallery-grid">
+
+<div class="gallery-item reveal">
+<img src="exterior.jpg" alt="Café exterior">
+</div>
+
+<div class="gallery-item reveal">
+<img src="coffee.jpg" alt="Coffee">
+</div>
+
+<div class="gallery-item reveal">
+<img src="coffe croissant.jpg" alt="Coffee and croissant">
+</div>
+
+<div class="gallery-item reveal">
+<img src="coffe beans.jpg" alt="Coffee beans">
+</div>
+
+<div class="gallery-item reveal">
+<img src="time.jpg" alt="Café moments">
+</div>
+
+<div class="gallery-item reveal">
+<img src="awards.jpg" alt="Café awards">
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- EVENTS -->
+
+<section id="events">
+
+<div class="container event-grid">
+
+<div class="event-image reveal">
+<img src="people.jpg" alt="People at Panchatantra Café">
+</div>
+
+<div class="reveal">
+
+<p class="eyebrow">GATHER · CREATE · CONNECT</p>
+
+<h2 class="heading">
+Beautiful things happen when we <em>gather.</em>
+</h2>
+
+<p class="description">
+From workshops and flea markets to community gatherings, discover experiences that bring people together.
+</p>
+
+<br>
+
+<a href="Event.html" class="btn">Explore Events ↗</a>
+
+</div>
+
+</div>
+</section>
+
+<!-- REVIEWS -->
+
+<section class="reviews">
+
+<div class="container">
+
+<p class="eyebrow">THE CAFÉ EXPERIENCE</p>
+
+<h2 class="heading">Your stories matter to us.</h2>
+
+<div class="review-card">
+
+<div class="stars">★★★★★</div>
+
+<p>
+"Every visit, every conversation and every shared moment is part of the Panchatantra story."
+</p>
+
+<br>
+
+<a href="https://www.google.com/maps/search/?api=1&query=Panchatantra+Cafe+Begumpet+Hyderabad" target="_blank" class="menu-link">Find us on Google ↗</a>
+
+</div>
+</div>
+</section>
+
+<!-- VISIT -->
+
+<section id="visit">
+
+<div class="container visit-grid">
+
+<div class="reveal">
+
+<p class="eyebrow">COME SAY HELLO</p>
+
+<h2 class="heading">
+Your table is <em>waiting.</em>
+</h2>
+
+<p class="description">
+Drop by for a meal, a coffee, a book or simply a little time away from the rush.
+</p>
+
+<div class="visit-details">
+
+<div>
+<strong>Address</strong>
+<span>House 1-10-290/1, Sai Nilayam, Circle 30, Begumpet, Hyderabad, Telangana</span>
+</div>
+
+<div>
+<strong>Opening Hours</strong>
+<span>Daily · 11:00 AM – 11:00 PM</span>
+</div>
+
+<div>
+<strong>Call Us</strong>
+<span>+91 85169 23456</span>
+</div>
+
+</div>
+
+<div class="visit-buttons">
+
+<a class="btn" href="https://maps.app.goo.gl/RJKehn9R445dQgz3A" target="_blank">Get Directions ↗</a>
+
+<a class="btn btn-outline" href="https://wa.me/918516923456" target="_blank">WhatsApp Us</a>
+
+</div>
+
+</div>
+
+<div class="visit-image reveal">
+<img src="exterior.jpg" alt="Panchatantra Café Begumpet">
+</div>
+
+</div>
+</section>
+
 </main>
-<footer><div class="container"><div class="footer-top"><div><div class="footer-brand">Panchatantra Café.</div><p>Where Every Bite Tells a Story.</p><p>Begumpet, Hyderabad</p></div><div class="footer-links"><a href="#about">About</a><a href="#moments">Moments</a><a href="#menu">Menu</a><a href="#cafe">The Café</a><a href="Event.html">Events</a><a href="#visit">Visit</a><a href="https://www.instagram.com/panchatantrahyd/" target="_blank" rel="noopener noreferrer">Instagram</a></div></div><div class="footer-bottom">© 2026 Panchatantra Café. All rights reserved.</div></div></footer>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-top">
+
+<div>
+
+<div class="footer-brand">Panchatantra Café.</div>
+
+<p>Where Every Bite Tells a Story.</p>
+
+<p>Begumpet, Hyderabad</p>
+
+</div>
+
+<div class="footer-links">
+
+<a href="#about">About</a>
+<a href="#moments">Moments</a>
+<a href="#menu">Menu</a>
+<a href="#cafe">The Café</a>
+<a href="Event.html">Events</a>
+<a href="#visit">Visit</a>
+
+<a href="https://www.instagram.com/panchatantrahyd/" target="_blank">Instagram ↗</a>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 Panchatantra Café. All rights reserved.
+</div>
+
+</div>
+
+</footer>
+
 <script>
-document.addEventListener('DOMContentLoaded',()=>{
- const intro=document.getElementById('pt-intro');
- const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
- const seen=sessionStorage.getItem('panchatantraIntroSeen');
 
- if(intro&&!reduce&&!seen){
-  sessionStorage.setItem('panchatantraIntroSeen','yes');
-  setTimeout(()=>intro.classList.add('is-leaving'),6500);
-  setTimeout(()=>{
-   intro.remove();
-   document.body.classList.remove('intro-playing');
-  },7900);
- }else{
-  if(intro)intro.remove();
-  document.body.classList.remove('intro-playing');
- }
+document.addEventListener("DOMContentLoaded", function() {
 
- const sections=document.querySelectorAll('main>section:not(.hero)');
- if(reduce||!('IntersectionObserver' in window)){
-  sections.forEach(section=>section.classList.add('visible'));
- }else{
-  sections.forEach(section=>section.classList.add('reveal'));
-  const observer=new IntersectionObserver(entries=>{
-   entries.forEach(entry=>{
-    if(entry.isIntersecting){
-     entry.target.classList.add('visible');
-     observer.unobserve(entry.target);
-    }
-   });
-  },{threshold:.12,rootMargin:'0px 0px -45px 0px'});
-  sections.forEach(section=>observer.observe(section));
- }
+    const elements = document.querySelectorAll(".reveal");
 
- const header=document.querySelector('header');
- const updateHeader=()=>{if(header)header.classList.toggle('scrolled',window.scrollY>18)};
- updateHeader();
- window.addEventListener('scroll',updateHeader,{passive:true});
+    const observer = new IntersectionObserver(function(entries) {
+
+        entries.forEach(function(entry) {
+
+            if(entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+
+                observer.unobserve(entry.target);
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.12
+    });
+
+    elements.forEach(function(element) {
+        observer.observe(element);
+    });
+
 });
+
 </script>
+
 </body>
 </html>
