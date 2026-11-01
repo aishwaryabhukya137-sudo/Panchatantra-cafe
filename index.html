@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#fbf7ef">
+<meta name="description" content="Discover Panchatantra Café in Begumpet, Hyderabad — food, coffee, books and conversations.">
 
 <title>Panchatantra Café | Begumpet</title>
 
@@ -18,7 +19,6 @@
     --muted: #8b796b;
     --line: #e5d9c9;
     --accent: #a77b5c;
-    --soft: #eee2d3;
 }
 
 * {
@@ -27,7 +27,10 @@
     box-sizing: border-box;
 }
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
 
 body {
     background: var(--cream);
@@ -36,7 +39,9 @@ body {
     overflow-x: hidden;
 }
 
-body.loading { overflow: hidden; }
+body.loading {
+    overflow: hidden;
+}
 
 a {
     text-decoration: none;
@@ -44,17 +49,14 @@ a {
 }
 
 img {
-    width: 100%;
     display: block;
-    object-fit: cover;
+    width: 100%;
 }
 
 .container {
     width: min(1160px, 90%);
     margin: auto;
 }
-
-.serif { font-family: 'Playfair Display', serif; }
 
 .eyebrow {
     font-size: 10px;
@@ -66,25 +68,25 @@ img {
 
 h2 {
     font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 4.5vw, 57px);
+    line-height: 1.13;
     font-weight: 500;
-    font-size: clamp(38px, 5vw, 62px);
-    line-height: 1.12;
 }
 
 .description {
     color: var(--muted);
-    line-height: 1.9;
-    font-size: 14px;
+    line-height: 1.85;
+    font-size: 13px;
 }
 
 .btn {
     display: inline-block;
     background: var(--brown);
     color: var(--cream);
-    padding: 15px 24px;
+    padding: 14px 23px;
     font-size: 10px;
     letter-spacing: 1.5px;
-    transition: .35s;
+    transition: .3s;
 }
 
 .btn:hover {
@@ -98,7 +100,7 @@ h2 {
     padding-bottom: 5px;
 }
 
-/* INTRO */
+/* INTRO ANIMATION */
 
 .intro-screen {
     position: fixed;
@@ -110,7 +112,7 @@ h2 {
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    animation: introExit 1.2s ease 3.1s forwards;
+    animation: introExit 1.1s ease 3s forwards;
 }
 
 .intro-logo {
@@ -120,7 +122,7 @@ h2 {
 }
 
 .intro-icon {
-    font-size: 45px;
+    font-size: 42px;
     margin-bottom: 18px;
     animation: cupBounce 1.2s ease infinite alternate;
 }
@@ -153,23 +155,28 @@ h2 {
     to { transform: translateY(7px) rotate(7deg); }
 }
 
-@keyframes fadeIn { to { opacity: 1; } }
-@keyframes lineGrow { to { width: 110px; } }
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+@keyframes lineGrow {
+    to { width: 110px; }
+}
 
 @keyframes introExit {
     0% { opacity: 1; transform: scale(1); }
-    65% { opacity: 1; transform: scale(1.08); }
-    100% { opacity: 0; transform: scale(1.2); visibility: hidden; }
+    65% { opacity: 1; transform: scale(1.06); }
+    100% { opacity: 0; transform: scale(1.12); visibility: hidden; }
 }
 
 /* HEADER */
 
 header {
-    height: 80px;
+    height: 76px;
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(251,247,239,.95);
+    background: rgba(251,247,239,.96);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--line);
 }
@@ -188,8 +195,8 @@ header {
 }
 
 .logo img {
-    width: 45px;
-    height: 45px;
+    width: 43px;
+    height: 43px;
     border-radius: 50%;
     object-fit: contain;
 }
@@ -208,7 +215,7 @@ header {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 23px;
     list-style: none;
 }
 
@@ -218,7 +225,9 @@ header {
     transition: .3s;
 }
 
-.nav-links a:hover { color: var(--accent); }
+.nav-links a:hover {
+    color: var(--accent);
+}
 
 .menu-toggle {
     display: none;
@@ -226,26 +235,28 @@ header {
     border: none;
     color: var(--brown);
     font-size: 25px;
+    cursor: pointer;
 }
 
-/* UNIVERSAL CREATIVE IMAGE FRAMES */
+/* IMAGE FRAMES */
 
 .image-frame {
     position: relative;
-    isolation: isolate;
-    padding: 11px;
-    background: #f4eadc;
-    border: 1px solid #dfcdb9;
-    border-radius: 5px 45px 5px 45px;
-    box-shadow: 12px 14px 0 rgba(167,123,92,.10);
+    padding: 9px;
+    background: #f2e8da;
+    border: 1px solid #dfcbb5;
+    border-radius: 5px 35px 5px 35px;
+    box-shadow: 7px 9px 0 rgba(167,123,92,.10);
+    overflow: visible;
+    height: 100%;
 }
 
 .image-frame::before {
     content: "";
     position: absolute;
-    inset: 5px;
+    inset: 4px;
     border: 1px solid rgba(167,123,92,.35);
-    border-radius: 3px 39px 3px 39px;
+    border-radius: 3px 30px 3px 30px;
     pointer-events: none;
     z-index: 2;
 }
@@ -253,9 +264,9 @@ header {
 .image-frame::after {
     content: "✳";
     position: absolute;
-    top: -19px;
-    right: 17px;
-    font-size: 27px;
+    top: -15px;
+    right: 12px;
+    font-size: 23px;
     color: var(--accent);
     z-index: 3;
 }
@@ -263,139 +274,95 @@ header {
 .image-frame img {
     width: 100%;
     height: 100%;
-    border-radius: 3px 34px 3px 34px;
+    display: block;
+    border-radius: 3px 27px 3px 27px;
     object-fit: cover;
-    transition: transform .8s ease;
+    transition: transform .7s ease;
 }
 
 .image-frame:hover img {
-    transform: scale(1.035);
+    transform: scale(1.025);
 }
 
 .frame-small {
-    border-radius: 35px 5px 35px 5px;
-    box-shadow: -10px 12px 0 rgba(167,123,92,.10);
+    border-radius: 30px 5px 30px 5px;
 }
 
 .frame-small::before {
-    border-radius: 29px 3px 29px 3px;
+    border-radius: 25px 3px 25px 3px;
 }
 
 .frame-small img {
-    border-radius: 29px 3px 29px 3px;
+    border-radius: 25px 3px 25px 3px;
 }
 
 .frame-round {
-    border-radius: 50% 50% 5px 5px;
-    box-shadow: 10px 12px 0 rgba(167,123,92,.10);
+    border-radius: 45% 45% 5px 5px;
 }
 
 .frame-round::before {
-    border-radius: 50% 50% 3px 3px;
+    border-radius: 43% 43% 3px 3px;
 }
 
 .frame-round img {
-    border-radius: 50% 50% 3px 3px;
+    border-radius: 43% 43% 3px 3px;
 }
 
-.frame-simple {
-    border-radius: 5px;
+/* FULL IMAGE FRAME - NO CROPPING */
+
+.fit-full {
+    background: #f5eee3;
 }
 
-.frame-simple::before {
-    border-radius: 2px;
+.fit-full img {
+    object-fit: contain;
+    background: #f5eee3;
 }
 
-.frame-simple img {
-    border-radius: 2px;
+/* HERO INTRO TEXT */
+
+.hero {
+    padding: 65px 0 35px;
 }
 
-.frame-caption {
-    position: absolute;
-    left: 50%;
-    bottom: -17px;
-    transform: translateX(-50%);
-    background: var(--cream);
-    border: 1px solid var(--line);
-    padding: 9px 17px;
+.hero-content {
+    text-align: center;
+    max-width: 780px;
+    margin: auto;
+}
+
+.hero-content h1 {
     font-family: 'Playfair Display', serif;
-    font-style: italic;
-    white-space: nowrap;
-    font-size: 13px;
-    z-index: 4;
-}
-
-/* HERO */
-
-.hero { padding: 65px 0 45px; }
-
-.hero-grid {
-    display: grid;
-    grid-template-columns: .9fr 1.1fr;
-    gap: 35px;
-    align-items: center;
-}
-
-.hero-text h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(55px, 7vw, 88px);
-    line-height: 1.02;
+    font-size: clamp(52px, 7vw, 82px);
+    line-height: 1.06;
     font-weight: 500;
-    margin: 22px 0;
+    margin: 20px 0;
 }
 
-.hero-text h1 em { color: var(--accent); }
+.hero-content h1 em {
+    color: var(--accent);
+}
 
-.hero-text p {
-    max-width: 390px;
+.hero-content p {
+    max-width: 530px;
+    margin: auto;
     font-size: 14px;
-    color: var(--muted);
     line-height: 1.9;
+    color: var(--muted);
 }
 
 .hero-actions {
     display: flex;
     align-items: center;
-    gap: 25px;
-    margin-top: 30px;
-}
-
-/* OUTLINE GIRL */
-
-.hero-visual {
-    position: relative;
-    min-height: 430px;
-    display: flex;
-    align-items: center;
     justify-content: center;
-}
-
-.girl-svg {
-    width: 100%;
-    max-width: 440px;
-    animation: gentleFloat 5s ease-in-out infinite;
-}
-
-@keyframes gentleFloat {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-9px); }
-}
-
-.hero-sticker {
-    position: absolute;
-    top: 8%;
-    right: 2%;
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    color: var(--accent);
-    transform: rotate(8deg);
-    font-size: 17px;
+    gap: 25px;
+    margin-top: 25px;
 }
 
 .hero-bottom {
     border-top: 1px solid var(--line);
     margin-top: 35px;
-    padding-top: 20px;
+    padding-top: 17px;
     display: flex;
     justify-content: space-between;
     font-size: 9px;
@@ -403,85 +370,114 @@ header {
     color: var(--muted);
 }
 
-/* HOMEPAGE IMAGE FIRST */
+/* HOMEPAGE PHOTO */
 
 .home-photo {
-    padding: 35px 0 90px;
+    padding: 25px 0 55px;
 }
 
 .home-photo-frame {
     position: relative;
-    padding: 15px;
-    background: #f2e8da;
+    padding: 12px;
+    background: #f1e6d7;
     border: 1px solid #dfcbb5;
-    box-shadow: 0 20px 45px rgba(68,51,41,.09);
-    border-radius: 7px 75px 7px 75px;
+    border-radius: 6px 65px 6px 65px;
+    box-shadow: 0 15px 35px rgba(68,51,41,.08);
 }
 
 .home-photo-frame::before {
     content: "";
     position: absolute;
-    inset: 7px;
-    border: 1px solid rgba(167,123,92,.45);
-    border-radius: 4px 67px 4px 67px;
+    inset: 6px;
+    border: 1px solid rgba(167,123,92,.4);
+    border-radius: 4px 58px 4px 58px;
     pointer-events: none;
     z-index: 2;
 }
 
-.home-photo-frame::after {
-    content: "A LITTLE PLACE FULL OF STORIES";
-    position: absolute;
-    top: 27px;
-    left: 30px;
-    background: var(--cream);
-    padding: 12px 17px;
-    font-size: 9px;
-    letter-spacing: 2px;
-    color: var(--brown);
-    z-index: 3;
-}
-
 .home-photo-frame img {
-    height: 530px;
-    border-radius: 3px 62px 3px 62px;
+    width: 100%;
+    height: 490px;
     object-fit: cover;
     object-position: center;
+    border-radius: 3px 54px 3px 54px;
 }
 
 .photo-label {
     position: absolute;
-    left: 40px;
-    bottom: 35px;
+    left: 35px;
+    bottom: 30px;
     background: var(--cream);
-    padding: 22px 28px;
+    padding: 18px 24px;
     max-width: 310px;
     z-index: 4;
-    box-shadow: 5px 7px 18px rgba(68,51,41,.10);
+    box-shadow: 4px 6px 18px rgba(68,51,41,.1);
 }
 
 .photo-label h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 27px;
+    font-size: 25px;
     font-weight: 500;
+    margin-top: 5px;
 }
 
 .photo-label p {
     font-size: 11px;
     color: var(--muted);
-    margin-top: 7px;
+    margin-top: 6px;
+}
+
+/* GIRL ILLUSTRATION */
+
+.girl-section {
+    padding: 15px 0 55px;
+}
+
+.girl-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 65px;
+    max-width: 850px;
+    margin: auto;
+}
+
+.girl-art {
+    width: 330px;
+    max-width: 100%;
+    flex-shrink: 0;
+    animation: gentleFloat 5s ease-in-out infinite;
+}
+
+.girl-copy {
+    max-width: 370px;
+}
+
+.girl-copy h2 {
+    margin: 14px 0;
+    font-size: clamp(30px, 4vw, 45px);
+}
+
+.girl-copy p {
+    margin-bottom: 20px;
+}
+
+@keyframes gentleFloat {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-7px); }
 }
 
 /* STORY INTRO */
 
 .story-intro {
-    padding: 100px 0;
+    padding: 65px 0;
     text-align: center;
     border-top: 1px solid var(--line);
 }
 
 .story-intro h2 {
     max-width: 720px;
-    margin: 20px auto;
+    margin: 17px auto;
 }
 
 .story-intro p {
@@ -490,58 +486,56 @@ header {
 }
 
 .doodle {
-    width: 100px;
-    height: 80px;
-    margin: 25px auto;
+    width: 90px;
+    height: 65px;
+    margin: 18px auto;
 }
 
 /* ABOUT */
 
 .about {
-    padding: 90px 0;
+    padding: 65px 0;
     border-top: 1px solid var(--line);
 }
 
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 65px;
+    gap: 55px;
     align-items: center;
 }
 
 .about-image {
-    height: 450px;
-    position: relative;
+    height: 390px;
 }
 
-.about-image img { height: 100%; }
-
-.about-image::after {
-    content: "♡";
-    position: absolute;
-    bottom: -32px;
-    right: -22px;
-    font-size: 65px;
-    color: var(--accent);
-    font-family: Georgia, serif;
+.about-image img {
+    object-position: center;
 }
 
-.about-text h2 { margin: 20px 0; }
-.about-text p { margin-bottom: 25px; }
+.about-text h2 {
+    margin: 17px 0;
+}
+
+.about-text p {
+    margin-bottom: 22px;
+}
 
 /* MENU */
 
 .experience {
-    padding: 100px 0;
+    padding: 70px 0;
     border-top: 1px solid var(--line);
 }
 
 .center-heading {
     text-align: center;
-    margin-bottom: 55px;
+    margin-bottom: 40px;
 }
 
-.center-heading h2 { margin: 17px auto; }
+.center-heading h2 {
+    margin: 14px auto;
+}
 
 .center-heading p {
     margin: auto;
@@ -550,49 +544,46 @@ header {
 
 .menu-grid {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 30px;
-    align-items: start;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    align-items: stretch;
 }
 
 .menu-card {
     text-align: center;
-    padding: 12px 12px 25px;
+    padding: 10px 10px 22px;
     background: #f7f0e6;
     border: 1px solid var(--line);
-    position: relative;
-    transition: transform .4s;
+    transition: transform .35s;
 }
 
-.menu-card:nth-child(2) { margin-top: 35px; }
-.menu-card:nth-child(3) { margin-top: 0; }
-
-.menu-card:hover { transform: translateY(-8px); }
+.menu-card:hover {
+    transform: translateY(-6px);
+}
 
 .menu-card .image-frame {
-    height: 280px;
-    padding: 9px;
+    height: 250px;
 }
 
 .menu-card h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 500;
-    margin: 30px 0 10px;
+    margin: 24px 0 9px;
 }
 
 .menu-card p {
     color: var(--muted);
     font-size: 12px;
     line-height: 1.8;
-    max-width: 260px;
+    max-width: 270px;
     margin: auto;
 }
 
 /* COFFEE STORY */
 
 .coffee-story {
-    padding: 90px 0;
+    padding: 65px 0;
     border-top: 1px solid var(--line);
 }
 
@@ -600,53 +591,75 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    gap: 65px;
+    gap: 55px;
 }
 
 .coffee-doodle {
     width: 100%;
-    max-width: 480px;
+    max-width: 420px;
 }
 
-.coffee-story h2 { margin: 20px 0; }
-.coffee-story p { margin-bottom: 25px; }
+.coffee-story h2 {
+    margin: 17px 0;
+}
+
+.coffee-story p {
+    margin-bottom: 20px;
+}
 
 /* CAFE */
 
 .cafe {
-    padding: 100px 0;
+    padding: 70px 0;
     border-top: 1px solid var(--line);
 }
 
 .cafe-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 50px;
     align-items: center;
 }
 
 .cafe-images {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 17px;
     align-items: center;
 }
 
-.cafe-images .image-frame { height: 340px; }
-.cafe-images .image-frame:last-child {
-    height: 280px;
-    margin-top: 55px;
+.cafe-images .image-frame {
+    height: 300px;
 }
 
-.cafe-text h2 { margin: 20px 0; }
+/* Sitting spot: show the entire photo */
+
+.cafe-images .sitting-frame {
+    height: 300px;
+    background: #f5eee3;
+}
+
+.cafe-images .sitting-frame img {
+    object-fit: contain;
+    background: #f5eee3;
+}
+
+.cafe-images .exterior-frame {
+    height: 255px;
+    margin-top: 35px;
+}
+
+.cafe-text h2 {
+    margin: 17px 0;
+}
 
 .cafe-list {
     list-style: none;
-    margin-top: 20px;
+    margin-top: 17px;
 }
 
 .cafe-list li {
-    padding: 13px 0;
+    padding: 11px 0;
     border-bottom: 1px solid var(--line);
     font-size: 12px;
 }
@@ -654,98 +667,122 @@ header {
 .cafe-list li::before {
     content: "✳";
     color: var(--accent);
-    margin-right: 12px;
+    margin-right: 11px;
 }
 
 /* FRIENDSHIP */
 
 .moments {
-    padding: 100px 0;
+    padding: 70px 0;
     border-top: 1px solid var(--line);
 }
 
 .moments-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 55px;
     align-items: center;
 }
 
-.moments-image { height: 430px; }
-.moments-image img { height: 100%; }
+.moments-image {
+    height: 370px;
+}
 
-.moments-text h2 { margin: 20px 0; }
-.moments-text p { margin-bottom: 25px; }
+.moments-image img {
+    object-position: center;
+}
+
+.moments-text h2 {
+    margin: 17px 0;
+}
+
+.moments-text p {
+    margin-bottom: 22px;
+}
 
 /* GALLERY */
 
 .gallery {
-    padding: 100px 0;
+    padding: 70px 0;
     border-top: 1px solid var(--line);
 }
 
 .gallery-grid {
     display: grid;
     grid-template-columns: 1.15fr 1fr 1fr;
-    grid-template-rows: 230px 230px;
-    gap: 23px;
-    align-items: stretch;
+    grid-template-rows: 210px 210px;
+    gap: 18px;
 }
 
 .gallery-item {
-    position: relative;
     min-width: 0;
     min-height: 0;
 }
 
 .gallery-item .image-frame {
     height: 100%;
-    padding: 8px;
 }
 
-.gallery-item:nth-child(1) { grid-row: span 2; }
-.gallery-item:nth-child(5) { grid-column: span 2; }
+.gallery-item:nth-child(1) {
+    grid-row: span 2;
+}
 
-.gallery-item:nth-child(2) { transform: translateY(12px); }
-.gallery-item:nth-child(4) { transform: translateY(-8px); }
+.gallery-item:nth-child(5) {
+    grid-column: span 2;
+}
 
-.gallery-item .image-frame::after {
-    content: "♡";
-    font-size: 22px;
-    top: -15px;
+.gallery-item:nth-child(2) {
+    transform: translateY(8px);
+}
+
+.gallery-item:nth-child(4) {
+    transform: translateY(-5px);
 }
 
 /* EVENTS */
 
 .events {
-    padding: 100px 0;
+    padding: 70px 0;
     border-top: 1px solid var(--line);
 }
 
 .events-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 55px;
     align-items: center;
 }
 
-.events-image { height: 410px; }
-.events-image img { height: 100%; }
+.events-image {
+    height: 370px;
+}
 
-.events-text h2 { margin: 20px 0; }
-.events-text p { margin-bottom: 25px; }
+/* Awards: never crop the actual image */
+
+.events-image img {
+    object-fit: contain;
+    background: #f5eee3;
+}
+
+.events-text h2 {
+    margin: 17px 0;
+}
+
+.events-text p {
+    margin-bottom: 22px;
+}
 
 /* REVIEWS */
 
 .reviews {
-    padding: 90px 0;
+    padding: 65px 0;
     border-top: 1px solid var(--line);
     text-align: center;
 }
 
 .review-box {
     border: 1px solid var(--line);
-    padding: 45px 30px;
+    padding: 40px 30px;
     max-width: 730px;
     margin: auto;
     background: #f8f1e7;
@@ -757,21 +794,28 @@ header {
     content: "✳";
     position: absolute;
     color: var(--accent);
-    font-size: 25px;
+    font-size: 22px;
 }
 
-.review-box::before { top: 12px; left: 15px; }
-.review-box::after { bottom: 12px; right: 15px; }
+.review-box::before {
+    top: 12px;
+    left: 15px;
+}
+
+.review-box::after {
+    bottom: 12px;
+    right: 15px;
+}
 
 .stars {
     color: var(--accent);
     letter-spacing: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 17px;
 }
 
 .review-box blockquote {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(23px,3vw,34px);
+    font-size: clamp(22px, 3vw, 33px);
     line-height: 1.5;
     font-style: italic;
 }
@@ -779,28 +823,30 @@ header {
 /* VISIT */
 
 .visit {
-    padding: 100px 0;
+    padding: 70px 0;
     border-top: 1px solid var(--line);
 }
 
 .visit-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 50px;
 }
 
-.visit h2 { margin: 20px 0; }
+.visit h2 {
+    margin: 17px 0;
+}
 
 .visit-details {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    gap: 25px;
 }
 
 .visit-details h4 {
     font-size: 10px;
     letter-spacing: 2px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .visit-details p {
@@ -813,31 +859,31 @@ header {
 
 footer {
     border-top: 1px solid var(--line);
-    padding: 45px 0 25px;
+    padding: 38px 0 22px;
 }
 
 .footer-top {
     display: flex;
     justify-content: space-between;
     gap: 25px;
-    padding-bottom: 30px;
+    padding-bottom: 25px;
 }
 
 .footer-top h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 28px;
+    font-size: 27px;
     font-weight: 500;
 }
 
 .footer-top p {
     font-size: 11px;
     color: var(--muted);
-    margin-top: 8px;
+    margin-top: 7px;
 }
 
 .footer-links {
     display: flex;
-    gap: 22px;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
@@ -848,19 +894,19 @@ footer {
 
 .footer-bottom {
     border-top: 1px solid var(--line);
-    padding-top: 20px;
+    padding-top: 17px;
     display: flex;
     justify-content: space-between;
     color: var(--muted);
     font-size: 10px;
 }
 
-/* REVEAL */
+/* SCROLL REVEAL */
 
 .reveal {
     opacity: 0;
-    transform: translateY(35px);
-    transition: opacity .9s ease, transform .9s ease;
+    transform: translateY(22px);
+    transition: opacity .8s ease, transform .8s ease;
 }
 
 .reveal.visible {
@@ -868,19 +914,9 @@ footer {
     transform: translateY(0);
 }
 
-/* DECORATION */
-
-.floating-star { animation: starFloat 4s ease-in-out infinite; }
-
-@keyframes starFloat {
-    0%,100% { transform: translateY(0) rotate(0); }
-    50% { transform: translateY(-12px) rotate(12deg); }
-}
-
 /* RESPONSIVE */
 
 @media(max-width:850px) {
-    .hero-grid,
     .about-grid,
     .coffee-story-grid,
     .cafe-grid,
@@ -888,61 +924,86 @@ footer {
     .events-grid,
     .visit-grid {
         grid-template-columns: 1fr;
+        gap: 35px;
     }
 
-    .hero-visual { min-height: 340px; }
+    .girl-layout {
+        gap: 30px;
+    }
 
-    .home-photo-frame img { height: 400px; }
+    .menu-grid {
+        gap: 15px;
+    }
 
-    .menu-grid { gap: 18px; }
+    .menu-card .image-frame {
+        height: 210px;
+    }
 
-    .menu-card .image-frame { height: 220px; }
-
-    .cafe-images .image-frame { height: 300px; }
-
-    .gallery-grid {
-        grid-template-rows: 200px 200px;
+    .events-image {
+        height: 330px;
     }
 }
 
 @media(max-width:600px) {
-    header { height: 70px; }
 
-    .menu-toggle { display: block; }
+    header {
+        height: 68px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
 
     .nav-links {
         display: none;
         position: absolute;
-        top: 70px;
+        top: 68px;
         left: 0;
         width: 100%;
         background: var(--cream);
         border-bottom: 1px solid var(--line);
-        padding: 25px;
+        padding: 23px;
         flex-direction: column;
         align-items: flex-start;
-        gap: 22px;
+        gap: 20px;
     }
 
-    .nav-links.active { display: flex; }
+    .nav-links.active {
+        display: flex;
+    }
 
-    .nav > .text-link { display: none; }
+    .nav > .text-link {
+        display: none;
+    }
 
-    .hero { padding-top: 45px; }
+    .hero {
+        padding-top: 45px;
+    }
 
-    .hero-text h1 { font-size: 58px; }
+    .hero-content h1 {
+        font-size: 55px;
+    }
 
-    .hero-visual { min-height: 270px; }
+    .hero-content p {
+        font-size: 13px;
+    }
+
+    .hero-actions {
+        flex-wrap: wrap;
+        gap: 17px;
+    }
 
     .hero-bottom {
         flex-direction: column;
-        gap: 12px;
+        gap: 11px;
     }
 
-    .home-photo { padding: 25px 0 65px; }
+    .home-photo {
+        padding: 20px 0 35px;
+    }
 
     .home-photo-frame {
-        padding: 9px;
+        padding: 8px;
         border-radius: 5px 35px 5px 35px;
     }
 
@@ -951,77 +1012,147 @@ footer {
     }
 
     .home-photo-frame img {
-        height: 330px;
-        border-radius: 3px 25px 3px 25px;
-    }
-
-    .home-photo-frame::after {
-        top: 18px;
-        left: 17px;
-        font-size: 7px;
-        padding: 9px;
+        height: 310px;
+        border-radius: 3px 26px 3px 26px;
     }
 
     .photo-label {
         left: 17px;
-        bottom: 18px;
-        padding: 13px 15px;
-        max-width: 250px;
+        bottom: 17px;
+        padding: 12px 14px;
+        max-width: 240px;
     }
 
-    .photo-label h3 { font-size: 20px; }
+    .photo-label h3 {
+        font-size: 19px;
+    }
+
+    .photo-label p {
+        font-size: 10px;
+    }
+
+    .girl-section {
+        padding: 5px 0 35px;
+    }
+
+    .girl-layout {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .girl-art {
+        width: 260px;
+    }
+
+    .girl-copy {
+        max-width: 340px;
+    }
+
+    .girl-copy h2 {
+        font-size: 34px;
+    }
+
+    .story-intro,
+    .about,
+    .experience,
+    .coffee-story,
+    .cafe,
+    .moments,
+    .gallery,
+    .events,
+    .reviews,
+    .visit {
+        padding: 50px 0;
+    }
+
+    .about-image {
+        height: 300px;
+    }
 
     .menu-grid {
         grid-template-columns: 1fr;
-        gap: 35px;
+        gap: 25px;
     }
 
-    .menu-card:nth-child(2) { margin-top: 0; }
+    .menu-card .image-frame {
+        height: 255px;
+    }
 
-    .menu-card .image-frame { height: 260px; }
-
-    .about-image { height: 330px; }
+    .coffee-doodle {
+        max-width: 320px;
+        margin: auto;
+        display: block;
+    }
 
     .cafe-images {
         gap: 12px;
     }
 
-    .cafe-images .image-frame { height: 245px; }
-
-    .cafe-images .image-frame:last-child {
-        height: 210px;
-        margin-top: 35px;
+    .cafe-images .image-frame,
+    .cafe-images .sitting-frame {
+        height: 235px;
     }
 
-    .moments-image,
-    .events-image { height: 290px; }
+    .cafe-images .exterior-frame {
+        height: 210px;
+        margin-top: 25px;
+    }
+
+    .moments-image {
+        height: 290px;
+    }
 
     .gallery-grid {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 180px 180px 180px;
-        gap: 14px;
+        grid-template-rows: 160px 160px 160px;
+        gap: 12px;
     }
 
-    .gallery-item:nth-child(1) { grid-row: span 1; }
-    .gallery-item:nth-child(5) { grid-column: span 2; }
-    .gallery-item:nth-child(2),
-    .gallery-item:nth-child(4) { transform: none; }
+    .gallery-item:nth-child(1) {
+        grid-row: span 1;
+    }
 
-    .gallery-item .image-frame { padding: 6px; }
+    .gallery-item:nth-child(5) {
+        grid-column: span 2;
+    }
+
+    .gallery-item:nth-child(2),
+    .gallery-item:nth-child(4) {
+        transform: none;
+    }
+
+    .gallery-item .image-frame {
+        padding: 6px;
+    }
+
+    .events-image {
+        height: 280px;
+    }
+
+    .review-box {
+        padding: 35px 20px;
+    }
+
+    .visit-details {
+        gap: 20px;
+    }
 
     .footer-top,
     .footer-bottom {
         flex-direction: column;
-        gap: 20px;
+        gap: 18px;
     }
 
-    .visit-details { gap: 20px; }
-
-    .image-frame { padding: 7px; }
+    .footer-links {
+        gap: 15px;
+    }
 }
 
 @media(prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
         animation-duration: .01ms !important;
         transition-duration: .01ms !important;
         scroll-behavior: auto !important;
@@ -1054,7 +1185,8 @@ footer {
         </div>
     </a>
 
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <button class="menu-toggle"
+    onclick="toggleMenu()" aria-label="Open navigation">☰</button>
 
     <ul class="nav-links" id="navLinks">
         <li><a href="#about">Our Story</a></li>
@@ -1070,20 +1202,18 @@ footer {
 </div>
 </header>
 
-<!-- HERO TEXT -->
+<!-- HERO -->
 
 <section class="hero">
 <div class="container">
 
-<div class="hero-grid">
+    <div class="hero-content reveal">
 
-    <div class="hero-text reveal">
         <span class="eyebrow">A LITTLE WORLD OF STORIES · BEGUMPET</span>
 
         <h1>
-            A little<br>
-            world of<br>
-            <em>stories.</em>
+            A little world<br>
+            of <em>stories.</em>
         </h1>
 
         <p>
@@ -1095,158 +1225,18 @@ footer {
             <a href="#menu" class="btn">EXPLORE OUR MENU ↗</a>
             <a href="#about" class="text-link">Our Story</a>
         </div>
-    </div>
-
-    <!-- OUTLINE-ONLY COFFEE GIRL -->
-
-    <div class="hero-visual reveal">
-
-    <svg class="girl-svg" viewBox="0 0 500 440"
-    xmlns="http://www.w3.org/2000/svg">
-
-        <circle cx="250" cy="220" r="180"
-        fill="none" stroke="#dfcdb9"
-        stroke-width="1.5" stroke-dasharray="3 8"/>
-
-        <!-- Hair outline -->
-
-        <path d="M165 165 Q130 40 250 43
-        Q375 38 345 170 L350 290
-        Q330 350 250 355 Q170 350 150 290Z"
-        fill="none" stroke="#49352c"
-        stroke-width="4" stroke-linecap="round"/>
-
-        <!-- Face -->
-
-        <path d="M178 145 Q175 75 250 72
-        Q325 75 322 145
-        L312 205 Q300 255 250 260
-        Q200 255 188 205Z"
-        fill="none" stroke="#49352c"
-        stroke-width="3.5"/>
-
-        <!-- Fringe -->
-
-        <path d="M180 140 Q175 70 245 75
-        Q300 65 320 130
-        Q285 100 260 110
-        Q220 115 180 140Z"
-        fill="none" stroke="#49352c"
-        stroke-width="3.5" stroke-linecap="round"/>
-
-        <!-- Hair strands -->
-
-        <path d="M180 150 Q155 205 175 260
-        M320 150 Q345 205 325 260"
-        fill="none" stroke="#49352c"
-        stroke-width="4" stroke-linecap="round"/>
-
-        <!-- Eyes -->
-
-        <path d="M210 170 Q225 158 240 170
-        M260 170 Q275 158 290 170"
-        fill="none" stroke="#49352c"
-        stroke-width="3" stroke-linecap="round"/>
-
-        <!-- Nose and smile -->
-
-        <path d="M248 178 Q242 195 252 198"
-        fill="none" stroke="#49352c" stroke-width="2"/>
-
-        <path d="M230 220 Q250 235 270 220"
-        fill="none" stroke="#49352c"
-        stroke-width="2.5" stroke-linecap="round"/>
-
-        <!-- Neck -->
-
-        <path d="M225 255 L225 285
-        Q250 305 275 285 L275 255"
-        fill="none" stroke="#49352c" stroke-width="3"/>
-
-        <!-- Dress -->
-
-        <path d="M225 280 Q175 285 155 330
-        L130 405 Q250 425 370 405
-        L345 330 Q325 285 275 280"
-        fill="none" stroke="#49352c" stroke-width="4"/>
-
-        <!-- Collar -->
-
-        <path d="M215 285 L250 325 L285 285"
-        fill="none" stroke="#a77b5c" stroke-width="3"/>
-
-        <!-- Arm holding cup -->
-
-        <path d="M295 300 Q350 290 365 255"
-        fill="none" stroke="#49352c"
-        stroke-width="17" stroke-linecap="round"/>
-
-        <path d="M295 300 Q350 290 365 255"
-        fill="none" stroke="#fbf7ef"
-        stroke-width="10" stroke-linecap="round"/>
-
-        <!-- Cup -->
-
-        <path d="M330 225 L405 225 L397 290
-        Q365 305 338 290Z"
-        fill="#fbf7ef" stroke="#49352c" stroke-width="3.5"/>
-
-        <path d="M402 238 Q438 230 426 270
-        Q418 287 397 275"
-        fill="none" stroke="#49352c" stroke-width="3.5"/>
-
-        <path d="M340 242 H400"
-        stroke="#a77b5c" stroke-width="3"/>
-
-        <!-- Steam -->
-
-        <path d="M350 210 Q335 192 350 175
-        M375 210 Q390 192 375 175"
-        fill="none" stroke="#a77b5c"
-        stroke-width="2.5" stroke-linecap="round"/>
-
-        <!-- Little details -->
-
-        <path d="M90 130 L97 145 L112 150
-        L97 155 L90 170 L85 155
-        L70 150 L85 145Z"
-        fill="none" stroke="#a77b5c" stroke-width="2"/>
-
-        <path d="M410 100 L415 112 L428 117
-        L415 122 L410 135 L405 122
-        L392 117 L405 112Z"
-        fill="none" stroke="#a77b5c" stroke-width="2"/>
-
-        <circle cx="105" cy="260" r="4" fill="#a77b5c"/>
-        <circle cx="420" cy="330" r="4" fill="#a77b5c"/>
-
-        <!-- Small book -->
-
-        <path d="M65 350 Q95 335 125 355
-        L125 390 Q95 372 65 390Z"
-        fill="none" stroke="#49352c" stroke-width="2.5"/>
-
-        <path d="M125 355 Q150 335 175 350
-        L175 390 Q150 372 125 390Z"
-        fill="none" stroke="#49352c" stroke-width="2.5"/>
-
-    </svg>
-
-    <span class="hero-sticker floating-star">A little coffee break ♡</span>
 
     </div>
 
-</div>
-
-<div class="hero-bottom">
-    <span>FOOD · COFFEE · BOOKS · CONVERSATIONS</span>
-    <span>MADE WITH LOVE IN BEGUMPET</span>
-</div>
+    <div class="hero-bottom">
+        <span>FOOD · COFFEE · BOOKS · CONVERSATIONS</span>
+        <span>MADE WITH LOVE IN BEGUMPET</span>
+    </div>
 
 </div>
 </section>
 
-<!-- HOMEPAGE PHOTO: FIRST MAIN IMAGE -->
+<!-- MAIN HOMEPAGE IMAGE -->
 
 <section class="home-photo reveal">
 <div class="container">
@@ -1254,7 +1244,7 @@ footer {
     <div class="home-photo-frame">
 
         <img src="homepage.jpg"
-        alt="Welcome to Panchatantra Café">
+        alt="Panchatantra Café">
 
         <div class="photo-label">
             <span class="eyebrow">WELCOME TO OUR LITTLE WORLD</span>
@@ -1267,7 +1257,148 @@ footer {
 </div>
 </section>
 
-<!-- INTRODUCTION -->
+<!-- GIRL ILLUSTRATION -->
+
+<section class="girl-section">
+<div class="container">
+
+    <div class="girl-layout reveal">
+
+        <!-- Minimal outline drawing -->
+
+        <svg class="girl-art" viewBox="0 0 340 350"
+        xmlns="http://www.w3.org/2000/svg">
+
+            <g fill="none" stroke="#49352c"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+
+                <!-- Hair silhouette -->
+
+                <path d="M85 135
+                Q65 35 165 28
+                Q255 25 265 110
+                Q285 190 245 225
+                Q230 180 220 145
+                Q170 170 115 140
+                Q110 190 88 220
+                Q70 180 85 135Z"/>
+
+                <!-- Face profile -->
+
+                <path d="M112 118
+                Q112 65 170 62
+                Q220 63 232 112
+                Q238 137 230 153
+                L246 169
+                Q252 179 237 182
+                Q236 216 205 228
+                Q171 238 145 211
+                Q122 189 112 118Z"/>
+
+                <!-- Hair detail -->
+
+                <path d="M112 115 Q145 75 205 100"/>
+                <path d="M92 130 Q75 180 103 220"/>
+
+                <!-- Eye -->
+
+                <path d="M198 145 Q210 140 218 146"/>
+
+                <!-- Nose -->
+
+                <path d="M231 157 Q242 167 233 174"/>
+
+                <!-- Smile -->
+
+                <path d="M215 193 Q224 197 230 192"/>
+
+                <!-- Neck -->
+
+                <path d="M160 222 L158 255
+                M205 224 L211 250"/>
+
+                <!-- Shoulder and dress -->
+
+                <path d="M158 250
+                Q105 253 85 295
+                L65 340
+                M211 250
+                Q260 258 278 300
+                L295 340"/>
+
+                <!-- Cup and hand -->
+
+                <path d="M190 235
+                Q225 218 247 205"/>
+
+                <path d="M236 200
+                Q247 190 255 199"/>
+
+                <path d="M245 187
+                L295 187
+                L290 230
+                Q270 243 250 230Z"/>
+
+                <path d="M294 196
+                Q318 190 310 216
+                Q306 226 292 220"/>
+
+                <!-- Cup decoration -->
+
+                <path d="M253 205 H291"/>
+
+                <!-- Steam -->
+
+                <path d="M260 176 Q249 162 261 150"/>
+                <path d="M280 176 Q291 162 280 149"/>
+
+                <!-- Table -->
+
+                <path d="M40 340 H310"/>
+
+            </g>
+
+            <!-- Small decorative stars -->
+
+            <g fill="none" stroke="#a77b5c" stroke-width="2">
+                <path d="M55 105 L60 118 L73 123
+                L60 128 L55 141 L50 128
+                L37 123 L50 118Z"/>
+
+                <path d="M290 90 L295 102 L307 107
+                L295 112 L290 124 L285 112
+                L273 107 L285 102Z"/>
+            </g>
+
+            <circle cx="65" cy="230" r="3" fill="#a77b5c"/>
+            <circle cx="290" cy="270" r="3" fill="#a77b5c"/>
+
+        </svg>
+
+        <div class="girl-copy">
+            <span class="eyebrow">A MOMENT FOR YOURSELF</span>
+
+            <h2>Slow down.<br>Sip. Smile.</h2>
+
+            <p class="description">
+                A favourite cup, a familiar face, a good conversation.
+                Sometimes the smallest moments become the stories
+                we remember the longest.
+            </p>
+
+            <a href="#visit" class="text-link">
+                Spend a little time with us ↗
+            </a>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<!-- STORY INTRO -->
 
 <section class="story-intro reveal">
 <div class="container">
@@ -1301,8 +1432,8 @@ footer {
 <div class="container about-grid">
 
     <div class="about-image image-frame reveal">
-        <img src="friendship.jpg" alt="Friends enjoying Panchatantra Café">
-        <span class="frame-caption">Moments worth remembering ♡</span>
+        <img src="friendship.jpg"
+        alt="Friends enjoying Panchatantra Café">
     </div>
 
     <div class="about-text reveal">
@@ -1320,12 +1451,6 @@ footer {
 
         <a href="#cafe" class="text-link">Discover Our Story ↗</a>
 
-        <svg class="doodle" viewBox="0 0 120 80" style="margin:20px 0">
-            <path d="M20 60 Q40 20 60 60 Q80 20 100 60"
-            fill="none" stroke="#a77b5c" stroke-width="3"/>
-            <path d="M60 25 V65" stroke="#49352c" stroke-width="2"/>
-        </svg>
-
     </div>
 
 </div>
@@ -1339,6 +1464,7 @@ footer {
     <div class="center-heading reveal">
         <span class="eyebrow">A LITTLE TASTE OF HAPPINESS</span>
         <h2>A little taste of happiness.</h2>
+
         <p class="description">
             From comforting favourites to refreshing drinks and
             irresistible sweet endings, discover little things
@@ -1349,9 +1475,10 @@ footer {
     <div class="menu-grid">
 
         <div class="menu-card reveal">
-            <div class="image-frame frame-simple">
+            <div class="image-frame">
                 <img src="food.jpg" alt="Food at Panchatantra Café">
             </div>
+
             <h3>Food & Favourites</h3>
             <p>Comforting favourites, freshly prepared and made to be enjoyed.</p>
         </div>
@@ -1360,23 +1487,27 @@ footer {
             <div class="image-frame frame-round">
                 <img src="drink.jpg" alt="Drinks at Panchatantra Café">
             </div>
+
             <h3>Sips & Smiles</h3>
             <p>Refreshing drinks and café favourites for every kind of mood.</p>
         </div>
 
         <div class="menu-card reveal">
-            <div class="image-frame frame-simple">
+            <div class="image-frame">
                 <img src="dessert.jpg" alt="Desserts at Panchatantra Café">
             </div>
+
             <h3>Sweet Little Things</h3>
             <p>A little sweetness to make your café moment complete.</p>
         </div>
 
     </div>
 
-    <div style="text-align:center;margin-top:45px">
+    <div style="text-align:center;margin-top:35px">
         <a href="https://dinein.petpooja.com/qr/jzxh1v2054/B1"
-        target="_blank" class="btn">EXPLORE & ORDER ↗</a>
+        target="_blank" rel="noopener" class="btn">
+            EXPLORE & ORDER ↗
+        </a>
     </div>
 
 </div>
@@ -1389,59 +1520,59 @@ footer {
 
     <div class="reveal">
 
-    <svg class="coffee-doodle" viewBox="0 0 480 380">
+        <svg class="coffee-doodle" viewBox="0 0 480 380">
 
-        <circle cx="240" cy="185" r="160"
-        fill="none" stroke="#dfcdb9"
-        stroke-width="2" stroke-dasharray="4 9"/>
+            <circle cx="240" cy="185" r="160"
+            fill="none" stroke="#dfcdb9"
+            stroke-width="2" stroke-dasharray="4 9"/>
 
-        <path d="M130 145 H330 L310 290
-        Q230 325 150 290Z"
-        fill="none" stroke="#49352c" stroke-width="5"/>
+            <path d="M130 145 H330 L310 290
+            Q230 325 150 290Z"
+            fill="none" stroke="#49352c" stroke-width="5"/>
 
-        <path d="M325 165 Q425 140 390 235
-        Q375 270 315 250"
-        fill="none" stroke="#49352c" stroke-width="5"/>
+            <path d="M325 165 Q425 140 390 235
+            Q375 270 315 250"
+            fill="none" stroke="#49352c" stroke-width="5"/>
 
-        <ellipse cx="230" cy="150" rx="100" ry="20"
-        fill="none" stroke="#49352c" stroke-width="4"/>
+            <ellipse cx="230" cy="150" rx="100" ry="20"
+            fill="none" stroke="#49352c" stroke-width="4"/>
 
-        <ellipse cx="230" cy="150" rx="65" ry="11"
-        fill="none" stroke="#a77b5c" stroke-width="3"/>
+            <ellipse cx="230" cy="150" rx="65" ry="11"
+            fill="none" stroke="#a77b5c" stroke-width="3"/>
 
-        <path d="M190 110 Q160 75 195 45
-        M230 110 Q260 70 230 40
-        M270 110 Q300 75 275 45"
-        fill="none" stroke="#a77b5c"
-        stroke-width="4" stroke-linecap="round"/>
+            <path d="M190 110 Q160 75 195 45
+            M230 110 Q260 70 230 40
+            M270 110 Q300 75 275 45"
+            fill="none" stroke="#a77b5c"
+            stroke-width="4" stroke-linecap="round"/>
 
-        <ellipse cx="100" cy="290" rx="13" ry="23"
-        transform="rotate(35 100 290)"
-        fill="none" stroke="#49352c" stroke-width="2"/>
+            <ellipse cx="100" cy="290" rx="13" ry="23"
+            transform="rotate(35 100 290)"
+            fill="none" stroke="#49352c" stroke-width="2"/>
 
-        <path d="M90 270 Q110 290 105 310"
-        fill="none" stroke="#49352c" stroke-width="2"/>
+            <path d="M90 270 Q110 290 105 310"
+            fill="none" stroke="#49352c" stroke-width="2"/>
 
-        <ellipse cx="380" cy="320" rx="13" ry="23"
-        transform="rotate(-35 380 320)"
-        fill="none" stroke="#49352c" stroke-width="2"/>
+            <ellipse cx="380" cy="320" rx="13" ry="23"
+            transform="rotate(-35 380 320)"
+            fill="none" stroke="#49352c" stroke-width="2"/>
 
-        <path d="M390 300 Q370 320 375 340"
-        fill="none" stroke="#49352c" stroke-width="2"/>
+            <path d="M390 300 Q370 320 375 340"
+            fill="none" stroke="#49352c" stroke-width="2"/>
 
-        <path d="M80 90 L86 105 L102 110
-        L86 115 L80 130 L74 115
-        L58 110 L74 105Z"
-        fill="none" stroke="#a77b5c" stroke-width="2"/>
+            <path d="M80 90 L86 105 L102 110
+            L86 115 L80 130 L74 115
+            L58 110 L74 105Z"
+            fill="none" stroke="#a77b5c" stroke-width="2"/>
 
-    </svg>
+        </svg>
 
     </div>
 
     <div class="reveal">
         <span class="eyebrow">A MOMENT FOR YOURSELF</span>
 
-        <h2>Slow down. Sip. Smile.</h2>
+        <h2>Every cup has a story.</h2>
 
         <p class="description">
             A favourite cup, a familiar face, a good conversation.
@@ -1451,7 +1582,9 @@ footer {
 
         <br>
 
-        <a href="#visit" class="text-link">Come spend a little time with us ↗</a>
+        <a href="#visit" class="text-link">
+            Come spend a little time with us ↗
+        </a>
     </div>
 
 </div>
@@ -1464,12 +1597,14 @@ footer {
 
     <div class="cafe-images reveal">
 
-        <div class="image-frame">
-            <img src="sitting spot.jpg" alt="Panchatantra Café seating">
+        <div class="image-frame sitting-frame">
+            <img src="sitting spot.jpg"
+            alt="Panchatantra Café seating">
         </div>
 
-        <div class="image-frame frame-small">
-            <img src="exterior.jpg" alt="Panchatantra Café exterior">
+        <div class="image-frame frame-small exterior-frame">
+            <img src="exterior.jpg"
+            alt="Panchatantra Café exterior">
         </div>
 
     </div>
@@ -1503,6 +1638,7 @@ footer {
 <div class="container moments-grid">
 
     <div class="moments-text reveal">
+
         <span class="eyebrow">THE BEST MOMENTS ARE SHARED</span>
 
         <h2>Good friends. Good food. Good stories.</h2>
@@ -1516,15 +1652,11 @@ footer {
         <a href="https://wa.me/918516923456"
         class="text-link">Plan your visit ↗</a>
 
-        <svg class="doodle" viewBox="0 0 130 80" style="margin:20px 0">
-            <path d="M65 65 C-5 25 30 -5 65 25
-            C100 -5 135 25 65 65Z"
-            fill="none" stroke="#a77b5c" stroke-width="3"/>
-        </svg>
     </div>
 
     <div class="moments-image image-frame frame-round reveal">
-        <img src="people.jpg" alt="People enjoying Panchatantra Café">
+        <img src="people.jpg"
+        alt="People enjoying Panchatantra Café">
     </div>
 
 </div>
@@ -1536,12 +1668,16 @@ footer {
 <div class="container">
 
     <div class="center-heading reveal">
+
         <span class="eyebrow">LITTLE MOMENTS, BIG MEMORIES</span>
+
         <h2>Life looks better over coffee.</h2>
+
         <p class="description">
             A welcoming space for coffee dates, quiet afternoons
             and conversations that last a little longer.
         </p>
+
     </div>
 
     <div class="gallery-grid reveal">
@@ -1554,7 +1690,8 @@ footer {
 
         <div class="gallery-item">
             <div class="image-frame frame-small">
-                <img src="coffe croissant.jpg" alt="Coffee and croissant">
+                <img src="coffe croissant.jpg"
+                alt="Coffee and croissant">
             </div>
         </div>
 
@@ -1571,7 +1708,7 @@ footer {
         </div>
 
         <div class="gallery-item">
-            <div class="image-frame frame-simple">
+            <div class="image-frame">
                 <img src="sitting spot.jpg" alt="Café seating">
             </div>
         </div>
@@ -1586,8 +1723,9 @@ footer {
 <section class="events" id="events">
 <div class="container events-grid">
 
-    <div class="events-image image-frame reveal">
-        <img src="awards.jpg" alt="Panchatantra Café special moments">
+    <div class="events-image image-frame fit-full reveal">
+        <img src="awards.jpg"
+        alt="Panchatantra Café special moments">
     </div>
 
     <div class="events-text reveal">
@@ -1601,7 +1739,9 @@ footer {
             discover experiences that bring people together.
         </p>
 
-        <a href="Event.html" class="btn">DISCOVER OUR EVENTS ↗</a>
+        <a href="Event.html" class="btn">
+            DISCOVER OUR EVENTS ↗
+        </a>
 
     </div>
 
@@ -1619,6 +1759,7 @@ footer {
     </div>
 
     <div class="review-box reveal">
+
         <div class="stars">★★★★★</div>
 
         <blockquote>
@@ -1650,7 +1791,9 @@ footer {
         <br>
 
         <a href="https://maps.app.goo.gl/RJKehn9R445dQgz3A"
-        target="_blank" class="btn">GET DIRECTIONS ↗</a>
+        target="_blank" rel="noopener" class="btn">
+            GET DIRECTIONS ↗
+        </a>
 
     </div>
 
@@ -1680,7 +1823,9 @@ footer {
             <h4>FOLLOW US</h4>
             <p>
                 <a href="https://www.instagram.com/panchatantrahyd/"
-                target="_blank">Instagram ↗</a>
+                target="_blank" rel="noopener">
+                    Instagram ↗
+                </a>
             </p>
         </div>
 
@@ -1722,16 +1867,18 @@ footer {
 
 <script>
 
-// INTRO
+// INTRO SCREEN
 
 window.addEventListener("load", function() {
     setTimeout(() => {
         document.body.classList.remove("loading");
 
         const intro = document.getElementById("introScreen");
-        if (intro) intro.remove();
 
-    }, 4300);
+        if (intro) {
+            intro.remove();
+        }
+    }, 4100);
 });
 
 // MOBILE MENU
@@ -1751,14 +1898,16 @@ document.querySelectorAll(".nav-links a").forEach(link => {
 const observer = new IntersectionObserver((entries) => {
 
     entries.forEach(entry => {
+
         if (entry.isIntersecting) {
             entry.target.classList.add("visible");
             observer.unobserve(entry.target);
         }
+
     });
 
 }, {
-    threshold: 0.12
+    threshold: 0.10
 });
 
 document.querySelectorAll(".reveal").forEach(element => {
