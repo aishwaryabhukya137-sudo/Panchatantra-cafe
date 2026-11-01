@@ -146,35 +146,21 @@ h2 {
 }
 
 @keyframes bounceLogo {
-    from {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
 @keyframes cupBounce {
-    from {
-        transform: translateY(-5px) rotate(-7deg);
-    }
-    to {
-        transform: translateY(7px) rotate(7deg);
-    }
+    from { transform: translateY(-5px) rotate(-7deg); }
+    to { transform: translateY(7px) rotate(7deg); }
 }
 
 @keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
+    to { opacity: 1; }
 }
 
 @keyframes lineGrow {
-    to {
-        width: 110px;
-    }
+    to { width: 110px; }
 }
 
 @keyframes introExit {
@@ -432,7 +418,7 @@ header {
     margin-top: 6px;
 }
 
-/* CUTE GIRL ILLUSTRATION */
+/* CUTE GIRL */
 
 .girl-section {
     padding: 10px 0 45px;
@@ -468,12 +454,8 @@ header {
 }
 
 @keyframes gentleFloat {
-    0%,100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-7px);
-    }
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-7px); }
 }
 
 /* STORY INTRO */
@@ -616,7 +598,7 @@ header {
     margin-bottom: 20px;
 }
 
-/* CAFE AND SITTING SPOT */
+/* CAFE */
 
 .cafe-grid {
     display: grid;
@@ -694,31 +676,47 @@ header {
     margin-bottom: 22px;
 }
 
-/* GALLERY */
+/* GALLERY - ALL FOUR FRAMES EQUAL */
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: 1.15fr 1fr 1fr;
-    grid-template-rows: 210px 210px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 18px;
+    align-items: stretch;
 }
 
 .gallery-item {
     min-width: 0;
-    min-height: 0;
+    height: 245px;
 }
 
 .gallery-item .image-frame {
+    width: 100%;
     height: 100%;
+    padding: 8px;
+    border-radius: 18px;
+    box-shadow: 0 5px 16px rgba(90,65,45,.08);
 }
 
-.gallery-item:nth-child(1) {
-    grid-row: span 2;
+.gallery-item .image-frame::before {
+    inset: 4px;
+    border-radius: 13px;
+}
+
+.gallery-item .image-frame::after {
+    top: 8px;
+    right: 12px;
+}
+
+.gallery-item .image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
 }
 
 /* EVENTS AND AWARDS */
 
-/* Frame follows the actual image dimensions */
 .events-grid {
     display: grid;
     grid-template-columns: 1.15fr .85fr;
@@ -920,6 +918,15 @@ footer {
         height: 210px;
     }
 
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .gallery-item {
+        height: 230px;
+    }
+
     .events-image {
         max-width: 650px;
         margin: auto;
@@ -1086,19 +1093,28 @@ footer {
         height: 290px;
     }
 
-    /* Four gallery photos: no duplicate sitting spot */
+    /* MOBILE GALLERY - FOUR MATCHING FRAMES */
+
     .gallery-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 180px 180px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
     }
 
-    .gallery-item:nth-child(1) {
-        grid-row: span 2;
+    .gallery-item {
+        height: 165px;
     }
 
     .gallery-item .image-frame {
         padding: 6px;
+        border-radius: 14px;
+    }
+
+    .gallery-item .image-frame::before {
+        border-radius: 10px;
+    }
+
+    .gallery-item .image-frame img {
+        border-radius: 9px;
     }
 
     .events-image {
@@ -1237,353 +1253,289 @@ footer {
 </div>
 </section>
 
-<!-- CUTE GIRL ILLUSTRATION -->
+<!-- NEW CUTE GIRL ILLUSTRATION -->
 
 <section class="girl-section">
 <div class="container">
 
-    <div class="girl-layout reveal">
+<div class="girl-layout reveal">
 
-        <svg class="girl-art"
-        viewBox="0 0 360 390"
-        xmlns="http://www.w3.org/2000/svg"
-        role="img"
-        aria-label="Cute laughing girl wearing a maxi dress and holding a coffee cup">
+<svg class="girl-art"
+viewBox="0 0 360 430"
+xmlns="http://www.w3.org/2000/svg"
+role="img"
+aria-label="Cute slim cartoon girl laughing in a long pastel dress and holding a cup of coffee">
 
-            <!-- Soft background -->
-            <ellipse cx="180" cy="365" rx="112" ry="12"
-            fill="#eadbca"/>
+<defs>
+    <linearGradient id="dressColor" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#e5c9d1"/>
+        <stop offset="100%" stop-color="#cdaebd"/>
+    </linearGradient>
 
-            <circle cx="180" cy="175" r="145"
-            fill="#f7eadc"/>
+    <linearGradient id="hairColor" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#80513b"/>
+        <stop offset="100%" stop-color="#4d3028"/>
+    </linearGradient>
+</defs>
 
-            <circle cx="180" cy="175" r="132"
-            fill="none"
-            stroke="#e5cdb6"
-            stroke-width="1.5"
-            stroke-dasharray="4 7"/>
+<!-- Background -->
+<circle cx="180" cy="195" r="160" fill="#f7eadc"/>
+<circle cx="180" cy="195" r="148"
+fill="none" stroke="#e5cdb6"
+stroke-width="1.5" stroke-dasharray="4 7"/>
 
-            <!-- Hair behind -->
-            <path d="M102 175
-            C76 104 104 45 171 37
-            C239 27 287 77 278 158
-            L272 246
-            C259 277 239 285 220 254
-            L119 260
-            C94 235 88 205 102 175Z"
-            fill="#68402f"/>
+<ellipse cx="180" cy="408" rx="80" ry="9" fill="#eadbca"/>
 
-            <!-- Neck -->
-            <path d="M151 218
-            L149 264
-            Q180 286 211 261
-            L204 218Z"
-            fill="#eab18e"/>
+<!-- Hair behind head -->
+<path d="M116 145
+C105 76 143 40 184 42
+C239 39 268 82 254 154
+L249 211
+Q240 240 222 229
+L132 229
+Q109 206 116 145Z"
+fill="url(#hairColor)"/>
 
-            <!-- Face -->
-            <path d="M112 133
-            C112 86 140 66 181 66
-            C224 66 249 96 246 143
-            L239 192
-            C234 228 210 248 180 248
-            C149 248 124 225 116 193Z"
-            fill="#f5c39f"/>
+<!-- Neck -->
+<path d="M162 217 L160 250
+Q180 267 200 249 L198 217Z"
+fill="#edb994"/>
 
-            <!-- Ears -->
-            <ellipse cx="112" cy="169" rx="12" ry="17"
-            fill="#eab18e"/>
+<!-- Face -->
+<ellipse cx="180" cy="153" rx="61" ry="76" fill="#f4c6a4"/>
 
-            <ellipse cx="246" cy="169" rx="12" ry="17"
-            fill="#eab18e"/>
+<!-- Ears -->
+<ellipse cx="120" cy="160" rx="9" ry="14" fill="#edb994"/>
+<ellipse cx="240" cy="160" rx="9" ry="14" fill="#edb994"/>
 
-            <!-- Hair cap and bangs -->
-            <path d="M96 155
-            C80 83 119 32 181 32
-            C246 31 286 80 269 158
-            C251 143 241 124 236 104
-            C222 122 204 128 185 117
-            C166 136 141 130 128 113
-            C121 133 109 148 96 155Z"
-            fill="#68402f"/>
+<!-- Hair cap -->
+<path d="M117 155
+C102 95 131 42 183 39
+C236 36 264 82 248 154
+C232 136 225 119 223 103
+C207 122 191 125 177 113
+C159 129 139 126 132 108
+C130 129 125 144 117 155Z"
+fill="url(#hairColor)"/>
 
-            <!-- Soft fringe -->
-            <path d="M111 112
-            C132 91 147 93 160 110
-            C171 91 191 91 203 108
-            C218 91 237 96 246 119
-            C225 133 207 131 190 120
-            C172 139 148 136 132 121
-            C124 131 117 134 111 135Z"
-            fill="#68402f"/>
+<!-- Bangs close to eyebrows -->
+<path d="M121 113
+Q140 86 158 107
+Q175 87 191 105
+Q210 85 231 112
+Q218 130 198 122
+Q181 138 162 122
+Q142 136 121 125Z"
+fill="#63402f"/>
 
-            <!-- Side locks -->
-            <path d="M104 132
-            C91 186 104 232 130 257
-            C119 213 126 171 132 140Z"
-            fill="#68402f"/>
+<!-- Side hair -->
+<path d="M120 127
+Q108 187 130 239
+Q140 250 145 238
+Q129 188 139 137Z"
+fill="#63402f"/>
 
-            <path d="M250 132
-            C267 183 252 230 230 255
-            C239 210 232 169 222 139Z"
-            fill="#68402f"/>
+<path d="M239 128
+Q254 188 230 239
+Q219 250 214 238
+Q230 188 220 137Z"
+fill="#63402f"/>
 
-            <!-- Hair highlights -->
-            <path d="M124 72
-            Q151 43 181 48"
-            fill="none"
-            stroke="#a87856"
-            stroke-width="5"
-            stroke-linecap="round"/>
+<!-- Hair shine -->
+<path d="M143 65 Q168 48 190 53"
+fill="none" stroke="#aa795b"
+stroke-width="4" stroke-linecap="round"/>
 
-            <path d="M205 49
-            Q238 56 249 83"
-            fill="none"
-            stroke="#a87856"
-            stroke-width="4"
-            stroke-linecap="round"/>
+<!-- Blush -->
+<ellipse cx="143" cy="176" rx="13" ry="8" fill="#e99b91" opacity=".6"/>
+<ellipse cx="217" cy="176" rx="13" ry="8" fill="#e99b91" opacity=".6"/>
 
-            <!-- Blush -->
-            <ellipse cx="139" cy="183" rx="16" ry="9"
-            fill="#e99b91" opacity=".55"/>
+<!-- Laughing closed eyes -->
+<path d="M145 153 Q156 168 168 153"
+fill="none" stroke="#49352c"
+stroke-width="3.5" stroke-linecap="round"/>
 
-            <ellipse cx="218" cy="183" rx="16" ry="9"
-            fill="#e99b91" opacity=".55"/>
+<path d="M192 153 Q204 168 216 153"
+fill="none" stroke="#49352c"
+stroke-width="3.5" stroke-linecap="round"/>
 
-            <!-- Happy closed eyes -->
-            <path d="M139 161
-            Q151 174 163 160"
-            fill="none"
-            stroke="#49352c"
-            stroke-width="4"
-            stroke-linecap="round"/>
+<!-- Eyelashes -->
+<path d="M147 151 L142 146 M158 153 L158 147
+M205 153 L205 147 M215 151 L220 146"
+stroke="#49352c" stroke-width="2"
+stroke-linecap="round"/>
 
-            <path d="M195 160
-            Q207 174 219 161"
-            fill="none"
-            stroke="#49352c"
-            stroke-width="4"
-            stroke-linecap="round"/>
+<!-- Tiny nose -->
+<path d="M179 163 Q174 174 181 175"
+fill="none" stroke="#c98970"
+stroke-width="2" stroke-linecap="round"/>
 
-            <!-- Eyelashes -->
-            <path d="M143 156 L138 151
-            M153 158 L153 151
-            M212 157 L217 151
-            M203 158 L203 151"
-            stroke="#49352c"
-            stroke-width="2"
-            stroke-linecap="round"/>
+<!-- Big happy laughing smile -->
+<path d="M158 184
+Q180 217 202 184
+Q200 213 180 216
+Q160 211 158 184Z"
+fill="#9e5555"/>
 
-            <!-- Nose -->
-            <path d="M178 168
-            Q172 181 181 183"
-            fill="none"
-            stroke="#c98970"
-            stroke-width="2.5"
-            stroke-linecap="round"/>
+<path d="M163 188 Q180 199 197 188"
+fill="none" stroke="#fff2e5"
+stroke-width="4" stroke-linecap="round"/>
 
-            <!-- Big laughing smile -->
-            <path d="M157 193
-            Q180 222 204 193
-            Q201 218 181 220
-            Q162 216 157 193Z"
-            fill="#9d514f"/>
+<!-- Earrings -->
+<circle cx="120" cy="185" r="4" fill="#e2b96f"/>
+<circle cx="240" cy="185" r="4" fill="#e2b96f"/>
 
-            <path d="M163 196
-            Q181 206 199 196"
-            fill="none"
-            stroke="#fff0df"
-            stroke-width="4"
-            stroke-linecap="round"/>
+<!-- Maxi dress: fitted waist and long flowing skirt -->
+<path d="M157 248
+Q140 251 130 269
+L111 302
+Q102 335 91 392
+Q180 414 269 392
+Q258 335 249 302
+L230 269
+Q220 251 203 248
+L193 263
+Q180 273 167 263Z"
+fill="url(#dressColor)"/>
 
-            <!-- Earrings -->
-            <circle cx="111" cy="194" r="5"
-            fill="#e1b65e"/>
+<!-- Dress neckline -->
+<path d="M157 248 Q180 278 203 248"
+fill="none" stroke="#b88fa0" stroke-width="3"/>
 
-            <circle cx="247" cy="194" r="5"
-            fill="#e1b65e"/>
+<!-- Waist seam -->
+<path d="M112 302 Q180 315 248 302"
+fill="none" stroke="#b88fa0" stroke-width="3"/>
 
-            <!-- Maxi dress body -->
-            <path d="M148 260
-            C126 261 105 277 96 303
-            L76 359
-            Q180 375 284 359
-            L264 303
-            C255 277 234 261 212 260
-            L195 276
-            L165 276Z"
-            fill="#b7c9ae"/>
+<!-- Dress folds -->
+<path d="M145 309 Q135 352 130 397"
+fill="none" stroke="#b58fa0" stroke-width="2"/>
 
-            <!-- Dress neckline -->
-            <path d="M148 260
-            Q180 300 212 260"
-            fill="none"
-            stroke="#879f80"
-            stroke-width="4"/>
+<path d="M180 312 Q174 352 180 404"
+fill="none" stroke="#b58fa0" stroke-width="2"/>
 
-            <!-- Dress sleeves -->
-            <path d="M130 267
-            Q109 269 99 295
-            L124 306
-            L145 276Z"
-            fill="#c4d2b8"/>
+<path d="M215 309 Q225 352 230 397"
+fill="none" stroke="#b58fa0" stroke-width="2"/>
 
-            <path d="M230 267
-            Q251 269 261 295
-            L236 306
-            L215 276Z"
-            fill="#c4d2b8"/>
+<!-- Little dress flowers -->
+<g fill="#fff3e7">
+    <circle cx="150" cy="335" r="3"/>
+    <circle cx="156" cy="341" r="3"/>
+    <circle cx="144" cy="341" r="3"/>
+    <circle cx="150" cy="347" r="3"/>
 
-            <!-- Maxi dress folds -->
-            <path d="M121 307
-            Q135 333 121 361"
-            fill="none"
-            stroke="#91a88a"
-            stroke-width="2"/>
+    <circle cx="210" cy="355" r="3"/>
+    <circle cx="216" cy="361" r="3"/>
+    <circle cx="204" cy="361" r="3"/>
+    <circle cx="210" cy="367" r="3"/>
+</g>
 
-            <path d="M180 291
-            Q169 326 180 366"
-            fill="none"
-            stroke="#91a88a"
-            stroke-width="2"/>
+<!-- Left arm relaxed -->
+<path d="M132 270
+Q119 277 116 297
+L105 330
+Q103 340 112 342
+Q120 342 123 330
+L143 291Z"
+fill="#f4c6a4"/>
 
-            <path d="M239 307
-            Q225 333 240 361"
-            fill="none"
-            stroke="#91a88a"
-            stroke-width="2"/>
+<!-- Right arm reaching for coffee -->
+<path d="M229 270
+Q245 276 251 292
+L267 266
+Q273 256 282 263
+Q289 269 282 280
+L262 317
+Q254 327 244 315
+L218 290Z"
+fill="#f4c6a4"/>
 
-            <!-- Dress little flowers -->
-            <g fill="#fff0dc">
-                <circle cx="145" cy="318" r="3"/>
-                <circle cx="151" cy="324" r="3"/>
-                <circle cx="139" cy="324" r="3"/>
-                <circle cx="145" cy="330" r="3"/>
+<!-- Coffee cup -->
+<path d="M254 224
+L310 224
+L305 274
+Q282 285 259 274Z"
+fill="#e9a9a6"/>
 
-                <circle cx="218" cy="318" r="3"/>
-                <circle cx="224" cy="324" r="3"/>
-                <circle cx="212" cy="324" r="3"/>
-                <circle cx="218" cy="330" r="3"/>
-            </g>
+<!-- Coffee cup rim -->
+<ellipse cx="282" cy="225" rx="28" ry="6" fill="#754a35"/>
+<ellipse cx="282" cy="225" rx="21" ry="3.5" fill="#bd8964"/>
 
-            <!-- Arm holding cup -->
-            <path d="M229 278
-            Q248 273 261 293
-            L278 263
-            Q284 251 294 256
-            Q302 262 294 275
-            L274 318
-            Q264 334 248 321
-            L221 303Z"
-            fill="#f5c39f"/>
+<!-- Cup handle -->
+<path d="M309 236
+Q333 227 333 249
+Q330 269 306 262"
+fill="none" stroke="#c77e77"
+stroke-width="7" stroke-linecap="round"/>
 
-            <!-- Other arm -->
-            <path d="M121 280
-            Q105 291 111 309
-            Q117 320 131 312
-            L150 290Z"
-            fill="#f5c39f"/>
+<!-- Cup heart -->
+<path d="M282 242
+C274 233 264 244 282 258
+C300 244 290 233 282 242Z"
+fill="#fff4e9"/>
 
-            <!-- Coffee cup -->
-            <path d="M247 222
-            L311 222
-            L304 277
-            Q279 292 254 277Z"
-            fill="#e8a6a0"/>
+<!-- Fingers around cup -->
+<path d="M257 262 Q265 254 272 261
+M257 269 Q264 263 271 269"
+fill="none" stroke="#e7aa8a"
+stroke-width="3" stroke-linecap="round"/>
 
-            <!-- Cup handle -->
-            <path d="M308 233
-            Q335 222 334 247
-            Q330 269 305 264"
-            fill="none"
-            stroke="#c77e77"
-            stroke-width="8"
-            stroke-linecap="round"/>
+<!-- Steam -->
+<path d="M269 211 Q258 198 270 186"
+fill="none" stroke="#c69a78"
+stroke-width="2.5" stroke-linecap="round"/>
 
-            <!-- Coffee surface -->
-            <ellipse cx="279" cy="223" rx="32" ry="7"
-            fill="#754a35"/>
+<path d="M289 211 Q300 198 289 186"
+fill="none" stroke="#c69a78"
+stroke-width="2.5" stroke-linecap="round"/>
 
-            <ellipse cx="279" cy="223" rx="24" ry="4"
-            fill="#b9825c"/>
+<!-- Little hair bow -->
+<path d="M229 73
+Q210 54 208 73
+Q209 87 229 82
+Q247 94 250 78
+Q251 62 229 73Z"
+fill="#e6b6b7"/>
 
-            <!-- Cup heart decoration -->
-            <path d="M279 242
-            C270 232 259 243 279 258
-            C299 243 288 232 279 242Z"
-            fill="#fff0df"/>
+<circle cx="229" cy="78" r="4" fill="#c98d98"/>
 
-            <!-- Steam -->
-            <path d="M262 208
-            Q248 194 262 181"
-            fill="none"
-            stroke="#c69a78"
-            stroke-width="3"
-            stroke-linecap="round"/>
+<!-- Floating stars -->
+<path d="M55 112 L61 126 L75 132
+L61 138 L55 152 L49 138
+L35 132 L49 126Z"
+fill="#e5b85f"/>
 
-            <path d="M282 208
-            Q296 194 283 181"
-            fill="none"
-            stroke="#c69a78"
-            stroke-width="3"
-            stroke-linecap="round"/>
+<path d="M299 95 L304 107 L316 112
+L304 117 L299 129 L294 117
+L282 112 L294 107Z"
+fill="#d99b98"/>
 
-            <!-- Cute stars -->
-            <path d="M54 112
-            L60 126 L74 132
-            L60 138 L54 152
-            L48 138 L34 132
-            L48 126Z"
-            fill="#e5b85f"/>
+<path d="M67 247 L71 256 L80 260
+L71 264 L67 273 L63 264
+L54 260 L63 256Z"
+fill="#d99b98"/>
 
-            <path d="M300 86
-            L305 98 L317 103
-            L305 108 L300 120
-            L295 108 L283 103
-            L295 98Z"
-            fill="#d99b98"/>
+<circle cx="307" cy="327" r="4" fill="#e5b85f"/>
+<circle cx="85" cy="190" r="3" fill="#e5b85f"/>
 
-            <path d="M63 220
-            Q69 208 75 220
-            Q87 226 75 232
-            Q69 244 63 232
-            Q51 226 63 220Z"
-            fill="#e9b8aa"/>
+</svg>
 
-            <circle cx="310" cy="315" r="5"
-            fill="#e5b85f"/>
+<div class="girl-copy">
+    <span class="eyebrow">A MOMENT FOR YOURSELF</span>
 
-            <!-- Little leaves -->
-            <path d="M61 281
-            Q41 260 37 281
-            Q47 297 61 281Z"
-            fill="#a8bd9d"/>
+    <h2>Slow down.<br>Sip. Smile.</h2>
 
-            <path d="M61 281
-            Q57 293 51 300"
-            stroke="#809a77"
-            stroke-width="2"
-            fill="none"/>
+    <p class="description">
+        A favourite cup, a familiar face, a good conversation.
+        Sometimes the smallest moments become the stories
+        we remember the longest.
+    </p>
 
-        </svg>
+    <a href="#visit" class="text-link">
+        Spend a little time with us ↗
+    </a>
+</div>
 
-        <div class="girl-copy">
-            <span class="eyebrow">A MOMENT FOR YOURSELF</span>
-
-            <h2>Slow down.<br>Sip. Smile.</h2>
-
-            <p class="description">
-                A favourite cup, a familiar face, a good conversation.
-                Sometimes the smallest moments become the stories
-                we remember the longest.
-            </p>
-
-            <a href="#visit" class="text-link">
-                Spend a little time with us ↗
-            </a>
-        </div>
-
-    </div>
-
+</div>
 </div>
 </section>
 
@@ -1625,8 +1577,7 @@ footer {
 <div class="container about-grid">
 
     <div class="about-image image-frame reveal">
-        <img src="friendship.jpg"
-        alt="Friends enjoying Panchatantra Café">
+        <img src="friendship.jpg" alt="Friends enjoying Panchatantra Café">
     </div>
 
     <div class="about-text reveal">
@@ -1841,14 +1792,13 @@ footer {
     </div>
 
     <div class="moments-image image-frame frame-round reveal">
-        <img src="people.jpg"
-        alt="People enjoying Panchatantra Café">
+        <img src="people.jpg" alt="People enjoying Panchatantra Café">
     </div>
 
 </div>
 </section>
 
-<!-- GALLERY: FOUR PHOTOS ONLY -->
+<!-- GALLERY -->
 
 <section class="gallery" id="gallery">
 <div class="container">
@@ -1873,20 +1823,19 @@ footer {
         </div>
 
         <div class="gallery-item">
-            <div class="image-frame frame-small">
-                <img src="coffe croissant.jpg"
-                alt="Coffee and croissant">
+            <div class="image-frame">
+                <img src="coffe croissant.jpg" alt="Coffee and croissant">
             </div>
         </div>
 
         <div class="gallery-item">
-            <div class="image-frame frame-round">
+            <div class="image-frame">
                 <img src="food.jpg" alt="Food">
             </div>
         </div>
 
         <div class="gallery-item">
-            <div class="image-frame frame-small">
+            <div class="image-frame">
                 <img src="dessert.jpg" alt="Desserts">
             </div>
         </div>
@@ -2078,9 +2027,7 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
 
         if (entry.isIntersecting) {
-
             entry.target.classList.add("visible");
-
             observer.unobserve(entry.target);
         }
 
