@@ -2,24 +2,22 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#fbf7ef">
 
-<title>Panchatantra Café | Where Every Bite Tells a Story</title>
+<title>Panchatantra Café | Begumpet</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 
 <style>
 :root {
     --cream: #fbf7ef;
-    --paper: #fbf7ef;
-    --brown: #392a22;
-    --muted: #88776b;
-    --line: #ded2c2;
-    --accent: #a66e4e;
-    --dark: #392a22;
+    --cream2: #f5eee3;
+    --brown: #443329;
+    --muted: #8b796b;
+    --line: #e5d9c9;
+    --accent: #a77b5c;
 }
 
 * {
@@ -39,9 +37,13 @@ body {
     overflow-x: hidden;
 }
 
+body.loading {
+    overflow: hidden;
+}
+
 a {
-    color: inherit;
     text-decoration: none;
+    color: inherit;
 }
 
 img {
@@ -50,54 +52,144 @@ img {
     object-fit: cover;
 }
 
-button {
-    font: inherit;
+.container {
+    width: min(1160px, 90%);
+    margin: auto;
 }
 
-.container {
-    width: min(1180px, 90%);
-    margin: auto;
+.serif {
+    font-family: 'Playfair Display', serif;
 }
 
 .eyebrow {
     font-size: 10px;
     letter-spacing: 3px;
-    font-weight: 700;
-    color: var(--accent);
     text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
 }
 
-.section-title {
+h2 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(38px, 5vw, 62px);
-    line-height: 1.1;
     font-weight: 500;
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1.12;
 }
 
-.section-description {
+.description {
     color: var(--muted);
-    font-size: 14px;
     line-height: 1.9;
-    max-width: 520px;
+    font-size: 14px;
 }
 
-/* NAVIGATION */
+.btn {
+    display: inline-block;
+    background: var(--brown);
+    color: var(--cream);
+    padding: 15px 24px;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    transition: .35s;
+}
 
-header {
-    height: 82px;
+.btn:hover {
+    background: var(--accent);
+    transform: translateY(-3px);
+}
+
+.text-link {
+    font-size: 12px;
+    border-bottom: 1px solid var(--brown);
+    padding-bottom: 5px;
+}
+
+/* INTRO SCREEN */
+
+.intro-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 5000;
+    background: var(--cream);
     display: flex;
     align-items: center;
-    border-bottom: 1px solid var(--line);
-    background: var(--cream);
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    animation: introExit 1.2s ease 3.1s forwards;
+}
+
+.intro-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 8vw, 76px);
+    animation: bounceLogo 1s cubic-bezier(.34,1.56,.64,1);
+}
+
+.intro-icon {
+    font-size: 45px;
+    margin-bottom: 18px;
+    display: inline-block;
+    animation: cupBounce 1.2s ease infinite alternate;
+}
+
+.intro-subtitle {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 4px;
+    margin-top: 15px;
+    opacity: 0;
+    animation: fadeIn .8s ease .7s forwards;
+}
+
+.intro-line {
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    margin-top: 25px;
+    animation: lineGrow 1.2s ease 1s forwards;
+}
+
+@keyframes bounceLogo {
+    0% { transform: translateY(-80px) scale(.7); opacity: 0; }
+    65% { transform: translateY(12px) scale(1.06); opacity: 1; }
+    100% { transform: translateY(0) scale(1); }
+}
+
+@keyframes cupBounce {
+    from { transform: translateY(-5px) rotate(-7deg); }
+    to { transform: translateY(7px) rotate(7deg); }
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+@keyframes lineGrow {
+    to { width: 110px; }
+}
+
+@keyframes introExit {
+    0% { opacity: 1; transform: scale(1); }
+    65% { opacity: 1; transform: scale(1.08); }
+    100% { opacity: 0; transform: scale(1.2); visibility: hidden; }
+}
+
+/* HEADER */
+
+header {
+    height: 80px;
     position: sticky;
     top: 0;
     z-index: 1000;
+    background: rgba(251,247,239,.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
 }
 
 .nav {
+    height: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 }
 
 .logo {
@@ -107,36 +199,33 @@ header {
 }
 
 .logo img {
-    width: 48px;
-    height: 48px;
-    object-fit: contain;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
+    object-fit: contain;
 }
 
 .logo-name {
     font-family: 'Playfair Display', serif;
     font-size: 22px;
-    font-weight: 600;
 }
 
 .logo small {
     display: block;
-    font-family: 'DM Sans', sans-serif;
     font-size: 8px;
     letter-spacing: 3px;
-    margin-top: 2px;
 }
 
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 25px;
     list-style: none;
 }
 
 .nav-links a {
-    font-size: 12px;
     color: var(--muted);
+    font-size: 11px;
     transition: .3s;
 }
 
@@ -144,192 +233,160 @@ header {
     color: var(--accent);
 }
 
-.nav-button {
-    border: 1px solid var(--brown);
-    padding: 12px 20px;
-    font-size: 11px;
-    letter-spacing: 1px;
-    transition: .3s;
-}
-
-.nav-button:hover {
-    background: var(--brown);
-    color: var(--cream);
-}
-
 .menu-toggle {
     display: none;
     background: none;
     border: none;
-    font-size: 25px;
     color: var(--brown);
+    font-size: 25px;
 }
 
 /* HERO */
 
 .hero {
-    padding: 75px 0 55px;
-    min-height: 680px;
-    display: flex;
-    align-items: center;
-    position: relative;
+    padding: 70px 0 45px;
 }
 
 .hero-grid {
     display: grid;
-    grid-template-columns: 1fr 1.1fr;
-    align-items: center;
+    grid-template-columns: .9fr 1.1fr;
     gap: 35px;
-}
-
-.hero-text {
-    padding: 15px 0;
+    align-items: center;
 }
 
 .hero-text h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(54px, 7vw, 88px);
+    font-size: clamp(55px, 7vw, 88px);
+    line-height: 1.02;
     font-weight: 500;
-    line-height: 1.04;
-    margin: 23px 0;
+    margin: 22px 0;
 }
 
-.hero-text h1 span {
-    font-style: italic;
+.hero-text h1 em {
     color: var(--accent);
 }
 
 .hero-text p {
-    color: var(--muted);
-    line-height: 1.9;
     max-width: 390px;
     font-size: 14px;
+    color: var(--muted);
+    line-height: 1.9;
 }
 
 .hero-actions {
     display: flex;
     align-items: center;
     gap: 25px;
-    margin-top: 32px;
+    margin-top: 30px;
 }
 
-.primary-btn {
-    display: inline-block;
-    background: var(--brown);
-    color: var(--cream);
-    padding: 15px 24px;
-    font-size: 11px;
-    letter-spacing: 1px;
-    transition: .3s;
-}
-
-.primary-btn:hover {
-    background: var(--accent);
-}
-
-.text-link {
-    font-size: 12px;
-    border-bottom: 1px solid var(--brown);
-    padding-bottom: 5px;
-}
-
-.hero-art {
-    min-height: 480px;
+.hero-visual {
     position: relative;
+    min-height: 470px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Hand-drawn coffee girl */
-
-.girl-illustration {
+.girl-svg {
     width: 100%;
-    max-width: 570px;
-    height: auto;
-    overflow: visible;
+    max-width: 500px;
+    animation: gentleFloat 5s ease-in-out infinite;
 }
 
-.art-note {
+@keyframes gentleFloat {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-9px); }
+}
+
+.hero-sticker {
     position: absolute;
-    right: 0;
-    bottom: 15px;
+    top: 12%;
+    right: 5%;
     font-family: 'Playfair Display', serif;
     font-style: italic;
-    font-size: 16px;
-    transform: rotate(-7deg);
     color: var(--accent);
+    transform: rotate(8deg);
+    font-size: 17px;
 }
 
 .hero-bottom {
     border-top: 1px solid var(--line);
-    padding-top: 23px;
-    margin-top: 45px;
+    margin-top: 35px;
+    padding-top: 20px;
     display: flex;
     justify-content: space-between;
-    color: var(--muted);
     font-size: 9px;
     letter-spacing: 2px;
+    color: var(--muted);
 }
 
-/* INTRO */
+/* HOMEPAGE CAFE PHOTO */
 
-.intro {
+.home-photo {
+    padding: 40px 0 100px;
+}
+
+.home-photo-frame {
+    position: relative;
+    height: 510px;
+    overflow: hidden;
+}
+
+.home-photo-frame img {
+    height: 100%;
+    transition: transform 1.2s;
+}
+
+.home-photo-frame:hover img {
+    transform: scale(1.04);
+}
+
+.photo-label {
+    position: absolute;
+    left: 35px;
+    bottom: 30px;
+    background: var(--cream);
+    padding: 22px 28px;
+    max-width: 310px;
+}
+
+.photo-label h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    font-weight: 500;
+}
+
+.photo-label p {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 7px;
+}
+
+/* STORY INTRO */
+
+.story-intro {
     padding: 100px 0;
+    text-align: center;
     border-top: 1px solid var(--line);
 }
 
-.intro-content {
-    text-align: center;
-    max-width: 750px;
+.story-intro h2 {
+    max-width: 720px;
+    margin: 20px auto;
+}
+
+.story-intro p {
+    max-width: 620px;
     margin: auto;
 }
 
-.intro-content h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(36px, 5vw, 58px);
-    font-weight: 500;
-    margin: 20px 0;
-}
+/* ILLUSTRATION DIVIDERS */
 
-.intro-content p {
-    color: var(--muted);
-    font-size: 14px;
-    line-height: 2;
-}
-
-/* ILLUSTRATED SHOP */
-
-.shop-section {
-    padding: 80px 0 110px;
-    border-top: 1px solid var(--line);
-}
-
-.shop-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 70px;
-    align-items: center;
-}
-
-.shop-art {
-    width: 100%;
-    max-width: 550px;
-}
-
-.shop-text h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(40px, 5vw, 65px);
-    line-height: 1.1;
-    font-weight: 500;
-    margin: 20px 0;
-}
-
-.shop-text p {
-    font-size: 14px;
-    line-height: 2;
-    color: var(--muted);
-    margin-bottom: 25px;
+.doodle {
+    width: 100px;
+    height: 80px;
+    margin: 25px auto;
 }
 
 /* ABOUT */
@@ -347,32 +404,29 @@ header {
 }
 
 .about-image {
-    height: 470px;
-    overflow: hidden;
+    position: relative;
 }
 
 .about-image img {
-    height: 100%;
-    transition: transform .7s;
+    height: 440px;
 }
 
-.about-image:hover img {
-    transform: scale(1.04);
+.about-image::after {
+    content: "♡";
+    position: absolute;
+    bottom: -20px;
+    right: -15px;
+    font-size: 60px;
+    color: var(--accent);
+    font-family: Georgia, serif;
 }
 
 .about-text h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(40px, 5vw, 60px);
-    font-weight: 500;
-    line-height: 1.1;
     margin: 20px 0;
 }
 
 .about-text p {
-    color: var(--muted);
-    font-size: 14px;
-    line-height: 2;
-    margin-bottom: 28px;
+    margin-bottom: 25px;
 }
 
 /* EXPERIENCE */
@@ -387,105 +441,149 @@ header {
     margin-bottom: 55px;
 }
 
-.center-heading p {
-    margin: 17px auto 0;
+.center-heading h2 {
+    margin: 17px auto;
 }
 
-.experience-grid {
+.center-heading p {
+    margin: auto;
+    max-width: 570px;
+}
+
+.menu-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+    gap: 25px;
 }
 
-.experience-card {
+.menu-card {
     text-align: center;
 }
 
-.experience-card img {
-    height: 290px;
-    margin-bottom: 22px;
-    transition: .5s;
+.menu-card img {
+    height: 270px;
+    transition: transform .7s;
 }
 
-.experience-card:hover img {
-    transform: translateY(-7px);
+.menu-card:hover img {
+    transform: scale(1.035);
 }
 
-.experience-card h3 {
+.menu-card h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 25px;
+    font-size: 26px;
     font-weight: 500;
-    margin-bottom: 10px;
+    margin: 22px 0 10px;
 }
 
-.experience-card p {
+.menu-card p {
+    color: var(--muted);
     font-size: 12px;
     line-height: 1.8;
-    color: var(--muted);
-    max-width: 280px;
-    margin: auto;
 }
 
-/* CAFÉ */
+/* HAND DRAWN COFFEE SECTION */
+
+.coffee-story {
+    padding: 90px 0;
+    border-top: 1px solid var(--line);
+}
+
+.coffee-story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.coffee-doodle {
+    width: 100%;
+    max-width: 480px;
+}
+
+.coffee-story h2 {
+    margin: 20px 0;
+}
+
+.coffee-story p {
+    margin-bottom: 25px;
+}
+
+/* CAFE */
 
 .cafe {
-    padding: 90px 0;
+    padding: 100px 0;
     border-top: 1px solid var(--line);
 }
 
 .cafe-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 65px;
+    gap: 60px;
     align-items: center;
 }
 
 .cafe-images {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 15px;
+    gap: 14px;
     align-items: center;
 }
 
 .cafe-images img:first-child {
-    height: 350px;
-    margin-top: 35px;
+    height: 340px;
 }
 
 .cafe-images img:last-child {
-    height: 290px;
-    margin-bottom: 35px;
+    height: 270px;
+    margin-top: 45px;
 }
 
 .cafe-text h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(40px, 5vw, 58px);
-    line-height: 1.1;
-    font-weight: 500;
     margin: 20px 0;
-}
-
-.cafe-text p {
-    color: var(--muted);
-    font-size: 14px;
-    line-height: 2;
 }
 
 .cafe-list {
     list-style: none;
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
 .cafe-list li {
     padding: 13px 0;
     border-bottom: 1px solid var(--line);
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .cafe-list li::before {
     content: "✳";
     color: var(--accent);
     margin-right: 12px;
+}
+
+/* BOOKS AND FRIENDS */
+
+.moments {
+    padding: 100px 0;
+    border-top: 1px solid var(--line);
+}
+
+.moments-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.moments-grid img {
+    height: 410px;
+}
+
+.moments-text h2 {
+    margin: 20px 0;
+}
+
+.moments-text p {
+    margin-bottom: 25px;
 }
 
 /* GALLERY */
@@ -498,17 +596,17 @@ header {
 .gallery-grid {
     display: grid;
     grid-template-columns: 1.2fr 1fr 1fr;
-    grid-template-rows: 230px 230px;
+    grid-template-rows: 220px 220px;
     gap: 15px;
 }
 
 .gallery-grid img {
     height: 100%;
-    transition: .4s;
+    transition: .6s;
 }
 
 .gallery-grid img:hover {
-    transform: scale(1.02);
+    transform: scale(1.025);
 }
 
 .gallery-grid img:first-child {
@@ -526,37 +624,26 @@ header {
     border-top: 1px solid var(--line);
 }
 
-.event-grid {
+.events-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 55px;
+    gap: 60px;
     align-items: center;
 }
 
-.event-image {
+.events-grid img {
     height: 390px;
 }
 
-.event-image img {
-    height: 100%;
-}
-
-.event-text h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(40px, 5vw, 58px);
-    font-weight: 500;
-    line-height: 1.1;
+.events-text h2 {
     margin: 20px 0;
 }
 
-.event-text p {
-    color: var(--muted);
-    line-height: 2;
-    font-size: 14px;
+.events-text p {
     margin-bottom: 25px;
 }
 
-/* REVIEWS */
+/* REVIEW */
 
 .reviews {
     padding: 90px 0;
@@ -565,16 +652,16 @@ header {
 }
 
 .review-box {
-    max-width: 720px;
-    margin: auto;
-    padding: 45px 30px;
     border: 1px solid var(--line);
+    padding: 45px 30px;
+    max-width: 730px;
+    margin: auto;
 }
 
 .stars {
-    letter-spacing: 5px;
     color: var(--accent);
-    margin-bottom: 25px;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
 }
 
 .review-box blockquote {
@@ -582,14 +669,6 @@ header {
     font-size: clamp(23px, 3vw, 34px);
     line-height: 1.5;
     font-style: italic;
-}
-
-.review-box small {
-    display: block;
-    margin-top: 25px;
-    color: var(--muted);
-    letter-spacing: 2px;
-    font-size: 10px;
 }
 
 /* VISIT */
@@ -606,16 +685,7 @@ header {
 }
 
 .visit h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(42px, 5vw, 65px);
-    font-weight: 500;
     margin: 20px 0;
-}
-
-.visit p {
-    font-size: 14px;
-    line-height: 2;
-    color: var(--muted);
 }
 
 .visit-details {
@@ -624,14 +694,16 @@ header {
     gap: 30px;
 }
 
-.detail h4 {
+.visit-details h4 {
     font-size: 10px;
     letter-spacing: 2px;
     margin-bottom: 12px;
 }
 
-.detail p {
-    font-size: 13px;
+.visit-details p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.9;
 }
 
 /* FOOTER */
@@ -639,24 +711,22 @@ header {
 footer {
     border-top: 1px solid var(--line);
     padding: 45px 0 25px;
-    background: var(--cream);
 }
 
 .footer-top {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    gap: 30px;
-    padding-bottom: 35px;
+    gap: 25px;
+    padding-bottom: 30px;
 }
 
-.footer-brand h3 {
+.footer-top h3 {
     font-family: 'Playfair Display', serif;
     font-size: 28px;
     font-weight: 500;
 }
 
-.footer-brand p {
+.footer-top p {
     font-size: 11px;
     color: var(--muted);
     margin-top: 8px;
@@ -678,16 +748,16 @@ footer {
     padding-top: 20px;
     display: flex;
     justify-content: space-between;
-    font-size: 10px;
     color: var(--muted);
+    font-size: 10px;
 }
 
-/* ANIMATIONS */
+/* SCROLL ANIMATIONS */
 
 .reveal {
     opacity: 0;
-    transform: translateY(25px);
-    transition: opacity .8s ease, transform .8s ease;
+    transform: translateY(35px);
+    transition: opacity .9s ease, transform .9s ease;
 }
 
 .reveal.visible {
@@ -695,59 +765,46 @@ footer {
     transform: translateY(0);
 }
 
-/* MOBILE */
+/* FLOATING DECORATION */
 
-@media(max-width: 850px) {
+.floating-star {
+    animation: starFloat 4s ease-in-out infinite;
+}
 
-    .nav-links {
-        gap: 15px;
-    }
+@keyframes starFloat {
+    0%,100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-12px) rotate(12deg); }
+}
 
+/* RESPONSIVE */
+
+@media(max-width:850px) {
     .hero-grid,
-    .shop-grid,
     .about-grid,
+    .coffee-story-grid,
     .cafe-grid,
-    .event-grid,
+    .moments-grid,
+    .events-grid,
     .visit-grid {
         grid-template-columns: 1fr;
     }
 
-    .hero {
-        padding-top: 55px;
-    }
-
-    .hero-art {
+    .hero-visual {
         min-height: 350px;
     }
 
-    .shop-grid,
-    .about-grid,
-    .cafe-grid,
-    .event-grid {
-        gap: 35px;
+    .menu-grid {
+        gap: 15px;
     }
 
-    .about-image {
-        height: 350px;
-    }
-
-    .experience-card img {
-        height: 230px;
-    }
-
-    .gallery-grid {
-        grid-template-rows: 180px 180px;
+    .menu-card img {
+        height: 210px;
     }
 }
 
-@media(max-width: 600px) {
-
+@media(max-width:600px) {
     header {
         height: 70px;
-    }
-
-    .logo-name {
-        font-size: 19px;
     }
 
     .menu-toggle {
@@ -757,7 +814,7 @@ footer {
     .nav-links {
         display: none;
         position: absolute;
-        top: 69px;
+        top: 70px;
         left: 0;
         width: 100%;
         background: var(--cream);
@@ -772,47 +829,40 @@ footer {
         display: flex;
     }
 
-    .nav-button {
-        display: none;
-    }
-
     .hero {
-        padding: 55px 0 35px;
+        padding-top: 50px;
     }
 
     .hero-text h1 {
-        font-size: 55px;
+        font-size: 58px;
     }
 
-    .hero-art {
+    .hero-visual {
         min-height: 280px;
     }
 
     .hero-bottom {
         flex-direction: column;
         gap: 12px;
-        font-size: 8px;
     }
 
-    .intro,
-    .shop-section,
-    .about,
-    .experience,
-    .cafe,
-    .gallery,
-    .events,
-    .reviews,
-    .visit {
-        padding: 70px 0;
+    .home-photo-frame {
+        height: 340px;
     }
 
-    .experience-grid {
+    .photo-label {
+        left: 15px;
+        bottom: 15px;
+        padding: 15px;
+    }
+
+    .menu-grid {
         grid-template-columns: 1fr;
-        gap: 35px;
+        gap: 40px;
     }
 
-    .experience-card img {
-        height: 270px;
+    .menu-card img {
+        height: 260px;
     }
 
     .cafe-images img:first-child {
@@ -820,12 +870,12 @@ footer {
     }
 
     .cafe-images img:last-child {
-        height: 220px;
+        height: 210px;
     }
 
     .gallery-grid {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 190px 190px 190px;
+        grid-template-rows: 180px 180px 180px;
     }
 
     .gallery-grid img:first-child {
@@ -836,474 +886,289 @@ footer {
         grid-column: span 2;
     }
 
-    .event-image {
+    .moments-grid img,
+    .events-grid img {
         height: 280px;
-    }
-
-    .visit-details {
-        gap: 22px;
     }
 
     .footer-top,
     .footer-bottom {
         flex-direction: column;
-        align-items: flex-start;
+        gap: 20px;
     }
 
-    .footer-links {
-        gap: 15px;
+    .visit-details {
+        gap: 20px;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
     }
 }
 </style>
 </head>
 
-<body>
+<body class="loading">
+
+<!-- INTRO ANIMATION -->
+
+<div class="intro-screen" id="introScreen">
+    <div class="intro-icon">☕</div>
+    <div class="intro-logo">Panchatantra Café</div>
+    <div class="intro-subtitle">WHERE EVERY BITE TELLS A STORY</div>
+    <div class="intro-line"></div>
+</div>
+
 
 <!-- HEADER -->
 
 <header>
-    <div class="container nav">
+<div class="container nav">
 
-        <a href="#" class="logo">
-            <img src="logooo.jpg" alt="Panchatantra Café logo">
-            <div>
-                <div class="logo-name">Panchatantra</div>
-                <small>CAFÉ · BEGUMPET</small>
-            </div>
-        </a>
+    <a href="#" class="logo">
+        <img src="logooo.jpg" alt="Panchatantra Café">
+        <div>
+            <div class="logo-name">Panchatantra</div>
+            <small>CAFÉ · BEGUMPET</small>
+        </div>
+    </a>
 
-        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#about">Our Story</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#gallery">Moments</a></li>
-            <li><a href="Event.html">Events</a></li>
-            <li><a href="#visit">Visit Us</a></li>
-        </ul>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#cafe">The Café</a></li>
+        <li><a href="#gallery">Moments</a></li>
+        <li><a href="Event.html">Events</a></li>
+        <li><a href="#visit">Visit</a></li>
+    </ul>
 
-        <a class="nav-button" href="https://wa.me/918516923456">
-            SAY HELLO ↗
-        </a>
+    <a href="https://wa.me/918516923456" class="text-link">
+        SAY HELLO ↗
+    </a>
 
-    </div>
+</div>
 </header>
 
 
-<!-- HERO SECTION -->
+<!-- HERO -->
 
 <section class="hero">
 <div class="container">
 
-    <div class="hero-grid">
+<div class="hero-grid">
 
-        <div class="hero-text reveal">
+    <div class="hero-text reveal">
+        <span class="eyebrow">A LITTLE WORLD OF STORIES · BEGUMPET</span>
 
-            <span class="eyebrow">A LITTLE WORLD OF STORIES · BEGUMPET</span>
+        <h1>
+            A little<br>
+            world of<br>
+            <em>stories.</em>
+        </h1>
 
-            <h1>
-                A little<br>
-                world of<br>
-                <span>stories.</span>
-            </h1>
+        <p>
+            Where every bite tells a story. Come for the coffee,
+            stay for the conversations and leave with beautiful memories.
+        </p>
 
-            <p>
-                Where every bite tells a story.
-                Come for the coffee, stay for the conversations,
-                and leave with beautiful memories.
-            </p>
-
-            <div class="hero-actions">
-                <a href="#menu" class="primary-btn">EXPLORE OUR MENU ↗</a>
-                <a href="#about" class="text-link">Our Story</a>
-            </div>
-
+        <div class="hero-actions">
+            <a href="#menu" class="btn">EXPLORE OUR MENU ↗</a>
+            <a href="#about" class="text-link">Our Story</a>
         </div>
+    </div>
 
 
-        <!-- ORIGINAL GIRL WITH COFFEE ILLUSTRATION -->
+    <!-- GIRL ILLUSTRATION -->
 
-        <div class="hero-art reveal">
+    <div class="hero-visual reveal">
 
-        <svg class="girl-illustration"
-        viewBox="0 0 580 490"
-        xmlns="http://www.w3.org/2000/svg">
+    <svg class="girl-svg" viewBox="0 0 500 440"
+    xmlns="http://www.w3.org/2000/svg">
 
-        <defs>
-            <pattern id="dots" width="12" height="12"
-            patternUnits="userSpaceOnUse">
-                <circle cx="2" cy="2" r="1" fill="#b18b70"/>
-            </pattern>
-        </defs>
-
-        <!-- Decorative circle -->
-
-        <circle cx="290" cy="235" r="195"
-        fill="none" stroke="#c8b39d"
-        stroke-width="1" stroke-dasharray="4 7"/>
-
-        <circle cx="290" cy="235" r="175"
+        <circle cx="250" cy="220" r="185"
         fill="#f2e9dc"/>
 
-        <!-- Chair -->
+        <circle cx="250" cy="220" r="165"
+        fill="none" stroke="#bca58e"
+        stroke-dasharray="3 8"/>
 
-        <path d="M155 425 L155 235
-        Q155 200 190 200
-        L365 200 Q400 200 400 235
-        L400 425"
-        fill="none" stroke="#49372d"
-        stroke-width="5" stroke-linecap="round"/>
+        <!-- Hair -->
 
-        <path d="M150 420 L420 420"
-        stroke="#49372d" stroke-width="5"
-        stroke-linecap="round"/>
-
-        <!-- Hair behind -->
-
-        <path d="M205 130
-        Q170 55 255 52
-        Q350 35 365 120
-        Q395 205 350 280
-        L220 280 Q165 210 205 130Z"
-        fill="#49352c" stroke="#49352c"
-        stroke-width="4"/>
+        <path d="M165 150 Q140 35 260 45
+        Q370 40 350 165 L355 300
+        Q250 365 155 290Z"
+        fill="#4b382d"/>
 
         <!-- Body -->
 
-        <path d="M205 250
-        Q155 270 155 350
-        L145 420 L365 420
-        L355 310
-        Q340 250 290 245Z"
-        fill="#fbf7ef"
-        stroke="#49352c" stroke-width="4"/>
-
-        <!-- Dress details -->
-
-        <path d="M205 280 Q270 320 350 280"
-        fill="none" stroke="#9c765d"
-        stroke-width="2"/>
+        <path d="M150 400 Q145 260 205 235
+        Q255 210 305 240 Q365 280 360 400Z"
+        fill="#e6d8c8" stroke="#49352c" stroke-width="4"/>
 
         <!-- Neck -->
 
-        <path d="M245 205 L245 255
-        Q270 280 295 250 L290 200"
-        fill="#e9c5a5"
-        stroke="#49352c" stroke-width="3"/>
+        <path d="M220 210 L220 260
+        Q250 285 280 250 L280 205"
+        fill="#edc8a8" stroke="#49352c" stroke-width="3"/>
 
         <!-- Face -->
 
-        <ellipse cx="270" cy="157"
-        rx="70" ry="85"
-        fill="#edc8a8"
-        stroke="#49352c" stroke-width="4"/>
+        <ellipse cx="250" cy="155" rx="75" ry="90"
+        fill="#edc8a8" stroke="#49352c" stroke-width="4"/>
 
-        <!-- Hair front -->
+        <!-- Hair fringe -->
 
-        <path d="M200 145
-        Q185 75 260 65
-        Q345 60 340 145
-        Q310 105 270 115
-        Q235 130 200 145Z"
-        fill="#49352c"/>
+        <path d="M175 145 Q160 50 255 60
+        Q350 55 325 145 Q290 105 255 115
+        Q210 125 175 145Z"
+        fill="#4b382d"/>
 
-        <path d="M202 140
-        Q180 180 210 225"
-        fill="none" stroke="#49352c"
-        stroke-width="15" stroke-linecap="round"/>
+        <path d="M180 130 Q155 185 185 230"
+        fill="none" stroke="#4b382d"
+        stroke-width="16" stroke-linecap="round"/>
 
-        <path d="M338 140
-        Q360 180 330 225"
-        fill="none" stroke="#49352c"
-        stroke-width="15" stroke-linecap="round"/>
+        <path d="M320 130 Q350 185 320 230"
+        fill="none" stroke="#4b382d"
+        stroke-width="16" stroke-linecap="round"/>
 
-        <!-- Face details -->
+        <!-- Eyes -->
 
-        <path d="M238 158 Q248 151 258 158"
+        <path d="M215 155 Q230 145 242 155
+        M260 155 Q275 145 290 155"
         fill="none" stroke="#49352c"
         stroke-width="3" stroke-linecap="round"/>
 
-        <path d="M285 158 Q295 151 305 158"
-        fill="none" stroke="#49352c"
-        stroke-width="3" stroke-linecap="round"/>
+        <circle cx="230" cy="162" r="3" fill="#49352c"/>
+        <circle cx="276" cy="162" r="3" fill="#49352c"/>
 
-        <circle cx="250" cy="165" r="3" fill="#49352c"/>
-        <circle cx="296" cy="165" r="3" fill="#49352c"/>
+        <path d="M242 195 Q258 205 274 194"
+        fill="none" stroke="#9c6655" stroke-width="3"/>
 
-        <path d="M265 175 Q270 183 276 175"
-        fill="none" stroke="#49352c" stroke-width="2"/>
-
-        <path d="M255 193 Q270 204 286 192"
-        fill="none" stroke="#9d6655"
-        stroke-width="3" stroke-linecap="round"/>
-
-        <circle cx="230" cy="185" r="9" fill="#d99b8a" opacity=".5"/>
-        <circle cx="310" cy="185" r="9" fill="#d99b8a" opacity=".5"/>
+        <circle cx="210" cy="183" r="9" fill="#d99b8a" opacity=".5"/>
+        <circle cx="295" cy="183" r="9" fill="#d99b8a" opacity=".5"/>
 
         <!-- Arm -->
 
-        <path d="M330 265
-        Q385 280 375 330
-        L340 350"
+        <path d="M305 265 Q365 275 370 325"
         fill="none" stroke="#edc8a8"
-        stroke-width="23" stroke-linecap="round"/>
+        stroke-width="22" stroke-linecap="round"/>
 
-        <path d="M330 265
-        Q385 280 375 330"
-        fill="none" stroke="#49352c"
-        stroke-width="3"/>
+        <!-- Cup -->
 
-        <!-- Coffee cup -->
+        <path d="M345 260 L410 260 L400 320
+        Q375 335 350 320Z"
+        fill="#fbf7ef" stroke="#49352c" stroke-width="4"/>
 
-        <path d="M335 260
-        L395 260 L388 315
-        Q365 330 342 315Z"
-        fill="#fbf7ef"
-        stroke="#49352c" stroke-width="4"/>
+        <path d="M405 270 Q440 265 425 305
+        Q415 315 400 305"
+        fill="none" stroke="#49352c" stroke-width="4"/>
 
-        <path d="M395 270
-        Q425 270 410 300
-        Q400 310 390 300"
-        fill="none" stroke="#49352c"
-        stroke-width="4"/>
-
-        <path d="M345 280 L390 280"
-        stroke="#a66e4e" stroke-width="3"/>
+        <path d="M350 280 L405 280"
+        stroke="#a77b5c" stroke-width="3"/>
 
         <!-- Steam -->
 
-        <path d="M350 240 Q330 220 350 205"
-        fill="none" stroke="#9c765d"
-        stroke-width="2" stroke-linecap="round"/>
-
-        <path d="M375 240 Q395 220 375 205"
-        fill="none" stroke="#9c765d"
-        stroke-width="2" stroke-linecap="round"/>
+        <path d="M365 240 Q350 220 370 205
+        M390 240 Q410 220 390 205"
+        fill="none" stroke="#a77b5c" stroke-width="2"/>
 
         <!-- Table -->
 
-        <path d="M70 420 L510 420"
-        stroke="#49352c" stroke-width="5"
-        stroke-linecap="round"/>
-
-        <path d="M100 425 L90 470 M480 425 L490 470"
+        <path d="M65 405 H440"
         stroke="#49352c" stroke-width="4"/>
 
         <!-- Book -->
 
-        <path d="M80 385 Q120 365 155 390
-        L155 415 Q115 390 80 410Z"
-        fill="#d9c3aa" stroke="#49352c"
-        stroke-width="3"/>
+        <path d="M70 370 Q110 350 150 375
+        L150 400 Q110 380 70 400Z"
+        fill="#e2cdb5" stroke="#49352c" stroke-width="3"/>
 
-        <path d="M155 390 Q185 365 215 385
-        L215 410 Q180 390 155 415Z"
-        fill="#f4e8d9" stroke="#49352c"
-        stroke-width="3"/>
+        <path d="M150 375 Q180 350 210 370
+        L210 400 Q180 380 150 400Z"
+        fill="#f5eee3" stroke="#49352c" stroke-width="3"/>
 
-        <!-- Decorative stars -->
+        <!-- Stars -->
 
-        <path d="M455 115 L460 130 L475 135 L460 140 L455 155 L450 140 L435 135 L450 130Z"
-        fill="#a66e4e"/>
+        <path d="M420 95 L425 110 L440 115
+        L425 120 L420 135 L415 120
+        L400 115 L415 110Z"
+        fill="#a77b5c"/>
 
-        <path d="M120 170 L124 180 L135 184 L124 188 L120 200 L116 188 L105 184 L116 180Z"
-        fill="#a66e4e"/>
+        <path d="M80 150 L84 162 L96 166
+        L84 170 L80 182 L76 170
+        L64 166 L76 162Z"
+        fill="#a77b5c"/>
 
-        <circle cx="445" cy="205" r="4" fill="#a66e4e"/>
-        <circle cx="125" cy="250" r="4" fill="#a66e4e"/>
+        <circle cx="420" cy="185" r="4" fill="#a77b5c"/>
+        <circle cx="100" cy="260" r="4" fill="#a77b5c"/>
 
-        <!-- Caption -->
+    </svg>
 
-        <text x="290" y="470"
-        text-anchor="middle"
-        font-family="Georgia"
-        font-size="15"
-        font-style="italic"
-        fill="#8c6d59">
-        A little pause, a little happiness.
-        </text>
-
-        </svg>
-
-        <div class="art-note">coffee & little stories ♡</div>
-
-        </div>
+    <span class="hero-sticker floating-star">A little coffee break ♡</span>
 
     </div>
 
-    <div class="hero-bottom">
-        <span>FOOD · COFFEE · BOOKS · CONVERSATIONS</span>
-        <span>MADE WITH LOVE IN BEGUMPET</span>
+</div>
+
+<div class="hero-bottom">
+    <span>FOOD · COFFEE · BOOKS · CONVERSATIONS</span>
+    <span>MADE WITH LOVE IN BEGUMPET</span>
+</div>
+
+</div>
+</section>
+
+
+<!-- REAL CAFE PHOTO ON HOMEPAGE -->
+
+<section class="home-photo reveal">
+<div class="container">
+
+    <div class="home-photo-frame">
+        <img src="exterior.jpg"
+        alt="Panchatantra Café in Begumpet">
+
+        <div class="photo-label">
+            <span class="eyebrow">WELCOME TO OUR LITTLE WORLD</span>
+            <h3>Meet you at Panchatantra?</h3>
+            <p>Good food, coffee and conversations await.</p>
+        </div>
     </div>
 
 </div>
 </section>
 
 
-<!-- INTRO -->
+<!-- INTRODUCTION -->
 
-<section class="intro reveal">
-    <div class="container intro-content">
+<section class="story-intro reveal">
+<div class="container">
 
-        <span class="eyebrow">THE PANCHATANTRA FEELING</span>
+    <span class="eyebrow">THE PANCHATANTRA FEELING</span>
 
-        <h2>More than a café.<br>A place to belong.</h2>
+    <h2>Some stories begin with a cup of coffee.</h2>
 
-        <p>
-            Some places serve coffee. Some places create memories.
-            At Panchatantra, we bring together good food, warm
-            conversations, books, games and little moments that
-            make ordinary days special.
-        </p>
-
-    </div>
-</section>
-
-
-<!-- ILLUSTRATED CAFÉ SHOP -->
-
-<section class="shop-section">
-<div class="container shop-grid">
-
-    <div class="shop-art reveal">
-
-    <svg viewBox="0 0 550 440"
-    xmlns="http://www.w3.org/2000/svg">
-
-        <!-- Background circle -->
-
-        <circle cx="275" cy="220" r="195"
-        fill="#f2e9dc"/>
-
-        <!-- Ground -->
-
-        <path d="M45 365 Q270 345 510 365"
-        fill="none" stroke="#49352c"
-        stroke-width="3"/>
-
-        <!-- Café building -->
-
-        <rect x="105" y="115" width="340"
-        height="245" rx="5"
-        fill="#fbf7ef" stroke="#49352c"
-        stroke-width="4"/>
-
-        <!-- Roof -->
-
-        <path d="M85 125 L275 45 L465 125Z"
-        fill="#e8d8c5" stroke="#49352c"
-        stroke-width="4"/>
-
-        <!-- Signboard -->
-
-        <rect x="185" y="130" width="180"
-        height="55" rx="4"
-        fill="#f2e9dc" stroke="#49352c"
-        stroke-width="3"/>
-
-        <text x="275" y="153"
-        text-anchor="middle"
-        font-family="Georgia"
-        font-size="15"
-        fill="#49352c">PANCHATANTRA</text>
-
-        <text x="275" y="172"
-        text-anchor="middle"
-        font-family="Arial"
-        font-size="9"
-        letter-spacing="3"
-        fill="#8b6b55">CAFÉ</text>
-
-        <!-- Awning -->
-
-        <path d="M115 200 L435 200 L420 230
-        L130 230Z"
-        fill="#e6d3be" stroke="#49352c"
-        stroke-width="3"/>
-
-        <path d="M165 200 L165 230 M215 200 L215 230
-        M265 200 L265 230 M315 200 L315 230
-        M365 200 L365 230"
-        stroke="#49352c" stroke-width="2"/>
-
-        <!-- Windows -->
-
-        <rect x="130" y="245" width="95"
-        height="110" fill="#f1e6d7"
-        stroke="#49352c" stroke-width="3"/>
-
-        <path d="M177 245 V355 M130 300 H225"
-        stroke="#49352c" stroke-width="2"/>
-
-        <rect x="325" y="245" width="95"
-        height="110" fill="#f1e6d7"
-        stroke="#49352c" stroke-width="3"/>
-
-        <path d="M372 245 V355 M325 300 H420"
-        stroke="#49352c" stroke-width="2"/>
-
-        <!-- Door -->
-
-        <rect x="235" y="245" width="80"
-        height="115" rx="35"
-        fill="#e6d3be" stroke="#49352c"
-        stroke-width="3"/>
-
-        <circle cx="300" cy="305" r="4"
-        fill="#49352c"/>
-
-        <!-- Plants -->
-
-        <path d="M70 350 L70 285 M70 315
-        Q35 290 45 270 Q70 275 70 305
-        M70 320 Q100 285 105 300 Q100 325 70 335"
-        fill="none" stroke="#49352c"
-        stroke-width="3"/>
-
-        <path d="M480 350 L480 285 M480 315
-        Q450 285 445 300 Q450 325 480 335
-        M480 315 Q505 275 515 290 Q515 320 480 335"
-        fill="none" stroke="#49352c"
-        stroke-width="3"/>
-
-        <path d="M45 350 H95 L90 375 H50Z"
-        fill="#d8c1a9" stroke="#49352c"
-        stroke-width="3"/>
-
-        <path d="M455 350 H505 L500 375 H460Z"
-        fill="#d8c1a9" stroke="#49352c"
-        stroke-width="3"/>
-
-        <!-- Little decorative birds -->
-
-        <path d="M420 80 Q430 65 440 80 Q450 65 460 80"
-        fill="none" stroke="#49352c"
-        stroke-width="2"/>
-
-        <path d="M95 85 Q105 70 115 85 Q125 70 135 85"
-        fill="none" stroke="#49352c"
-        stroke-width="2"/>
-
+    <svg class="doodle" viewBox="0 0 120 90">
+        <path d="M30 35 H90 L85 75 Q60 85 35 75Z"
+        fill="none" stroke="#49352c" stroke-width="3"/>
+        <path d="M90 40 Q115 35 105 60 Q100 70 87 65"
+        fill="none" stroke="#49352c" stroke-width="3"/>
+        <path d="M45 25 Q35 10 48 2 M65 25 Q80 10 68 2"
+        fill="none" stroke="#a77b5c" stroke-width="2"/>
+        <path d="M40 50 H82" stroke="#a77b5c" stroke-width="2"/>
     </svg>
 
-    </div>
-
-    <div class="shop-text reveal">
-
-        <span class="eyebrow">COME ON IN</span>
-
-        <h2>Your little corner of comfort.</h2>
-
-        <p>
-            Step into a space where every corner has a story.
-            Enjoy a cup of coffee, explore our books, play games
-            with your friends or simply take a moment for yourself.
-        </p>
-
-        <a href="#visit" class="primary-btn">FIND YOUR WAY HERE ↗</a>
-
-    </div>
+    <p class="description">
+        Some places serve coffee. Some places create memories.
+        At Panchatantra, we bring together good food, warm conversations,
+        books, games and little moments that make ordinary days special.
+    </p>
 
 </div>
 </section>
@@ -1315,7 +1180,7 @@ footer {
 <div class="container about-grid">
 
     <div class="about-image reveal">
-        <img src="friendship.jpg" alt="Friends enjoying time at Panchatantra Café">
+        <img src="friendship.jpg" alt="Friends enjoying Panchatantra Café">
     </div>
 
     <div class="about-text reveal">
@@ -1324,17 +1189,20 @@ footer {
 
         <h2>A place to pause, connect & belong.</h2>
 
-        <p>
-            Panchatantra Café is a place where stories unfold
-            over good food and conversations. Whether you're
-            catching up with friends, enjoying a quiet moment
-            with a book, or discovering something new, there's
-            always a little space for you here.
+        <p class="description">
+            Panchatantra Café is a place where stories unfold over good
+            food and conversations. Whether you're catching up with
+            friends, enjoying a quiet moment with a book, or discovering
+            something new, there's always a little space for you here.
         </p>
 
-        <a href="#experience" class="text-link">
-            Discover Our Story ↗
-        </a>
+        <a href="#cafe" class="text-link">Discover Our Story ↗</a>
+
+        <svg class="doodle" viewBox="0 0 120 80" style="margin:20px 0">
+            <path d="M20 60 Q40 20 60 60 Q80 20 100 60"
+            fill="none" stroke="#a77b5c" stroke-width="3"/>
+            <path d="M60 25 V65" stroke="#49352c" stroke-width="2"/>
+        </svg>
 
     </div>
 
@@ -1348,62 +1216,137 @@ footer {
 <div class="container">
 
     <div class="center-heading reveal">
-        <span class="eyebrow">A TASTE OF HAPPINESS</span>
-
-        <h2 class="section-title">A little taste of happiness.</h2>
-
-        <p class="section-description">
-            From comforting favourites to refreshing drinks
-            and irresistible sweet endings, discover little
-            things that make your day better.
+        <span class="eyebrow">A LITTLE TASTE OF HAPPINESS</span>
+        <h2>A little taste of happiness.</h2>
+        <p class="description">
+            From comforting favourites to refreshing drinks and
+            irresistible sweet endings, discover little things
+            that make your day better.
         </p>
     </div>
 
-    <div class="experience-grid">
+    <div class="menu-grid">
 
-        <div class="experience-card reveal">
+        <div class="menu-card reveal">
             <img src="food.jpg" alt="Food at Panchatantra Café">
             <h3>Food & Favourites</h3>
-            <p>
-                Comforting favourites, freshly prepared
-                and made to be enjoyed.
-            </p>
+            <p>Comforting favourites, freshly prepared and made to be enjoyed.</p>
         </div>
 
-        <div class="experience-card reveal">
-            <img src="drink.jpg" alt="Refreshing café drinks">
+        <div class="menu-card reveal">
+            <img src="drink.jpg" alt="Drinks at Panchatantra Café">
             <h3>Sips & Smiles</h3>
-            <p>
-                Refreshing drinks and café favourites
-                for every kind of mood.
-            </p>
+            <p>Refreshing drinks and café favourites for every kind of mood.</p>
         </div>
 
-        <div class="experience-card reveal">
+        <div class="menu-card reveal">
             <img src="dessert.jpg" alt="Desserts at Panchatantra Café">
             <h3>Sweet Little Things</h3>
-            <p>
-                A little sweetness to make your
-                café moment complete.
-            </p>
+            <p>A little sweetness to make your café moment complete.</p>
         </div>
 
     </div>
 
-    <div style="text-align:center; margin-top:45px;">
+    <div style="text-align:center;margin-top:45px">
         <a href="https://dinein.petpooja.com/qr/jzxh1v2054/B1"
-        class="primary-btn" target="_blank">
-            EXPLORE & ORDER ↗
-        </a>
+        target="_blank" class="btn">EXPLORE & ORDER ↗</a>
     </div>
 
 </div>
 </section>
 
 
-<!-- CAFÉ EXPERIENCE -->
+<!-- COFFEE ILLUSTRATION STORY -->
 
-<section class="cafe">
+<section class="coffee-story">
+<div class="container coffee-story-grid">
+
+    <div class="reveal">
+
+    <svg class="coffee-doodle" viewBox="0 0 480 380">
+
+        <circle cx="240" cy="185" r="160"
+        fill="#f2e9dc"/>
+
+        <!-- Coffee cup -->
+
+        <path d="M130 145 H330 L310 290
+        Q230 325 150 290Z"
+        fill="#fbf7ef" stroke="#49352c" stroke-width="5"/>
+
+        <path d="M325 165 Q425 140 390 235
+        Q375 270 315 250"
+        fill="none" stroke="#49352c" stroke-width="5"/>
+
+        <path d="M155 185 H310"
+        stroke="#a77b5c" stroke-width="5"/>
+
+        <!-- Coffee -->
+
+        <ellipse cx="230" cy="150" rx="100" ry="20"
+        fill="#b18a6d" stroke="#49352c" stroke-width="4"/>
+
+        <ellipse cx="230" cy="150" rx="65" ry="11"
+        fill="#f2e9dc"/>
+
+        <!-- Steam -->
+
+        <path d="M190 110 Q160 75 195 45
+        M230 110 Q260 70 230 40
+        M270 110 Q300 75 275 45"
+        fill="none" stroke="#a77b5c"
+        stroke-width="4" stroke-linecap="round"/>
+
+        <!-- Coffee beans -->
+
+        <ellipse cx="100" cy="290" rx="13" ry="23"
+        transform="rotate(35 100 290)"
+        fill="#a77b5c" stroke="#49352c" stroke-width="2"/>
+
+        <path d="M90 270 Q110 290 105 310"
+        fill="none" stroke="#49352c" stroke-width="2"/>
+
+        <ellipse cx="380" cy="320" rx="13" ry="23"
+        transform="rotate(-35 380 320)"
+        fill="#a77b5c" stroke="#49352c" stroke-width="2"/>
+
+        <path d="M390 300 Q370 320 375 340"
+        fill="none" stroke="#49352c" stroke-width="2"/>
+
+        <!-- Stars -->
+
+        <path d="M80 90 L86 105 L102 110
+        L86 115 L80 130 L74 115
+        L58 110 L74 105Z"
+        fill="#a77b5c"/>
+
+    </svg>
+
+    </div>
+
+    <div class="reveal">
+        <span class="eyebrow">A MOMENT FOR YOURSELF</span>
+
+        <h2>Slow down. Sip. Smile.</h2>
+
+        <p class="description">
+            A favourite cup, a familiar face, a good conversation.
+            Sometimes the smallest moments become the stories
+            we remember the longest.
+        </p>
+
+        <br>
+
+        <a href="#visit" class="text-link">Come spend a little time with us ↗</a>
+    </div>
+
+</div>
+</section>
+
+
+<!-- CAFE -->
+
+<section class="cafe" id="cafe">
 <div class="container cafe-grid">
 
     <div class="cafe-images reveal">
@@ -1413,14 +1356,13 @@ footer {
 
     <div class="cafe-text reveal">
 
-        <span class="eyebrow">THE LITTLE THINGS</span>
+        <span class="eyebrow">YOUR LITTLE CORNER</span>
 
         <h2>Your little corner of comfort.</h2>
 
-        <p>
-            From books and games to shared laughter,
-            Panchatantra is designed for more than just
-            a quick coffee stop.
+        <p class="description">
+            From books and games to shared laughter, Panchatantra
+            is designed for more than just a quick coffee stop.
         </p>
 
         <ul class="cafe-list">
@@ -1436,6 +1378,40 @@ footer {
 </section>
 
 
+<!-- FRIENDSHIP -->
+
+<section class="moments">
+<div class="container moments-grid">
+
+    <div class="moments-text reveal">
+        <span class="eyebrow">THE BEST MOMENTS ARE SHARED</span>
+
+        <h2>Good friends. Good food. Good stories.</h2>
+
+        <p class="description">
+            Whether it's a long overdue catch-up, a coffee date
+            or an afternoon spent laughing, there's always
+            room for one more memory here.
+        </p>
+
+        <a href="https://wa.me/918516923456"
+        class="text-link">Plan your visit ↗</a>
+
+        <svg class="doodle" viewBox="0 0 130 80" style="margin:20px 0">
+            <path d="M65 65 C-5 25 30 -5 65 25
+            C100 -5 135 25 65 65Z"
+            fill="none" stroke="#a77b5c" stroke-width="3"/>
+        </svg>
+    </div>
+
+    <div class="reveal">
+        <img src="people.jpg" alt="People enjoying Panchatantra Café">
+    </div>
+
+</div>
+</section>
+
+
 <!-- GALLERY -->
 
 <section class="gallery" id="gallery">
@@ -1443,23 +1419,19 @@ footer {
 
     <div class="center-heading reveal">
         <span class="eyebrow">LITTLE MOMENTS, BIG MEMORIES</span>
-
-        <h2 class="section-title">Life looks better over coffee.</h2>
-
-        <p class="section-description">
+        <h2>Life looks better over coffee.</h2>
+        <p class="description">
             A welcoming space for coffee dates, quiet afternoons
             and conversations that last a little longer.
         </p>
     </div>
 
     <div class="gallery-grid reveal">
-
-        <img src="coffee.jpg" alt="Coffee at Panchatantra Café">
+        <img src="coffee.jpg" alt="Coffee">
         <img src="coffe croissant.jpg" alt="Coffee and croissant">
-        <img src="coffe beans.jpg" alt="Coffee beans">
-        <img src="people.jpg" alt="People at Panchatantra Café">
-        <img src="time.jpg" alt="Time at Panchatantra Café">
-
+        <img src="food.jpg" alt="Food">
+        <img src="dessert.jpg" alt="Desserts">
+        <img src="sitting spot.jpg" alt="Café seating">
     </div>
 
 </div>
@@ -1469,27 +1441,24 @@ footer {
 <!-- EVENTS -->
 
 <section class="events" id="events">
-<div class="container event-grid">
+<div class="container events-grid">
 
-    <div class="event-image reveal">
+    <div class="reveal">
         <img src="awards.jpg" alt="Panchatantra Café special moments">
     </div>
 
-    <div class="event-text reveal">
+    <div class="events-text reveal">
 
         <span class="eyebrow">GATHER · CREATE · CONNECT</span>
 
         <h2>Beautiful things happen when we gather.</h2>
 
-        <p>
-            From workshops and flea markets to community
-            gatherings, discover experiences that bring
-            people together.
+        <p class="description">
+            From workshops and flea markets to community gatherings,
+            discover experiences that bring people together.
         </p>
 
-        <a href="Event.html" class="primary-btn">
-            DISCOVER OUR EVENTS ↗
-        </a>
+        <a href="Event.html" class="btn">DISCOVER OUR EVENTS ↗</a>
 
     </div>
 
@@ -1497,26 +1466,23 @@ footer {
 </section>
 
 
-<!-- REVIEWS -->
+<!-- REVIEW -->
 
 <section class="reviews">
 <div class="container">
 
     <div class="center-heading reveal">
         <span class="eyebrow">KIND WORDS</span>
-        <h2 class="section-title">Your stories matter to us.</h2>
+        <h2>Your stories matter to us.</h2>
     </div>
 
     <div class="review-box reveal">
-
         <div class="stars">★★★★★</div>
 
         <blockquote>
-            "Every visit, every conversation and every
-            shared moment is part of the Panchatantra story."
+            "Every visit, every conversation and every shared
+            moment is part of the Panchatantra story."
         </blockquote>
-
-        <small>WITH LOVE · PANCHATANTRA CAFÉ</small>
 
     </div>
 
@@ -1535,7 +1501,7 @@ footer {
 
         <h2>Your table is waiting.</h2>
 
-        <p>
+        <p class="description">
             Drop by for a meal, a coffee, a book or simply
             a little time away from the rush.
         </p>
@@ -1543,15 +1509,13 @@ footer {
         <br>
 
         <a href="https://maps.app.goo.gl/RJKehn9R445dQgz3A"
-        class="primary-btn" target="_blank">
-            GET DIRECTIONS ↗
-        </a>
+        target="_blank" class="btn">GET DIRECTIONS ↗</a>
 
     </div>
 
     <div class="visit-details reveal">
 
-        <div class="detail">
+        <div>
             <h4>FIND US</h4>
             <p>
                 House 1-10-290/1,<br>
@@ -1561,20 +1525,17 @@ footer {
             </p>
         </div>
 
-        <div class="detail">
+        <div>
             <h4>OPENING HOURS</h4>
-            <p>
-                Monday – Sunday<br>
-                11:00 AM – 11:00 PM
-            </p>
+            <p>Monday – Sunday<br>11 AM – 11 PM</p>
         </div>
 
-        <div class="detail">
+        <div>
             <h4>CALL US</h4>
             <p>+91 85169 23456</p>
         </div>
 
-        <div class="detail">
+        <div>
             <h4>FOLLOW US</h4>
             <p>
                 <a href="https://www.instagram.com/panchatantrahyd/"
@@ -1595,7 +1556,7 @@ footer {
 
     <div class="footer-top">
 
-        <div class="footer-brand">
+        <div>
             <h3>Panchatantra Café.</h3>
             <p>Where Every Bite Tells a Story.</p>
         </div>
@@ -1603,16 +1564,17 @@ footer {
         <div class="footer-links">
             <a href="#about">Our Story</a>
             <a href="#menu">Menu</a>
+            <a href="#cafe">The Café</a>
             <a href="#gallery">Moments</a>
             <a href="Event.html">Events</a>
-            <a href="#visit">Visit Us</a>
+            <a href="#visit">Visit</a>
         </div>
 
     </div>
 
     <div class="footer-bottom">
         <span>© 2026 Panchatantra Café. All rights reserved.</span>
-        <span>Made with love in Begumpet, Hyderabad ♡</span>
+        <span>Made with love in Begumpet ♡</span>
     </div>
 
 </div>
@@ -1621,13 +1583,21 @@ footer {
 
 <script>
 
-// Mobile navigation
+// INTRO SCREEN
+
+window.addEventListener("load", function() {
+    setTimeout(() => {
+        document.body.classList.remove("loading");
+        document.getElementById("introScreen").remove();
+    }, 4300);
+});
+
+
+// MOBILE MENU
 
 function toggleMenu() {
     document.getElementById("navLinks").classList.toggle("active");
 }
-
-// Close mobile menu after clicking a link
 
 document.querySelectorAll(".nav-links a").forEach(link => {
     link.addEventListener("click", () => {
@@ -1635,17 +1605,16 @@ document.querySelectorAll(".nav-links a").forEach(link => {
     });
 });
 
-// Scroll reveal animation
+
+// SCROLL REVEAL
 
 const observer = new IntersectionObserver((entries) => {
 
     entries.forEach(entry => {
-
         if (entry.isIntersecting) {
             entry.target.classList.add("visible");
             observer.unobserve(entry.target);
         }
-
     });
 
 }, {
