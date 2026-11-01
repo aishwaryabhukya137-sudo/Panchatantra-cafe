@@ -9,6 +9,7 @@
 <title>Panchatantra Café | Begumpet</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 
 <style>
@@ -50,7 +51,7 @@ a {
 
 img {
     display: block;
-    width: 100%;
+    max-width: 100%;
 }
 
 .container {
@@ -145,21 +146,35 @@ h2 {
 }
 
 @keyframes bounceLogo {
-    from { transform: translateY(-50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 @keyframes cupBounce {
-    from { transform: translateY(-5px) rotate(-7deg); }
-    to { transform: translateY(7px) rotate(7deg); }
+    from {
+        transform: translateY(-5px) rotate(-7deg);
+    }
+    to {
+        transform: translateY(7px) rotate(7deg);
+    }
 }
 
 @keyframes fadeIn {
-    to { opacity: 1; }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes lineGrow {
-    to { width: 110px; }
+    to {
+        width: 110px;
+    }
 }
 
 @keyframes introExit {
@@ -417,7 +432,7 @@ header {
     margin-top: 6px;
 }
 
-/* COLOURFUL GIRL */
+/* CUTE GIRL ILLUSTRATION */
 
 .girl-section {
     padding: 10px 0 45px;
@@ -453,8 +468,12 @@ header {
 }
 
 @keyframes gentleFloat {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-7px); }
+    0%,100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-7px);
+    }
 }
 
 /* STORY INTRO */
@@ -613,7 +632,6 @@ header {
     align-items: center;
 }
 
-/* First sitting spot photo */
 .cafe-images .sitting-frame {
     height: 340px;
     padding: 9px;
@@ -625,7 +643,6 @@ header {
     background: #f5eee3;
 }
 
-/* Exterior photo */
 .cafe-images .exterior-frame {
     height: 285px;
     margin-top: 30px;
@@ -699,26 +716,9 @@ header {
     grid-row: span 2;
 }
 
-.gallery-item:nth-child(5) {
-    grid-column: span 2;
-}
-
-/* Second sitting spot photo in gallery */
-.gallery-item.sitting-gallery {
-    grid-column: span 2;
-}
-
-.gallery-item.sitting-gallery .image-frame {
-    background: #f5eee3;
-}
-
-.gallery-item.sitting-gallery img {
-    object-fit: contain;
-    background: #f5eee3;
-}
-
 /* EVENTS AND AWARDS */
 
+/* Frame follows the actual image dimensions */
 .events-grid {
     display: grid;
     grid-template-columns: 1.15fr .85fr;
@@ -726,15 +726,15 @@ header {
     align-items: center;
 }
 
-/* Larger awards frame */
 .events-image {
     width: 100%;
-    height: 440px;
+    height: auto;
     padding: 14px;
     background: #f2e8da;
     border: 1px solid #dfcbb5;
     border-radius: 8px 55px 8px 55px;
     box-shadow: 8px 10px 0 rgba(167,123,92,.12);
+    overflow: hidden;
 }
 
 .events-image::before {
@@ -743,11 +743,11 @@ header {
 }
 
 .events-image img {
+    display: block;
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: contain;
     object-position: center;
-    background: #f5eee3;
     border-radius: 4px 42px 4px 42px;
 }
 
@@ -881,7 +881,7 @@ footer {
     font-size: 10px;
 }
 
-/* REVEAL */
+/* SCROLL REVEAL */
 
 .reveal {
     opacity: 0;
@@ -897,6 +897,7 @@ footer {
 /* TABLET */
 
 @media(max-width:850px) {
+
     .about-grid,
     .coffee-story-grid,
     .cafe-grid,
@@ -911,10 +912,6 @@ footer {
         gap: 30px;
     }
 
-    .events-image {
-        height: 390px;
-    }
-
     .menu-grid {
         gap: 15px;
     }
@@ -922,11 +919,17 @@ footer {
     .menu-card .image-frame {
         height: 210px;
     }
+
+    .events-image {
+        max-width: 650px;
+        margin: auto;
+    }
 }
 
 /* MOBILE */
 
 @media(max-width:600px) {
+
     header {
         height: 68px;
     }
@@ -1083,19 +1086,15 @@ footer {
         height: 290px;
     }
 
+    /* Four gallery photos: no duplicate sitting spot */
     .gallery-grid {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 155px 155px 175px;
+        grid-template-rows: 180px 180px;
         gap: 12px;
     }
 
     .gallery-item:nth-child(1) {
-        grid-row: span 1;
-    }
-
-    .gallery-item:nth-child(5),
-    .gallery-item.sitting-gallery {
-        grid-column: span 2;
+        grid-row: span 2;
     }
 
     .gallery-item .image-frame {
@@ -1103,8 +1102,15 @@ footer {
     }
 
     .events-image {
-        height: 310px;
+        width: 100%;
+        height: auto;
         padding: 9px;
+    }
+
+    .events-image img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
     }
 
     .review-box {
@@ -1125,6 +1131,8 @@ footer {
         gap: 15px;
     }
 }
+
+/* REDUCED MOTION */
 
 @media(prefers-reduced-motion: reduce) {
     *,
@@ -1229,200 +1237,332 @@ footer {
 </div>
 </section>
 
-<!-- COLOURFUL GIRL ILLUSTRATION -->
+<!-- CUTE GIRL ILLUSTRATION -->
 
 <section class="girl-section">
 <div class="container">
 
     <div class="girl-layout reveal">
 
-        <svg class="girl-art" viewBox="0 0 360 370"
+        <svg class="girl-art"
+        viewBox="0 0 360 390"
         xmlns="http://www.w3.org/2000/svg"
-        role="img" aria-label="Illustration of a girl enjoying coffee">
+        role="img"
+        aria-label="Cute laughing girl wearing a maxi dress and holding a coffee cup">
 
-            <!-- Background -->
-            <ellipse cx="180" cy="335" rx="125" ry="13"
+            <!-- Soft background -->
+            <ellipse cx="180" cy="365" rx="112" ry="12"
             fill="#eadbca"/>
 
-            <circle cx="175" cy="165" r="132"
+            <circle cx="180" cy="175" r="145"
             fill="#f7eadc"/>
 
-            <circle cx="175" cy="165" r="119"
-            fill="none" stroke="#e5cdb6"
-            stroke-width="1.5" stroke-dasharray="4 7"/>
+            <circle cx="180" cy="175" r="132"
+            fill="none"
+            stroke="#e5cdb6"
+            stroke-width="1.5"
+            stroke-dasharray="4 7"/>
 
-            <!-- Hair behind head -->
-            <path d="M88 160
-            C67 75 113 32 180 35
-            C252 31 288 93 270 174
-            L260 263
-            C241 289 219 286 208 252
-            L110 264
-            C88 235 78 202 88 160Z"
-            fill="#70432f"/>
+            <!-- Hair behind -->
+            <path d="M102 175
+            C76 104 104 45 171 37
+            C239 27 287 77 278 158
+            L272 246
+            C259 277 239 285 220 254
+            L119 260
+            C94 235 88 205 102 175Z"
+            fill="#68402f"/>
 
             <!-- Neck -->
-            <path d="M145 215 L142 270
-            Q177 292 211 266
-            L201 214Z"
-            fill="#d99d78"/>
+            <path d="M151 218
+            L149 264
+            Q180 286 211 261
+            L204 218Z"
+            fill="#eab18e"/>
 
             <!-- Face -->
-            <path d="M112 112
-            C113 68 145 55 184 59
-            C226 62 244 93 237 145
-            L227 194
-            C220 229 195 247 168 243
-            C133 239 112 206 108 166Z"
-            fill="#f2bd99"/>
+            <path d="M112 133
+            C112 86 140 66 181 66
+            C224 66 249 96 246 143
+            L239 192
+            C234 228 210 248 180 248
+            C149 248 124 225 116 193Z"
+            fill="#f5c39f"/>
 
-            <!-- Face blush -->
-            <ellipse cx="132" cy="174" rx="15" ry="8"
-            fill="#e99b91" opacity=".5"/>
+            <!-- Ears -->
+            <ellipse cx="112" cy="169" rx="12" ry="17"
+            fill="#eab18e"/>
 
-            <ellipse cx="207" cy="174" rx="15" ry="8"
-            fill="#e99b91" opacity=".5"/>
+            <ellipse cx="246" cy="169" rx="12" ry="17"
+            fill="#eab18e"/>
 
-            <!-- Hair top -->
-            <path d="M91 151
-            C75 85 110 37 179 34
-            C248 29 280 82 265 151
-            C246 129 232 106 224 86
-            C193 112 150 118 112 106
-            C108 124 103 140 91 151Z"
-            fill="#70432f"/>
+            <!-- Hair cap and bangs -->
+            <path d="M96 155
+            C80 83 119 32 181 32
+            C246 31 286 80 269 158
+            C251 143 241 124 236 104
+            C222 122 204 128 185 117
+            C166 136 141 130 128 113
+            C121 133 109 148 96 155Z"
+            fill="#68402f"/>
 
-            <!-- Hair side locks -->
-            <path d="M102 116
-            C82 174 97 233 121 254
-            C107 210 118 164 126 135Z"
-            fill="#70432f"/>
+            <!-- Soft fringe -->
+            <path d="M111 112
+            C132 91 147 93 160 110
+            C171 91 191 91 203 108
+            C218 91 237 96 246 119
+            C225 133 207 131 190 120
+            C172 139 148 136 132 121
+            C124 131 117 134 111 135Z"
+            fill="#68402f"/>
 
-            <path d="M237 116
-            C260 174 250 224 227 253
-            C239 209 229 160 218 133Z"
-            fill="#70432f"/>
+            <!-- Side locks -->
+            <path d="M104 132
+            C91 186 104 232 130 257
+            C119 213 126 171 132 140Z"
+            fill="#68402f"/>
 
-            <!-- Hair shine -->
-            <path d="M121 72 Q151 42 184 53"
-            fill="none" stroke="#a87856"
-            stroke-width="5" stroke-linecap="round"/>
+            <path d="M250 132
+            C267 183 252 230 230 255
+            C239 210 232 169 222 139Z"
+            fill="#68402f"/>
 
-            <!-- Eyes -->
-            <path d="M135 157 Q145 149 155 157"
-            fill="none" stroke="#49352c"
-            stroke-width="3" stroke-linecap="round"/>
+            <!-- Hair highlights -->
+            <path d="M124 72
+            Q151 43 181 48"
+            fill="none"
+            stroke="#a87856"
+            stroke-width="5"
+            stroke-linecap="round"/>
 
-            <path d="M187 157 Q197 149 207 157"
-            fill="none" stroke="#49352c"
-            stroke-width="3" stroke-linecap="round"/>
+            <path d="M205 49
+            Q238 56 249 83"
+            fill="none"
+            stroke="#a87856"
+            stroke-width="4"
+            stroke-linecap="round"/>
+
+            <!-- Blush -->
+            <ellipse cx="139" cy="183" rx="16" ry="9"
+            fill="#e99b91" opacity=".55"/>
+
+            <ellipse cx="218" cy="183" rx="16" ry="9"
+            fill="#e99b91" opacity=".55"/>
+
+            <!-- Happy closed eyes -->
+            <path d="M139 161
+            Q151 174 163 160"
+            fill="none"
+            stroke="#49352c"
+            stroke-width="4"
+            stroke-linecap="round"/>
+
+            <path d="M195 160
+            Q207 174 219 161"
+            fill="none"
+            stroke="#49352c"
+            stroke-width="4"
+            stroke-linecap="round"/>
+
+            <!-- Eyelashes -->
+            <path d="M143 156 L138 151
+            M153 158 L153 151
+            M212 157 L217 151
+            M203 158 L203 151"
+            stroke="#49352c"
+            stroke-width="2"
+            stroke-linecap="round"/>
 
             <!-- Nose -->
-            <path d="M174 160 Q169 176 178 179"
-            fill="none" stroke="#bd8067"
-            stroke-width="2" stroke-linecap="round"/>
+            <path d="M178 168
+            Q172 181 181 183"
+            fill="none"
+            stroke="#c98970"
+            stroke-width="2.5"
+            stroke-linecap="round"/>
 
-            <!-- Smile -->
-            <path d="M158 195 Q174 208 192 194"
-            fill="none" stroke="#9e554f"
-            stroke-width="3" stroke-linecap="round"/>
+            <!-- Big laughing smile -->
+            <path d="M157 193
+            Q180 222 204 193
+            Q201 218 181 220
+            Q162 216 157 193Z"
+            fill="#9d514f"/>
+
+            <path d="M163 196
+            Q181 206 199 196"
+            fill="none"
+            stroke="#fff0df"
+            stroke-width="4"
+            stroke-linecap="round"/>
 
             <!-- Earrings -->
-            <circle cx="110" cy="190" r="5" fill="#d8a64e"/>
-            <circle cx="232" cy="190" r="5" fill="#d8a64e"/>
+            <circle cx="111" cy="194" r="5"
+            fill="#e1b65e"/>
 
-            <!-- Dress -->
-            <path d="M142 260
-            C115 263 91 282 82 322
-            L75 345
-            L281 345
-            L272 322
-            C263 282 238 263 210 260
-            L190 280
-            L162 280Z"
+            <circle cx="247" cy="194" r="5"
+            fill="#e1b65e"/>
+
+            <!-- Maxi dress body -->
+            <path d="M148 260
+            C126 261 105 277 96 303
+            L76 359
+            Q180 375 284 359
+            L264 303
+            C255 277 234 261 212 260
+            L195 276
+            L165 276Z"
             fill="#b7c9ae"/>
 
             <!-- Dress neckline -->
-            <path d="M142 260 Q176 299 210 260"
-            fill="none" stroke="#8ba487"
+            <path d="M148 260
+            Q180 300 212 260"
+            fill="none"
+            stroke="#879f80"
             stroke-width="4"/>
 
-            <!-- Dress details -->
-            <path d="M104 309 Q177 327 252 309"
-            fill="none" stroke="#8ba487"
-            stroke-width="2" opacity=".7"/>
+            <!-- Dress sleeves -->
+            <path d="M130 267
+            Q109 269 99 295
+            L124 306
+            L145 276Z"
+            fill="#c4d2b8"/>
 
-            <circle cx="176" cy="306" r="4" fill="#f6e4c8"/>
-            <circle cx="176" cy="322" r="4" fill="#f6e4c8"/>
+            <path d="M230 267
+            Q251 269 261 295
+            L236 306
+            L215 276Z"
+            fill="#c4d2b8"/>
 
-            <!-- Arm -->
-            <path d="M224 276
-            Q249 268 262 291
-            L280 259
-            Q287 247 297 253
-            Q305 260 295 275
-            L277 316
-            Q268 332 251 320
-            L222 305Z"
-            fill="#f2bd99"/>
-
-            <!-- Cup -->
-            <path d="M243 220
-            L307 220
-            L301 276
-            Q275 292 250 276Z"
-            fill="#e8a6a0"/>
-
-            <path d="M306 231
-            Q335 220 332 247
-            Q328 267 303 262"
-            fill="none" stroke="#c77e77"
-            stroke-width="8" stroke-linecap="round"/>
-
-            <!-- Coffee -->
-            <ellipse cx="275" cy="222" rx="31" ry="7"
-            fill="#754a35"/>
-
-            <ellipse cx="275" cy="222" rx="24" ry="4"
-            fill="#b9825c"/>
-
-            <!-- Cup decoration -->
-            <path d="M263 245 Q275 256 287 245"
-            fill="none" stroke="#fff2df"
+            <!-- Maxi dress folds -->
+            <path d="M121 307
+            Q135 333 121 361"
+            fill="none"
+            stroke="#91a88a"
             stroke-width="2"/>
 
-            <path d="M275 238 L275 250"
-            stroke="#fff2df" stroke-width="2"/>
+            <path d="M180 291
+            Q169 326 180 366"
+            fill="none"
+            stroke="#91a88a"
+            stroke-width="2"/>
+
+            <path d="M239 307
+            Q225 333 240 361"
+            fill="none"
+            stroke="#91a88a"
+            stroke-width="2"/>
+
+            <!-- Dress little flowers -->
+            <g fill="#fff0dc">
+                <circle cx="145" cy="318" r="3"/>
+                <circle cx="151" cy="324" r="3"/>
+                <circle cx="139" cy="324" r="3"/>
+                <circle cx="145" cy="330" r="3"/>
+
+                <circle cx="218" cy="318" r="3"/>
+                <circle cx="224" cy="324" r="3"/>
+                <circle cx="212" cy="324" r="3"/>
+                <circle cx="218" cy="330" r="3"/>
+            </g>
+
+            <!-- Arm holding cup -->
+            <path d="M229 278
+            Q248 273 261 293
+            L278 263
+            Q284 251 294 256
+            Q302 262 294 275
+            L274 318
+            Q264 334 248 321
+            L221 303Z"
+            fill="#f5c39f"/>
+
+            <!-- Other arm -->
+            <path d="M121 280
+            Q105 291 111 309
+            Q117 320 131 312
+            L150 290Z"
+            fill="#f5c39f"/>
+
+            <!-- Coffee cup -->
+            <path d="M247 222
+            L311 222
+            L304 277
+            Q279 292 254 277Z"
+            fill="#e8a6a0"/>
+
+            <!-- Cup handle -->
+            <path d="M308 233
+            Q335 222 334 247
+            Q330 269 305 264"
+            fill="none"
+            stroke="#c77e77"
+            stroke-width="8"
+            stroke-linecap="round"/>
+
+            <!-- Coffee surface -->
+            <ellipse cx="279" cy="223" rx="32" ry="7"
+            fill="#754a35"/>
+
+            <ellipse cx="279" cy="223" rx="24" ry="4"
+            fill="#b9825c"/>
+
+            <!-- Cup heart decoration -->
+            <path d="M279 242
+            C270 232 259 243 279 258
+            C299 243 288 232 279 242Z"
+            fill="#fff0df"/>
 
             <!-- Steam -->
-            <path d="M260 207 Q247 193 260 180"
-            fill="none" stroke="#c69a78"
-            stroke-width="3" stroke-linecap="round"/>
+            <path d="M262 208
+            Q248 194 262 181"
+            fill="none"
+            stroke="#c69a78"
+            stroke-width="3"
+            stroke-linecap="round"/>
 
-            <path d="M280 207 Q293 193 281 180"
-            fill="none" stroke="#c69a78"
-            stroke-width="3" stroke-linecap="round"/>
+            <path d="M282 208
+            Q296 194 283 181"
+            fill="none"
+            stroke="#c69a78"
+            stroke-width="3"
+            stroke-linecap="round"/>
 
-            <!-- Decorative stars -->
-            <path d="M57 112 L62 124 L74 129
-            L62 134 L57 146 L52 134
-            L40 129 L52 124Z"
+            <!-- Cute stars -->
+            <path d="M54 112
+            L60 126 L74 132
+            L60 138 L54 152
+            L48 138 L34 132
+            L48 126Z"
             fill="#e5b85f"/>
 
-            <path d="M296 92 L301 103 L312 108
-            L301 113 L296 124 L291 113
-            L280 108 L291 103Z"
+            <path d="M300 86
+            L305 98 L317 103
+            L305 108 L300 120
+            L295 108 L283 103
+            L295 98Z"
             fill="#d99b98"/>
 
-            <circle cx="70" cy="230" r="5" fill="#b7c9ae"/>
-            <circle cx="302" cy="310" r="5" fill="#e5b85f"/>
+            <path d="M63 220
+            Q69 208 75 220
+            Q87 226 75 232
+            Q69 244 63 232
+            Q51 226 63 220Z"
+            fill="#e9b8aa"/>
 
-            <!-- Little decorative leaves -->
-            <path d="M62 276 Q43 255 38 278 Q48 292 62 276Z"
+            <circle cx="310" cy="315" r="5"
+            fill="#e5b85f"/>
+
+            <!-- Little leaves -->
+            <path d="M61 281
+            Q41 260 37 281
+            Q47 297 61 281Z"
             fill="#a8bd9d"/>
 
-            <path d="M62 276 Q57 286 52 294"
-            stroke="#809a77" stroke-width="2" fill="none"/>
+            <path d="M61 281
+            Q57 293 51 300"
+            stroke="#809a77"
+            stroke-width="2"
+            fill="none"/>
 
         </svg>
 
@@ -1708,7 +1848,7 @@ footer {
 </div>
 </section>
 
-<!-- GALLERY -->
+<!-- GALLERY: FOUR PHOTOS ONLY -->
 
 <section class="gallery" id="gallery">
 <div class="container">
@@ -1751,14 +1891,6 @@ footer {
             </div>
         </div>
 
-        <!-- Second sitting spot photo: adjusted independently -->
-        <div class="gallery-item sitting-gallery">
-            <div class="image-frame">
-                <img src="sitting spot.jpg"
-                alt="Panchatantra Café sitting area">
-            </div>
-        </div>
-
     </div>
 
 </div>
@@ -1769,7 +1901,7 @@ footer {
 <section class="events" id="events">
 <div class="container events-grid">
 
-    <div class="events-image image-frame fit-full reveal">
+    <div class="events-image image-frame reveal">
         <img src="awards.jpg"
         alt="Panchatantra Café awards and achievements">
     </div>
@@ -1910,7 +2042,9 @@ footer {
 // INTRO SCREEN
 
 window.addEventListener("load", function() {
+
     setTimeout(() => {
+
         document.body.classList.remove("loading");
 
         const intro = document.getElementById("introScreen");
@@ -1918,7 +2052,9 @@ window.addEventListener("load", function() {
         if (intro) {
             intro.remove();
         }
+
     }, 4100);
+
 });
 
 // MOBILE MENU
@@ -1928,9 +2064,11 @@ function toggleMenu() {
 }
 
 document.querySelectorAll(".nav-links a").forEach(link => {
+
     link.addEventListener("click", () => {
         document.getElementById("navLinks").classList.remove("active");
     });
+
 });
 
 // SCROLL REVEAL
@@ -1940,7 +2078,9 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
 
         if (entry.isIntersecting) {
+
             entry.target.classList.add("visible");
+
             observer.unobserve(entry.target);
         }
 
