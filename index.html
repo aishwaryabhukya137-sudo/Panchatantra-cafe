@@ -10,7 +10,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -322,16 +323,21 @@ header {
     margin: auto;
 }
 
+/* HANDWRITTEN LANDING PAGE HEADING */
+
 .hero-content h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(52px, 7vw, 82px);
-    line-height: 1.06;
-    font-weight: 500;
-    margin: 20px 0;
+    font-family: 'Caveat', cursive;
+    font-size: clamp(76px, 10vw, 118px);
+    line-height: .88;
+    font-weight: 600;
+    letter-spacing: -2px;
+    margin: 25px 0;
+    color: var(--brown);
 }
 
 .hero-content h1 em {
     color: var(--accent);
+    font-style: normal;
 }
 
 .hero-content p {
@@ -416,46 +422,6 @@ header {
     font-size: 11px;
     color: var(--muted);
     margin-top: 6px;
-}
-
-/* CUTE GIRL */
-
-.girl-section {
-    padding: 10px 0 45px;
-}
-
-.girl-layout {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 65px;
-    max-width: 900px;
-    margin: auto;
-}
-
-.girl-art {
-    width: 350px;
-    max-width: 100%;
-    flex-shrink: 0;
-    animation: gentleFloat 5s ease-in-out infinite;
-}
-
-.girl-copy {
-    max-width: 370px;
-}
-
-.girl-copy h2 {
-    margin: 14px 0;
-    font-size: clamp(30px, 4vw, 45px);
-}
-
-.girl-copy p {
-    margin-bottom: 20px;
-}
-
-@keyframes gentleFloat {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-7px); }
 }
 
 /* STORY INTRO */
@@ -676,7 +642,7 @@ header {
     margin-bottom: 22px;
 }
 
-/* GALLERY - ALL FOUR FRAMES EQUAL */
+/* GALLERY */
 
 .gallery-grid {
     display: grid;
@@ -833,6 +799,57 @@ header {
     line-height: 1.9;
 }
 
+/* FINAL GIRL SECTION */
+
+.final-girl {
+    padding: 65px 0 55px;
+    border-top: 1px solid var(--line);
+    overflow: hidden;
+}
+
+.final-girl-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 65px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.final-girl-art {
+    width: 330px;
+    max-width: 100%;
+    flex-shrink: 0;
+    overflow: visible;
+    animation: gentleFloat 5s ease-in-out infinite;
+}
+
+.final-girl-copy {
+    max-width: 390px;
+}
+
+.final-girl-copy h2 {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(55px, 7vw, 82px);
+    font-weight: 600;
+    line-height: .95;
+    color: var(--brown);
+    margin: 14px 0;
+}
+
+.final-girl-copy h2 span {
+    color: var(--accent);
+}
+
+.final-girl-copy p {
+    margin-bottom: 24px;
+}
+
+@keyframes gentleFloat {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
 /* FOOTER */
 
 footer {
@@ -906,10 +923,6 @@ footer {
         gap: 32px;
     }
 
-    .girl-layout {
-        gap: 30px;
-    }
-
     .menu-grid {
         gap: 15px;
     }
@@ -930,6 +943,10 @@ footer {
     .events-image {
         max-width: 650px;
         margin: auto;
+    }
+
+    .final-girl-layout {
+        gap: 30px;
     }
 }
 
@@ -972,7 +989,9 @@ footer {
     }
 
     .hero-content h1 {
-        font-size: 55px;
+        font-size: 76px;
+        line-height: .9;
+        letter-spacing: -1px;
     }
 
     .hero-content p {
@@ -1020,28 +1039,6 @@ footer {
 
     .photo-label p {
         font-size: 10px;
-    }
-
-    .girl-section {
-        padding: 5px 0 35px;
-    }
-
-    .girl-layout {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-    }
-
-    .girl-art {
-        width: 270px;
-    }
-
-    .girl-copy {
-        max-width: 340px;
-    }
-
-    .girl-copy h2 {
-        font-size: 34px;
     }
 
     .story-intro,
@@ -1093,7 +1090,7 @@ footer {
         height: 290px;
     }
 
-    /* MOBILE GALLERY - FOUR MATCHING FRAMES */
+    /* MOBILE GALLERY */
 
     .gallery-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1135,6 +1132,30 @@ footer {
 
     .visit-details {
         gap: 20px;
+    }
+
+    /* FINAL GIRL ON MOBILE */
+
+    .final-girl {
+        padding: 45px 0 40px;
+    }
+
+    .final-girl-layout {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+
+    .final-girl-art {
+        width: 260px;
+    }
+
+    .final-girl-copy {
+        max-width: 340px;
+    }
+
+    .final-girl-copy h2 {
+        font-size: 65px;
     }
 
     .footer-top,
@@ -1250,292 +1271,6 @@ footer {
         </div>
     </div>
 
-</div>
-</section>
-
-<!-- NEW CUTE GIRL ILLUSTRATION -->
-
-<section class="girl-section">
-<div class="container">
-
-<div class="girl-layout reveal">
-
-<svg class="girl-art"
-viewBox="0 0 360 430"
-xmlns="http://www.w3.org/2000/svg"
-role="img"
-aria-label="Cute slim cartoon girl laughing in a long pastel dress and holding a cup of coffee">
-
-<defs>
-    <linearGradient id="dressColor" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="#e5c9d1"/>
-        <stop offset="100%" stop-color="#cdaebd"/>
-    </linearGradient>
-
-    <linearGradient id="hairColor" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="#80513b"/>
-        <stop offset="100%" stop-color="#4d3028"/>
-    </linearGradient>
-</defs>
-
-<!-- Background -->
-<circle cx="180" cy="195" r="160" fill="#f7eadc"/>
-<circle cx="180" cy="195" r="148"
-fill="none" stroke="#e5cdb6"
-stroke-width="1.5" stroke-dasharray="4 7"/>
-
-<ellipse cx="180" cy="408" rx="80" ry="9" fill="#eadbca"/>
-
-<!-- Hair behind head -->
-<path d="M116 145
-C105 76 143 40 184 42
-C239 39 268 82 254 154
-L249 211
-Q240 240 222 229
-L132 229
-Q109 206 116 145Z"
-fill="url(#hairColor)"/>
-
-<!-- Neck -->
-<path d="M162 217 L160 250
-Q180 267 200 249 L198 217Z"
-fill="#edb994"/>
-
-<!-- Face -->
-<ellipse cx="180" cy="153" rx="61" ry="76" fill="#f4c6a4"/>
-
-<!-- Ears -->
-<ellipse cx="120" cy="160" rx="9" ry="14" fill="#edb994"/>
-<ellipse cx="240" cy="160" rx="9" ry="14" fill="#edb994"/>
-
-<!-- Hair cap -->
-<path d="M117 155
-C102 95 131 42 183 39
-C236 36 264 82 248 154
-C232 136 225 119 223 103
-C207 122 191 125 177 113
-C159 129 139 126 132 108
-C130 129 125 144 117 155Z"
-fill="url(#hairColor)"/>
-
-<!-- Bangs close to eyebrows -->
-<path d="M121 113
-Q140 86 158 107
-Q175 87 191 105
-Q210 85 231 112
-Q218 130 198 122
-Q181 138 162 122
-Q142 136 121 125Z"
-fill="#63402f"/>
-
-<!-- Side hair -->
-<path d="M120 127
-Q108 187 130 239
-Q140 250 145 238
-Q129 188 139 137Z"
-fill="#63402f"/>
-
-<path d="M239 128
-Q254 188 230 239
-Q219 250 214 238
-Q230 188 220 137Z"
-fill="#63402f"/>
-
-<!-- Hair shine -->
-<path d="M143 65 Q168 48 190 53"
-fill="none" stroke="#aa795b"
-stroke-width="4" stroke-linecap="round"/>
-
-<!-- Blush -->
-<ellipse cx="143" cy="176" rx="13" ry="8" fill="#e99b91" opacity=".6"/>
-<ellipse cx="217" cy="176" rx="13" ry="8" fill="#e99b91" opacity=".6"/>
-
-<!-- Laughing closed eyes -->
-<path d="M145 153 Q156 168 168 153"
-fill="none" stroke="#49352c"
-stroke-width="3.5" stroke-linecap="round"/>
-
-<path d="M192 153 Q204 168 216 153"
-fill="none" stroke="#49352c"
-stroke-width="3.5" stroke-linecap="round"/>
-
-<!-- Eyelashes -->
-<path d="M147 151 L142 146 M158 153 L158 147
-M205 153 L205 147 M215 151 L220 146"
-stroke="#49352c" stroke-width="2"
-stroke-linecap="round"/>
-
-<!-- Tiny nose -->
-<path d="M179 163 Q174 174 181 175"
-fill="none" stroke="#c98970"
-stroke-width="2" stroke-linecap="round"/>
-
-<!-- Big happy laughing smile -->
-<path d="M158 184
-Q180 217 202 184
-Q200 213 180 216
-Q160 211 158 184Z"
-fill="#9e5555"/>
-
-<path d="M163 188 Q180 199 197 188"
-fill="none" stroke="#fff2e5"
-stroke-width="4" stroke-linecap="round"/>
-
-<!-- Earrings -->
-<circle cx="120" cy="185" r="4" fill="#e2b96f"/>
-<circle cx="240" cy="185" r="4" fill="#e2b96f"/>
-
-<!-- Maxi dress: fitted waist and long flowing skirt -->
-<path d="M157 248
-Q140 251 130 269
-L111 302
-Q102 335 91 392
-Q180 414 269 392
-Q258 335 249 302
-L230 269
-Q220 251 203 248
-L193 263
-Q180 273 167 263Z"
-fill="url(#dressColor)"/>
-
-<!-- Dress neckline -->
-<path d="M157 248 Q180 278 203 248"
-fill="none" stroke="#b88fa0" stroke-width="3"/>
-
-<!-- Waist seam -->
-<path d="M112 302 Q180 315 248 302"
-fill="none" stroke="#b88fa0" stroke-width="3"/>
-
-<!-- Dress folds -->
-<path d="M145 309 Q135 352 130 397"
-fill="none" stroke="#b58fa0" stroke-width="2"/>
-
-<path d="M180 312 Q174 352 180 404"
-fill="none" stroke="#b58fa0" stroke-width="2"/>
-
-<path d="M215 309 Q225 352 230 397"
-fill="none" stroke="#b58fa0" stroke-width="2"/>
-
-<!-- Little dress flowers -->
-<g fill="#fff3e7">
-    <circle cx="150" cy="335" r="3"/>
-    <circle cx="156" cy="341" r="3"/>
-    <circle cx="144" cy="341" r="3"/>
-    <circle cx="150" cy="347" r="3"/>
-
-    <circle cx="210" cy="355" r="3"/>
-    <circle cx="216" cy="361" r="3"/>
-    <circle cx="204" cy="361" r="3"/>
-    <circle cx="210" cy="367" r="3"/>
-</g>
-
-<!-- Left arm relaxed -->
-<path d="M132 270
-Q119 277 116 297
-L105 330
-Q103 340 112 342
-Q120 342 123 330
-L143 291Z"
-fill="#f4c6a4"/>
-
-<!-- Right arm reaching for coffee -->
-<path d="M229 270
-Q245 276 251 292
-L267 266
-Q273 256 282 263
-Q289 269 282 280
-L262 317
-Q254 327 244 315
-L218 290Z"
-fill="#f4c6a4"/>
-
-<!-- Coffee cup -->
-<path d="M254 224
-L310 224
-L305 274
-Q282 285 259 274Z"
-fill="#e9a9a6"/>
-
-<!-- Coffee cup rim -->
-<ellipse cx="282" cy="225" rx="28" ry="6" fill="#754a35"/>
-<ellipse cx="282" cy="225" rx="21" ry="3.5" fill="#bd8964"/>
-
-<!-- Cup handle -->
-<path d="M309 236
-Q333 227 333 249
-Q330 269 306 262"
-fill="none" stroke="#c77e77"
-stroke-width="7" stroke-linecap="round"/>
-
-<!-- Cup heart -->
-<path d="M282 242
-C274 233 264 244 282 258
-C300 244 290 233 282 242Z"
-fill="#fff4e9"/>
-
-<!-- Fingers around cup -->
-<path d="M257 262 Q265 254 272 261
-M257 269 Q264 263 271 269"
-fill="none" stroke="#e7aa8a"
-stroke-width="3" stroke-linecap="round"/>
-
-<!-- Steam -->
-<path d="M269 211 Q258 198 270 186"
-fill="none" stroke="#c69a78"
-stroke-width="2.5" stroke-linecap="round"/>
-
-<path d="M289 211 Q300 198 289 186"
-fill="none" stroke="#c69a78"
-stroke-width="2.5" stroke-linecap="round"/>
-
-<!-- Little hair bow -->
-<path d="M229 73
-Q210 54 208 73
-Q209 87 229 82
-Q247 94 250 78
-Q251 62 229 73Z"
-fill="#e6b6b7"/>
-
-<circle cx="229" cy="78" r="4" fill="#c98d98"/>
-
-<!-- Floating stars -->
-<path d="M55 112 L61 126 L75 132
-L61 138 L55 152 L49 138
-L35 132 L49 126Z"
-fill="#e5b85f"/>
-
-<path d="M299 95 L304 107 L316 112
-L304 117 L299 129 L294 117
-L282 112 L294 107Z"
-fill="#d99b98"/>
-
-<path d="M67 247 L71 256 L80 260
-L71 264 L67 273 L63 264
-L54 260 L63 256Z"
-fill="#d99b98"/>
-
-<circle cx="307" cy="327" r="4" fill="#e5b85f"/>
-<circle cx="85" cy="190" r="3" fill="#e5b85f"/>
-
-</svg>
-
-<div class="girl-copy">
-    <span class="eyebrow">A MOMENT FOR YOURSELF</span>
-
-    <h2>Slow down.<br>Sip. Smile.</h2>
-
-    <p class="description">
-        A favourite cup, a familiar face, a good conversation.
-        Sometimes the smallest moments become the stories
-        we remember the longest.
-    </p>
-
-    <a href="#visit" class="text-link">
-        Spend a little time with us ↗
-    </a>
-</div>
-
-</div>
 </div>
 </section>
 
@@ -1952,6 +1687,317 @@ fill="#d99b98"/>
 
     </div>
 
+</div>
+</section>
+
+<!-- FINAL GIRL: MEET YOU AT THE CAFE -->
+
+<section class="final-girl">
+<div class="container">
+
+<div class="final-girl-layout reveal">
+
+<!-- INLINE GIRL ILLUSTRATION: NO IMAGE FILE REQUIRED -->
+
+<svg class="final-girl-art"
+viewBox="0 0 360 430"
+xmlns="http://www.w3.org/2000/svg"
+role="img"
+aria-label="Illustration of a happy girl in a pink dress holding a coffee cup">
+
+<defs>
+    <linearGradient id="dressColor" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#e5c9d1"/>
+        <stop offset="100%" stop-color="#cdaebd"/>
+    </linearGradient>
+
+    <linearGradient id="hairColor" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#80513b"/>
+        <stop offset="100%" stop-color="#4d3028"/>
+    </linearGradient>
+</defs>
+
+<!-- HAIR BEHIND HEAD -->
+
+<path d="M116 145
+C105 76 143 40 184 42
+C239 39 268 82 254 154
+L249 211
+Q240 240 222 229
+L132 229
+Q109 206 116 145Z"
+fill="url(#hairColor)"/>
+
+<!-- NECK -->
+
+<path d="M162 217 L160 250
+Q180 267 200 249 L198 217Z"
+fill="#edb994"/>
+
+<!-- FACE -->
+
+<ellipse cx="180" cy="153" rx="61" ry="76" fill="#f4c6a4"/>
+
+<!-- EARS -->
+
+<ellipse cx="120" cy="160" rx="9" ry="14" fill="#edb994"/>
+<ellipse cx="240" cy="160" rx="9" ry="14" fill="#edb994"/>
+
+<!-- HAIR CAP -->
+
+<path d="M117 155
+C102 95 131 42 183 39
+C236 36 264 82 248 154
+C232 136 225 119 223 103
+C207 122 191 125 177 113
+C159 129 139 126 132 108
+C130 129 125 144 117 155Z"
+fill="url(#hairColor)"/>
+
+<!-- BANGS -->
+
+<path d="M121 113
+Q140 86 158 107
+Q175 87 191 105
+Q210 85 231 112
+Q218 130 198 122
+Q181 138 162 122
+Q142 136 121 125Z"
+fill="#63402f"/>
+
+<!-- SIDE HAIR -->
+
+<path d="M120 127
+Q108 187 130 239
+Q140 250 145 238
+Q129 188 139 137Z"
+fill="#63402f"/>
+
+<path d="M239 128
+Q254 188 230 239
+Q219 250 214 238
+Q230 188 220 137Z"
+fill="#63402f"/>
+
+<!-- HAIR SHINE -->
+
+<path d="M143 65 Q168 48 190 53"
+fill="none" stroke="#aa795b"
+stroke-width="4" stroke-linecap="round"/>
+
+<!-- BLUSH -->
+
+<ellipse cx="143" cy="176" rx="13" ry="8" fill="#e99b91" opacity=".6"/>
+<ellipse cx="217" cy="176" rx="13" ry="8" fill="#e99b91" opacity=".6"/>
+
+<!-- CLOSED SMILING EYES -->
+
+<path d="M145 153 Q156 168 168 153"
+fill="none" stroke="#49352c"
+stroke-width="3.5" stroke-linecap="round"/>
+
+<path d="M192 153 Q204 168 216 153"
+fill="none" stroke="#49352c"
+stroke-width="3.5" stroke-linecap="round"/>
+
+<!-- EYELASHES -->
+
+<path d="M147 151 L142 146 M158 153 L158 147
+M205 153 L205 147 M215 151 L220 146"
+stroke="#49352c" stroke-width="2"
+stroke-linecap="round"/>
+
+<!-- NOSE -->
+
+<path d="M179 163 Q174 174 181 175"
+fill="none" stroke="#c98970"
+stroke-width="2" stroke-linecap="round"/>
+
+<!-- HAPPY SMILE -->
+
+<path d="M158 184
+Q180 217 202 184
+Q200 213 180 216
+Q160 211 158 184Z"
+fill="#9e5555"/>
+
+<path d="M163 188 Q180 199 197 188"
+fill="none" stroke="#fff2e5"
+stroke-width="4" stroke-linecap="round"/>
+
+<!-- EARRINGS -->
+
+<circle cx="120" cy="185" r="4" fill="#e2b96f"/>
+<circle cx="240" cy="185" r="4" fill="#e2b96f"/>
+
+<!-- PINK MAXI DRESS -->
+
+<path d="M157 248
+Q140 251 130 269
+L111 302
+Q102 335 91 392
+Q180 414 269 392
+Q258 335 249 302
+L230 269
+Q220 251 203 248
+L193 263
+Q180 273 167 263Z"
+fill="url(#dressColor)"/>
+
+<!-- DRESS NECKLINE -->
+
+<path d="M157 248 Q180 278 203 248"
+fill="none" stroke="#b88fa0" stroke-width="3"/>
+
+<!-- WAIST SEAM -->
+
+<path d="M112 302 Q180 315 248 302"
+fill="none" stroke="#b88fa0" stroke-width="3"/>
+
+<!-- DRESS FOLDS -->
+
+<path d="M145 309 Q135 352 130 397"
+fill="none" stroke="#b58fa0" stroke-width="2"/>
+
+<path d="M180 312 Q174 352 180 404"
+fill="none" stroke="#b58fa0" stroke-width="2"/>
+
+<path d="M215 309 Q225 352 230 397"
+fill="none" stroke="#b58fa0" stroke-width="2"/>
+
+<!-- DRESS FLOWERS -->
+
+<g fill="#fff3e7">
+    <circle cx="150" cy="335" r="3"/>
+    <circle cx="156" cy="341" r="3"/>
+    <circle cx="144" cy="341" r="3"/>
+    <circle cx="150" cy="347" r="3"/>
+
+    <circle cx="210" cy="355" r="3"/>
+    <circle cx="216" cy="361" r="3"/>
+    <circle cx="204" cy="361" r="3"/>
+    <circle cx="210" cy="367" r="3"/>
+</g>
+
+<!-- LEFT ARM -->
+
+<path d="M132 270
+Q119 277 116 297
+L105 330
+Q103 340 112 342
+Q120 342 123 330
+L143 291Z"
+fill="#f4c6a4"/>
+
+<!-- RIGHT ARM -->
+
+<path d="M229 270
+Q245 276 251 292
+L267 266
+Q273 256 282 263
+Q289 269 282 280
+L262 317
+Q254 327 244 315
+L218 290Z"
+fill="#f4c6a4"/>
+
+<!-- COFFEE CUP -->
+
+<path d="M254 224
+L310 224
+L305 274
+Q282 285 259 274Z"
+fill="#e9a9a6"/>
+
+<ellipse cx="282" cy="225" rx="28" ry="6" fill="#754a35"/>
+<ellipse cx="282" cy="225" rx="21" ry="3.5" fill="#bd8964"/>
+
+<!-- CUP HANDLE -->
+
+<path d="M309 236
+Q333 227 333 249
+Q330 269 306 262"
+fill="none" stroke="#c77e77"
+stroke-width="7" stroke-linecap="round"/>
+
+<!-- HEART ON CUP -->
+
+<path d="M282 242
+C274 233 264 244 282 258
+C300 244 290 233 282 242Z"
+fill="#fff4e9"/>
+
+<!-- FINGERS -->
+
+<path d="M257 262 Q265 254 272 261
+M257 269 Q264 263 271 269"
+fill="none" stroke="#e7aa8a"
+stroke-width="3" stroke-linecap="round"/>
+
+<!-- COFFEE STEAM -->
+
+<path d="M269 211 Q258 198 270 186"
+fill="none" stroke="#c69a78"
+stroke-width="2.5" stroke-linecap="round"/>
+
+<path d="M289 211 Q300 198 289 186"
+fill="none" stroke="#c69a78"
+stroke-width="2.5" stroke-linecap="round"/>
+
+<!-- HAIR BOW -->
+
+<path d="M229 73
+Q210 54 208 73
+Q209 87 229 82
+Q247 94 250 78
+Q251 62 229 73Z"
+fill="#e6b6b7"/>
+
+<circle cx="229" cy="78" r="4" fill="#c98d98"/>
+
+<!-- FLOATING STARS -->
+
+<path d="M55 112 L61 126 L75 132
+L61 138 L55 152 L49 138
+L35 132 L49 126Z"
+fill="#e5b85f"/>
+
+<path d="M299 95 L304 107 L316 112
+L304 117 L299 129 L294 117
+L282 112 L294 107Z"
+fill="#d99b98"/>
+
+<path d="M67 247 L71 256 L80 260
+L71 264 L67 273 L63 264
+L54 260 L63 256Z"
+fill="#d99b98"/>
+
+<circle cx="307" cy="327" r="4" fill="#e5b85f"/>
+<circle cx="85" cy="190" r="3" fill="#e5b85f"/>
+
+</svg>
+
+<!-- GIRL'S MESSAGE -->
+
+<div class="final-girl-copy">
+
+    <span class="eyebrow">UNTIL WE MEET AGAIN</span>
+
+    <h2>Meet you<br>at the <span>café.</span></h2>
+
+    <p class="description">
+        Your coffee is waiting, your favourite corner is ready
+        and there's always another story to share.
+    </p>
+
+    <a href="https://maps.app.goo.gl/RJKehn9R445dQgz3A"
+    target="_blank" rel="noopener" class="btn">
+        COME SAY HELLO ↗
+    </a>
+
+</div>
+
+</div>
 </div>
 </section>
 
