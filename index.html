@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -323,16 +323,13 @@ header {
     margin: auto;
 }
 
-/* HANDWRITTEN LANDING PAGE HEADING */
-
 .hero-content h1 {
-    font-family: 'Caveat', cursive;
-    font-size: clamp(76px, 10vw, 118px);
-    line-height: .88;
-    font-weight: 600;
+    font-family: 'Kalam', cursive;
+    font-size: clamp(65px, 8vw, 100px);
+    line-height: 1.12;
+    font-weight: 400;
+    margin: 20px 0;
     letter-spacing: -2px;
-    margin: 25px 0;
-    color: var(--brown);
 }
 
 .hero-content h1 em {
@@ -422,6 +419,62 @@ header {
     font-size: 11px;
     color: var(--muted);
     margin-top: 6px;
+}
+
+/* GIRL ILLUSTRATION */
+
+.girl-section {
+    padding: 35px 0 55px;
+}
+
+.girl-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 65px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.girl-art {
+    width: 350px;
+    max-width: 100%;
+    flex-shrink: 0;
+    animation: gentleFloat 5s ease-in-out infinite;
+}
+
+.girl-copy {
+    max-width: 370px;
+}
+
+.girl-copy h2 {
+    margin: 14px 0;
+    font-size: clamp(30px, 4vw, 45px);
+}
+
+.girl-copy p {
+    margin-bottom: 20px;
+}
+
+@keyframes gentleFloat {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-7px); }
+}
+
+/* FINAL GIRL SECTION */
+
+.final-girl {
+    background: var(--cream);
+    border-top: 1px solid var(--line);
+    padding: 65px 0;
+}
+
+.final-girl .girl-layout {
+    flex-direction: row-reverse;
+}
+
+.final-girl .girl-art {
+    width: 350px;
 }
 
 /* STORY INTRO */
@@ -799,57 +852,6 @@ header {
     line-height: 1.9;
 }
 
-/* FINAL GIRL SECTION */
-
-.final-girl {
-    padding: 65px 0 55px;
-    border-top: 1px solid var(--line);
-    overflow: hidden;
-}
-
-.final-girl-layout {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 65px;
-    max-width: 900px;
-    margin: auto;
-}
-
-.final-girl-art {
-    width: 330px;
-    max-width: 100%;
-    flex-shrink: 0;
-    overflow: visible;
-    animation: gentleFloat 5s ease-in-out infinite;
-}
-
-.final-girl-copy {
-    max-width: 390px;
-}
-
-.final-girl-copy h2 {
-    font-family: 'Caveat', cursive;
-    font-size: clamp(55px, 7vw, 82px);
-    font-weight: 600;
-    line-height: .95;
-    color: var(--brown);
-    margin: 14px 0;
-}
-
-.final-girl-copy h2 span {
-    color: var(--accent);
-}
-
-.final-girl-copy p {
-    margin-bottom: 24px;
-}
-
-@keyframes gentleFloat {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-}
-
 /* FOOTER */
 
 footer {
@@ -923,6 +925,10 @@ footer {
         gap: 32px;
     }
 
+    .girl-layout {
+        gap: 30px;
+    }
+
     .menu-grid {
         gap: 15px;
     }
@@ -943,10 +949,6 @@ footer {
     .events-image {
         max-width: 650px;
         margin: auto;
-    }
-
-    .final-girl-layout {
-        gap: 30px;
     }
 }
 
@@ -989,9 +991,8 @@ footer {
     }
 
     .hero-content h1 {
-        font-size: 76px;
-        line-height: .9;
-        letter-spacing: -1px;
+        font-size: 64px;
+        line-height: 1.1;
     }
 
     .hero-content p {
@@ -1039,6 +1040,34 @@ footer {
 
     .photo-label p {
         font-size: 10px;
+    }
+
+    .girl-section {
+        padding: 25px 0 40px;
+    }
+
+    .girl-layout,
+    .final-girl .girl-layout {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .girl-art,
+    .final-girl .girl-art {
+        width: 270px;
+    }
+
+    .girl-copy {
+        max-width: 340px;
+    }
+
+    .girl-copy h2 {
+        font-size: 34px;
+    }
+
+    .final-girl {
+        padding: 45px 0;
     }
 
     .story-intro,
@@ -1090,8 +1119,6 @@ footer {
         height: 290px;
     }
 
-    /* MOBILE GALLERY */
-
     .gallery-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
@@ -1132,30 +1159,6 @@ footer {
 
     .visit-details {
         gap: 20px;
-    }
-
-    /* FINAL GIRL ON MOBILE */
-
-    .final-girl {
-        padding: 45px 0 40px;
-    }
-
-    .final-girl-layout {
-        flex-direction: column;
-        text-align: center;
-        gap: 5px;
-    }
-
-    .final-girl-art {
-        width: 260px;
-    }
-
-    .final-girl-copy {
-        max-width: 340px;
-    }
-
-    .final-girl-copy h2 {
-        font-size: 65px;
     }
 
     .footer-top,
@@ -1271,6 +1274,162 @@ footer {
         </div>
     </div>
 
+</div>
+</section>
+
+<!-- NEW GIRL AFTER HOMEPAGE -->
+
+<section class="girl-section">
+<div class="container">
+<div class="girl-layout reveal">
+
+<svg class="girl-art" viewBox="0 0 400 440"
+xmlns="http://www.w3.org/2000/svg"
+role="img" aria-label="Illustration of a girl with long hair enjoying coffee">
+
+<circle cx="200" cy="210" r="170" fill="#f5eee3"/>
+<circle cx="200" cy="210" r="155" fill="none"
+stroke="#dfcbb5" stroke-width="1.5" stroke-dasharray="4 8"/>
+
+<!-- Hair behind -->
+<path d="M105 155 Q85 35 200 38 Q320 30 300 165
+L285 260 L115 260Z" fill="#50352b"/>
+
+<!-- Dress -->
+<path d="M145 265 Q120 280 110 330
+L90 420 Q200 440 310 420
+L290 330 Q280 280 255 265Z"
+fill="#d8b8bd"/>
+
+<path d="M145 280 Q200 310 255 280"
+fill="none" stroke="#bd939e" stroke-width="3"/>
+
+<path d="M145 320 L125 415 M200 320 L200 425
+M255 320 L275 415"
+stroke="#bd939e" stroke-width="2" fill="none"/>
+
+<!-- Neck -->
+<path d="M175 235 L175 275 Q200 290 225 275 L225 235Z"
+fill="#eab99b"/>
+
+<!-- Face -->
+<ellipse cx="200" cy="165" rx="70" ry="83" fill="#f2c6a7"/>
+
+<!-- Hair top -->
+<path d="M130 160 Q105 65 200 55
+Q295 55 270 165
+Q250 130 235 112
+Q210 145 165 119
+Q150 145 130 160Z"
+fill="#50352b"/>
+
+<!-- Long hair -->
+<path d="M132 130 Q110 220 145 290
+L160 275 Q137 205 153 135Z" fill="#50352b"/>
+
+<path d="M268 130 Q290 220 255 290
+L240 275 Q263 205 247 135Z" fill="#50352b"/>
+
+<!-- Fringe -->
+<path d="M132 125 Q150 90 177 110
+Q200 85 220 108 Q250 90 268 130
+Q240 130 225 145 Q200 125 180 145
+Q155 130 132 145Z"
+fill="#624333"/>
+
+<!-- Face -->
+<path d="M165 165 Q176 178 187 165"
+stroke="#49352c" stroke-width="3"
+fill="none" stroke-linecap="round"/>
+
+<path d="M213 165 Q224 178 235 165"
+stroke="#49352c" stroke-width="3"
+fill="none" stroke-linecap="round"/>
+
+<ellipse cx="160" cy="190" rx="13" ry="7"
+fill="#df9991" opacity=".55"/>
+
+<ellipse cx="240" cy="190" rx="13" ry="7"
+fill="#df9991" opacity=".55"/>
+
+<path d="M184 205 Q200 225 216 205"
+stroke="#a45e5b" stroke-width="4"
+fill="none" stroke-linecap="round"/>
+
+<!-- Earrings -->
+<circle cx="130" cy="195" r="5" fill="#d6ad69"/>
+<circle cx="270" cy="195" r="5" fill="#d6ad69"/>
+
+<!-- Arms -->
+<path d="M125 290 Q100 310 115 350
+L140 365 Q150 365 150 355
+L140 325 L160 300Z"
+fill="#f2c6a7"/>
+
+<path d="M265 290 Q290 305 290 335
+L310 300 Q320 285 330 295
+Q340 305 325 320 L300 365
+Q285 375 270 355 L245 320Z"
+fill="#f2c6a7"/>
+
+<!-- Coffee cup -->
+<path d="M285 245 L350 245 L343 305
+Q315 320 292 305Z"
+fill="#a77b5c"/>
+
+<ellipse cx="318" cy="245" rx="33" ry="8" fill="#654431"/>
+<ellipse cx="318" cy="245" rx="25" ry="5" fill="#d9b18b"/>
+
+<path d="M350 260 Q380 250 375 280
+Q372 300 345 290"
+stroke="#a77b5c" stroke-width="8" fill="none"/>
+
+<path d="M318 265 C308 252 298 268 318 283
+C338 268 328 252 318 265Z"
+fill="#f7e8d9"/>
+
+<!-- Steam -->
+<path d="M300 225 Q285 210 300 195
+M325 225 Q340 210 325 195"
+stroke="#b99475" stroke-width="3"
+fill="none" stroke-linecap="round"/>
+
+<!-- Bow -->
+<path d="M248 85 Q220 60 225 88
+Q230 105 250 95 Q270 110 275 88
+Q278 68 248 85Z" fill="#d69da4"/>
+
+<circle cx="250" cy="90" r="5" fill="#b77c86"/>
+
+<!-- Stars -->
+<path d="M65 120 L72 137 L90 144
+L72 151 L65 168 L58 151
+L40 144 L58 137Z" fill="#d9b36c"/>
+
+<path d="M330 115 L336 129 L350 135
+L336 141 L330 155 L324 141
+L310 135 L324 129Z" fill="#d69da4"/>
+
+<circle cx="65" cy="280" r="4" fill="#d9b36c"/>
+<circle cx="345" cy="365" r="4" fill="#d9b36c"/>
+
+</svg>
+
+<div class="girl-copy">
+    <span class="eyebrow">A LITTLE HAPPINESS</span>
+
+    <h2>Slow moments.<br>Warm coffee.</h2>
+
+    <p class="description">
+        Take a break from the busy day.
+        Find your favourite corner, grab a cup
+        and make a little memory with us.
+    </p>
+
+    <a href="#visit" class="text-link">Come visit us ↗</a>
+</div>
+
+</div>
 </div>
 </section>
 
@@ -1690,311 +1849,158 @@ footer {
 </div>
 </section>
 
-<!-- FINAL GIRL: MEET YOU AT THE CAFE -->
+<!-- FINAL GIRL SECTION -->
 
-<section class="final-girl">
+<section class="girl-section final-girl">
 <div class="container">
+<div class="girl-layout reveal">
 
-<div class="final-girl-layout reveal">
-
-<!-- INLINE GIRL ILLUSTRATION: NO IMAGE FILE REQUIRED -->
-
-<svg class="final-girl-art"
-viewBox="0 0 360 430"
+<svg class="girl-art" viewBox="0 0 400 440"
 xmlns="http://www.w3.org/2000/svg"
-role="img"
-aria-label="Illustration of a happy girl in a pink dress holding a coffee cup">
-
-<defs>
-    <linearGradient id="dressColor" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="#e5c9d1"/>
-        <stop offset="100%" stop-color="#cdaebd"/>
-    </linearGradient>
-
-    <linearGradient id="hairColor" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="#80513b"/>
-        <stop offset="100%" stop-color="#4d3028"/>
-    </linearGradient>
-</defs>
-
-<!-- HAIR BEHIND HEAD -->
-
-<path d="M116 145
-C105 76 143 40 184 42
-C239 39 268 82 254 154
-L249 211
-Q240 240 222 229
-L132 229
-Q109 206 116 145Z"
-fill="url(#hairColor)"/>
-
-<!-- NECK -->
-
-<path d="M162 217 L160 250
-Q180 267 200 249 L198 217Z"
-fill="#edb994"/>
-
-<!-- FACE -->
-
-<ellipse cx="180" cy="153" rx="61" ry="76" fill="#f4c6a4"/>
-
-<!-- EARS -->
-
-<ellipse cx="120" cy="160" rx="9" ry="14" fill="#edb994"/>
-<ellipse cx="240" cy="160" rx="9" ry="14" fill="#edb994"/>
-
-<!-- HAIR CAP -->
-
-<path d="M117 155
-C102 95 131 42 183 39
-C236 36 264 82 248 154
-C232 136 225 119 223 103
-C207 122 191 125 177 113
-C159 129 139 126 132 108
-C130 129 125 144 117 155Z"
-fill="url(#hairColor)"/>
-
-<!-- BANGS -->
-
-<path d="M121 113
-Q140 86 158 107
-Q175 87 191 105
-Q210 85 231 112
-Q218 130 198 122
-Q181 138 162 122
-Q142 136 121 125Z"
-fill="#63402f"/>
-
-<!-- SIDE HAIR -->
-
-<path d="M120 127
-Q108 187 130 239
-Q140 250 145 238
-Q129 188 139 137Z"
-fill="#63402f"/>
-
-<path d="M239 128
-Q254 188 230 239
-Q219 250 214 238
-Q230 188 220 137Z"
-fill="#63402f"/>
-
-<!-- HAIR SHINE -->
-
-<path d="M143 65 Q168 48 190 53"
-fill="none" stroke="#aa795b"
-stroke-width="4" stroke-linecap="round"/>
-
-<!-- BLUSH -->
-
-<ellipse cx="143" cy="176" rx="13" ry="8" fill="#e99b91" opacity=".6"/>
-<ellipse cx="217" cy="176" rx="13" ry="8" fill="#e99b91" opacity=".6"/>
-
-<!-- CLOSED SMILING EYES -->
-
-<path d="M145 153 Q156 168 168 153"
-fill="none" stroke="#49352c"
-stroke-width="3.5" stroke-linecap="round"/>
-
-<path d="M192 153 Q204 168 216 153"
-fill="none" stroke="#49352c"
-stroke-width="3.5" stroke-linecap="round"/>
-
-<!-- EYELASHES -->
-
-<path d="M147 151 L142 146 M158 153 L158 147
-M205 153 L205 147 M215 151 L220 146"
-stroke="#49352c" stroke-width="2"
-stroke-linecap="round"/>
-
-<!-- NOSE -->
-
-<path d="M179 163 Q174 174 181 175"
-fill="none" stroke="#c98970"
-stroke-width="2" stroke-linecap="round"/>
-
-<!-- HAPPY SMILE -->
-
-<path d="M158 184
-Q180 217 202 184
-Q200 213 180 216
-Q160 211 158 184Z"
-fill="#9e5555"/>
-
-<path d="M163 188 Q180 199 197 188"
-fill="none" stroke="#fff2e5"
-stroke-width="4" stroke-linecap="round"/>
-
-<!-- EARRINGS -->
-
-<circle cx="120" cy="185" r="4" fill="#e2b96f"/>
-<circle cx="240" cy="185" r="4" fill="#e2b96f"/>
-
-<!-- PINK MAXI DRESS -->
-
-<path d="M157 248
-Q140 251 130 269
-L111 302
-Q102 335 91 392
-Q180 414 269 392
-Q258 335 249 302
-L230 269
-Q220 251 203 248
-L193 263
-Q180 273 167 263Z"
-fill="url(#dressColor)"/>
-
-<!-- DRESS NECKLINE -->
-
-<path d="M157 248 Q180 278 203 248"
-fill="none" stroke="#b88fa0" stroke-width="3"/>
-
-<!-- WAIST SEAM -->
-
-<path d="M112 302 Q180 315 248 302"
-fill="none" stroke="#b88fa0" stroke-width="3"/>
-
-<!-- DRESS FOLDS -->
-
-<path d="M145 309 Q135 352 130 397"
-fill="none" stroke="#b58fa0" stroke-width="2"/>
-
-<path d="M180 312 Q174 352 180 404"
-fill="none" stroke="#b58fa0" stroke-width="2"/>
-
-<path d="M215 309 Q225 352 230 397"
-fill="none" stroke="#b58fa0" stroke-width="2"/>
-
-<!-- DRESS FLOWERS -->
-
-<g fill="#fff3e7">
-    <circle cx="150" cy="335" r="3"/>
-    <circle cx="156" cy="341" r="3"/>
-    <circle cx="144" cy="341" r="3"/>
-    <circle cx="150" cy="347" r="3"/>
-
-    <circle cx="210" cy="355" r="3"/>
-    <circle cx="216" cy="361" r="3"/>
-    <circle cx="204" cy="361" r="3"/>
-    <circle cx="210" cy="367" r="3"/>
-</g>
-
-<!-- LEFT ARM -->
-
-<path d="M132 270
-Q119 277 116 297
-L105 330
-Q103 340 112 342
-Q120 342 123 330
-L143 291Z"
-fill="#f4c6a4"/>
-
-<!-- RIGHT ARM -->
-
-<path d="M229 270
-Q245 276 251 292
-L267 266
-Q273 256 282 263
-Q289 269 282 280
-L262 317
-Q254 327 244 315
-L218 290Z"
-fill="#f4c6a4"/>
-
-<!-- COFFEE CUP -->
-
-<path d="M254 224
-L310 224
-L305 274
-Q282 285 259 274Z"
-fill="#e9a9a6"/>
-
-<ellipse cx="282" cy="225" rx="28" ry="6" fill="#754a35"/>
-<ellipse cx="282" cy="225" rx="21" ry="3.5" fill="#bd8964"/>
-
-<!-- CUP HANDLE -->
-
-<path d="M309 236
-Q333 227 333 249
-Q330 269 306 262"
-fill="none" stroke="#c77e77"
-stroke-width="7" stroke-linecap="round"/>
-
-<!-- HEART ON CUP -->
-
-<path d="M282 242
-C274 233 264 244 282 258
-C300 244 290 233 282 242Z"
-fill="#fff4e9"/>
-
-<!-- FINGERS -->
-
-<path d="M257 262 Q265 254 272 261
-M257 269 Q264 263 271 269"
-fill="none" stroke="#e7aa8a"
-stroke-width="3" stroke-linecap="round"/>
-
-<!-- COFFEE STEAM -->
-
-<path d="M269 211 Q258 198 270 186"
-fill="none" stroke="#c69a78"
-stroke-width="2.5" stroke-linecap="round"/>
-
-<path d="M289 211 Q300 198 289 186"
-fill="none" stroke="#c69a78"
-stroke-width="2.5" stroke-linecap="round"/>
-
-<!-- HAIR BOW -->
-
-<path d="M229 73
-Q210 54 208 73
-Q209 87 229 82
-Q247 94 250 78
-Q251 62 229 73Z"
-fill="#e6b6b7"/>
-
-<circle cx="229" cy="78" r="4" fill="#c98d98"/>
-
-<!-- FLOATING STARS -->
-
-<path d="M55 112 L61 126 L75 132
-L61 138 L55 152 L49 138
-L35 132 L49 126Z"
-fill="#e5b85f"/>
-
-<path d="M299 95 L304 107 L316 112
-L304 117 L299 129 L294 117
-L282 112 L294 107Z"
-fill="#d99b98"/>
-
-<path d="M67 247 L71 256 L80 260
-L71 264 L67 273 L63 264
-L54 260 L63 256Z"
-fill="#d99b98"/>
-
-<circle cx="307" cy="327" r="4" fill="#e5b85f"/>
-<circle cx="85" cy="190" r="3" fill="#e5b85f"/>
+role="img" aria-label="Girl saying see you at the café">
+
+<circle cx="200" cy="210" r="170" fill="#f5eee3"/>
+<circle cx="200" cy="210" r="155" fill="none"
+stroke="#dfcbb5" stroke-width="1.5" stroke-dasharray="4 8"/>
+
+<!-- Hair -->
+<path d="M105 155 Q85 35 200 38 Q320 30 300 165
+L285 260 L115 260Z" fill="#50352b"/>
+
+<!-- Dress -->
+<path d="M145 265 Q120 280 110 330
+L90 420 Q200 440 310 420
+L290 330 Q280 280 255 265Z"
+fill="#d8b8bd"/>
+
+<path d="M145 280 Q200 310 255 280"
+fill="none" stroke="#bd939e" stroke-width="3"/>
+
+<path d="M145 320 L125 415 M200 320 L200 425
+M255 320 L275 415"
+stroke="#bd939e" stroke-width="2" fill="none"/>
+
+<!-- Neck -->
+<path d="M175 235 L175 275 Q200 290 225 275 L225 235Z"
+fill="#eab99b"/>
+
+<!-- Face -->
+<ellipse cx="200" cy="165" rx="70" ry="83" fill="#f2c6a7"/>
+
+<!-- Hair top -->
+<path d="M130 160 Q105 65 200 55
+Q295 55 270 165
+Q250 130 235 112
+Q210 145 165 119
+Q150 145 130 160Z"
+fill="#50352b"/>
+
+<!-- Long hair -->
+<path d="M132 130 Q110 220 145 290
+L160 275 Q137 205 153 135Z" fill="#50352b"/>
+
+<path d="M268 130 Q290 220 255 290
+L240 275 Q263 205 247 135Z" fill="#50352b"/>
+
+<!-- Fringe -->
+<path d="M132 125 Q150 90 177 110
+Q200 85 220 108 Q250 90 268 130
+Q240 130 225 145 Q200 125 180 145
+Q155 130 132 145Z"
+fill="#624333"/>
+
+<!-- Face details -->
+<path d="M165 165 Q176 178 187 165"
+stroke="#49352c" stroke-width="3"
+fill="none" stroke-linecap="round"/>
+
+<path d="M213 165 Q224 178 235 165"
+stroke="#49352c" stroke-width="3"
+fill="none" stroke-linecap="round"/>
+
+<ellipse cx="160" cy="190" rx="13" ry="7"
+fill="#df9991" opacity=".55"/>
+
+<ellipse cx="240" cy="190" rx="13" ry="7"
+fill="#df9991" opacity=".55"/>
+
+<path d="M184 205 Q200 225 216 205"
+stroke="#a45e5b" stroke-width="4"
+fill="none" stroke-linecap="round"/>
+
+<!-- Earrings -->
+<circle cx="130" cy="195" r="5" fill="#d6ad69"/>
+<circle cx="270" cy="195" r="5" fill="#d6ad69"/>
+
+<!-- Arms -->
+<path d="M125 290 Q100 310 115 350
+L140 365 Q150 365 150 355
+L140 325 L160 300Z"
+fill="#f2c6a7"/>
+
+<path d="M265 290 Q290 305 290 335
+L310 300 Q320 285 330 295
+Q340 305 325 320 L300 365
+Q285 375 270 355 L245 320Z"
+fill="#f2c6a7"/>
+
+<!-- Coffee cup -->
+<path d="M285 245 L350 245 L343 305
+Q315 320 292 305Z"
+fill="#a77b5c"/>
+
+<ellipse cx="318" cy="245" rx="33" ry="8" fill="#654431"/>
+<ellipse cx="318" cy="245" rx="25" ry="5" fill="#d9b18b"/>
+
+<path d="M350 260 Q380 250 375 280
+Q372 300 345 290"
+stroke="#a77b5c" stroke-width="8" fill="none"/>
+
+<path d="M318 265 C308 252 298 268 318 283
+C338 268 328 252 318 265Z"
+fill="#f7e8d9"/>
+
+<!-- Steam -->
+<path d="M300 225 Q285 210 300 195
+M325 225 Q340 210 325 195"
+stroke="#b99475" stroke-width="3"
+fill="none" stroke-linecap="round"/>
+
+<!-- Bow -->
+<path d="M248 85 Q220 60 225 88
+Q230 105 250 95 Q270 110 275 88
+Q278 68 248 85Z" fill="#d69da4"/>
+
+<circle cx="250" cy="90" r="5" fill="#b77c86"/>
+
+<!-- Stars -->
+<path d="M65 120 L72 137 L90 144
+L72 151 L65 168 L58 151
+L40 144 L58 137Z" fill="#d9b36c"/>
+
+<path d="M330 115 L336 129 L350 135
+L336 141 L330 155 L324 141
+L310 135 L324 129Z" fill="#d69da4"/>
+
+<circle cx="65" cy="280" r="4" fill="#d9b36c"/>
+<circle cx="345" cy="365" r="4" fill="#d9b36c"/>
 
 </svg>
 
-<!-- GIRL'S MESSAGE -->
+<div class="girl-copy">
+    <span class="eyebrow">UNTIL NEXT TIME</span>
 
-<div class="final-girl-copy">
-
-    <span class="eyebrow">UNTIL WE MEET AGAIN</span>
-
-    <h2>Meet you<br>at the <span>café.</span></h2>
+    <h2>Meet you<br>at the café! ♡</h2>
 
     <p class="description">
-        Your coffee is waiting, your favourite corner is ready
-        and there's always another story to share.
+        Your coffee, your favourite people
+        and your next little story are waiting here.
     </p>
 
     <a href="https://maps.app.goo.gl/RJKehn9R445dQgz3A"
     target="_blank" rel="noopener" class="btn">
-        COME SAY HELLO ↗
+        FIND YOUR WAY HERE ↗
     </a>
-
 </div>
 
 </div>
