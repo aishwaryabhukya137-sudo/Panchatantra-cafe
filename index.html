@@ -31,7 +31,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 90px;
+    scroll-padding-top: 100px;
 }
 
 body {
@@ -39,6 +39,7 @@ body {
     color: var(--brown);
     font-family: 'DM Sans', sans-serif;
     overflow-x: hidden;
+    font-size: 16px;
 }
 
 body.loading {
@@ -61,7 +62,7 @@ img {
 }
 
 .eyebrow {
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--accent);
@@ -70,24 +71,24 @@ img {
 
 h2 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(34px, 4.5vw, 55px);
+    font-size: clamp(38px, 5vw, 62px);
     line-height: 1.15;
     font-weight: 500;
 }
 
 .description {
     color: var(--muted);
-    line-height: 1.85;
-    font-size: 13px;
+    line-height: 1.9;
+    font-size: 16px;
 }
 
 .btn {
     display: inline-block;
     background: var(--brown);
     color: var(--cream);
-    padding: 14px 23px;
-    font-size: 10px;
-    letter-spacing: 1.5px;
+    padding: 17px 27px;
+    font-size: 12px;
+    letter-spacing: 1.7px;
     transition: .3s;
 }
 
@@ -97,7 +98,7 @@ h2 {
 }
 
 .text-link {
-    font-size: 12px;
+    font-size: 15px;
     border-bottom: 1px solid var(--brown);
     padding-bottom: 5px;
 }
@@ -119,19 +120,19 @@ h2 {
 
 .intro-logo {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(38px, 8vw, 76px);
+    font-size: clamp(44px, 9vw, 88px);
     animation: bounceLogo 1s ease;
 }
 
 .intro-icon {
-    font-size: 42px;
+    font-size: 48px;
     margin-bottom: 18px;
     animation: cupBounce 1.2s ease infinite alternate;
 }
 
 .intro-subtitle {
     color: var(--muted);
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 4px;
     margin-top: 15px;
     opacity: 0;
@@ -175,11 +176,11 @@ h2 {
 /* HEADER */
 
 header {
-    height: 76px;
+    height: 88px;
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(251,247,239,.96);
+    background: rgba(251,247,239,.97);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--line);
 }
@@ -194,37 +195,44 @@ header {
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 14px;
 }
 
+/* LOGO: LARGER AND WITHOUT CIRCULAR FRAME */
+
 .logo img {
-    width: 43px;
-    height: 43px;
-    border-radius: 50%;
+    width: 68px;
+    height: 68px;
+    border-radius: 0;
     object-fit: contain;
+    background: transparent;
+    mix-blend-mode: multiply;
 }
 
 .logo-name {
     font-family: 'Playfair Display', serif;
-    font-size: 22px;
+    font-size: 30px;
+    line-height: 1.15;
+    letter-spacing: .3px;
 }
 
 .logo small {
     display: block;
-    font-size: 8px;
-    letter-spacing: 3px;
+    font-size: 11px;
+    letter-spacing: 3.5px;
+    margin-top: 4px;
 }
 
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 23px;
+    gap: 25px;
     list-style: none;
 }
 
 .nav-links a {
     color: var(--muted);
-    font-size: 11px;
+    font-size: 14px;
     transition: .3s;
 }
 
@@ -237,7 +245,7 @@ header {
     background: none;
     border: none;
     color: var(--brown);
-    font-size: 25px;
+    font-size: 30px;
     cursor: pointer;
 }
 
@@ -314,18 +322,18 @@ header {
 /* HERO */
 
 .hero {
-    padding: 65px 0 30px;
+    padding: 75px 0 30px;
 }
 
 .hero-content {
     text-align: center;
-    max-width: 780px;
+    max-width: 850px;
     margin: auto;
 }
 
 .hero-content h1 {
     font-family: 'Kalam', cursive;
-    font-size: clamp(65px, 8vw, 100px);
+    font-size: clamp(72px, 9vw, 112px);
     line-height: 1.12;
     font-weight: 400;
     margin: 20px 0;
@@ -338,9 +346,9 @@ header {
 }
 
 .hero-content p {
-    max-width: 530px;
+    max-width: 620px;
     margin: auto;
-    font-size: 14px;
+    font-size: 17px;
     line-height: 1.9;
     color: var(--muted);
 }
@@ -350,24 +358,24 @@ header {
     align-items: center;
     justify-content: center;
     gap: 25px;
-    margin-top: 25px;
+    margin-top: 30px;
 }
 
 .hero-bottom {
     border-top: 1px solid var(--line);
-    margin-top: 35px;
-    padding-top: 17px;
+    margin-top: 40px;
+    padding-top: 20px;
     display: flex;
     justify-content: space-between;
-    font-size: 9px;
-    letter-spacing: 2px;
+    font-size: 11px;
+    letter-spacing: 2.3px;
     color: var(--muted);
 }
 
 /* HOMEPAGE PHOTO */
 
 .home-photo {
-    padding: 20px 0 45px;
+    padding: 20px 0 50px;
 }
 
 .home-photo-frame {
@@ -402,21 +410,21 @@ header {
     left: 35px;
     bottom: 30px;
     background: var(--cream);
-    padding: 18px 24px;
-    max-width: 310px;
+    padding: 22px 28px;
+    max-width: 370px;
     z-index: 4;
     box-shadow: 4px 6px 18px rgba(68,51,41,.1);
 }
 
 .photo-label h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 25px;
+    font-size: 30px;
     font-weight: 500;
     margin-top: 5px;
 }
 
 .photo-label p {
-    font-size: 11px;
+    font-size: 14px;
     color: var(--muted);
     margin-top: 6px;
 }
@@ -449,7 +457,7 @@ header {
 
 .girl-copy h2 {
     margin: 14px 0;
-    font-size: clamp(30px, 4vw, 45px);
+    font-size: clamp(38px, 4.5vw, 52px);
 }
 
 .girl-copy p {
@@ -486,12 +494,12 @@ header {
 }
 
 .story-intro h2 {
-    max-width: 720px;
+    max-width: 780px;
     margin: 17px auto;
 }
 
 .story-intro p {
-    max-width: 620px;
+    max-width: 700px;
     margin: auto;
 }
 
@@ -512,7 +520,7 @@ header {
 .events,
 .reviews,
 .visit {
-    padding: 60px 0;
+    padding: 65px 0;
     border-top: 1px solid var(--line);
 }
 
@@ -554,7 +562,7 @@ header {
 
 .center-heading p {
     margin: auto;
-    max-width: 570px;
+    max-width: 680px;
 }
 
 .menu-grid {
@@ -566,7 +574,7 @@ header {
 
 .menu-card {
     text-align: center;
-    padding: 10px 10px 22px;
+    padding: 10px 10px 25px;
     background: #f7f0e6;
     border: 1px solid var(--line);
     transition: transform .35s;
@@ -582,16 +590,16 @@ header {
 
 .menu-card h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 500;
     margin: 24px 0 9px;
 }
 
 .menu-card p {
     color: var(--muted);
-    font-size: 12px;
-    line-height: 1.8;
-    max-width: 270px;
+    font-size: 14px;
+    line-height: 1.9;
+    max-width: 290px;
     margin: auto;
 }
 
@@ -633,15 +641,28 @@ header {
     align-items: center;
 }
 
+/* FIXED SITTING SPOT IMAGE ALIGNMENT */
+
 .cafe-images .sitting-frame {
     height: 340px;
+    width: 100%;
     padding: 9px;
     background: #f5eee3;
+    overflow: hidden;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
 }
 
 .cafe-images .sitting-frame img {
-    object-fit: contain;
-    background: #f5eee3;
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 25px 3px 25px 3px;
 }
 
 .cafe-images .exterior-frame {
@@ -659,9 +680,10 @@ header {
 }
 
 .cafe-list li {
-    padding: 11px 0;
+    padding: 13px 0;
     border-bottom: 1px solid var(--line);
-    font-size: 12px;
+    font-size: 15px;
+    line-height: 1.6;
 }
 
 .cafe-list li::before {
@@ -817,7 +839,7 @@ header {
 
 .review-box blockquote {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(22px, 3vw, 33px);
+    font-size: clamp(25px, 3.5vw, 37px);
     line-height: 1.5;
     font-style: italic;
 }
@@ -841,14 +863,14 @@ header {
 }
 
 .visit-details h4 {
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 2px;
     margin-bottom: 10px;
 }
 
 .visit-details p {
     color: var(--muted);
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.9;
 }
 
@@ -868,12 +890,12 @@ footer {
 
 .footer-top h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 27px;
+    font-size: 32px;
     font-weight: 500;
 }
 
 .footer-top p {
-    font-size: 11px;
+    font-size: 14px;
     color: var(--muted);
     margin-top: 7px;
 }
@@ -885,7 +907,7 @@ footer {
 }
 
 .footer-links a {
-    font-size: 11px;
+    font-size: 13px;
     color: var(--muted);
 }
 
@@ -895,7 +917,7 @@ footer {
     display: flex;
     justify-content: space-between;
     color: var(--muted);
-    font-size: 10px;
+    font-size: 12px;
 }
 
 /* SCROLL REVEAL */
@@ -957,29 +979,52 @@ footer {
 @media(max-width:600px) {
 
     header {
-        height: 68px;
+        height: 78px;
+    }
+
+    .logo {
+        gap: 10px;
+    }
+
+    .logo img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .logo-name {
+        font-size: 27px;
+    }
+
+    .logo small {
+        font-size: 10px;
+        letter-spacing: 3px;
     }
 
     .menu-toggle {
         display: block;
+        font-size: 30px;
     }
 
     .nav-links {
         display: none;
         position: absolute;
-        top: 68px;
+        top: 78px;
         left: 0;
         width: 100%;
         background: var(--cream);
         border-bottom: 1px solid var(--line);
-        padding: 23px;
+        padding: 27px;
         flex-direction: column;
         align-items: flex-start;
-        gap: 20px;
+        gap: 24px;
     }
 
     .nav-links.active {
         display: flex;
+    }
+
+    .nav-links a {
+        font-size: 17px;
     }
 
     .nav > .text-link {
@@ -991,12 +1036,12 @@ footer {
     }
 
     .hero-content h1 {
-        font-size: 64px;
+        font-size: 70px;
         line-height: 1.1;
     }
 
     .hero-content p {
-        font-size: 13px;
+        font-size: 15px;
     }
 
     .hero-actions {
@@ -1007,6 +1052,7 @@ footer {
     .hero-bottom {
         flex-direction: column;
         gap: 11px;
+        font-size: 11px;
     }
 
     .home-photo {
@@ -1031,15 +1077,15 @@ footer {
         left: 17px;
         bottom: 17px;
         padding: 12px 14px;
-        max-width: 240px;
+        max-width: 250px;
     }
 
     .photo-label h3 {
-        font-size: 19px;
+        font-size: 22px;
     }
 
     .photo-label p {
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .girl-section {
@@ -1063,7 +1109,7 @@ footer {
     }
 
     .girl-copy h2 {
-        font-size: 34px;
+        font-size: 38px;
     }
 
     .final-girl {
@@ -1096,6 +1142,14 @@ footer {
         height: 250px;
     }
 
+    .menu-card h3 {
+        font-size: 27px;
+    }
+
+    .menu-card p {
+        font-size: 14px;
+    }
+
     .coffee-doodle {
         max-width: 300px;
         margin: auto;
@@ -1106,13 +1160,29 @@ footer {
         gap: 12px;
     }
 
+    /* MOBILE SITTING SPOT ALIGNMENT */
+
     .cafe-images .sitting-frame {
-        height: 235px;
+        width: 100%;
+        height: 250px;
+        padding: 7px;
+        overflow: hidden;
+    }
+
+    .cafe-images .sitting-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
     }
 
     .cafe-images .exterior-frame {
-        height: 210px;
+        height: 220px;
         margin-top: 20px;
+    }
+
+    .cafe-list li {
+        font-size: 14px;
     }
 
     .moments-image {
@@ -1161,14 +1231,35 @@ footer {
         gap: 20px;
     }
 
+    .visit-details h4 {
+        font-size: 11px;
+    }
+
+    .visit-details p {
+        font-size: 13px;
+    }
+
     .footer-top,
     .footer-bottom {
         flex-direction: column;
         gap: 18px;
     }
 
+    .footer-top h3 {
+        font-size: 29px;
+    }
+
+    .footer-top p,
+    .footer-links a {
+        font-size: 13px;
+    }
+
     .footer-links {
         gap: 15px;
+    }
+
+    .footer-bottom {
+        font-size: 11px;
     }
 }
 
@@ -1277,7 +1368,7 @@ footer {
 </div>
 </section>
 
-<!-- NEW GIRL AFTER HOMEPAGE -->
+<!-- GIRL SECTION -->
 
 <section class="girl-section">
 <div class="container">
@@ -1285,17 +1376,15 @@ footer {
 
 <svg class="girl-art" viewBox="0 0 400 440"
 xmlns="http://www.w3.org/2000/svg"
-role="img" aria-label="Illustration of a girl with long hair enjoying coffee">
+role="img" aria-label="Illustration of a girl enjoying coffee">
 
 <circle cx="200" cy="210" r="170" fill="#f5eee3"/>
 <circle cx="200" cy="210" r="155" fill="none"
 stroke="#dfcbb5" stroke-width="1.5" stroke-dasharray="4 8"/>
 
-<!-- Hair behind -->
 <path d="M105 155 Q85 35 200 38 Q320 30 300 165
 L285 260 L115 260Z" fill="#50352b"/>
 
-<!-- Dress -->
 <path d="M145 265 Q120 280 110 330
 L90 420 Q200 440 310 420
 L290 330 Q280 280 255 265Z"
@@ -1308,14 +1397,11 @@ fill="none" stroke="#bd939e" stroke-width="3"/>
 M255 320 L275 415"
 stroke="#bd939e" stroke-width="2" fill="none"/>
 
-<!-- Neck -->
 <path d="M175 235 L175 275 Q200 290 225 275 L225 235Z"
 fill="#eab99b"/>
 
-<!-- Face -->
 <ellipse cx="200" cy="165" rx="70" ry="83" fill="#f2c6a7"/>
 
-<!-- Hair top -->
 <path d="M130 160 Q105 65 200 55
 Q295 55 270 165
 Q250 130 235 112
@@ -1323,21 +1409,18 @@ Q210 145 165 119
 Q150 145 130 160Z"
 fill="#50352b"/>
 
-<!-- Long hair -->
 <path d="M132 130 Q110 220 145 290
 L160 275 Q137 205 153 135Z" fill="#50352b"/>
 
 <path d="M268 130 Q290 220 255 290
 L240 275 Q263 205 247 135Z" fill="#50352b"/>
 
-<!-- Fringe -->
 <path d="M132 125 Q150 90 177 110
 Q200 85 220 108 Q250 90 268 130
 Q240 130 225 145 Q200 125 180 145
 Q155 130 132 145Z"
 fill="#624333"/>
 
-<!-- Face -->
 <path d="M165 165 Q176 178 187 165"
 stroke="#49352c" stroke-width="3"
 fill="none" stroke-linecap="round"/>
@@ -1356,11 +1439,9 @@ fill="#df9991" opacity=".55"/>
 stroke="#a45e5b" stroke-width="4"
 fill="none" stroke-linecap="round"/>
 
-<!-- Earrings -->
 <circle cx="130" cy="195" r="5" fill="#d6ad69"/>
 <circle cx="270" cy="195" r="5" fill="#d6ad69"/>
 
-<!-- Arms -->
 <path d="M125 290 Q100 310 115 350
 L140 365 Q150 365 150 355
 L140 325 L160 300Z"
@@ -1372,7 +1453,6 @@ Q340 305 325 320 L300 365
 Q285 375 270 355 L245 320Z"
 fill="#f2c6a7"/>
 
-<!-- Coffee cup -->
 <path d="M285 245 L350 245 L343 305
 Q315 320 292 305Z"
 fill="#a77b5c"/>
@@ -1388,20 +1468,17 @@ stroke="#a77b5c" stroke-width="8" fill="none"/>
 C338 268 328 252 318 265Z"
 fill="#f7e8d9"/>
 
-<!-- Steam -->
 <path d="M300 225 Q285 210 300 195
 M325 225 Q340 210 325 195"
 stroke="#b99475" stroke-width="3"
 fill="none" stroke-linecap="round"/>
 
-<!-- Bow -->
 <path d="M248 85 Q220 60 225 88
 Q230 105 250 95 Q270 110 275 88
 Q278 68 248 85Z" fill="#d69da4"/>
 
 <circle cx="250" cy="90" r="5" fill="#b77c86"/>
 
-<!-- Stars -->
 <path d="M65 120 L72 137 L90 144
 L72 151 L65 168 L58 151
 L40 144 L58 137Z" fill="#d9b36c"/>
@@ -1863,11 +1940,9 @@ role="img" aria-label="Girl saying see you at the café">
 <circle cx="200" cy="210" r="155" fill="none"
 stroke="#dfcbb5" stroke-width="1.5" stroke-dasharray="4 8"/>
 
-<!-- Hair -->
 <path d="M105 155 Q85 35 200 38 Q320 30 300 165
 L285 260 L115 260Z" fill="#50352b"/>
 
-<!-- Dress -->
 <path d="M145 265 Q120 280 110 330
 L90 420 Q200 440 310 420
 L290 330 Q280 280 255 265Z"
@@ -1880,14 +1955,11 @@ fill="none" stroke="#bd939e" stroke-width="3"/>
 M255 320 L275 415"
 stroke="#bd939e" stroke-width="2" fill="none"/>
 
-<!-- Neck -->
 <path d="M175 235 L175 275 Q200 290 225 275 L225 235Z"
 fill="#eab99b"/>
 
-<!-- Face -->
 <ellipse cx="200" cy="165" rx="70" ry="83" fill="#f2c6a7"/>
 
-<!-- Hair top -->
 <path d="M130 160 Q105 65 200 55
 Q295 55 270 165
 Q250 130 235 112
@@ -1895,21 +1967,18 @@ Q210 145 165 119
 Q150 145 130 160Z"
 fill="#50352b"/>
 
-<!-- Long hair -->
 <path d="M132 130 Q110 220 145 290
 L160 275 Q137 205 153 135Z" fill="#50352b"/>
 
 <path d="M268 130 Q290 220 255 290
 L240 275 Q263 205 247 135Z" fill="#50352b"/>
 
-<!-- Fringe -->
 <path d="M132 125 Q150 90 177 110
 Q200 85 220 108 Q250 90 268 130
 Q240 130 225 145 Q200 125 180 145
 Q155 130 132 145Z"
 fill="#624333"/>
 
-<!-- Face details -->
 <path d="M165 165 Q176 178 187 165"
 stroke="#49352c" stroke-width="3"
 fill="none" stroke-linecap="round"/>
@@ -1928,11 +1997,9 @@ fill="#df9991" opacity=".55"/>
 stroke="#a45e5b" stroke-width="4"
 fill="none" stroke-linecap="round"/>
 
-<!-- Earrings -->
 <circle cx="130" cy="195" r="5" fill="#d6ad69"/>
 <circle cx="270" cy="195" r="5" fill="#d6ad69"/>
 
-<!-- Arms -->
 <path d="M125 290 Q100 310 115 350
 L140 365 Q150 365 150 355
 L140 325 L160 300Z"
@@ -1944,7 +2011,6 @@ Q340 305 325 320 L300 365
 Q285 375 270 355 L245 320Z"
 fill="#f2c6a7"/>
 
-<!-- Coffee cup -->
 <path d="M285 245 L350 245 L343 305
 Q315 320 292 305Z"
 fill="#a77b5c"/>
@@ -1960,20 +2026,17 @@ stroke="#a77b5c" stroke-width="8" fill="none"/>
 C338 268 328 252 318 265Z"
 fill="#f7e8d9"/>
 
-<!-- Steam -->
 <path d="M300 225 Q285 210 300 195
 M325 225 Q340 210 325 195"
 stroke="#b99475" stroke-width="3"
 fill="none" stroke-linecap="round"/>
 
-<!-- Bow -->
 <path d="M248 85 Q220 60 225 88
 Q230 105 250 95 Q270 110 275 88
 Q278 68 248 85Z" fill="#d69da4"/>
 
 <circle cx="250" cy="90" r="5" fill="#b77c86"/>
 
-<!-- Stars -->
 <path d="M65 120 L72 137 L90 144
 L72 151 L65 168 L58 151
 L40 144 L58 137Z" fill="#d9b36c"/>
