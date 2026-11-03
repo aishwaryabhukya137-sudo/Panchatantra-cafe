@@ -1,310 +1,465 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
-
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fbf7ef">
 
 <title>Events & Workshops | Panchatantra Café</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
-
-:root{
-    --cream:#F7F1E8;
-    --beige:#E9DCCB;
-    --terracotta:#B96543;
-    --brown:#38271F;
-    --muted:#78675C;
-    --white:#FFFCF8;
-    --line:#DFD0BF;
+:root {
+    --cream: #fbf7ef;
+    --beige: #e9dccb;
+    --terracotta: #a77b5c;
+    --brown: #443329;
+    --muted: #8b796b;
+    --white: #fffdf9;
+    --line: #e5d9c9;
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
 
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:var(--cream);
-    color:var(--brown);
-    line-height:1.6;
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--brown);
+    line-height: 1.7;
 }
 
-a{
-    color:inherit;
-    text-decoration:none;
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
 /* HEADER */
 
-header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:rgba(247,241,232,0.96);
-    border-bottom:1px solid var(--line);
-    backdrop-filter:blur(10px);
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(251,247,239,.97);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(12px);
 }
 
-.navbar{
-    max-width:1200px;
-    margin:auto;
-    padding:18px 24px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:25px;
+.navbar {
+    max-width: 1160px;
+    min-height: 82px;
+    margin: auto;
+    padding: 12px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
 }
 
-.brand{
-    font-family:Georgia,serif;
-    font-size:23px;
-    font-weight:bold;
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    flex-shrink: 0;
 }
 
-nav{
-    display:flex;
-    gap:22px;
-    flex-wrap:wrap;
+.brand img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    border-radius: 50%;
+    mix-blend-mode: multiply;
 }
 
-nav a{
-    font-size:14px;
+.brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    line-height: 1.1;
 }
 
-nav a:hover{
-    color:var(--terracotta);
+.brand small {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 3px;
+    margin-top: 5px;
 }
 
-.home-btn{
-    background:var(--terracotta);
-    color:white !important;
-    padding:9px 16px;
-    border-radius:4px;
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav a {
+    font-size: 13px;
+    color: var(--muted);
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--terracotta);
+}
+
+.home-btn {
+    background: var(--brown);
+    color: white;
+    padding: 11px 19px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    transition: .3s;
+}
+
+.home-btn:hover {
+    background: var(--terracotta);
 }
 
 /* PAGE */
 
-.page{
-    max-width:1000px;
-    margin:auto;
-    padding:90px 24px;
+.page {
+    max-width: 1050px;
+    margin: auto;
+    padding: 85px 25px;
 }
 
-.label{
-    color:var(--terracotta);
-    font-size:13px;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    margin-bottom:10px;
+.label {
+    color: var(--terracotta);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 13px;
 }
 
-h1,
-h2{
-    font-family:Georgia,serif;
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
 }
 
-h1{
-    font-size:clamp(45px,7vw,72px);
-    line-height:1;
-    margin-bottom:20px;
+h1 {
+    font-size: clamp(45px, 7vw, 76px);
+    line-height: 1.08;
+    margin-bottom: 22px;
 }
 
-.intro{
-    max-width:700px;
-    color:var(--muted);
-    font-size:17px;
-    margin-bottom:60px;
+.intro {
+    max-width: 720px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 55px;
 }
 
 /* GUIDELINES */
 
-.policy{
-    background:var(--white);
-    border:1px solid var(--line);
-    padding:35px;
-    margin-bottom:25px;
+.policy {
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 40px;
+    margin-bottom: 30px;
 }
 
-.policy h2{
-    font-size:27px;
-    margin-bottom:22px;
+.policy h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
 }
 
-.policy h3{
-    font-size:17px;
-    margin-top:22px;
-    margin-bottom:6px;
+.policy h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 25px;
+    margin-bottom: 9px;
 }
 
-.policy p{
-    color:var(--muted);
+.policy p,
+.policy ul {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.9;
 }
 
-.policy ul{
-    padding-left:20px;
-    color:var(--muted);
+.policy ul {
+    padding-left: 21px;
 }
 
-.policy li{
-    margin-bottom:8px;
+.policy li {
+    padding-left: 4px;
+    margin-bottom: 7px;
 }
 
-/* REGISTER */
-
-.register{
-    margin-top:60px;
+.policy strong {
+    color: var(--brown);
 }
 
-.register h2{
-    font-size:38px;
-    margin-bottom:15px;
+/* REGISTRATION */
+
+.register {
+    margin-top: 65px;
 }
 
-.register-intro{
-    color:var(--muted);
-    margin-bottom:30px;
+.register h2 {
+    font-size: clamp(32px, 5vw, 45px);
+    margin-bottom: 12px;
 }
 
-.register-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
+.register-intro {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 28px;
 }
 
-.register-card{
-    background:var(--white);
-    border:1px solid var(--line);
-    padding:30px;
+.register-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
 }
 
-.register-card h3{
-    font-family:Georgia,serif;
-    font-size:25px;
-    margin-bottom:10px;
+.register-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 32px;
+    transition: .3s;
 }
 
-.register-card p{
-    color:var(--muted);
-    margin-bottom:22px;
+.register-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(68,51,41,.07);
 }
 
-.register-btn{
-    display:inline-block;
-    background:var(--terracotta);
-    color:white;
-    padding:12px 20px;
-    border-radius:4px;
+.register-card h3 {
+    font-size: 25px;
+    margin-bottom: 12px;
 }
 
-.register-btn:hover{
-    background:var(--brown);
+.register-card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 25px;
 }
 
-/* BACK */
-
-.back{
-    margin-top:50px;
+.register-btn {
+    display: inline-block;
+    background: var(--brown);
+    color: white;
+    padding: 13px 20px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    transition: .3s;
 }
 
-.back a{
-    color:var(--terracotta);
-    font-weight:bold;
+.register-btn:hover {
+    background: var(--terracotta);
+}
+
+/* BACK HOME */
+
+.back {
+    margin-top: 45px;
+}
+
+.back a {
+    display: inline-block;
+    color: var(--terracotta);
+    font-size: 13px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--terracotta);
+    padding-bottom: 5px;
 }
 
 /* FOOTER */
 
-footer{
-    background:var(--brown);
-    color:white;
-    text-align:center;
-    padding:35px 20px;
+footer {
+    border-top: 1px solid var(--line);
+    padding: 30px 20px;
+    text-align: center;
 }
 
-footer p{
-    color:var(--beige);
+footer h3 {
+    font-size: 24px;
+    margin-bottom: 6px;
+}
+
+footer p {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+/* TABLET */
+
+@media(max-width:850px) {
+
+    .navbar {
+        gap: 15px;
+    }
+
+    nav {
+        gap: 14px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
 }
 
 /* MOBILE */
 
-@media(max-width:750px){
+@media(max-width:600px) {
 
-    .navbar{
-        flex-direction:column;
-        align-items:flex-start;
+    .navbar {
+        min-height: 75px;
+        padding: 10px 17px;
+        flex-wrap: wrap;
+        gap: 12px;
     }
 
-    nav{
-        gap:14px;
+    .brand img {
+        width: 49px;
+        height: 49px;
     }
 
-    .page{
-        padding:65px 20px;
+    .brand-name {
+        font-size: 22px;
     }
 
-    .policy{
-        padding:25px;
+    .brand small {
+        font-size: 8px;
+        letter-spacing: 2px;
     }
 
-    .register-grid{
-        grid-template-columns:1fr;
+    nav {
+        width: 100%;
+        justify-content: space-between;
+        gap: 8px;
+        padding: 8px 0 4px;
     }
 
-    h1{
-        font-size:48px;
+    nav a {
+        font-size: 11px;
     }
 
+    .home-btn {
+        padding: 8px 11px;
+        font-size: 10px;
+    }
+
+    .page {
+        padding: 55px 18px;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    .intro {
+        font-size: 13px;
+        margin-bottom: 38px;
+    }
+
+    .policy {
+        padding: 24px 20px;
+    }
+
+    .policy h2 {
+        font-size: 27px;
+    }
+
+    .policy h3 {
+        font-size: 14px;
+    }
+
+    .policy p,
+    .policy ul {
+        font-size: 12px;
+    }
+
+    .register {
+        margin-top: 45px;
+    }
+
+    .register-grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    .register-card {
+        padding: 25px 22px;
+    }
+
+    .register-card h3 {
+        font-size: 23px;
+    }
+
+    .back {
+        margin-top: 35px;
+    }
+}
+
+/* SMALL MOBILE */
+
+@media(max-width:360px) {
+
+    .brand-name {
+        font-size: 19px;
+    }
+
+    nav {
+        gap: 6px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
 }
 
 </style>
-
 </head>
 
 <body>
 
-
 <!-- HEADER -->
 
 <header>
-
     <div class="navbar">
 
-        <a href="Index.html" class="brand">
-            Panchatantra Café
+        <a href="/" class="brand">
+
+            <img src="logooo.jpg" alt="Panchatantra Café Logo">
+
+            <div>
+                <div class="brand-name">Panchatantra</div>
+                <small>CAFÉ · BEGUMPET</small>
+            </div>
+
         </a>
 
         <nav>
-
-            <a href="Index.html">
-                Home
-            </a>
-
-            <a href="#guidelines">
-                Guidelines
-            </a>
-
-            <a href="#register">
-                Register
-            </a>
-
+            <a href="/">Home</a>
+            <a href="#guidelines">Guidelines</a>
+            <a href="#register">Register</a>
+            <a href="/" class="home-btn">BACK HOME ↗</a>
         </nav>
 
     </div>
-
 </header>
 
-
-<!-- PAGE -->
+<!-- MAIN PAGE -->
 
 <main class="page">
 
@@ -322,68 +477,44 @@ footer p{
         registering your event.
     </p>
 
-
     <!-- GUIDELINES -->
 
-    <div id="guidelines" class="policy">
+    <section id="guidelines" class="policy">
 
-        <h2>
-            Event Guidelines & Policies
-        </h2>
+        <h2>Event Guidelines & Policies</h2>
 
-
-        <h3>
-            1. Advance Notice
-        </h3>
+        <h3>1. Advance Notice</h3>
 
         <ul>
             <li>
                 Events and flea markets must be booked and informed at
                 least <strong>20 days in advance.</strong>
             </li>
-
             <li>
                 Workshops must be booked and informed at least
                 <strong>10 days in advance.</strong>
             </li>
-
             <li>
                 This ensures sufficient time for both parties to promote
                 the event effectively.
             </li>
         </ul>
 
-
-        <h3>
-            2. Cancellation Policy
-        </h3>
+        <h3>2. Cancellation Policy</h3>
 
         <ul>
-            <li>
-                There is <strong>no cancellation policy.</strong>
-            </li>
-
-            <li>
-                Events, workshops and flea markets are promoted on
-                social media.
-            </li>
-
+            <li>There is <strong>no cancellation policy.</strong></li>
+            <li>Events, workshops and flea markets are promoted on social media.</li>
             <li>
                 <strong>50% advance payment is mandatory and
                 non-refundable in case of cancellation.</strong>
             </li>
         </ul>
 
-
-        <h3>
-            3. Setup and Dismantling
-        </h3>
+        <h3>3. Setup and Dismantling</h3>
 
         <ul>
-            <li>
-                Setup time must be included within the booked hours.
-            </li>
-
+            <li>Setup time must be included within the booked hours.</li>
             <li>
                 The event organiser is responsible for ensuring the area
                 is cleared and restored to its original condition after
@@ -391,145 +522,96 @@ footer p{
             </li>
         </ul>
 
-
-        <h3>
-            4. Property Usage
-        </h3>
+        <h3>4. Property Usage</h3>
 
         <ul>
-            <li>
-                No damage to café property is allowed.
-            </li>
-
-            <li>
-                Any damages caused will be charged to the organiser.
-            </li>
-
+            <li>No damage to café property is allowed.</li>
+            <li>Any damages caused will be charged to the organiser.</li>
             <li>
                 Certain areas of the café may be restricted unless
                 pre-approved.
             </li>
         </ul>
 
-
-        <h3>
-            5. Noise Levels
-        </h3>
+        <h3>5. Noise Levels</h3>
 
         <p>
             Noise must be kept to a reasonable level to avoid disturbing
             other patrons and neighbours.
         </p>
 
-
-        <h3>
-            6. Participant Limit
-        </h3>
+        <h3>6. Participant Limit</h3>
 
         <ul>
             <li>
                 Events and workshops must adhere to the maximum allowed
                 capacity of the café.
             </li>
-
-            <li>
-                Additional attendees require prior approval.
-            </li>
+            <li>Additional attendees require prior approval.</li>
         </ul>
 
-
-        <h3>
-            7. Food and Beverages
-        </h3>
+        <h3>7. Food and Beverages</h3>
 
         <p>
             All food and beverages must be provided by Panchatantra Café
             unless otherwise agreed upon.
         </p>
 
-
-        <h3>
-            8. Licenses and Permissions
-        </h3>
+        <h3>8. Licenses and Permissions</h3>
 
         <p>
             The organiser is responsible for obtaining any necessary
             licenses, permits and permissions required for the event.
         </p>
 
-
-        <h3>
-            9. Electrical Equipment
-        </h3>
+        <h3>9. Electrical Equipment</h3>
 
         <ul>
             <li>
                 Use of high-powered electrical equipment must be
                 pre-approved.
             </li>
-
-            <li>
-                Additional charges may apply for electricity usage.
-            </li>
+            <li>Additional charges may apply for electricity usage.</li>
         </ul>
 
-
-        <h3>
-            10. Cleanliness
-        </h3>
+        <h3>10. Cleanliness</h3>
 
         <ul>
             <li>
-                The organiser must ensure the space is left clean and
-                tidy.
+                The organiser must ensure the space is left clean and tidy.
             </li>
-
             <li>
                 Additional cleaning charges may apply if the space is
                 not restored to its original condition.
             </li>
         </ul>
 
-
-        <h3>
-            11. Brand Representation
-        </h3>
+        <h3>11. Brand Representation</h3>
 
         <p>
             Any representation of Panchatantra Café's brand in
             promotional materials must be pre-approved.
         </p>
 
-    </div>
-
+    </section>
 
     <!-- REGISTRATION -->
 
     <section id="register" class="register">
 
-        <div class="label">
-            Registration
-        </div>
+        <div class="label">Registration</div>
 
-        <h2>
-            Be part of something.
-        </h2>
+        <h2>Be part of something.</h2>
 
         <p class="register-intro">
             Choose the option that applies to you.
         </p>
 
-
         <div class="register-grid">
-
-
-            <!-- ATTEND -->
 
             <div class="register-card">
 
-                <h3>
-                    Attend an Event / Workshop
-                </h3>
+                <h3>Attend an Event / Workshop</h3>
 
                 <p>
                     Interested in attending an upcoming event or
@@ -539,22 +621,18 @@ footer p{
                 <a
                     class="register-btn"
                     href="https://wa.me/918516923456?text=Hello%20Panchatantra%20Caf%C3%A9%2C%20I%20would%20like%20to%20attend%20an%20event%20or%20workshop."
-                    target="_blank">
+                    target="_blank"
+                    rel="noopener noreferrer">
 
-                    Register to Attend
+                    REGISTER TO ATTEND ↗
 
                 </a>
 
             </div>
 
-
-            <!-- CONDUCT -->
-
             <div class="register-card">
 
-                <h3>
-                    Conduct an Event / Workshop
-                </h3>
+                <h3>Conduct an Event / Workshop</h3>
 
                 <p>
                     Want to conduct an event, workshop or put up a stall
@@ -564,39 +642,36 @@ footer p{
                 <a
                     class="register-btn"
                     href="https://wa.me/918516923456?text=Hello%20Panchatantra%20Caf%C3%A9%2C%20I%20would%20like%20to%20conduct%20an%20event%2Fworkshop%20or%20put%20up%20a%20stall."
-                    target="_blank">
+                    target="_blank"
+                    rel="noopener noreferrer">
 
-                    Register Your Event
+                    REGISTER YOUR EVENT ↗
 
                 </a>
 
             </div>
 
-
         </div>
 
     </section>
 
+    <!-- BACK HOME -->
 
     <div class="back">
-
-        <a href="Index.html">
-            ← Back to Panchatantra Café
-        </a>
-
+        <a href="/">← Back to Panchatantra Café</a>
     </div>
 
 </main>
 
+<!-- FOOTER -->
 
 <footer>
 
-    <p>
-        Panchatantra Café · Begumpet, Hyderabad
-    </p>
+    <h3>Panchatantra Café</h3>
+
+    <p>Where Every Bite Tells a Story · Begumpet, Hyderabad</p>
 
 </footer>
-
 
 </body>
 </html>
