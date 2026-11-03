@@ -187,9 +187,10 @@ header {
     display:flex;
     align-items:center;
     justify-content:space-between;
+    position:relative;
 }
 
-/* BIG LOGO ON THE LEFT */
+/* LOGO ON LEFT */
 
 .logo {
     display:flex;
@@ -225,30 +226,70 @@ header {
     margin-top:7px;
 }
 
-.nav-links {
+/* THREE-LINE MENU ON EVERY DEVICE */
+
+.menu-toggle {
     display:flex;
     align-items:center;
-    gap:23px;
+    justify-content:center;
+    background:none;
+    border:none;
+    color:var(--brown);
+    font-size:36px;
+    cursor:pointer;
+    padding:10px;
+    line-height:1;
+    z-index:1002;
+}
+
+/* DROPDOWN MENU */
+
+.nav-links {
+    display:none;
+    position:absolute;
+    top:100%;
+    right:0;
+    width:300px;
+    max-width:90vw;
+    background:var(--cream);
+    border:1px solid var(--line);
+    box-shadow:0 12px 30px rgba(68,51,41,.12);
+    padding:18px 25px;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
     list-style:none;
+    z-index:1001;
+}
+
+.nav-links.active {
+    display:flex;
+}
+
+.nav-links li {
+    width:100%;
+    border-bottom:1px solid var(--line);
+}
+
+.nav-links li:last-child {
+    border-bottom:none;
 }
 
 .nav-links a {
-    color:var(--muted);
-    font-size:13px;
+    display:block;
+    color:var(--brown);
+    font-size:15px;
+    padding:16px 5px;
     transition:.3s;
 }
 
 .nav-links a:hover {
     color:var(--accent);
+    padding-left:12px;
 }
 
-.menu-toggle {
+.nav>.text-link {
     display:none;
-    background:none;
-    border:none;
-    color:var(--brown);
-    font-size:29px;
-    cursor:pointer;
 }
 
 /* IMAGE FRAMES */
@@ -920,16 +961,8 @@ footer {
 /* TABLET */
 
 @media(max-width:1100px) {
-    .nav-links {
-        gap:12px;
-    }
-
-    .nav-links a {
-        font-size:12px;
-    }
-
     .logo-name {
-        font-size:32px;
+        font-size:36px;
     }
 
     .logo img {
@@ -942,10 +975,6 @@ footer {
 
     header {
         height:145px;
-    }
-
-    .nav-links {
-        gap:13px;
     }
 
     .logo-name {
@@ -1011,14 +1040,14 @@ footer {
     }
 
     .logo img {
-        width:115px;
-        height:115px;
+        width:105px;
+        height:105px;
         object-fit:contain;
         object-position:left center;
     }
 
     .logo-name {
-        font-size:29px;
+        font-size:27px;
         line-height:1.05;
     }
 
@@ -1029,34 +1058,13 @@ footer {
     }
 
     .menu-toggle {
-        display:block;
         font-size:32px;
     }
 
     .nav-links {
-        display:none;
-        position:absolute;
-        top:130px;
-        left:0;
         width:100%;
-        background:var(--cream);
-        border-bottom:1px solid var(--line);
-        padding:25px;
-        flex-direction:column;
-        align-items:flex-start;
-        gap:22px;
-    }
-
-    .nav-links.active {
-        display:flex;
-    }
-
-    .nav-links a {
-        font-size:15px;
-    }
-
-    .nav>.text-link {
-        display:none;
+        max-width:100%;
+        padding:15px 25px;
     }
 
     .hero {
@@ -1176,8 +1184,6 @@ footer {
         display:block;
     }
 
-    /* MOBILE CAFE PHOTOS */
-
     .cafe-images {
         display:grid;
         grid-template-columns:1fr 1fr;
@@ -1269,12 +1275,12 @@ footer {
     }
 
     .logo img {
-        width:95px;
-        height:95px;
+        width:85px;
+        height:85px;
     }
 
     .logo-name {
-        font-size:24px;
+        font-size:23px;
     }
 
     .logo small {
@@ -1331,7 +1337,15 @@ footer {
         </div>
     </a>
 
-    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open navigation">☰</button>
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+        onclick="toggleMenu()"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="navLinks">
+        ☰
+    </button>
 
     <ul class="nav-links" id="navLinks">
         <li><a href="#about">Our Story</a></li>
@@ -1401,7 +1415,6 @@ footer {
 <div class="girl-layout reveal">
 
 <svg class="girl-art" viewBox="0 0 400 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a girl enjoying coffee">
-
 <circle cx="200" cy="210" r="170" fill="#f5eee3"/>
 <circle cx="200" cy="210" r="155" fill="none" stroke="#dfcbb5" stroke-width="1.5" stroke-dasharray="4 8"/>
 <path d="M105 155 Q85 35 200 38 Q320 30 300 165 L285 260 L115 260Z" fill="#50352b"/>
@@ -1434,7 +1447,6 @@ footer {
 <path d="M330 115 L336 129 L350 135 L336 141 L330 155 L324 141 L310 135 L324 129Z" fill="#d69da4"/>
 <circle cx="65" cy="280" r="4" fill="#d9b36c"/>
 <circle cx="345" cy="365" r="4" fill="#d9b36c"/>
-
 </svg>
 
 <div class="girl-copy">
@@ -1794,7 +1806,6 @@ footer {
 <div class="girl-layout reveal">
 
 <svg class="girl-art" viewBox="0 0 400 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Girl saying see you at the café">
-
 <circle cx="200" cy="210" r="170" fill="#f5eee3"/>
 <circle cx="200" cy="210" r="155" fill="none" stroke="#dfcbb5" stroke-width="1.5" stroke-dasharray="4 8"/>
 <path d="M105 155 Q85 35 200 38 Q320 30 300 165 L285 260 L115 260Z" fill="#50352b"/>
@@ -1827,7 +1838,6 @@ footer {
 <path d="M330 115 L336 129 L350 135 L336 141 L330 155 L324 141 L310 135 L324 129Z" fill="#d69da4"/>
 <circle cx="65" cy="280" r="4" fill="#d9b36c"/>
 <circle cx="345" cy="365" r="4" fill="#d9b36c"/>
-
 </svg>
 
 <div class="girl-copy">
@@ -1895,17 +1905,57 @@ window.addEventListener("load",function() {
 
 });
 
-/* MOBILE MENU */
+/* MENU TOGGLE - SAME ON ALL DEVICES */
 
 function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("active");
+    const menu = document.getElementById("navLinks");
+    const button = document.getElementById("menuToggle");
+
+    menu.classList.toggle("active");
+
+    const isOpen = menu.classList.contains("active");
+
+    button.setAttribute("aria-expanded", isOpen);
+    button.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation" : "Open navigation"
+    );
+
+    button.innerHTML = isOpen ? "✕" : "☰";
 }
+
+/* CLOSE MENU AFTER CLICKING A LINK */
 
 document.querySelectorAll(".nav-links a").forEach(link => {
 
     link.addEventListener("click",() => {
         document.getElementById("navLinks").classList.remove("active");
+
+        const button = document.getElementById("menuToggle");
+        button.innerHTML = "☰";
+        button.setAttribute("aria-expanded", "false");
+        button.setAttribute("aria-label", "Open navigation");
     });
+
+});
+
+/* CLOSE MENU WHEN CLICKING OUTSIDE */
+
+document.addEventListener("click", function(event) {
+
+    const menu = document.getElementById("navLinks");
+    const button = document.getElementById("menuToggle");
+
+    if (
+        menu.classList.contains("active") &&
+        !menu.contains(event.target) &&
+        !button.contains(event.target)
+    ) {
+        menu.classList.remove("active");
+        button.innerHTML = "☰";
+        button.setAttribute("aria-expanded", "false");
+        button.setAttribute("aria-label", "Open navigation");
+    }
 
 });
 
