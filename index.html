@@ -29,7 +29,7 @@
 
 html {
     scroll-behavior:smooth;
-    scroll-padding-top:120px;
+    scroll-padding-top:150px;
 }
 
 body {
@@ -170,10 +170,10 @@ h2 {
     }
 }
 
-/* HEADER AND BIG LOGO */
+/* HEADER AND EXTRA BIG LOGO */
 
 header {
-    height:120px;
+    height:150px;
     position:sticky;
     top:0;
     z-index:1000;
@@ -196,11 +196,9 @@ header {
     flex-shrink:0;
 }
 
-/* BIGGER LOGO IMAGE */
-
 .logo img {
-    width:100px;
-    height:100px;
+    width:130px;
+    height:130px;
     object-fit:contain;
     border-radius:0;
     background:transparent;
@@ -210,7 +208,7 @@ header {
 
 .logo-name {
     font-family:'Playfair Display',serif;
-    font-size:40px;
+    font-size:43px;
     line-height:1.05;
     font-weight:500;
     white-space:nowrap;
@@ -413,7 +411,6 @@ header {
     padding:18px 24px;
     max-width:310px;
     z-index:4;
-    box-shadow:4px 6px 18px rgba(68,51,41,.1);
 }
 
 .photo-label h3 {
@@ -628,8 +625,6 @@ header {
     align-items:stretch;
 }
 
-/* BOTH CAFE PICTURES NOW HAVE EQUAL HEIGHT */
-
 .cafe-images .sitting-frame,
 .cafe-images .exterior-frame {
     width:100%;
@@ -652,13 +647,9 @@ header {
     object-position:center;
 }
 
-/* SITTING SPOT PHOTO POSITION */
-
 .cafe-images .sitting-frame img {
     object-position:center center;
 }
-
-/* EXTERIOR PHOTO POSITION */
 
 .cafe-images .exterior-frame img {
     object-position:center center;
@@ -924,7 +915,30 @@ footer {
 
 /* TABLET */
 
+@media(max-width:1100px) {
+    .nav-links {
+        gap:12px;
+    }
+
+    .nav-links a {
+        font-size:12px;
+    }
+
+    .logo-name {
+        font-size:32px;
+    }
+
+    .logo img {
+        width:110px;
+        height:110px;
+    }
+}
+
 @media(max-width:950px) {
+
+    header {
+        height:135px;
+    }
 
     .nav-links {
         gap:13px;
@@ -935,8 +949,8 @@ footer {
     }
 
     .logo img {
-        width:85px;
-        height:85px;
+        width:110px;
+        height:110px;
     }
 
     .about-grid,
@@ -981,7 +995,7 @@ footer {
 @media(max-width:600px) {
 
     header {
-        height:100px;
+        height:120px;
     }
 
     .container {
@@ -989,19 +1003,17 @@ footer {
     }
 
     .logo {
-        gap:12px;
+        gap:10px;
     }
 
-    /* BIG MOBILE LOGO */
-
     .logo img {
-        width:82px;
-        height:82px;
+        width:100px;
+        height:100px;
         object-fit:contain;
     }
 
     .logo-name {
-        font-size:31px;
+        font-size:29px;
         line-height:1.05;
     }
 
@@ -1019,7 +1031,7 @@ footer {
     .nav-links {
         display:none;
         position:absolute;
-        top:100px;
+        top:120px;
         left:0;
         width:100%;
         background:var(--cream);
@@ -1159,7 +1171,7 @@ footer {
         display:block;
     }
 
-    /* MOBILE CAFE PHOTOS - EQUAL HEIGHT AND ALIGNMENT */
+    /* MOBILE CAFE PHOTOS */
 
     .cafe-images {
         display:grid;
@@ -1252,12 +1264,12 @@ footer {
     }
 
     .logo img {
-        width:70px;
-        height:70px;
+        width:82px;
+        height:82px;
     }
 
     .logo-name {
-        font-size:25px;
+        font-size:24px;
     }
 
     .logo small {
