@@ -39,7 +39,6 @@ body {
     color: var(--brown);
     font-family: 'DM Sans', sans-serif;
     overflow-x: hidden;
-    font-size: 16px;
 }
 
 body.loading {
@@ -62,7 +61,7 @@ img {
 }
 
 .eyebrow {
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--accent);
@@ -71,24 +70,24 @@ img {
 
 h2 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(38px, 5vw, 62px);
+    font-size: clamp(34px, 4.5vw, 55px);
     line-height: 1.15;
     font-weight: 500;
 }
 
 .description {
     color: var(--muted);
-    line-height: 1.9;
-    font-size: 16px;
+    line-height: 1.85;
+    font-size: 14px;
 }
 
 .btn {
     display: inline-block;
     background: var(--brown);
     color: var(--cream);
-    padding: 17px 27px;
-    font-size: 12px;
-    letter-spacing: 1.7px;
+    padding: 15px 25px;
+    font-size: 11px;
+    letter-spacing: 1.5px;
     transition: .3s;
 }
 
@@ -98,7 +97,7 @@ h2 {
 }
 
 .text-link {
-    font-size: 15px;
+    font-size: 14px;
     border-bottom: 1px solid var(--brown);
     padding-bottom: 5px;
 }
@@ -120,19 +119,19 @@ h2 {
 
 .intro-logo {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(44px, 9vw, 88px);
+    font-size: clamp(38px, 8vw, 76px);
     animation: bounceLogo 1s ease;
 }
 
 .intro-icon {
-    font-size: 48px;
+    font-size: 42px;
     margin-bottom: 18px;
     animation: cupBounce 1.2s ease infinite alternate;
 }
 
 .intro-subtitle {
     color: var(--muted);
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: 4px;
     margin-top: 15px;
     opacity: 0;
@@ -173,10 +172,10 @@ h2 {
     }
 }
 
-/* HEADER */
+/* HEADER AND LOGO */
 
 header {
-    height: 88px;
+    height: 90px;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -195,30 +194,31 @@ header {
 .logo {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 13px;
 }
 
-/* LOGO: LARGER AND WITHOUT CIRCULAR FRAME */
+/* BIGGER LOGO + BLENDED WHITE BACKGROUND */
 
 .logo img {
-    width: 68px;
-    height: 68px;
-    border-radius: 0;
+    width: 65px;
+    height: 65px;
     object-fit: contain;
+    border-radius: 0;
     background: transparent;
     mix-blend-mode: multiply;
+    flex-shrink: 0;
 }
 
 .logo-name {
     font-family: 'Playfair Display', serif;
-    font-size: 30px;
+    font-size: 29px;
     line-height: 1.15;
-    letter-spacing: .3px;
+    font-weight: 500;
 }
 
 .logo small {
     display: block;
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 3.5px;
     margin-top: 4px;
 }
@@ -226,13 +226,13 @@ header {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 23px;
     list-style: none;
 }
 
 .nav-links a {
     color: var(--muted);
-    font-size: 14px;
+    font-size: 13px;
     transition: .3s;
 }
 
@@ -245,7 +245,7 @@ header {
     background: none;
     border: none;
     color: var(--brown);
-    font-size: 30px;
+    font-size: 29px;
     cursor: pointer;
 }
 
@@ -322,18 +322,18 @@ header {
 /* HERO */
 
 .hero {
-    padding: 75px 0 30px;
+    padding: 65px 0 30px;
 }
 
 .hero-content {
     text-align: center;
-    max-width: 850px;
+    max-width: 780px;
     margin: auto;
 }
 
 .hero-content h1 {
     font-family: 'Kalam', cursive;
-    font-size: clamp(72px, 9vw, 112px);
+    font-size: clamp(65px, 8vw, 100px);
     line-height: 1.12;
     font-weight: 400;
     margin: 20px 0;
@@ -346,9 +346,9 @@ header {
 }
 
 .hero-content p {
-    max-width: 620px;
+    max-width: 530px;
     margin: auto;
-    font-size: 17px;
+    font-size: 15px;
     line-height: 1.9;
     color: var(--muted);
 }
@@ -358,24 +358,24 @@ header {
     align-items: center;
     justify-content: center;
     gap: 25px;
-    margin-top: 30px;
+    margin-top: 25px;
 }
 
 .hero-bottom {
     border-top: 1px solid var(--line);
-    margin-top: 40px;
-    padding-top: 20px;
+    margin-top: 35px;
+    padding-top: 17px;
     display: flex;
     justify-content: space-between;
-    font-size: 11px;
-    letter-spacing: 2.3px;
+    font-size: 10px;
+    letter-spacing: 2px;
     color: var(--muted);
 }
 
 /* HOMEPAGE PHOTO */
 
 .home-photo {
-    padding: 20px 0 50px;
+    padding: 20px 0 45px;
 }
 
 .home-photo-frame {
@@ -410,21 +410,21 @@ header {
     left: 35px;
     bottom: 30px;
     background: var(--cream);
-    padding: 22px 28px;
-    max-width: 370px;
+    padding: 18px 24px;
+    max-width: 310px;
     z-index: 4;
     box-shadow: 4px 6px 18px rgba(68,51,41,.1);
 }
 
 .photo-label h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 500;
     margin-top: 5px;
 }
 
 .photo-label p {
-    font-size: 14px;
+    font-size: 12px;
     color: var(--muted);
     margin-top: 6px;
 }
@@ -457,7 +457,7 @@ header {
 
 .girl-copy h2 {
     margin: 14px 0;
-    font-size: clamp(38px, 4.5vw, 52px);
+    font-size: clamp(30px, 4vw, 45px);
 }
 
 .girl-copy p {
@@ -468,8 +468,6 @@ header {
     0%,100% { transform: translateY(0); }
     50% { transform: translateY(-7px); }
 }
-
-/* FINAL GIRL SECTION */
 
 .final-girl {
     background: var(--cream);
@@ -494,12 +492,12 @@ header {
 }
 
 .story-intro h2 {
-    max-width: 780px;
+    max-width: 720px;
     margin: 17px auto;
 }
 
 .story-intro p {
-    max-width: 700px;
+    max-width: 620px;
     margin: auto;
 }
 
@@ -520,7 +518,7 @@ header {
 .events,
 .reviews,
 .visit {
-    padding: 65px 0;
+    padding: 60px 0;
     border-top: 1px solid var(--line);
 }
 
@@ -535,10 +533,6 @@ header {
 
 .about-image {
     height: 380px;
-}
-
-.about-image img {
-    object-position: center;
 }
 
 .about-text h2 {
@@ -562,7 +556,7 @@ header {
 
 .center-heading p {
     margin: auto;
-    max-width: 680px;
+    max-width: 570px;
 }
 
 .menu-grid {
@@ -574,7 +568,7 @@ header {
 
 .menu-card {
     text-align: center;
-    padding: 10px 10px 25px;
+    padding: 10px 10px 22px;
     background: #f7f0e6;
     border: 1px solid var(--line);
     transition: transform .35s;
@@ -590,16 +584,16 @@ header {
 
 .menu-card h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 28px;
+    font-size: 25px;
     font-weight: 500;
     margin: 24px 0 9px;
 }
 
 .menu-card p {
     color: var(--muted);
-    font-size: 14px;
-    line-height: 1.9;
-    max-width: 290px;
+    font-size: 13px;
+    line-height: 1.8;
+    max-width: 270px;
     margin: auto;
 }
 
@@ -641,17 +635,18 @@ header {
     align-items: center;
 }
 
-/* FIXED SITTING SPOT IMAGE ALIGNMENT */
+/* FIXED SITTING SPOT FRAME */
 
 .cafe-images .sitting-frame {
     height: 340px;
     width: 100%;
-    padding: 9px;
-    background: #f5eee3;
-    overflow: hidden;
+    min-width: 0;
+    padding: 10px;
     display: flex;
     align-items: stretch;
     justify-content: stretch;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .cafe-images .sitting-frame img {
@@ -662,12 +657,23 @@ header {
     min-height: 0;
     object-fit: cover;
     object-position: center center;
-    border-radius: 25px 3px 25px 3px;
+    background: transparent;
+    border-radius: 3px 27px 3px 27px;
+    flex: 1;
 }
 
 .cafe-images .exterior-frame {
     height: 285px;
+    width: 100%;
     margin-top: 30px;
+    min-width: 0;
+}
+
+.cafe-images .exterior-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .cafe-text h2 {
@@ -680,10 +686,9 @@ header {
 }
 
 .cafe-list li {
-    padding: 13px 0;
+    padding: 11px 0;
     border-bottom: 1px solid var(--line);
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 13px;
 }
 
 .cafe-list li::before {
@@ -703,10 +708,6 @@ header {
 
 .moments-image {
     height: 370px;
-}
-
-.moments-image img {
-    object-position: center;
 }
 
 .moments-text h2 {
@@ -756,7 +757,7 @@ header {
     border-radius: 12px;
 }
 
-/* EVENTS AND AWARDS */
+/* EVENTS */
 
 .events-grid {
     display: grid;
@@ -839,7 +840,7 @@ header {
 
 .review-box blockquote {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(25px, 3.5vw, 37px);
+    font-size: clamp(22px, 3vw, 33px);
     line-height: 1.5;
     font-style: italic;
 }
@@ -863,14 +864,14 @@ header {
 }
 
 .visit-details h4 {
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: 2px;
     margin-bottom: 10px;
 }
 
 .visit-details p {
     color: var(--muted);
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.9;
 }
 
@@ -890,12 +891,12 @@ footer {
 
 .footer-top h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 32px;
+    font-size: 27px;
     font-weight: 500;
 }
 
 .footer-top p {
-    font-size: 14px;
+    font-size: 12px;
     color: var(--muted);
     margin-top: 7px;
 }
@@ -907,7 +908,7 @@ footer {
 }
 
 .footer-links a {
-    font-size: 13px;
+    font-size: 12px;
     color: var(--muted);
 }
 
@@ -917,7 +918,7 @@ footer {
     display: flex;
     justify-content: space-between;
     color: var(--muted);
-    font-size: 12px;
+    font-size: 11px;
 }
 
 /* SCROLL REVEAL */
@@ -987,22 +988,21 @@ footer {
     }
 
     .logo img {
-        width: 60px;
-        height: 60px;
+        width: 58px;
+        height: 58px;
     }
 
     .logo-name {
-        font-size: 27px;
+        font-size: 25px;
     }
 
     .logo small {
-        font-size: 10px;
+        font-size: 9px;
         letter-spacing: 3px;
     }
 
     .menu-toggle {
         display: block;
-        font-size: 30px;
     }
 
     .nav-links {
@@ -1013,10 +1013,10 @@ footer {
         width: 100%;
         background: var(--cream);
         border-bottom: 1px solid var(--line);
-        padding: 27px;
+        padding: 25px;
         flex-direction: column;
         align-items: flex-start;
-        gap: 24px;
+        gap: 22px;
     }
 
     .nav-links.active {
@@ -1024,7 +1024,7 @@ footer {
     }
 
     .nav-links a {
-        font-size: 17px;
+        font-size: 15px;
     }
 
     .nav > .text-link {
@@ -1036,12 +1036,12 @@ footer {
     }
 
     .hero-content h1 {
-        font-size: 70px;
+        font-size: 64px;
         line-height: 1.1;
     }
 
     .hero-content p {
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .hero-actions {
@@ -1052,7 +1052,7 @@ footer {
     .hero-bottom {
         flex-direction: column;
         gap: 11px;
-        font-size: 11px;
+        font-size: 9px;
     }
 
     .home-photo {
@@ -1077,15 +1077,15 @@ footer {
         left: 17px;
         bottom: 17px;
         padding: 12px 14px;
-        max-width: 250px;
+        max-width: 240px;
     }
 
     .photo-label h3 {
-        font-size: 22px;
+        font-size: 19px;
     }
 
     .photo-label p {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .girl-section {
@@ -1109,7 +1109,7 @@ footer {
     }
 
     .girl-copy h2 {
-        font-size: 38px;
+        font-size: 34px;
     }
 
     .final-girl {
@@ -1142,14 +1142,6 @@ footer {
         height: 250px;
     }
 
-    .menu-card h3 {
-        font-size: 27px;
-    }
-
-    .menu-card p {
-        font-size: 14px;
-    }
-
     .coffee-doodle {
         max-width: 300px;
         margin: auto;
@@ -1158,31 +1150,28 @@ footer {
 
     .cafe-images {
         gap: 12px;
+        align-items: center;
     }
 
-    /* MOBILE SITTING SPOT ALIGNMENT */
+    /* SITTING SPOT MOBILE ALIGNMENT */
 
     .cafe-images .sitting-frame {
-        width: 100%;
         height: 250px;
-        padding: 7px;
-        overflow: hidden;
+        width: 100%;
+        padding: 8px;
+        align-self: center;
     }
 
     .cafe-images .sitting-frame img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center center;
+        object-position: center;
     }
 
     .cafe-images .exterior-frame {
         height: 220px;
         margin-top: 20px;
-    }
-
-    .cafe-list li {
-        font-size: 14px;
     }
 
     .moments-image {
@@ -1231,35 +1220,14 @@ footer {
         gap: 20px;
     }
 
-    .visit-details h4 {
-        font-size: 11px;
-    }
-
-    .visit-details p {
-        font-size: 13px;
-    }
-
     .footer-top,
     .footer-bottom {
         flex-direction: column;
         gap: 18px;
     }
 
-    .footer-top h3 {
-        font-size: 29px;
-    }
-
-    .footer-top p,
-    .footer-links a {
-        font-size: 13px;
-    }
-
     .footer-links {
         gap: 15px;
-    }
-
-    .footer-bottom {
-        font-size: 11px;
     }
 }
 
@@ -1293,8 +1261,10 @@ footer {
 <header>
 <div class="container nav">
 
-    <a href="#" class="logo">
-        <img src="logooo.jpg" alt="Panchatantra Café">
+    <!-- LOGO NOW ALWAYS RETURNS TO THE MAIN WEBSITE -->
+
+    <a href="https://panchatantracafe.com/" class="logo">
+        <img src="logooo.jpg" alt="Panchatantra Café Logo">
         <div>
             <div class="logo-name">Panchatantra</div>
             <small>CAFÉ · BEGUMPET</small>
@@ -1382,110 +1352,52 @@ role="img" aria-label="Illustration of a girl enjoying coffee">
 <circle cx="200" cy="210" r="155" fill="none"
 stroke="#dfcbb5" stroke-width="1.5" stroke-dasharray="4 8"/>
 
-<path d="M105 155 Q85 35 200 38 Q320 30 300 165
-L285 260 L115 260Z" fill="#50352b"/>
+<path d="M105 155 Q85 35 200 38 Q320 30 300 165 L285 260 L115 260Z" fill="#50352b"/>
 
-<path d="M145 265 Q120 280 110 330
-L90 420 Q200 440 310 420
-L290 330 Q280 280 255 265Z"
-fill="#d8b8bd"/>
+<path d="M145 265 Q120 280 110 330 L90 420 Q200 440 310 420 L290 330 Q280 280 255 265Z" fill="#d8b8bd"/>
 
-<path d="M145 280 Q200 310 255 280"
-fill="none" stroke="#bd939e" stroke-width="3"/>
+<path d="M145 280 Q200 310 255 280" fill="none" stroke="#bd939e" stroke-width="3"/>
 
-<path d="M145 320 L125 415 M200 320 L200 425
-M255 320 L275 415"
-stroke="#bd939e" stroke-width="2" fill="none"/>
+<path d="M145 320 L125 415 M200 320 L200 425 M255 320 L275 415" stroke="#bd939e" stroke-width="2" fill="none"/>
 
-<path d="M175 235 L175 275 Q200 290 225 275 L225 235Z"
-fill="#eab99b"/>
+<path d="M175 235 L175 275 Q200 290 225 275 L225 235Z" fill="#eab99b"/>
 
 <ellipse cx="200" cy="165" rx="70" ry="83" fill="#f2c6a7"/>
 
-<path d="M130 160 Q105 65 200 55
-Q295 55 270 165
-Q250 130 235 112
-Q210 145 165 119
-Q150 145 130 160Z"
-fill="#50352b"/>
+<path d="M130 160 Q105 65 200 55 Q295 55 270 165 Q250 130 235 112 Q210 145 165 119 Q150 145 130 160Z" fill="#50352b"/>
 
-<path d="M132 130 Q110 220 145 290
-L160 275 Q137 205 153 135Z" fill="#50352b"/>
+<path d="M132 130 Q110 220 145 290 L160 275 Q137 205 153 135Z" fill="#50352b"/>
+<path d="M268 130 Q290 220 255 290 L240 275 Q263 205 247 135Z" fill="#50352b"/>
 
-<path d="M268 130 Q290 220 255 290
-L240 275 Q263 205 247 135Z" fill="#50352b"/>
+<path d="M132 125 Q150 90 177 110 Q200 85 220 108 Q250 90 268 130 Q240 130 225 145 Q200 125 180 145 Q155 130 132 145Z" fill="#624333"/>
 
-<path d="M132 125 Q150 90 177 110
-Q200 85 220 108 Q250 90 268 130
-Q240 130 225 145 Q200 125 180 145
-Q155 130 132 145Z"
-fill="#624333"/>
+<path d="M165 165 Q176 178 187 165 M213 165 Q224 178 235 165" stroke="#49352c" stroke-width="3" fill="none" stroke-linecap="round"/>
 
-<path d="M165 165 Q176 178 187 165"
-stroke="#49352c" stroke-width="3"
-fill="none" stroke-linecap="round"/>
+<ellipse cx="160" cy="190" rx="13" ry="7" fill="#df9991" opacity=".55"/>
+<ellipse cx="240" cy="190" rx="13" ry="7" fill="#df9991" opacity=".55"/>
 
-<path d="M213 165 Q224 178 235 165"
-stroke="#49352c" stroke-width="3"
-fill="none" stroke-linecap="round"/>
-
-<ellipse cx="160" cy="190" rx="13" ry="7"
-fill="#df9991" opacity=".55"/>
-
-<ellipse cx="240" cy="190" rx="13" ry="7"
-fill="#df9991" opacity=".55"/>
-
-<path d="M184 205 Q200 225 216 205"
-stroke="#a45e5b" stroke-width="4"
-fill="none" stroke-linecap="round"/>
+<path d="M184 205 Q200 225 216 205" stroke="#a45e5b" stroke-width="4" fill="none" stroke-linecap="round"/>
 
 <circle cx="130" cy="195" r="5" fill="#d6ad69"/>
 <circle cx="270" cy="195" r="5" fill="#d6ad69"/>
 
-<path d="M125 290 Q100 310 115 350
-L140 365 Q150 365 150 355
-L140 325 L160 300Z"
-fill="#f2c6a7"/>
+<path d="M125 290 Q100 310 115 350 L140 365 Q150 365 150 355 L140 325 L160 300Z" fill="#f2c6a7"/>
+<path d="M265 290 Q290 305 290 335 L310 300 Q320 285 330 295 Q340 305 325 320 L300 365 Q285 375 270 355 L245 320Z" fill="#f2c6a7"/>
 
-<path d="M265 290 Q290 305 290 335
-L310 300 Q320 285 330 295
-Q340 305 325 320 L300 365
-Q285 375 270 355 L245 320Z"
-fill="#f2c6a7"/>
-
-<path d="M285 245 L350 245 L343 305
-Q315 320 292 305Z"
-fill="#a77b5c"/>
-
+<path d="M285 245 L350 245 L343 305 Q315 320 292 305Z" fill="#a77b5c"/>
 <ellipse cx="318" cy="245" rx="33" ry="8" fill="#654431"/>
 <ellipse cx="318" cy="245" rx="25" ry="5" fill="#d9b18b"/>
 
-<path d="M350 260 Q380 250 375 280
-Q372 300 345 290"
-stroke="#a77b5c" stroke-width="8" fill="none"/>
+<path d="M350 260 Q380 250 375 280 Q372 300 345 290" stroke="#a77b5c" stroke-width="8" fill="none"/>
+<path d="M318 265 C308 252 298 268 318 283 C338 268 328 252 318 265Z" fill="#f7e8d9"/>
 
-<path d="M318 265 C308 252 298 268 318 283
-C338 268 328 252 318 265Z"
-fill="#f7e8d9"/>
+<path d="M300 225 Q285 210 300 195 M325 225 Q340 210 325 195" stroke="#b99475" stroke-width="3" fill="none" stroke-linecap="round"/>
 
-<path d="M300 225 Q285 210 300 195
-M325 225 Q340 210 325 195"
-stroke="#b99475" stroke-width="3"
-fill="none" stroke-linecap="round"/>
-
-<path d="M248 85 Q220 60 225 88
-Q230 105 250 95 Q270 110 275 88
-Q278 68 248 85Z" fill="#d69da4"/>
-
+<path d="M248 85 Q220 60 225 88 Q230 105 250 95 Q270 110 275 88 Q278 68 248 85Z" fill="#d69da4"/>
 <circle cx="250" cy="90" r="5" fill="#b77c86"/>
 
-<path d="M65 120 L72 137 L90 144
-L72 151 L65 168 L58 151
-L40 144 L58 137Z" fill="#d9b36c"/>
-
-<path d="M330 115 L336 129 L350 135
-L336 141 L330 155 L324 141
-L310 135 L324 129Z" fill="#d69da4"/>
+<path d="M65 120 L72 137 L90 144 L72 151 L65 168 L58 151 L40 144 L58 137Z" fill="#d9b36c"/>
+<path d="M330 115 L336 129 L350 135 L336 141 L330 155 L324 141 L310 135 L324 129Z" fill="#d69da4"/>
 
 <circle cx="65" cy="280" r="4" fill="#d9b36c"/>
 <circle cx="345" cy="365" r="4" fill="#d9b36c"/>
@@ -1494,7 +1406,6 @@ L310 135 L324 129Z" fill="#d69da4"/>
 
 <div class="girl-copy">
     <span class="eyebrow">A LITTLE HAPPINESS</span>
-
     <h2>Slow moments.<br>Warm coffee.</h2>
 
     <p class="description">
@@ -1522,15 +1433,11 @@ L310 135 L324 129Z" fill="#d69da4"/>
     <svg class="doodle" viewBox="0 0 120 90">
         <path d="M30 35 H90 L85 75 Q60 85 35 75Z"
         fill="none" stroke="#49352c" stroke-width="3"/>
-
         <path d="M90 40 Q115 35 105 60 Q100 70 87 65"
         fill="none" stroke="#49352c" stroke-width="3"/>
-
         <path d="M45 25 Q35 10 48 2 M65 25 Q80 10 68 2"
         fill="none" stroke="#a77b5c" stroke-width="2"/>
-
-        <path d="M40 50 H82"
-        stroke="#a77b5c" stroke-width="2"/>
+        <path d="M40 50 H82" stroke="#a77b5c" stroke-width="2"/>
     </svg>
 
     <p class="description">
@@ -1553,7 +1460,6 @@ L310 135 L324 129Z" fill="#d69da4"/>
 
     <div class="about-text reveal">
         <span class="eyebrow">OUR STORY</span>
-
         <h2>A place to pause, connect & belong.</h2>
 
         <p class="description">
@@ -1576,7 +1482,6 @@ L310 135 L324 129Z" fill="#d69da4"/>
 
     <div class="center-heading reveal">
         <span class="eyebrow">A LITTLE TASTE OF HAPPINESS</span>
-
         <h2>A little taste of happiness.</h2>
 
         <p class="description">
@@ -1592,7 +1497,6 @@ L310 135 L324 129Z" fill="#d69da4"/>
             <div class="image-frame">
                 <img src="food.jpg" alt="Food at Panchatantra Café">
             </div>
-
             <h3>Food & Favourites</h3>
             <p>Comforting favourites, freshly prepared and made to be enjoyed.</p>
         </div>
@@ -1601,7 +1505,6 @@ L310 135 L324 129Z" fill="#d69da4"/>
             <div class="image-frame frame-round">
                 <img src="drink.jpg" alt="Drinks at Panchatantra Café">
             </div>
-
             <h3>Sips & Smiles</h3>
             <p>Refreshing drinks and café favourites for every kind of mood.</p>
         </div>
@@ -1610,7 +1513,6 @@ L310 135 L324 129Z" fill="#d69da4"/>
             <div class="image-frame">
                 <img src="dessert.jpg" alt="Desserts at Panchatantra Café">
             </div>
-
             <h3>Sweet Little Things</h3>
             <p>A little sweetness to make your café moment complete.</p>
         </div>
@@ -1639,12 +1541,10 @@ L310 135 L324 129Z" fill="#d69da4"/>
             fill="none" stroke="#dfcdb9"
             stroke-width="2" stroke-dasharray="4 9"/>
 
-            <path d="M130 145 H330 L310 290
-            Q230 325 150 290Z"
+            <path d="M130 145 H330 L310 290 Q230 325 150 290Z"
             fill="none" stroke="#49352c" stroke-width="5"/>
 
-            <path d="M325 165 Q425 140 390 235
-            Q375 270 315 250"
+            <path d="M325 165 Q425 140 390 235 Q375 270 315 250"
             fill="none" stroke="#49352c" stroke-width="5"/>
 
             <ellipse cx="230" cy="150" rx="100" ry="20"
@@ -1653,11 +1553,8 @@ L310 135 L324 129Z" fill="#d69da4"/>
             <ellipse cx="230" cy="150" rx="65" ry="11"
             fill="none" stroke="#a77b5c" stroke-width="3"/>
 
-            <path d="M190 110 Q160 75 195 45
-            M230 110 Q260 70 230 40
-            M270 110 Q300 75 275 45"
-            fill="none" stroke="#a77b5c"
-            stroke-width="4" stroke-linecap="round"/>
+            <path d="M190 110 Q160 75 195 45 M230 110 Q260 70 230 40 M270 110 Q300 75 275 45"
+            fill="none" stroke="#a77b5c" stroke-width="4" stroke-linecap="round"/>
 
             <ellipse cx="100" cy="290" rx="13" ry="23"
             transform="rotate(35 100 290)"
@@ -1673,9 +1570,7 @@ L310 135 L324 129Z" fill="#d69da4"/>
             <path d="M390 300 Q370 320 375 340"
             fill="none" stroke="#49352c" stroke-width="2"/>
 
-            <path d="M80 90 L86 105 L102 110
-            L86 115 L80 130 L74 115
-            L58 110 L74 105Z"
+            <path d="M80 90 L86 105 L102 110 L86 115 L80 130 L74 115 L58 110 L74 105Z"
             fill="none" stroke="#a77b5c" stroke-width="2"/>
 
         </svg>
@@ -1683,7 +1578,6 @@ L310 135 L324 129Z" fill="#d69da4"/>
 
     <div class="reveal">
         <span class="eyebrow">A MOMENT FOR YOURSELF</span>
-
         <h2>Every cup has a story.</h2>
 
         <p class="description">
@@ -1723,7 +1617,6 @@ L310 135 L324 129Z" fill="#d69da4"/>
 
     <div class="cafe-text reveal">
         <span class="eyebrow">YOUR LITTLE CORNER</span>
-
         <h2>Your little corner of comfort.</h2>
 
         <p class="description">
@@ -1749,7 +1642,6 @@ L310 135 L324 129Z" fill="#d69da4"/>
 
     <div class="moments-text reveal">
         <span class="eyebrow">THE BEST MOMENTS ARE SHARED</span>
-
         <h2>Good friends. Good food. Good stories.</h2>
 
         <p class="description">
@@ -1776,7 +1668,6 @@ L310 135 L324 129Z" fill="#d69da4"/>
 
     <div class="center-heading reveal">
         <span class="eyebrow">LITTLE MOMENTS, BIG MEMORIES</span>
-
         <h2>Life looks better over coffee.</h2>
 
         <p class="description">
@@ -1828,7 +1719,6 @@ L310 135 L324 129Z" fill="#d69da4"/>
 
     <div class="events-text reveal">
         <span class="eyebrow">GATHER · CREATE · CONNECT</span>
-
         <h2>Beautiful things happen when we gather.</h2>
 
         <p class="description">
@@ -1873,7 +1763,6 @@ L310 135 L324 129Z" fill="#d69da4"/>
 
     <div class="reveal">
         <span class="eyebrow">COME SAY HELLO</span>
-
         <h2>Your table is waiting.</h2>
 
         <p class="description">
@@ -1940,110 +1829,52 @@ role="img" aria-label="Girl saying see you at the café">
 <circle cx="200" cy="210" r="155" fill="none"
 stroke="#dfcbb5" stroke-width="1.5" stroke-dasharray="4 8"/>
 
-<path d="M105 155 Q85 35 200 38 Q320 30 300 165
-L285 260 L115 260Z" fill="#50352b"/>
+<path d="M105 155 Q85 35 200 38 Q320 30 300 165 L285 260 L115 260Z" fill="#50352b"/>
 
-<path d="M145 265 Q120 280 110 330
-L90 420 Q200 440 310 420
-L290 330 Q280 280 255 265Z"
-fill="#d8b8bd"/>
+<path d="M145 265 Q120 280 110 330 L90 420 Q200 440 310 420 L290 330 Q280 280 255 265Z" fill="#d8b8bd"/>
 
-<path d="M145 280 Q200 310 255 280"
-fill="none" stroke="#bd939e" stroke-width="3"/>
+<path d="M145 280 Q200 310 255 280" fill="none" stroke="#bd939e" stroke-width="3"/>
 
-<path d="M145 320 L125 415 M200 320 L200 425
-M255 320 L275 415"
-stroke="#bd939e" stroke-width="2" fill="none"/>
+<path d="M145 320 L125 415 M200 320 L200 425 M255 320 L275 415" stroke="#bd939e" stroke-width="2" fill="none"/>
 
-<path d="M175 235 L175 275 Q200 290 225 275 L225 235Z"
-fill="#eab99b"/>
+<path d="M175 235 L175 275 Q200 290 225 275 L225 235Z" fill="#eab99b"/>
 
 <ellipse cx="200" cy="165" rx="70" ry="83" fill="#f2c6a7"/>
 
-<path d="M130 160 Q105 65 200 55
-Q295 55 270 165
-Q250 130 235 112
-Q210 145 165 119
-Q150 145 130 160Z"
-fill="#50352b"/>
+<path d="M130 160 Q105 65 200 55 Q295 55 270 165 Q250 130 235 112 Q210 145 165 119 Q150 145 130 160Z" fill="#50352b"/>
 
-<path d="M132 130 Q110 220 145 290
-L160 275 Q137 205 153 135Z" fill="#50352b"/>
+<path d="M132 130 Q110 220 145 290 L160 275 Q137 205 153 135Z" fill="#50352b"/>
+<path d="M268 130 Q290 220 255 290 L240 275 Q263 205 247 135Z" fill="#50352b"/>
 
-<path d="M268 130 Q290 220 255 290
-L240 275 Q263 205 247 135Z" fill="#50352b"/>
+<path d="M132 125 Q150 90 177 110 Q200 85 220 108 Q250 90 268 130 Q240 130 225 145 Q200 125 180 145 Q155 130 132 145Z" fill="#624333"/>
 
-<path d="M132 125 Q150 90 177 110
-Q200 85 220 108 Q250 90 268 130
-Q240 130 225 145 Q200 125 180 145
-Q155 130 132 145Z"
-fill="#624333"/>
+<path d="M165 165 Q176 178 187 165 M213 165 Q224 178 235 165" stroke="#49352c" stroke-width="3" fill="none" stroke-linecap="round"/>
 
-<path d="M165 165 Q176 178 187 165"
-stroke="#49352c" stroke-width="3"
-fill="none" stroke-linecap="round"/>
+<ellipse cx="160" cy="190" rx="13" ry="7" fill="#df9991" opacity=".55"/>
+<ellipse cx="240" cy="190" rx="13" ry="7" fill="#df9991" opacity=".55"/>
 
-<path d="M213 165 Q224 178 235 165"
-stroke="#49352c" stroke-width="3"
-fill="none" stroke-linecap="round"/>
-
-<ellipse cx="160" cy="190" rx="13" ry="7"
-fill="#df9991" opacity=".55"/>
-
-<ellipse cx="240" cy="190" rx="13" ry="7"
-fill="#df9991" opacity=".55"/>
-
-<path d="M184 205 Q200 225 216 205"
-stroke="#a45e5b" stroke-width="4"
-fill="none" stroke-linecap="round"/>
+<path d="M184 205 Q200 225 216 205" stroke="#a45e5b" stroke-width="4" fill="none" stroke-linecap="round"/>
 
 <circle cx="130" cy="195" r="5" fill="#d6ad69"/>
 <circle cx="270" cy="195" r="5" fill="#d6ad69"/>
 
-<path d="M125 290 Q100 310 115 350
-L140 365 Q150 365 150 355
-L140 325 L160 300Z"
-fill="#f2c6a7"/>
+<path d="M125 290 Q100 310 115 350 L140 365 Q150 365 150 355 L140 325 L160 300Z" fill="#f2c6a7"/>
+<path d="M265 290 Q290 305 290 335 L310 300 Q320 285 330 295 Q340 305 325 320 L300 365 Q285 375 270 355 L245 320Z" fill="#f2c6a7"/>
 
-<path d="M265 290 Q290 305 290 335
-L310 300 Q320 285 330 295
-Q340 305 325 320 L300 365
-Q285 375 270 355 L245 320Z"
-fill="#f2c6a7"/>
-
-<path d="M285 245 L350 245 L343 305
-Q315 320 292 305Z"
-fill="#a77b5c"/>
-
+<path d="M285 245 L350 245 L343 305 Q315 320 292 305Z" fill="#a77b5c"/>
 <ellipse cx="318" cy="245" rx="33" ry="8" fill="#654431"/>
 <ellipse cx="318" cy="245" rx="25" ry="5" fill="#d9b18b"/>
 
-<path d="M350 260 Q380 250 375 280
-Q372 300 345 290"
-stroke="#a77b5c" stroke-width="8" fill="none"/>
+<path d="M350 260 Q380 250 375 280 Q372 300 345 290" stroke="#a77b5c" stroke-width="8" fill="none"/>
+<path d="M318 265 C308 252 298 268 318 283 C338 268 328 252 318 265Z" fill="#f7e8d9"/>
 
-<path d="M318 265 C308 252 298 268 318 283
-C338 268 328 252 318 265Z"
-fill="#f7e8d9"/>
+<path d="M300 225 Q285 210 300 195 M325 225 Q340 210 325 195" stroke="#b99475" stroke-width="3" fill="none" stroke-linecap="round"/>
 
-<path d="M300 225 Q285 210 300 195
-M325 225 Q340 210 325 195"
-stroke="#b99475" stroke-width="3"
-fill="none" stroke-linecap="round"/>
-
-<path d="M248 85 Q220 60 225 88
-Q230 105 250 95 Q270 110 275 88
-Q278 68 248 85Z" fill="#d69da4"/>
-
+<path d="M248 85 Q220 60 225 88 Q230 105 250 95 Q270 110 275 88 Q278 68 248 85Z" fill="#d69da4"/>
 <circle cx="250" cy="90" r="5" fill="#b77c86"/>
 
-<path d="M65 120 L72 137 L90 144
-L72 151 L65 168 L58 151
-L40 144 L58 137Z" fill="#d9b36c"/>
-
-<path d="M330 115 L336 129 L350 135
-L336 141 L330 155 L324 141
-L310 135 L324 129Z" fill="#d69da4"/>
+<path d="M65 120 L72 137 L90 144 L72 151 L65 168 L58 151 L40 144 L58 137Z" fill="#d9b36c"/>
+<path d="M330 115 L336 129 L350 135 L336 141 L330 155 L324 141 L310 135 L324 129Z" fill="#d69da4"/>
 
 <circle cx="65" cy="280" r="4" fill="#d9b36c"/>
 <circle cx="345" cy="365" r="4" fill="#d9b36c"/>
@@ -2052,7 +1883,6 @@ L310 135 L324 129Z" fill="#d69da4"/>
 
 <div class="girl-copy">
     <span class="eyebrow">UNTIL NEXT TIME</span>
-
     <h2>Meet you<br>at the café! ♡</h2>
 
     <p class="description">
