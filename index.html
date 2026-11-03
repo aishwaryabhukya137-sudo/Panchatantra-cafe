@@ -170,7 +170,7 @@ h2 {
     }
 }
 
-/* HEADER AND EXTRA BIG LOGO */
+/* HEADER AND LOGO */
 
 header {
     height:150px;
@@ -189,17 +189,21 @@ header {
     justify-content:space-between;
 }
 
+/* BIG LOGO ON THE LEFT */
+
 .logo {
     display:flex;
     align-items:center;
-    gap:18px;
+    justify-content:flex-start;
+    gap:12px;
     flex-shrink:0;
 }
 
 .logo img {
-    width:130px;
-    height:130px;
+    width:150px;
+    height:150px;
     object-fit:contain;
+    object-position:left center;
     border-radius:0;
     background:transparent;
     mix-blend-mode:multiply;
@@ -929,15 +933,15 @@ footer {
     }
 
     .logo img {
-        width:110px;
-        height:110px;
+        width:125px;
+        height:125px;
     }
 }
 
 @media(max-width:950px) {
 
     header {
-        height:135px;
+        height:145px;
     }
 
     .nav-links {
@@ -949,8 +953,8 @@ footer {
     }
 
     .logo img {
-        width:110px;
-        height:110px;
+        width:125px;
+        height:125px;
     }
 
     .about-grid,
@@ -995,7 +999,7 @@ footer {
 @media(max-width:600px) {
 
     header {
-        height:120px;
+        height:130px;
     }
 
     .container {
@@ -1003,13 +1007,14 @@ footer {
     }
 
     .logo {
-        gap:10px;
+        gap:8px;
     }
 
     .logo img {
-        width:100px;
-        height:100px;
+        width:115px;
+        height:115px;
         object-fit:contain;
+        object-position:left center;
     }
 
     .logo-name {
@@ -1031,7 +1036,7 @@ footer {
     .nav-links {
         display:none;
         position:absolute;
-        top:120px;
+        top:130px;
         left:0;
         width:100%;
         background:var(--cream);
@@ -1260,12 +1265,12 @@ footer {
 @media(max-width:370px) {
 
     .logo {
-        gap:7px;
+        gap:5px;
     }
 
     .logo img {
-        width:82px;
-        height:82px;
+        width:95px;
+        height:95px;
     }
 
     .logo-name {
