@@ -14,6 +14,7 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
+
 :root {
     --cream: #fbf7ef;
     --cream2: #f5eee3;
@@ -31,7 +32,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 100px;
+    scroll-padding-top: 110px;
 }
 
 body {
@@ -147,21 +148,35 @@ h2 {
 }
 
 @keyframes bounceLogo {
-    from { transform: translateY(-50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 @keyframes cupBounce {
-    from { transform: translateY(-5px) rotate(-7deg); }
-    to { transform: translateY(7px) rotate(7deg); }
+    from {
+        transform: translateY(-5px) rotate(-7deg);
+    }
+    to {
+        transform: translateY(7px) rotate(7deg);
+    }
 }
 
 @keyframes fadeIn {
-    to { opacity: 1; }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes lineGrow {
-    to { width: 110px; }
+    to {
+        width: 110px;
+    }
 }
 
 @keyframes introExit {
@@ -172,10 +187,10 @@ h2 {
     }
 }
 
-/* HEADER AND LOGO */
+/* HEADER */
 
 header {
-    height: 90px;
+    height: 110px;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -191,36 +206,38 @@ header {
     justify-content: space-between;
 }
 
+/* BIGGER LOGO */
+
 .logo {
     display: flex;
     align-items: center;
-    gap: 13px;
+    gap: 16px;
+    flex-shrink: 0;
 }
 
-/* BIGGER LOGO + BLENDED WHITE BACKGROUND */
-
 .logo img {
-    width: 65px;
-    height: 65px;
+    width: 105px;
+    height: 105px;
     object-fit: contain;
     border-radius: 0;
     background: transparent;
     mix-blend-mode: multiply;
     flex-shrink: 0;
+    transform: scale(1.18);
 }
 
 .logo-name {
     font-family: 'Playfair Display', serif;
-    font-size: 29px;
-    line-height: 1.15;
+    font-size: 37px;
+    line-height: 1.1;
     font-weight: 500;
 }
 
 .logo small {
     display: block;
-    font-size: 10px;
-    letter-spacing: 3.5px;
-    margin-top: 4px;
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-top: 5px;
 }
 
 .nav-links {
@@ -465,8 +482,12 @@ header {
 }
 
 @keyframes gentleFloat {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-7px); }
+    0%,100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-7px);
+    }
 }
 
 .final-girl {
@@ -628,50 +649,35 @@ header {
     align-items: center;
 }
 
+/* BOTH CAFE IMAGES PERFECTLY ALIGNED */
+
 .cafe-images {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    align-items: center;
-}
-
-/* FIXED SITTING SPOT FRAME */
-
-.cafe-images .sitting-frame {
-    height: 340px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    align-items: stretch;
     width: 100%;
     min-width: 0;
-    padding: 10px;
-    display: flex;
-    align-items: stretch;
-    justify-content: stretch;
-    overflow: hidden;
+}
+
+.cafe-images .sitting-frame,
+.cafe-images .exterior-frame {
+    width: 100%;
+    height: 340px;
+    min-width: 0;
+    margin-top: 0;
+    padding: 8px;
+    align-self: stretch;
     box-sizing: border-box;
 }
 
-.cafe-images .sitting-frame img {
+.cafe-images .sitting-frame img,
+.cafe-images .exterior-frame img {
     display: block;
     width: 100%;
     height: 100%;
     min-width: 0;
     min-height: 0;
-    object-fit: cover;
-    object-position: center center;
-    background: transparent;
-    border-radius: 3px 27px 3px 27px;
-    flex: 1;
-}
-
-.cafe-images .exterior-frame {
-    height: 285px;
-    width: 100%;
-    margin-top: 30px;
-    min-width: 0;
-}
-
-.cafe-images .exterior-frame img {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
     object-position: center;
 }
@@ -973,6 +979,34 @@ footer {
         max-width: 650px;
         margin: auto;
     }
+
+    /* TABLET LOGO */
+
+    header {
+        height: 100px;
+    }
+
+    .logo img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .logo-name {
+        font-size: 33px;
+    }
+
+    /* TABLET CAFE PICTURES */
+
+    .cafe-images {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .cafe-images .sitting-frame,
+    .cafe-images .exterior-frame {
+        height: 340px;
+        margin-top: 0;
+    }
 }
 
 /* MOBILE */
@@ -980,7 +1014,7 @@ footer {
 @media(max-width:600px) {
 
     header {
-        height: 78px;
+        height: 88px;
     }
 
     .logo {
@@ -988,12 +1022,13 @@ footer {
     }
 
     .logo img {
-        width: 58px;
-        height: 58px;
+        width: 78px;
+        height: 78px;
+        transform: scale(1.18);
     }
 
     .logo-name {
-        font-size: 25px;
+        font-size: 28px;
     }
 
     .logo small {
@@ -1003,12 +1038,13 @@ footer {
 
     .menu-toggle {
         display: block;
+        font-size: 30px;
     }
 
     .nav-links {
         display: none;
         position: absolute;
-        top: 78px;
+        top: 88px;
         left: 0;
         width: 100%;
         background: var(--cream);
@@ -1148,30 +1184,28 @@ footer {
         display: block;
     }
 
+    /* MOBILE CAFE PICTURE ALIGNMENT */
+
     .cafe-images {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
-        align-items: center;
+        align-items: stretch;
     }
 
-    /* SITTING SPOT MOBILE ALIGNMENT */
-
-    .cafe-images .sitting-frame {
-        height: 250px;
+    .cafe-images .sitting-frame,
+    .cafe-images .exterior-frame {
         width: 100%;
-        padding: 8px;
-        align-self: center;
+        height: 235px;
+        margin-top: 0;
+        padding: 6px;
     }
 
-    .cafe-images .sitting-frame img {
+    .cafe-images .sitting-frame img,
+    .cafe-images .exterior-frame img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         object-position: center;
-    }
-
-    .cafe-images .exterior-frame {
-        height: 220px;
-        margin-top: 20px;
     }
 
     .moments-image {
@@ -1231,6 +1265,34 @@ footer {
     }
 }
 
+/* VERY SMALL PHONES */
+
+@media(max-width:380px) {
+
+    .logo img {
+        width: 68px;
+        height: 68px;
+    }
+
+    .logo-name {
+        font-size: 24px;
+    }
+
+    .logo small {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .cafe-images {
+        gap: 8px;
+    }
+
+    .cafe-images .sitting-frame,
+    .cafe-images .exterior-frame {
+        height: 205px;
+    }
+}
+
 /* REDUCED MOTION */
 
 @media(prefers-reduced-motion: reduce) {
@@ -1242,6 +1304,7 @@ footer {
         scroll-behavior: auto !important;
     }
 }
+
 </style>
 </head>
 
@@ -1261,10 +1324,9 @@ footer {
 <header>
 <div class="container nav">
 
-    <!-- LOGO NOW ALWAYS RETURNS TO THE MAIN WEBSITE -->
-
     <a href="https://panchatantracafe.com/" class="logo">
         <img src="logooo.jpg" alt="Panchatantra Café Logo">
+
         <div>
             <div class="logo-name">Panchatantra</div>
             <small>CAFÉ · BEGUMPET</small>
@@ -1349,8 +1411,7 @@ xmlns="http://www.w3.org/2000/svg"
 role="img" aria-label="Illustration of a girl enjoying coffee">
 
 <circle cx="200" cy="210" r="170" fill="#f5eee3"/>
-<circle cx="200" cy="210" r="155" fill="none"
-stroke="#dfcbb5" stroke-width="1.5" stroke-dasharray="4 8"/>
+<circle cx="200" cy="210" r="155" fill="none" stroke="#dfcbb5" stroke-width="1.5" stroke-dasharray="4 8"/>
 
 <path d="M105 155 Q85 35 200 38 Q320 30 300 165 L285 260 L115 260Z" fill="#50352b"/>
 
@@ -1826,8 +1887,7 @@ xmlns="http://www.w3.org/2000/svg"
 role="img" aria-label="Girl saying see you at the café">
 
 <circle cx="200" cy="210" r="170" fill="#f5eee3"/>
-<circle cx="200" cy="210" r="155" fill="none"
-stroke="#dfcbb5" stroke-width="1.5" stroke-dasharray="4 8"/>
+<circle cx="200" cy="210" r="155" fill="none" stroke="#dfcbb5" stroke-width="1.5" stroke-dasharray="4 8"/>
 
 <path d="M105 155 Q85 35 200 38 Q320 30 300 165 L285 260 L115 260Z" fill="#50352b"/>
 
