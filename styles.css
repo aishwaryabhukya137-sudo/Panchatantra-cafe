@@ -1,3 +1,5 @@
+/* Panchatantra Café — responsive styles
+   Original cream, brown and terracotta palette retained. */
 :root{--cream:#fbf7ef;--cream2:#f5eee3;--paper:#fffdf9;--brown:#443329;--muted:#8b796b;--line:#e5d9c9;--accent:#a77b5c;--accent-dark:#80583e;--shadow:0 18px 50px rgba(68,51,41,.09);--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",Arial,sans-serif;--script:"Kalam",cursive}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:105px}
@@ -111,12 +113,15 @@ details p{margin-top:.8rem;font-size:.9rem}
 .doodle-wrap{min-height:440px;display:grid;place-items:center;background:var(--cream2);border:1px solid var(--line);border-radius:48% 48% 8px 8px;overflow:hidden;position:relative}
 .coffee-doodle{width:min(100%,470px);height:auto}
 .doodle-caption{position:absolute;bottom:18px;left:20px;font:italic 1.15rem var(--serif);color:var(--accent-dark)}
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
-.reveal.visible{opacity:1;transform:none}
+
+/* Important: content stays visible even if JavaScript fails to load. */
+.reveal{opacity:1;transform:none}
+html.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
+html.js .reveal.visible{opacity:1;transform:none}
 :focus-visible{outline:3px solid #b88660;outline-offset:3px}
 @media(max-width:1020px){.nav-links{gap:.7rem}.nav-links a{font-size:.69rem}.brand-name{font-size:1.55rem}.brand img{width:54px;height:54px}}
 @media(max-width:780px){
- .nav-wrap{min-height:76px}.menu-toggle{display:block}
+ .nav-wrap{min-height:76px}.menu-toggle{display:block;flex:0 0 44px}
  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--cream);padding:.7rem 5% 1rem;border-bottom:1px solid var(--line);box-shadow:0 14px 22px #44332912;align-items:stretch;gap:0}
  .nav-links.open{display:flex;flex-direction:column}
  .nav-links li{border-bottom:1px solid var(--line)}
@@ -128,7 +133,7 @@ details p{margin-top:.8rem;font-size:.9rem}
  .story-image{height:340px}
  .cards{grid-template-columns:1fr 1fr}
  .feature-list{grid-template-columns:1fr 1fr}
- .footer-grid{grid-template-columns:1fr 1fr}
+ .brand{gap:.5rem}
 }
 @media(max-width:540px){
  .brand-name{font-size:1.35rem}.brand img{width:49px;height:49px}
@@ -145,4 +150,4 @@ details p{margin-top:.8rem;font-size:.9rem}
  .form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}
  .doodle-wrap{min-height:330px}
 }
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
