@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://panchatantracafe.com/sitemap.xml
