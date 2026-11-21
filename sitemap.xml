@@ -6,5 +6,7 @@
   <url><loc>https://panchatantracafe.com/books-and-games.html</loc><priority>0.7</priority></url>
   <url><loc>https://panchatantracafe.com/pet-friendly.html</loc><priority>0.7</priority></url>
   <url><loc>https://panchatantracafe.com/host-an-event.html</loc><priority>0.7</priority></url>
-  <url><loc>https://panchatantracafe.com/faq.html</loc><priority>0.6</priority></url>
+  <url><loc>https://panchatantracafe.com/faq.html</loc><priority>0.7</priority></url>
+  <url><loc>https://panchatantracafe.com/book.html</loc><priority>0.8</priority></url>
+  <url><loc>https://panchatantracafe.com/guide.html</loc><priority>0.7</priority></url>
 </urlset>
