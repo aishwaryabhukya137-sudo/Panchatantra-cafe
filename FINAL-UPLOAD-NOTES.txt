@@ -1,0 +1,8 @@
+PANCHATANTRA CAFE - FINAL NAVIGATION UPDATE
+
+Upload/replace all HTML files, styles.css and script.js from this package in the same website root folder.
+The hamburger navigation controller is embedded in every HTML page and is styled to work on desktop, tablet and mobile. The shared CSS/JS links include a version query to bypass stale browser cache.
+
+Keep your existing image assets (logooo.jpg, homepage.jpg, friendship.jpg, food.jpg, drink.jpg, dessert.jpg and other page photos) in the same root folder. They were not included in the ZIP you supplied, so this package intentionally does not replace or delete them.
+
+After publishing, open the site once in a private/incognito tab or hard-refresh to load the new files.
