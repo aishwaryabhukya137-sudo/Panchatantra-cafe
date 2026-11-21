@@ -6,7 +6,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261121-final">
+<link rel="stylesheet" href="styles.css?v=20261121-books-logo-fix">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Panchatantra Café">
 <meta property="og:title" content="Books & Board Games Café | Panchatantra Café Hyderabad"><meta property="og:description" content="Enjoy books, chess and UNO at Panchatantra Café in Begumpet, Hyderabad. Books and games are available to everyone.">
 <meta property="og:url" content="https://panchatantracafe.com/books-and-games.html"><meta property="og:image" content="https://panchatantracafe.com/homepage.jpg">
@@ -20,7 +20,7 @@
 </ul></div></header>
 <main>
 <section class="page-hero container"><span class="eyebrow">Pause, play, turn a page</span><h1>Stories beyond the menu.</h1><p>At Panchatantra Café, a visit can be about more than food and coffee. Settle in with a book, challenge a friend or simply enjoy the moment.</p></section>
-<section class="section container"><div class="cards">
+<section class="section container"><div class="cards books-games-cards">
 <article class="card"><div class="card-image"><img src="friendship.jpg" alt="A cosy café corner" loading="lazy"></div><h3>Pick up a book</h3><p>Browse the books available at the café and enjoy a little reading time.</p></article>
 <article class="card"><div class="card-image"><img src="sitting spot.jpg" alt="Seating area at Panchatantra Café" loading="lazy"></div><h3>Chess, anyone?</h3><p>Take a thoughtful break and enjoy a game of chess with your company.</p></article>
 <article class="card"><div class="card-image"><img src="people.jpg" alt="People enjoying time together at the café" loading="lazy"></div><h3>UNO & good company</h3><p>Bring your friends together for a light-hearted game of UNO.</p></article>
@@ -33,47 +33,5 @@
 <div><h3>Explore</h3><div class="footer-links"><a href="menu.html">Menu & ordering</a><a href="books-and-games.html">Books & games</a><a href="Event.html">Events & workshops</a><a href="host-an-event.html">Host an event</a><a href="pet-friendly.html">Pet-friendly café</a><a href="faq.html">FAQs</a><a href="guide.html">Café guide</a></div></div>
 <div><h3>Come say hello</h3><div class="footer-links"><a href="https://maps.app.goo.gl/RJKehn9R445dQgz3A" target="_blank" rel="noopener noreferrer">House 1-10-290/1, Sai Nilayam, Circle 30, Begumpet, Hyderabad</a><a href="tel:+918516923456">+91 85169 23456</a><a href="https://www.instagram.com/panchatantrahyd/" target="_blank" rel="noopener noreferrer">@panchatantrahyd on Instagram</a><a href="https://maps.app.goo.gl/RJKehn9R445dQgz3A" target="_blank" rel="noopener noreferrer">Find us on Google Maps</a></div></div>
 </div><div class="footer-bottom"><span>© <span data-year></span> Panchatantra Café. All rights reserved.</span><span>Begumpet · Hyderabad · Open daily, 11 AM–11 PM</span></div>
-</div></footer><a class="whatsapp-float" href="https://wa.me/918516923456" target="_blank" rel="noopener noreferrer" aria-label="Chat with Panchatantra Café on WhatsApp">WhatsApp ↗</a><script>
-(() => {
-  const closeAll = () => {
-    document.querySelectorAll('.menu-toggle').forEach((button) => {
-      const navId = button.getAttribute('aria-controls');
-      const nav = (navId && document.getElementById(navId)) || button.closest('.nav-wrap')?.querySelector('.nav-links');
-      if (nav) nav.classList.remove('open');
-      button.setAttribute('aria-expanded', 'false');
-      button.setAttribute('aria-label', 'Open navigation menu');
-      button.textContent = '☰';
-    });
-  };
-
-  document.addEventListener('click', (event) => {
-    const button = event.target.closest('.menu-toggle');
-    if (button) {
-      event.preventDefault();
-      event.stopPropagation();
-      const navId = button.getAttribute('aria-controls');
-      const nav = (navId && document.getElementById(navId)) || button.closest('.nav-wrap')?.querySelector('.nav-links');
-      if (!nav) return;
-      const opening = !nav.classList.contains('open');
-      closeAll();
-      nav.classList.toggle('open', opening);
-      button.setAttribute('aria-expanded', String(opening));
-      button.setAttribute('aria-label', opening ? 'Close navigation menu' : 'Open navigation menu');
-      button.textContent = opening ? '×' : '☰';
-      return;
-    }
-
-    if (event.target.closest('.nav-links a')) {
-      closeAll();
-      return;
-    }
-    if (!event.target.closest('.nav-wrap')) closeAll();
-  });
-
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') closeAll();
-  });
-})();
-</script>
-<script src="script.js?v=20261121-final" defer></script>
+</div></footer><a class="whatsapp-float" href="https://wa.me/918516923456" target="_blank" rel="noopener noreferrer" aria-label="Chat with Panchatantra Café on WhatsApp">WhatsApp ↗</a><script src="script.js" defer></script>
 </body></html>
