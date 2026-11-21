@@ -28,11 +28,14 @@ p{color:var(--muted)}
 .brand img{width:62px;height:62px;object-fit:contain;mix-blend-mode:multiply}
 .brand-name{font:500 1.75rem/1 var(--serif);white-space:nowrap}
 .brand small{display:block;margin-top:.32rem;font-size:.57rem;letter-spacing:.24em}
-.nav-links{display:flex;align-items:center;gap:clamp(.65rem,1.55vw,1.35rem);list-style:none}
-.nav-links a{font-size:.75rem;font-weight:600;color:var(--muted);transition:color .2s}
+.nav-links{display:none;position:absolute;z-index:1101;top:100%;right:0;width:min(380px,calc(100vw - 32px));max-height:min(78vh,620px);overflow-y:auto;list-style:none;flex-direction:column;align-items:stretch;gap:0;padding:.65rem 1.15rem 1rem;background:var(--cream);border:1px solid var(--line);box-shadow:0 14px 28px rgba(68,51,41,.16)}
+.nav-links.open{display:flex}
+.nav-links li{border-bottom:1px solid var(--line)}
+.nav-links li:last-child{border:0}
+.nav-links a{display:block;padding:.78rem .2rem;font-size:.9rem;font-weight:600;color:var(--muted);transition:color .2s}
 .nav-links a:hover,.nav-links a[aria-current=page]{color:var(--accent-dark)}
-.nav-links .nav-cta{padding:11px 14px;background:var(--brown);color:white;white-space:nowrap}
-.menu-toggle{display:none;position:relative;z-index:1102;border:1px solid var(--line);background:transparent;color:var(--brown);width:48px;height:48px;font-size:1.55rem;line-height:1;cursor:pointer;touch-action:manipulation}
+.nav-links .nav-cta{display:inline-block;margin:.65rem 0 .1rem;padding:11px 14px;background:var(--brown);color:white;white-space:nowrap}
+.menu-toggle{display:inline-flex;align-items:center;justify-content:center;flex:0 0 48px;position:relative;z-index:1102;border:1px solid var(--line);background:transparent;color:var(--brown);width:48px;height:48px;font-size:1.55rem;line-height:1;cursor:pointer;touch-action:manipulation}
 .hero{padding:clamp(3rem,6vw,5.5rem) 0 2.3rem}
 .hero-layout{display:grid;grid-template-columns:1.03fr .97fr;gap:clamp(1.5rem,5vw,4.5rem);align-items:center}
 .hero-copy h1{font-family:var(--script);font-weight:400;letter-spacing:-.035em;margin:1rem 0}
@@ -111,18 +114,11 @@ details p{margin-top:.8rem;font-size:.9rem}
 .doodle-wrap{min-height:440px;display:grid;place-items:center;background:var(--cream2);border:1px solid var(--line);border-radius:48% 48% 8px 8px;overflow:hidden;position:relative}
 .coffee-doodle{width:min(100%,470px);height:auto}
 .doodle-caption{position:absolute;bottom:18px;left:20px;font:italic 1.15rem var(--serif);color:var(--accent-dark)}
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
-.reveal.visible{opacity:1;transform:none}
+.reveal{opacity:1;transform:none}
 :focus-visible{outline:3px solid #b88660;outline-offset:3px}
-@media(max-width:1020px){.nav-links{gap:.7rem}.nav-links a{font-size:.69rem}.brand-name{font-size:1.55rem}.brand img{width:54px;height:54px}}
+@media(max-width:1020px){.brand-name{font-size:1.55rem}.brand img{width:54px;height:54px}}
 @media(max-width:780px){
- .nav-wrap{min-height:76px}.menu-toggle{display:block}
- .nav-links{display:none;position:absolute;z-index:1101;top:100%;left:0;right:0;background:var(--cream);padding:.7rem 5% 1rem;border:1px solid var(--line);border-top:0;box-shadow:0 14px 22px #44332912;align-items:stretch;gap:0}
- .nav-links.open{display:flex;flex-direction:column}
- .nav-links li{border-bottom:1px solid var(--line)}
- .nav-links li:last-child{border:0}
- .nav-links a{display:block;padding:.8rem 0;font-size:.9rem}
- .nav-links .nav-cta{display:inline-block;margin:.6rem 0;padding:10px 14px}
+ .nav-wrap{min-height:76px}.nav-links{right:0;width:min(380px,calc(100vw - 32px))}
  .hero-layout,.grid-2,.event-grid{grid-template-columns:1fr}
  .hero-image,.story-image{height:auto;min-height:0}
  .cards{grid-template-columns:1fr 1fr}
@@ -130,6 +126,7 @@ details p{margin-top:.8rem;font-size:.9rem}
  .footer-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:540px){
+ .nav-links{left:0;right:0;width:100%}
  .brand-name{font-size:1.35rem}.brand img{width:49px;height:49px}
  .brand small{font-size:.5rem;letter-spacing:.18em}
  .hero{padding-top:2.7rem}.hero-meta{font-size:.54rem;letter-spacing:.06em}

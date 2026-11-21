@@ -39,8 +39,8 @@ CONFIRMED SITE CHOICES
 - Google Maps listing is used for reviews and directions: https://maps.app.goo.gl/RJKehn9R445dQgz3A
 - Original café photos and logo are referenced, not replaced.
 - A simple coffee cup, open book and botanical line doodle is embedded directly in index.html as SVG.
-- Desktop navigation is visible; hamburger menu is for smaller screens.
-- Intro splash delay is removed.
+- A hamburger menu is visible on desktop, tablet and mobile; it opens/closes the same dropdown on every screen size.
+- Intro reveal content is visible even if JavaScript or scroll animations fail, preventing the blank homepage seen in the screenshot.
 - Booking and host enquiry forms open WhatsApp with the entered details. They do not create automatic confirmed reservations or store form data.
 - No event dates, prices, ratings or customer testimonials have been invented.
 - Google Tag Manager, GA4, Meta Pixel and Search Console IDs/access were not supplied, so tracking tags are not falsely represented as installed. JS emits custom browser events that can be connected after IDs are provided.
