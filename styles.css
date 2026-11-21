@@ -174,3 +174,78 @@ html.js .reveal.visible{opacity:1;transform:none}
 .coffee-moment{display:block;max-width:900px;margin:clamp(2.5rem,6vw,5rem) auto;padding:clamp(2rem,5vw,4rem);text-align:center;background:#f5eee5;border-radius:18px}
 .coffee-moment-copy{max-width:680px;margin:0 auto}
 .coffee-moment-copy h2{max-width:650px;margin-left:auto;margin-right:auto}
+
+
+/* FINAL FIX: show complete photographs on every page (no fixed-height cropping). */
+main img {
+  display: block;
+  width: 100%;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+}
+
+/* Let image frames grow to the photograph's natural aspect ratio. */
+main .photo-frame,
+main .hero-image,
+main .story-image,
+main .card-image,
+main .image-frame,
+main .image-wrap,
+main .image-wrapper,
+main .gallery-image,
+main .gallery-item,
+main .book-image,
+main .game-image,
+main .event-image,
+main .feature-image,
+main .media-frame,
+main .card-media,
+main .card-image-wrap {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  overflow: visible !important;
+}
+
+/* Keep image borders and cards neat while allowing full image height. */
+main .photo-frame img,
+main .card-image img {
+  width: 100%;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+}
+
+/* Reliable mobile navigation: the open panel sits below the header. */
+@media (max-width: 780px) {
+  .site-header { z-index: 2000; }
+  .nav-wrap { position: relative; }
+  .menu-toggle {
+    position: relative;
+    z-index: 2002;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .nav-links {
+    z-index: 2001;
+    max-height: calc(100dvh - 76px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .nav-links.open { display: flex !important; }
+}
+
+
+/* Catch image wrappers used by the Books, Games and Events pages too. */
+main div:has(> img),
+main figure:has(> img),
+main picture {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  overflow: visible !important;
+}

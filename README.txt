@@ -1,6 +1,16 @@
-Panchatantra Cafe homepage placement fix
+Panchatantra Cafe — image and mobile navigation fixes
 
-Replace index.html and styles.css on your website with the files in this ZIP.
-The coffee feature now appears immediately after the homepage hero/photo and before the About section. The unwanted SVG diagram and the duplicate lower coffee illustration section have been removed.
+Replace index.html and styles.css with these updated files, and upload menu.js too.
 
-Image generation failed in this session, so this version intentionally uses a clean text-led coffee feature rather than displaying the unwanted diagram. Upload a preferred woman-drinking-coffee image if you want it placed in that exact spot. Keep all existing website photos, logo, other HTML pages, and assets in their current locations.
+Fixes:
+- Main content photographs now show their full image and natural proportions instead of being cropped into fixed-height boxes.
+- Image wrappers expand naturally, including wrappers used on the Books, Games and Events pages, provided those pages load this shared styles.css.
+- The mobile hamburger opens on the first tap and closes on the second tap. Selecting a link, tapping outside, pressing Escape, or switching to desktop closes it.
+- The homepage loads menu.js automatically.
+
+IMPORTANT FOR OTHER HTML PAGES:
+The uploaded ZIP contained only index.html and styles.css, not books-and-games.html, Event.html, or the other page files. To enable the same reliable hamburger behaviour on each of those pages, add this line immediately before </body>:
+<script src="menu.js" defer></script>
+Make sure each page links to the updated styles.css.
+
+Keep all existing photos, logo, and other HTML pages in their current website folder. The original upload did not include those image assets or other HTML pages, so they are not duplicated in this ZIP.
