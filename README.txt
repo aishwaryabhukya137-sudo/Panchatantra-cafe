@@ -1,16 +1,12 @@
-Panchatantra Cafe — image and mobile navigation fixes
+Panchatantra Café — corrected homepage package
 
-Replace index.html and styles.css with these updated files, and upload menu.js too.
+Included:
+- index.html (hamburger navigation JavaScript embedded directly; no separate menu.js required)
+- styles.css (hero image frame follows image dimensions; removed broad image-wrapper override)
 
-Fixes:
-- Main content photographs now show their full image and natural proportions instead of being cropped into fixed-height boxes.
-- Image wrappers expand naturally, including wrappers used on the Books, Games and Events pages, provided those pages load this shared styles.css.
-- The mobile hamburger opens on the first tap and closes on the second tap. Selecting a link, tapping outside, pressing Escape, or switching to desktop closes it.
-- The homepage loads menu.js automatically.
+Upload both files to the same folder as the existing image assets. Keep your existing image filenames and other pages.
 
-IMPORTANT FOR OTHER HTML PAGES:
-The uploaded ZIP contained only index.html and styles.css, not books-and-games.html, Event.html, or the other page files. To enable the same reliable hamburger behaviour on each of those pages, add this line immediately before </body>:
-<script src="menu.js" defer></script>
-Make sure each page links to the updated styles.css.
+Important about the black bands in the café photo:
+The homepage.jpg image asset was not included in the uploaded website ZIP, so it could not be inspected or edited. If the black bands are part of homepage.jpg itself, CSS cannot remove them cleanly. Please upload homepage.jpg (or the full website ZIP including image assets) so the image can be cropped at the black bands without cutting off the café.
 
-Keep all existing photos, logo, and other HTML pages in their current website folder. The original upload did not include those image assets or other HTML pages, so they are not duplicated in this ZIP.
+For other HTML pages, copy the inline navigation script from this index.html to just before </body> on those pages, or send those page files so they can be updated too.

@@ -239,13 +239,28 @@ main .card-image img {
 }
 
 
-/* Catch image wrappers used by the Books, Games and Events pages too. */
-main div:has(> img),
-main figure:has(> img),
-main picture {
+/* Hero image: let the frame follow the actual image dimensions. */
+.hero-image {
   height: auto !important;
   min-height: 0 !important;
-  max-height: none !important;
   aspect-ratio: auto !important;
-  overflow: visible !important;
+  background: transparent !important;
+  overflow: hidden !important;
+}
+.hero-image img {
+  display: block;
+  width: 100%;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  background: transparent !important;
+}
+
+/* Mobile navigation panel and toggle remain above page content. */
+@media (max-width: 780px) {
+  .site-header { position: sticky; top: 0; z-index: 3000; }
+  .nav-wrap { position: relative; }
+  .menu-toggle { display: block; position: relative; z-index: 3002; cursor: pointer; touch-action: manipulation; }
+  .nav-links { z-index: 3001; }
+  .nav-links.open { display: flex !important; flex-direction: column; }
 }
