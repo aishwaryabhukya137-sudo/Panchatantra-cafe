@@ -14,33 +14,60 @@
 
 
 <style>
-/* Homepage refresh: full-width café photo, coffee-girl illustration and simple menu */
-.hero { padding-top: clamp(1.25rem, 3vw, 2.5rem); }
-.hero-layout { display: block !important; }
-.hero-copy { display: none !important; }
-.hero-image { width: 100%; max-width: none; margin: 0; }
-.hero-image img { display: block; width: 100%; aspect-ratio: 1.55 / 1; object-fit: cover; }
-.hero-meta { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-top: 1.1rem; color: #806b5c; font-size: .82rem; letter-spacing: .12em; text-transform: uppercase; }
-.coffee-moment { padding-top: clamp(1rem, 3vw, 2rem); padding-bottom: clamp(1rem, 3vw, 2rem); }
-.coffee-girl-art-wrap { width: min(100%, 820px); margin: 0 auto; }
-.coffee-girl-art-wrap svg { display: block; width: 100%; height: auto; max-height: 390px; margin: 0 auto; }
-.menu-showcase .section-heading { margin-bottom: 1.5rem; }
-.menu-showcase .section-heading h2 { margin: 0; letter-spacing: .22em; }
-.menu-showcase .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(.55rem, 2vw, 1.1rem); }
-.menu-showcase .card { min-width: 0; padding: 0; margin: 0; border: 0; background: transparent; box-shadow: none; }
-.menu-showcase .card-image { width: 100%; aspect-ratio: 1 / 1; overflow: hidden; border-radius: 16px; }
-.menu-showcase .card-image img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.menu-order-link { display: flex; justify-content: center; margin-top: 1.7rem; }
-.menu-order-link .btn { min-width: min(100%, 320px); text-align: center; }
-@media (max-width: 600px) {
-  .hero-meta { font-size: .68rem; letter-spacing: .08em; }
-  .hero-image img { aspect-ratio: 1.18 / 1; }
-  .menu-showcase .cards { gap: .5rem; }
-  .menu-showcase .card-image { border-radius: 11px; }
+/* Panchatantra homepage refresh */
+:root { --pt-cream:#fbf7ef; --pt-paper:#f3eadf; --pt-ink:#3d2c23; --pt-brown:#76513b; --pt-line:#ddcbbb; }
+html { scroll-behavior:smooth; scroll-padding-top:100px; }
+body { background:var(--pt-cream); color:var(--pt-ink); }
+.site-header { z-index:50; }
+.hero { padding-top:clamp(1.15rem,3vw,2.4rem); padding-bottom:0; }
+.hero-layout { display:block !important; }
+.hero-copy { display:none !important; }
+.hero-image { width:100%; max-width:none; margin:0; }
+.hero-image img { display:block; width:100%; height:clamp(270px,57vw,590px); aspect-ratio:unset; object-fit:cover; object-position:center 52%; border-radius:22px; }
+.hero-meta { display:flex; justify-content:space-between; gap:.7rem 1.5rem; flex-wrap:wrap; margin:1.15rem 0 0; padding:1rem 0; border-top:1px solid var(--pt-line); color:#806b5c; font-size:.78rem; letter-spacing:.12em; text-transform:uppercase; }
+.home-welcome { max-width:850px; margin:clamp(1.4rem,4vw,3rem) auto 0; padding:0 1.2rem; text-align:center; }
+.home-welcome .eyebrow { display:block; margin-bottom:.65rem; }
+.home-welcome h1 { max-width:800px; margin:0 auto .8rem; color:var(--pt-ink); font-family:"Playfair Display",serif; font-size:clamp(2.35rem,6.5vw,4.6rem); font-weight:500; line-height:1.08; letter-spacing:-.035em; }
+.home-welcome h1 em { color:#956d50; font-weight:400; }
+.home-welcome p { max-width:610px; margin:0 auto; color:#806f62; font-size:clamp(.98rem,2vw,1.12rem); line-height:1.8; }
+.home-welcome .text-link { display:inline-block; margin-top:1rem; }
+.coffee-moment { padding-top:clamp(1.8rem,5vw,3.8rem); padding-bottom:clamp(2rem,5vw,3.8rem); }
+.coffee-girl-art-wrap { width:min(100%,720px); margin:0 auto; padding:0; background:transparent; border:0; }
+.coffee-girl-art-wrap svg { display:block; width:100%; height:auto; max-height:360px; margin:0 auto; overflow:visible; }
+.menu-showcase { padding:clamp(2.8rem,7vw,5rem) 0; scroll-margin-top:100px; }
+.menu-showcase .container { max-width:1100px; }
+.menu-showcase .section-heading { margin:0 auto 1.5rem; padding:0 0 .8rem; text-align:center; }
+.menu-showcase .section-heading .eyebrow { display:block; margin-bottom:.45rem; }
+.menu-showcase .section-heading h2 { margin:0; font-family:"Playfair Display",serif; font-size:clamp(2rem,5vw,3rem); letter-spacing:.08em; line-height:1.2; }
+.menu-showcase .section-heading p { max-width:520px; margin:.65rem auto 0; color:#806f62; }
+.menu-showcase .cards { display:grid; grid-template-columns:1.35fr 1fr 1fr; align-items:stretch; gap:clamp(.65rem,2vw,1.15rem); }
+.menu-showcase .card { min-width:0; margin:0; padding:0; border:0; background:transparent; box-shadow:none; }
+.menu-showcase .card-image { width:100%; height:clamp(170px,25vw,300px); aspect-ratio:unset; overflow:hidden; border-radius:18px; background:#e8d9c9; }
+.menu-showcase .card:first-child .card-image { height:clamp(170px,25vw,300px); }
+.menu-showcase .card-image img { display:block; width:100%; height:100%; object-fit:cover; object-position:center; transition:transform .5s ease; }
+.menu-showcase .card:hover .card-image img { transform:scale(1.035); }
+.menu-order-link { display:flex; justify-content:center; margin-top:1.8rem; }
+.menu-order-link .btn { min-width:min(100%,360px); padding:1rem 1.6rem; text-align:center; border-radius:3px; letter-spacing:.08em; }
+.menu-showcase .menu-note { margin:.8rem 0 0; color:#8b7868; text-align:center; font-size:.82rem; }
+.coffee-moment-copy { display:none !important; }
+@media (max-width:700px) {
+ .hero { padding-top:1rem; }
+ .hero-image img { height:clamp(245px,72vw,390px); border-radius:17px; }
+ .hero-meta { justify-content:space-between; font-size:.66rem; letter-spacing:.07em; }
+ .home-welcome { margin-top:1.45rem; }
+ .coffee-moment { padding-top:1.4rem; padding-bottom:1.5rem; }
+ .coffee-girl-art-wrap svg { max-height:285px; }
+ .menu-showcase { padding:2.7rem 0 3rem; }
+ .menu-showcase .section-heading { margin-bottom:1.25rem; }
+ .menu-showcase .cards { grid-template-columns:1fr 1fr; gap:.65rem; }
+ .menu-showcase .card:first-child { grid-column:1 / -1; }
+ .menu-showcase .card:first-child .card-image { height:clamp(190px,55vw,270px); }
+ .menu-showcase .card:not(:first-child) .card-image { height:clamp(135px,38vw,190px); }
+ .menu-showcase .card-image { border-radius:13px; }
+ .menu-order-link { margin-top:1.35rem; }
+ .menu-order-link .btn { width:100%; min-width:0; }
 }
-@media (prefers-reduced-motion: reduce) {
-  .coffee-girl-art-wrap { scroll-behavior: auto; }
-}
+@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .menu-showcase .card-image img { transition:none; } }
 </style>
 </head><body>
 <header class="site-header"><div class="container nav-wrap">
@@ -60,87 +87,73 @@
     <span>Food · Coffee · Conversations</span>
     <span>Open daily · 11 AM–11 PM</span>
   </div>
+  <div class="home-welcome reveal">
+    <span class="eyebrow">A cosy corner in Begumpet, Hyderabad</span>
+    <h1>Good food. <em>Good stories.</em><br>Better moments.</h1>
+    <p>Some places are made for more than just a meal. Come by for a comforting bite, a cup of coffee, a good book or an unhurried conversation.</p>
+    <a class="text-link" href="https://dinein.petpooja.com/qr/jzxh1v2054/B1" target="_blank" rel="noopener noreferrer">Explore the menu ↗</a>
+  </div>
 </section>
 <section class="coffee-moment section container" aria-label="A little coffee moment">
-  <div class="coffee-girl-art-wrap" aria-label="A girl peacefully sipping coffee">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img" aria-labelledby="title desc">
-<title id="title">Girl sipping coffee line doodle</title>
-<desc id="desc">A delicate hand-drawn brown line illustration of a girl with flowing hair, eyes closed, holding a warm coffee cup.</desc>
-<g fill="none" stroke="#70452f" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round">
-  <!-- soft ground line and small decorative flourishes -->
-  <path d="M76 365 C190 358 240 370 330 364 S520 358 615 365 S760 365 826 358" opacity=".72"/>
-  <path d="M104 331 C87 310 85 288 97 271 M97 292 C75 287 66 275 62 260 M98 305 C119 294 126 280 126 264"/>
-  <path d="M62 260 C48 258 43 246 45 236 C59 238 66 247 62 260Z M97 271 C87 255 91 243 103 235 C111 249 108 261 97 271Z M126 264 C125 247 136 238 150 239 C149 254 140 263 126 264Z"/>
-  <path d="M786 330 C805 312 811 291 804 273 M804 294 C824 289 834 276 836 261 M804 307 C784 298 776 284 778 269"/>
-  <path d="M836 261 C851 257 858 245 854 234 C840 237 833 247 836 261Z M804 273 C816 257 811 245 799 238 C791 252 794 264 804 273Z M778 269 C778 252 766 243 752 246 C755 260 764 268 778 269Z"/>
-  <!-- hair silhouette, back flowing around shoulder -->
-  <path d="M330 356 C298 334 283 301 292 261 C299 226 323 204 339 176 C351 154 354 122 379 99 C405 74 451 62 490 74 C534 87 556 121 557 160 C558 187 546 210 536 230 C527 251 531 279 548 303 C560 322 563 343 551 359"/>
-  <path d="M337 351 C316 329 314 298 328 271 C341 245 357 232 365 208 C371 190 366 169 381 146 C396 124 424 110 449 110"/>
-  <path d="M347 350 C337 323 350 298 369 279 C390 258 395 237 389 215 C383 193 390 169 411 149 C430 131 458 125 480 132"/>
-  <path d="M365 357 C363 332 382 314 403 299 C424 284 434 260 424 239 C413 216 420 192 443 174 C462 159 484 159 502 168"/>
-  <path d="M391 359 C398 337 422 326 443 307 C462 290 466 266 453 248 C440 230 447 207 468 192"/>
-  <path d="M420 361 C440 346 468 344 488 355 M453 359 C474 345 502 342 523 353"/>
-  <!-- crown and fringe -->
-  <path d="M335 192 C319 151 335 111 370 88 C400 67 447 61 482 76 C516 90 536 116 542 145"/>
-  <path d="M351 145 C370 111 407 92 447 93 C476 94 502 106 519 127"/>
-  <path d="M368 120 C399 89 447 83 480 99 M386 104 C415 83 453 82 482 95"/>
-  <path d="M485 92 C474 116 469 136 475 158 C480 177 493 188 507 193"/>
-  <path d="M509 100 C500 126 499 148 509 167 C516 180 527 187 539 190"/>
-  <!-- face in profile, eyes closed -->
-  <path d="M469 145 C488 137 514 144 528 162 C543 180 542 207 530 226 C520 243 500 252 481 250"/>
-  <path d="M486 205 C495 214 508 215 518 207"/>
-  <path d="M490 226 C500 231 509 230 516 224" opacity=".7"/>
-  <path d="M469 188 C478 182 488 182 496 187"/>
-  <path d="M475 190 C482 194 489 194 496 190"/>
-  <path d="M523 192 C529 197 532 204 529 210"/>
-  <path d="M456 204 C450 214 450 226 458 234"/>
-  <path d="M457 232 C447 239 440 244 433 254"/>
-  <path d="M450 239 C438 241 431 250 427 261"/>
-  <!-- ear and tiny earring -->
-  <path d="M458 194 C443 188 433 199 438 214 C442 225 452 229 461 221"/>
-  <path d="M447 205 C451 201 456 204 455 211"/>
-  <circle cx="448" cy="234" r="4"/>
-  <!-- neck and sweater -->
-  <path d="M474 248 C477 267 470 281 456 291 M516 244 C520 263 532 277 550 284"/>
-  <path d="M344 358 C350 324 375 300 414 287 C433 281 447 280 460 284"/>
-  <path d="M550 284 C590 292 615 320 622 359"/>
-  <path d="M366 319 C389 311 414 311 436 319 M378 338 C400 329 422 330 444 339" opacity=".8"/>
-  <path d="M564 314 C580 326 588 342 589 359" opacity=".8"/>
-  <!-- arm holding cup -->
-  <path d="M420 300 C437 286 455 281 470 284 C485 288 495 300 499 316"/>
-  <path d="M421 302 C412 321 413 341 425 358"/>
-  <path d="M500 315 C507 332 515 346 529 359"/>
-  <!-- cup, handle and steam -->
-  <path d="M501 218 L588 218 L579 282 C577 299 563 310 545 310 L530 310 C512 310 499 297 498 279Z" fill="#fbf7ef" fill-opacity=".55"/>
-  <path d="M588 232 C613 226 624 240 618 260 C614 275 600 280 582 275"/>
-  <path d="M520 209 C511 193 517 183 528 174 M550 208 C542 191 548 181 558 171" opacity=".8"/>
-  <path d="M514 225 C530 233 558 233 575 225" opacity=".55"/>
-  <!-- fingers around cup -->
-  <path d="M497 242 C487 240 479 245 478 254 C477 263 486 269 499 268"/>
-  <path d="M500 259 C490 262 488 273 495 279 C503 285 511 280 514 273"/>
-  <path d="M584 249 C594 247 601 252 601 260 C601 269 592 273 581 269"/>
-  <!-- bow in hair -->
-  <path d="M350 158 C325 145 307 151 305 171 C304 189 322 199 345 187"/>
-  <path d="M350 158 C355 136 373 127 386 140 C399 153 386 173 365 179"/>
-  <path d="M350 158 C358 167 361 178 357 190"/>
-  <!-- tiny sparkle marks -->
-  <path d="M230 168 L230 190 M219 179 L241 179 M675 153 L675 174 M664 163 L686 163" stroke-width="3"/>
-  <path d="M700 255 C711 243 727 249 724 263 C721 276 704 283 704 283 C704 283 686 272 687 260 C688 248 699 246 700 255Z" stroke-width="3"/>
-</g>
-</svg>
-</div>
+  <div class="coffee-girl-art-wrap">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" role="img" aria-labelledby="girl-title girl-desc">
+      <title id="girl-title">A girl enjoying a cup of coffee</title>
+      <desc id="girl-desc">A simple elegant brown line drawing of a woman with long flowing hair, eyes closed, sipping coffee.</desc>
+      <g fill="none" stroke="#79543d" stroke-width="3.1" stroke-linecap="round" stroke-linejoin="round">
+        <!-- long flowing hair -->
+        <path d="M250 270c-28-34-35-78-18-119 13-31 40-53 72-61 37-10 77 2 99 29 20 25 22 58 10 88-7 18-8 39 4 62"/>
+        <path d="M254 267c-12-38-5-79 19-107 20-24 51-38 83-36 25 1 48 12 62 31"/>
+        <path d="M274 267c-3-31 7-59 28-79 17-17 42-26 66-23"/>
+        <path d="M292 267c7-23 21-40 42-53 17-10 28-25 31-43"/>
+        <path d="M240 174c-7-35 8-68 37-88 29-20 69-22 100-7 25 12 41 34 45 61"/>
+        <path d="M260 117c19-28 53-43 85-39 23 3 43 14 57 31"/>
+        <path d="M277 97c25-22 58-28 87-17"/>
+        <path d="M405 107c-12 18-17 38-12 57 4 17 14 28 28 36"/>
+        <!-- face profile -->
+        <path d="M366 112c20-7 43 1 54 17 12 17 12 40 2 57-8 14-22 23-38 25"/>
+        <path d="M383 174c8 6 18 6 26 0"/>
+        <path d="M385 153c7-5 15-5 22 0"/>
+        <path d="M389 157c5 3 11 3 16 0"/>
+        <path d="M420 159c5 7 6 14 2 21"/>
+        <path d="M369 159c-8-8-19-5-21 5-2 11 7 19 17 17"/>
+        <!-- neck and sweater -->
+        <path d="M385 208c1 17-6 29-19 39M416 202c4 17 14 29 29 37"/>
+        <path d="M276 278c9-29 32-48 67-54 16-3 30-2 43 2"/>
+        <path d="M446 238c30 8 49 23 59 48"/>
+        <path d="M298 278c19-12 43-17 65-15M454 258c16 6 27 15 35 28"/>
+        <!-- hand and cup -->
+        <path d="M389 220c15-13 31-17 44-12 12 5 18 17 18 31"/>
+        <path d="M435 195h72l-7 57c-2 13-13 22-26 22h-7c-13 0-24-10-25-23z" fill="#fbf7ef" fill-opacity=".72"/>
+        <path d="M507 207c20-8 31 3 27 19-3 13-14 17-28 13"/>
+        <path d="M444 207c15 8 39 8 55 0"/>
+        <path d="M420 229c-11-2-18 4-17 13 1 8 10 12 21 9"/>
+        <path d="M418 247c-8 7-7 16 1 20 8 4 16-1 18-9"/>
+        <path d="M456 187c-8-10-7-18 0-25M478 186c-5-10-3-18 4-25" opacity=".75"/>
+        <!-- bow and details -->
+        <path d="M269 130c-23-18-44-11-44 7 0 17 19 26 39 16M269 130c4-21 22-28 34-15 12 13 2 30-17 37"/>
+        <path d="M175 245c-15-17-16-33-7-45m7 45c15-15 18-30 12-44m-12 44c-2-18 2-31 13-40"/>
+        <path d="M590 245c15-17 16-33 7-45m-7 45c-15-15-18-30-12-44m12 44c2-18-2-31-13-40"/>
+        <path d="M139 185v22m-11-11h22M625 176v22m-11-11h22" stroke-width="2.5"/>
+        <path d="M570 125c9-12 25-6 22 7-2 10-15 18-15 18s-14-8-15-18c-1-9 7-14 8-7z" stroke-width="2.5"/>
+        <path d="M90 292h580" opacity=".55" stroke-width="2"/>
+      </g>
+    </svg>
+  </div>
 </section>
 
 <section class="section container grid-2" id="experience">
 <div class="photo-frame story-image reveal"><img src="friendship.jpg" alt="A warm café moment at Panchatantra" loading="lazy" decoding="async"></div>
 <div class="story-copy reveal"><span class="eyebrow">A little about us</span><h2>Make room for moments.</h2><p>Panchatantra Café is a place to slow down, settle in and enjoy the little things. Whether you're meeting friends, taking a quiet break or discovering a new favourite, there's space for your kind of café day.</p><p>Bring your curiosity, your favourite people and, yes, your furry companions too.</p><a class="text-link" href="books-and-games.html">Discover the café experience ↗</a></div></section>
-<section class="section soft-section menu-showcase" aria-label="Menu">
+<section class="section soft-section menu-showcase" aria-label="A taste of Panchatantra">
   <div class="container">
-    <div class="section-heading"><h2>MENU</h2></div>
+    <div class="section-heading">
+      <span class="eyebrow">A taste of Panchatantra</span>
+      <h2>Made for your little cravings.</h2>
+    </div>
     <div class="cards">
-      <article class="card"><div class="card-image"><img src="food.jpg" alt="Food at Panchatantra Café" loading="lazy" decoding="async"></div></article>
-      <article class="card"><div class="card-image"><img src="drink.jpg" alt="Coffee and drinks at Panchatantra Café" loading="lazy" decoding="async"></div></article>
-      <article class="card"><div class="card-image"><img src="dessert.jpg" alt="Desserts at Panchatantra Café" loading="lazy" decoding="async"></div></article>
+      <article class="card"><div class="card-image"><img src="food.jpg" alt="A freshly prepared café dish at Panchatantra" loading="lazy" decoding="async"></div></article>
+      <article class="card"><div class="card-image"><img src="drink.jpg" alt="A refreshing café drink at Panchatantra" loading="lazy" decoding="async"></div></article>
+      <article class="card"><div class="card-image"><img src="dessert.jpg" alt="A sweet treat served at Panchatantra" loading="lazy" decoding="async"></div></article>
     </div>
     <div class="menu-order-link">
       <a class="btn" href="https://dinein.petpooja.com/qr/jzxh1v2054/B1" target="_blank" rel="noopener noreferrer">View Full Menu on Petpooja ↗</a>
