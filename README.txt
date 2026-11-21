@@ -1,6 +1,11 @@
-Panchatantra Café update
+Panchatantra Café homepage update
 
-- index.html now contains the JavaScript inline; script.js is no longer needed.
-- Keep styles.css in the same folder as index.html.
-- Keep your existing image files and other website pages in their existing locations.
-- Upload/replace index.html and styles.css on your hosting account.
+Included:
+- Updated index.html with two matching inline hand-drawn coffee-girl illustrations:
+  one directly after the homepage hero and one near the end of the homepage.
+- Updated styles.css with responsive styling for both illustration sections.
+- Existing JavaScript remains embedded in index.html.
+
+Upload/replace index.html and styles.css in your website repository root.
+Keep all existing images, logo, other HTML pages, and assets in their current locations.
+No separate script.js or illustration image file is required.
