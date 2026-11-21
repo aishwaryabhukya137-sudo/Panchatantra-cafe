@@ -7,7 +7,7 @@ HOW TO INSTALL
 4. Upload/replace the files from this ZIP into the ROOT of the repository (same level as the current index.html).
 5. Do NOT delete your original JPG images. This package intentionally keeps image assets in your repository and references them by their existing filenames.
 6. Keep the original photos and logo in the root, including:
-   logooo.jpg, homepage.jpg, friendship.jpg, food.jpg, drink.jpg, dessert.jpg,
+   logooo.jpg, homepage-clean.jpg (new clean homepage photo), homepage.jpg (original backup), friendship.jpg, food.jpg, drink.jpg, dessert.jpg,
    exterior.jpg, sitting spot.jpg, people.jpg, coffee.jpg
 7. Keep the CNAME file. This package includes panchatantracafe.com.
 8. Commit to main and wait for GitHub Pages to publish.
@@ -38,7 +38,7 @@ CONFIRMED SITE CHOICES
 - Books and games remain available to everyone.
 - Google Maps listing is used for reviews and directions: https://maps.app.goo.gl/RJKehn9R445dQgz3A
 - Original café photos and logo are referenced, not replaced.
-- A hand-drawn coffee-girl illustration is embedded directly in index.html as SVG.
+- A simple coffee cup, open book and botanical line doodle is embedded directly in index.html as SVG.
 - Desktop navigation is visible; hamburger menu is for smaller screens.
 - Intro splash delay is removed.
 - Booking and host enquiry forms open WhatsApp with the entered details. They do not create automatic confirmed reservations or store form data.
@@ -50,3 +50,8 @@ The existing Petpooja URL is retained exactly as requested. It may open a table-
 
 DOMAIN / HOSTING
 This package cannot change DNS, GitHub Pages domain settings, the www SSL certificate, Cloudflare, Search Console or analytics accounts. Check the www certificate separately in GitHub Pages / DNS settings after upload.
+
+IMAGE NOTE
+- index.html now uses homepage-clean.jpg, included in this package, to avoid the black letterbox areas shown in the previous homepage screenshot.
+- Keep homepage.jpg as an untouched backup if you want it.
+- Menu page now shows three image tiles and one direct Petpooja link; the Ordering note and extra note section have been removed.

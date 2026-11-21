@@ -1,5 +1,3 @@
-/* Panchatantra Café — responsive styles
-   Original cream, brown and terracotta palette retained. */
 :root{--cream:#fbf7ef;--cream2:#f5eee3;--paper:#fffdf9;--brown:#443329;--muted:#8b796b;--line:#e5d9c9;--accent:#a77b5c;--accent-dark:#80583e;--shadow:0 18px 50px rgba(68,51,41,.09);--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",Arial,sans-serif;--script:"Kalam",cursive}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:105px}
@@ -25,7 +23,7 @@ p{color:var(--muted)}
 .btn-outline:hover{color:white}
 .text-link{display:inline-block;border-bottom:1px solid var(--accent);padding-bottom:3px;color:var(--brown);font-weight:600}
 .site-header{position:sticky;top:0;z-index:1000;background:rgba(251,247,239,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav-wrap{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:1.2rem}
+.nav-wrap{position:relative;min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:1.2rem}
 .brand{display:flex;align-items:center;gap:.7rem;min-width:0}
 .brand img{width:62px;height:62px;object-fit:contain;mix-blend-mode:multiply}
 .brand-name{font:500 1.75rem/1 var(--serif);white-space:nowrap}
@@ -34,7 +32,7 @@ p{color:var(--muted)}
 .nav-links a{font-size:.75rem;font-weight:600;color:var(--muted);transition:color .2s}
 .nav-links a:hover,.nav-links a[aria-current=page]{color:var(--accent-dark)}
 .nav-links .nav-cta{padding:11px 14px;background:var(--brown);color:white;white-space:nowrap}
-.menu-toggle{display:none;border:1px solid var(--line);background:transparent;color:var(--brown);width:44px;height:44px;font-size:1.35rem;cursor:pointer}
+.menu-toggle{display:none;position:relative;z-index:1102;border:1px solid var(--line);background:transparent;color:var(--brown);width:48px;height:48px;font-size:1.55rem;line-height:1;cursor:pointer;touch-action:manipulation}
 .hero{padding:clamp(3rem,6vw,5.5rem) 0 2.3rem}
 .hero-layout{display:grid;grid-template-columns:1.03fr .97fr;gap:clamp(1.5rem,5vw,4.5rem);align-items:center}
 .hero-copy h1{font-family:var(--script);font-weight:400;letter-spacing:-.035em;margin:1rem 0}
@@ -44,20 +42,20 @@ p{color:var(--muted)}
 .hero-meta{display:flex;justify-content:space-between;gap:1rem;border-top:1px solid var(--line);margin-top:2.2rem;padding-top:1rem;color:var(--muted);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase}
 .photo-frame{position:relative;padding:9px;background:#f1e6d7;border:1px solid #dfcbb5;border-radius:6px 48px 6px 48px;box-shadow:var(--shadow)}
 .photo-frame:before{content:"";position:absolute;inset:5px;border:1px solid rgba(167,123,92,.4);border-radius:4px 42px 4px 42px;pointer-events:none;z-index:1}
-.photo-frame img{width:100%;height:100%;object-fit:cover;border-radius:3px 38px 3px 38px}
-.hero-image{height:clamp(310px,43vw,510px)}
-.hero-image img{object-position:center 55%}
+.photo-frame img{width:100%;height:auto;object-fit:contain;border-radius:3px 38px 3px 38px}
+.hero-image{height:auto;min-height:0}
+.hero-image img{height:auto;object-fit:contain;object-position:center}
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
 .story-copy h2{margin:.8rem 0 1.1rem}
 .story-copy p+p{margin-top:.85rem}
-.story-image{height:420px}
-.story-image img{object-position:center}
+.story-image{height:auto;min-height:0}
+.story-image img{height:auto;object-fit:contain;object-position:center}
 .soft-section{background:var(--cream2)}
 .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}
 .card{background:var(--paper);border:1px solid var(--line);padding:1rem;transition:.25s;min-width:0}
 .card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
-.card-image{height:220px;overflow:hidden;margin-bottom:1.15rem}
-.card-image img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.card-image{aspect-ratio:4/3;height:auto;overflow:hidden;margin-bottom:1.15rem;background:var(--cream2)}
+.card-image img{width:100%;height:100%;object-fit:contain;transition:transform .5s}
 .card:hover .card-image img{transform:scale(1.04)}
 .card h3{margin-bottom:.5rem}
 .card p{font-size:.9rem}
@@ -113,27 +111,23 @@ details p{margin-top:.8rem;font-size:.9rem}
 .doodle-wrap{min-height:440px;display:grid;place-items:center;background:var(--cream2);border:1px solid var(--line);border-radius:48% 48% 8px 8px;overflow:hidden;position:relative}
 .coffee-doodle{width:min(100%,470px);height:auto}
 .doodle-caption{position:absolute;bottom:18px;left:20px;font:italic 1.15rem var(--serif);color:var(--accent-dark)}
-
-/* Important: content stays visible even if JavaScript fails to load. */
-.reveal{opacity:1;transform:none}
-html.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
-html.js .reveal.visible{opacity:1;transform:none}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:none}
 :focus-visible{outline:3px solid #b88660;outline-offset:3px}
 @media(max-width:1020px){.nav-links{gap:.7rem}.nav-links a{font-size:.69rem}.brand-name{font-size:1.55rem}.brand img{width:54px;height:54px}}
 @media(max-width:780px){
- .nav-wrap{min-height:76px}.menu-toggle{display:block;flex:0 0 44px}
- .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--cream);padding:.7rem 5% 1rem;border-bottom:1px solid var(--line);box-shadow:0 14px 22px #44332912;align-items:stretch;gap:0}
+ .nav-wrap{min-height:76px}.menu-toggle{display:block}
+ .nav-links{display:none;position:absolute;z-index:1101;top:100%;left:0;right:0;background:var(--cream);padding:.7rem 5% 1rem;border:1px solid var(--line);border-top:0;box-shadow:0 14px 22px #44332912;align-items:stretch;gap:0}
  .nav-links.open{display:flex;flex-direction:column}
  .nav-links li{border-bottom:1px solid var(--line)}
  .nav-links li:last-child{border:0}
  .nav-links a{display:block;padding:.8rem 0;font-size:.9rem}
  .nav-links .nav-cta{display:inline-block;margin:.6rem 0;padding:10px 14px}
  .hero-layout,.grid-2,.event-grid{grid-template-columns:1fr}
- .hero-image{height:clamp(270px,70vw,430px)}
- .story-image{height:340px}
+ .hero-image,.story-image{height:auto;min-height:0}
  .cards{grid-template-columns:1fr 1fr}
  .feature-list{grid-template-columns:1fr 1fr}
- .brand{gap:.5rem}
+ .footer-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:540px){
  .brand-name{font-size:1.35rem}.brand img{width:49px;height:49px}
@@ -141,7 +135,7 @@ html.js .reveal.visible{opacity:1;transform:none}
  .hero{padding-top:2.7rem}.hero-meta{font-size:.54rem;letter-spacing:.06em}
  .hero-actions{gap:.8rem}.btn{padding:12px 15px;font-size:.67rem}
  .cards,.feature-list,.footer-grid{grid-template-columns:1fr}
- .card-image{height:230px}
+ .card-image{height:auto;aspect-ratio:4/3}
  .photo-frame{border-radius:6px 36px 6px 36px}
  .photo-frame:before{border-radius:4px 30px 4px 30px}
  .photo-frame img{border-radius:3px 26px 3px 26px}
@@ -150,117 +144,13 @@ html.js .reveal.visible{opacity:1;transform:none}
  .form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}
  .doodle-wrap{min-height:330px}
 }
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
 
 
-/* Hand-drawn coffee moments */
-.coffee-moment { display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:clamp(2rem,5vw,5rem); overflow:hidden; }
-.coffee-moment-copy h2,.coffee-closing-copy h2 { font-family:"Playfair Display",Georgia,serif; color:#60432f; line-height:1.18; }
-.coffee-moment-copy p,.coffee-closing-copy p { color:#715d4b; max-width:38rem; line-height:1.8; }
-.coffee-girl-art { display:block; width:min(100%,540px); height:auto; overflow:visible; }
-.coffee-closing { padding:clamp(3rem,7vw,6rem) 0; background:#f4eadc; }
-.coffee-closing-inner { display:grid; grid-template-columns:minmax(220px,.85fr) 1.15fr; align-items:center; gap:clamp(2rem,5vw,5rem); }
-.coffee-closing-art { max-width:390px; margin:auto; }
-.coffee-closing-art .coffee-girl-art { width:100%; }
-.coffee-closing-copy { max-width:590px; }
-@media(max-width:760px) {
-  .coffee-moment,.coffee-closing-inner { grid-template-columns:1fr; text-align:center; }
-  .coffee-moment-copy p,.coffee-closing-copy p { margin-left:auto; margin-right:auto; }
-  .coffee-closing-art { max-width:280px; }
-}
-
-
-/* Homepage coffee feature: placed directly below the hero photo. */
-.coffee-moment{display:block;max-width:900px;margin:clamp(2.5rem,6vw,5rem) auto;padding:clamp(2rem,5vw,4rem);text-align:center;background:#f5eee5;border-radius:18px}
-.coffee-moment-copy{max-width:680px;margin:0 auto}
-.coffee-moment-copy h2{max-width:650px;margin-left:auto;margin-right:auto}
-
-
-/* FINAL FIX: show complete photographs on every page (no fixed-height cropping). */
-main img {
-  display: block;
-  width: 100%;
-  height: auto !important;
-  max-height: none !important;
-  object-fit: contain !important;
-  object-position: center center !important;
-}
-
-/* Let image frames grow to the photograph's natural aspect ratio. */
-main .photo-frame,
-main .hero-image,
-main .story-image,
-main .card-image,
-main .image-frame,
-main .image-wrap,
-main .image-wrapper,
-main .gallery-image,
-main .gallery-item,
-main .book-image,
-main .game-image,
-main .event-image,
-main .feature-image,
-main .media-frame,
-main .card-media,
-main .card-image-wrap {
-  height: auto !important;
-  min-height: 0 !important;
-  max-height: none !important;
-  aspect-ratio: auto !important;
-  overflow: visible !important;
-}
-
-/* Keep image borders and cards neat while allowing full image height. */
-main .photo-frame img,
-main .card-image img {
-  width: 100%;
-  height: auto !important;
-  max-height: none !important;
-  object-fit: contain !important;
-}
-
-/* Reliable mobile navigation: the open panel sits below the header. */
-@media (max-width: 780px) {
-  .site-header { z-index: 2000; }
-  .nav-wrap { position: relative; }
-  .menu-toggle {
-    position: relative;
-    z-index: 2002;
-    touch-action: manipulation;
-    -webkit-tap-highlight-color: transparent;
-  }
-  .nav-links {
-    z-index: 2001;
-    max-height: calc(100dvh - 76px);
-    overflow-y: auto;
-    overscroll-behavior: contain;
-  }
-  .nav-links.open { display: flex !important; }
-}
-
-
-/* Hero image: let the frame follow the actual image dimensions. */
-.hero-image {
-  height: auto !important;
-  min-height: 0 !important;
-  aspect-ratio: auto !important;
-  background: transparent !important;
-  overflow: hidden !important;
-}
-.hero-image img {
-  display: block;
-  width: 100%;
-  height: auto !important;
-  max-height: none !important;
-  object-fit: contain !important;
-  background: transparent !important;
-}
-
-/* Mobile navigation panel and toggle remain above page content. */
-@media (max-width: 780px) {
-  .site-header { position: sticky; top: 0; z-index: 3000; }
-  .nav-wrap { position: relative; }
-  .menu-toggle { display: block; position: relative; z-index: 3002; cursor: pointer; touch-action: manipulation; }
-  .nav-links { z-index: 3001; }
-  .nav-links.open { display: flex !important; flex-direction: column; }
-}
+/* Simple image-led Petpooja menu */
+.menu-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem;align-items:stretch}
+.menu-photo{margin:0;padding:8px;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);min-width:0}
+.menu-photo img{display:block;width:100%;height:100%;aspect-ratio:4/3;object-fit:contain;background:var(--cream2)}
+.menu-cta{text-align:center;margin-top:2.2rem}
+.menu-cta .btn{min-width:min(100%,340px)}
+@media(max-width:780px){.menu-gallery{grid-template-columns:1fr;gap:1.25rem}.menu-photo img{aspect-ratio:4/3}}
