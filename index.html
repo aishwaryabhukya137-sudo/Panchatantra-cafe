@@ -79,5 +79,88 @@
 <div><h3>Explore</h3><div class="footer-links"><a href="menu.html">Menu & ordering</a><a href="books-and-games.html">Books & games</a><a href="Event.html">Events & workshops</a><a href="host-an-event.html">Host an event</a><a href="pet-friendly.html">Pet-friendly café</a><a href="faq.html">FAQs</a><a href="guide.html">Café guide</a></div></div>
 <div><h3>Come say hello</h3><div class="footer-links"><a href="https://maps.app.goo.gl/RJKehn9R445dQgz3A" target="_blank" rel="noopener noreferrer">House 1-10-290/1, Sai Nilayam, Circle 30, Begumpet, Hyderabad</a><a href="tel:+918516923456">+91 85169 23456</a><a href="https://www.instagram.com/panchatantrahyd/" target="_blank" rel="noopener noreferrer">@panchatantrahyd on Instagram</a><a href="https://maps.app.goo.gl/RJKehn9R445dQgz3A" target="_blank" rel="noopener noreferrer">Find us on Google Maps</a></div></div>
 </div><div class="footer-bottom"><span>© <span data-year></span> Panchatantra Café. All rights reserved.</span><span>Begumpet · Hyderabad · Open daily, 11 AM–11 PM</span></div>
-</div></footer><a class="whatsapp-float" href="https://wa.me/918516923456" target="_blank" rel="noopener noreferrer" aria-label="Chat with Panchatantra Café on WhatsApp">WhatsApp ↗</a><script src="script.js" defer></script>
+</div></footer><a class="whatsapp-float" href="https://wa.me/918516923456" target="_blank" rel="noopener noreferrer" aria-label="Chat with Panchatantra Café on WhatsApp">WhatsApp ↗</a><script>
+/* Panchatantra Café site interactions — no libraries required. */
+(() => {
+  "use strict";
+
+  const root = document.documentElement;
+  const toggle = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".nav-links");
+
+  const closeMenu = () => {
+    if (!toggle || !nav) return;
+    nav.classList.remove("open");
+    document.body.classList.remove("menu-open");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Open navigation menu");
+    toggle.textContent = "☰";
+  };
+
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      const isOpen = nav.classList.toggle("open");
+      document.body.classList.toggle("menu-open", isOpen);
+      toggle.setAttribute("aria-expanded", String(isOpen));
+      toggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+      toggle.textContent = isOpen ? "×" : "☰";
+    });
+
+    nav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeMenu();
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 780) closeMenu();
+    });
+  }
+
+  // Reveal animations are progressive enhancement: CSS keeps everything visible
+  // unless this script is running successfully.
+  if ("IntersectionObserver" in window) {
+    root.classList.add("js");
+    const observer = new IntersectionObserver((entries, currentObserver) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          currentObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: "0px 0px -35px 0px" });
+
+    document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+  } else {
+    document.querySelectorAll(".reveal").forEach((element) => element.classList.add("visible"));
+  }
+
+  // Footer year.
+  document.querySelectorAll("[data-year]").forEach((element) => {
+    element.textContent = String(new Date().getFullYear());
+  });
+
+  // All enquiry/booking forms explicitly marked for WhatsApp are handled here.
+  document.querySelectorAll("form[data-whatsapp-form]").forEach((form) => {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+
+      const formName = form.getAttribute("data-whatsapp-form") || "cafe enquiry";
+      const lines = [`Panchatantra Café — ${formName.replace(/[_-]/g, " ")}`];
+
+      new FormData(form).forEach((value, key) => {
+        const cleanValue = String(value).trim();
+        if (cleanValue) lines.push(`${key}: ${cleanValue}`);
+      });
+
+      const message = encodeURIComponent(lines.join("\n"));
+      window.open(`https://wa.me/918516923456?text=${message}`, "_blank", "noopener,noreferrer");
+    });
+  });
+})();
+
+</script>
 </body></html>
