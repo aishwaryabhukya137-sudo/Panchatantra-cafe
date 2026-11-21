@@ -1,11 +1,6 @@
-Panchatantra Café homepage update
+Panchatantra Cafe homepage placement fix
 
-Included:
-- Updated index.html with two matching inline hand-drawn coffee-girl illustrations:
-  one directly after the homepage hero and one near the end of the homepage.
-- Updated styles.css with responsive styling for both illustration sections.
-- Existing JavaScript remains embedded in index.html.
+Replace index.html and styles.css on your website with the files in this ZIP.
+The coffee feature now appears immediately after the homepage hero/photo and before the About section. The unwanted SVG diagram and the duplicate lower coffee illustration section have been removed.
 
-Upload/replace index.html and styles.css in your website repository root.
-Keep all existing images, logo, other HTML pages, and assets in their current locations.
-No separate script.js or illustration image file is required.
+Image generation failed in this session, so this version intentionally uses a clean text-led coffee feature rather than displaying the unwanted diagram. Upload a preferred woman-drinking-coffee image if you want it placed in that exact spot. Keep all existing website photos, logo, other HTML pages, and assets in their current locations.
