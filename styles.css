@@ -23,9 +23,9 @@ p{color:var(--muted)}
 .btn-outline:hover{color:white}
 .text-link{display:inline-block;border-bottom:1px solid var(--accent);padding-bottom:3px;color:var(--brown);font-weight:600}
 .site-header{position:sticky;top:0;z-index:1000;background:rgba(251,247,239,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav-wrap{position:relative;min-height:100px;display:flex;align-items:center;justify-content:space-between;gap:1.2rem}
+.nav-wrap{position:relative;min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:1.2rem}
 .brand{display:flex;align-items:center;gap:.7rem;min-width:0}
-.brand img{width:78px;height:78px;object-fit:contain;mix-blend-mode:multiply}
+.brand img{width:62px;height:62px;object-fit:contain;mix-blend-mode:multiply}
 .brand-name{font:500 1.75rem/1 var(--serif);white-space:nowrap}
 .brand small{display:block;margin-top:.32rem;font-size:.57rem;letter-spacing:.24em}
 .nav-links{display:flex;align-items:center;gap:clamp(.65rem,1.55vw,1.35rem);list-style:none}
@@ -114,9 +114,9 @@ details p{margin-top:.8rem;font-size:.9rem}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
 .reveal.visible{opacity:1;transform:none}
 :focus-visible{outline:3px solid #b88660;outline-offset:3px}
-@media(max-width:1020px){.nav-links{gap:.7rem}.nav-links a{font-size:.69rem}.brand-name{font-size:1.55rem}.brand img{width:70px;height:70px}}
+@media(max-width:1020px){.nav-links{gap:.7rem}.nav-links a{font-size:.69rem}.brand-name{font-size:1.55rem}.brand img{width:54px;height:54px}}
 @media(max-width:780px){
- .nav-wrap{min-height:88px}.menu-toggle{display:block}
+ .nav-wrap{min-height:76px}.menu-toggle{display:block}
  .nav-links{display:none;position:absolute;z-index:1101;top:100%;left:0;right:0;background:var(--cream);padding:.7rem 5% 1rem;border:1px solid var(--line);border-top:0;box-shadow:0 14px 22px #44332912;align-items:stretch;gap:0}
  .nav-links.open{display:flex;flex-direction:column}
  .nav-links li{border-bottom:1px solid var(--line)}
@@ -130,7 +130,7 @@ details p{margin-top:.8rem;font-size:.9rem}
  .footer-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:540px){
- .brand-name{font-size:1.35rem}.brand img{width:62px;height:62px}
+ .brand-name{font-size:1.35rem}.brand img{width:49px;height:49px}
  .brand small{font-size:.5rem;letter-spacing:.18em}
  .hero{padding-top:2.7rem}.hero-meta{font-size:.54rem;letter-spacing:.06em}
  .hero-actions{gap:.8rem}.btn{padding:12px 15px;font-size:.67rem}
@@ -156,22 +156,107 @@ details p{margin-top:.8rem;font-size:.9rem}
 @media(max-width:780px){.menu-gallery{grid-template-columns:1fr;gap:1.25rem}.menu-photo img{aspect-ratio:4/3}}
 
 
-/* Books & Games: show each complete photograph at its natural aspect ratio. */
-.books-games-cards { align-items: start; }
-.books-games-cards .card { height: 100%; }
-.books-games-cards .card-image {
-  aspect-ratio: auto;
-  height: auto;
-  overflow: visible;
-  background: transparent;
+/* PANCHATANTRA HEADER FIX — single hamburger navigation on ALL screen sizes */
+.site-header { position: sticky; top: 0; z-index: 1000; }
+.site-header .nav-wrap {
+  position: relative;
+  min-height: 116px !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
-.books-games-cards .card-image img {
+.site-header .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .9rem;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+.site-header .brand img {
   display: block;
-  width: 100%;
-  height: auto;
-  max-height: none;
+  width: clamp(76px, 9.5vw, 100px) !important;
+  height: clamp(76px, 9.5vw, 100px) !important;
+  max-width: none;
+  flex: 0 0 auto;
   object-fit: contain;
-  object-position: center;
-  transform: none;
 }
-.books-games-cards .card:hover .card-image img { transform: none; }
+.site-header .brand-name {
+  display: block;
+  font-size: clamp(1.8rem, 3.6vw, 2.45rem) !important;
+  line-height: 1.04;
+  white-space: nowrap;
+}
+.site-header .brand small {
+  display: block;
+  margin-top: .38rem;
+  font-size: .68rem;
+  letter-spacing: .2em;
+}
+.site-header .menu-toggle {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 58px;
+  width: 58px !important;
+  height: 58px !important;
+  padding: 0;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--brown);
+  font-family: inherit;
+  font-size: 2rem !important;
+  line-height: 1;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  z-index: 1003;
+}
+.site-header .nav-links {
+  display: none !important;
+  position: absolute;
+  top: calc(100% - 1px);
+  right: 0;
+  left: auto;
+  z-index: 1002;
+  width: min(370px, calc(100vw - 28px));
+  max-height: min(76vh, 620px);
+  overflow-y: auto;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  padding: 12px 20px 16px;
+  margin: 0;
+  list-style: none;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  box-shadow: 0 16px 36px rgba(68,51,41,.16);
+}
+.site-header .nav-links.open { display: flex !important; }
+.site-header .nav-links li { display: block; width: 100%; border-bottom: 1px solid var(--line); }
+.site-header .nav-links li:last-child { border-bottom: 0; }
+.site-header .nav-links a {
+  display: block;
+  padding: 13px 2px;
+  color: var(--brown);
+  font-size: .95rem;
+  line-height: 1.35;
+}
+.site-header .nav-links .nav-cta {
+  display: inline-block;
+  width: fit-content;
+  margin: 12px 0 2px;
+  padding: 12px 14px;
+  color: #fff;
+  background: var(--brown);
+}
+@media (max-width: 600px) {
+  .site-header .nav-wrap { min-height: 94px !important; }
+  .site-header .brand { gap: .65rem; }
+  .site-header .brand img { width: 76px !important; height: 76px !important; }
+  .site-header .brand-name { font-size: clamp(1.7rem, 7vw, 2.05rem) !important; }
+  .site-header .brand small { font-size: .58rem; letter-spacing: .16em; }
+  .site-header .menu-toggle { flex-basis: 54px; width: 54px !important; height: 54px !important; }
+  .site-header .nav-links { left: 0; right: 0; width: 100%; }
+}
