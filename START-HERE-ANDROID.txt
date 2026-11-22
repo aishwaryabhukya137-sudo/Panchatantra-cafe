@@ -1,0 +1,21 @@
+PANCHATANTRA CAFE — FINAL WEBSITE PACKAGE
+
+IMPORTANT: This package is deliberately FLAT at the top level so it can be uploaded from an Android phone using GitHub's Upload files screen. Do not upload the enclosing folder as one folder, and do not put these files inside another folder in the repository.
+
+ANDROID / GITHUB PAGES UPLOAD
+1. Extract this ZIP on your phone.
+2. Open the extracted Panchatantra-Cafe-Final folder.
+3. In GitHub, open the repository Code tab > Add file > Upload files.
+4. Select all files INSIDE this folder (HTML, CSS, JS, images, CNAME, robots.txt, sitemap.xml and _headers).
+5. Upload to the repository root and commit. Do not upload the ZIP itself.
+6. Wait for the GitHub Pages deployment to finish, then test /menu.html, /books-and-games.html, /events.html, /pet-friendly.html and /faq.html.
+
+The navigation uses these flat .html page URLs because the current repository is being managed from Android and its screenshot shows files at the root. The custom 404 page also redirects clean folder-style URLs (for example /menu/) to their matching .html page.
+
+CONTENT NOTES
+- Booking and host-an-event forms open WhatsApp; the café must confirm requests manually.
+- No actual menu item prices or veg/non-veg tags were supplied, so none have been invented. Use the Request menu & prices button.
+- No confirmed event dates, ticket prices or seat counts were supplied; the Events page does not invent listings.
+- No tracking IDs were supplied. GA4, GTM, Meta Pixel, Search Console and Clarity must be connected by the account owner.
+- Domain/DNS tasks (www certificate, Cloudflare, DNSSEC, CAA, SPF/DKIM and DMARC) cannot be completed by uploading website files.
+- _headers is included for hosts that support it; GitHub Pages does not apply Cloudflare-style custom response headers from this file.
