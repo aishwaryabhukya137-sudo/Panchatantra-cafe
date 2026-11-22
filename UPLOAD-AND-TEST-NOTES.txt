@@ -1,0 +1,21 @@
+PANCHATANTRA CAFE — VERIFIED WEBSITE PACKAGE
+
+UPLOAD
+1. Back up the current GitHub repository.
+2. Extract this ZIP.
+3. Upload every file and folder inside the ZIP to the ROOT of the repository, replacing same-named HTML/CSS/JS files.
+4. Keep the CNAME file.
+5. Commit to the main branch and wait for GitHub Pages to publish.
+6. On your phone, open the site in a private/incognito tab or clear the browser cache once.
+
+FIXES INCLUDED
+- Hamburger navigation is used on desktop, tablet and mobile.
+- The menu opens and closes on repeated taps/clicks, closes after selecting a link, outside click, or Escape.
+- The brand mark and wordmark are enlarged.
+- Homepage content is visible even if JavaScript or IntersectionObserver fails (this prevents the blank homepage).
+- All local image references are included in this package.
+- Books & Games and menu photos use consistent frames with object-fit: contain so the complete photo remains visible.
+- Existing Petpooja, WhatsApp, map, phone, and internal page links are retained.
+
+IMPORTANT
+The menu and enquiry pages use the existing Petpooja URL and WhatsApp number already present in the supplied site. Check the live deployment after upload; this package cannot publish to your hosting account or test your server-side configuration.
