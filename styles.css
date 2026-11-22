@@ -441,119 +441,58 @@ body.menu-open { overflow: hidden; }
 .story-image { aspect-ratio:4/3!important; }
 @media(max-width:780px){.hero-image{aspect-ratio:1/1!important}.story-image{aspect-ratio:4/3!important}}
 
-/* FINAL IMAGE ALIGNMENT OVERRIDES — fixed frames, centered full-image fit */
-.card-image,
-.menu-photo {
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  width:100% !important;
-  height:auto !important;
-  aspect-ratio:4 / 3 !important;
-  min-height:0 !important;
-  overflow:hidden !important;
-  box-sizing:border-box !important;
-  background:var(--cream2,#f4eee5) !important;
-}
-.card-image img,
-.menu-photo img {
-  display:block !important;
-  flex:0 0 100% !important;
-  width:100% !important;
-  height:100% !important;
-  min-width:0 !important;
-  min-height:0 !important;
-  max-width:100% !important;
-  max-height:100% !important;
-  object-fit:contain !important;
-  object-position:50% 50% !important;
-  margin:0 auto !important;
-  transform:none !important;
-}
+/* FINAL OVERRIDE — image frame follows the photo's natural aspect ratio.
+   This removes the fixed square/4:3 boxes that were creating empty side bands.
+   The complete photo stays visible, fills the frame width, and is never distorted. */
 .photo-frame,
 .hero-image,
 .story-image {
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
+  display:block !important;
   width:100% !important;
-  min-width:0 !important;
+  height:auto !important;
   min-height:0 !important;
-  overflow:hidden !important;
+  aspect-ratio:auto !important;
+  overflow:visible !important;
   box-sizing:border-box !important;
-  background:var(--cream2,#f4eee5) !important;
 }
-.photo-frame { aspect-ratio:1 / 1 !important; }
-.hero-image { aspect-ratio:1 / 1 !important; }
-.story-image { aspect-ratio:4 / 3 !important; }
 .photo-frame img,
 .hero-image img,
 .story-image img {
   display:block !important;
-  flex:0 0 100% !important;
   width:100% !important;
-  height:100% !important;
-  min-width:0 !important;
+  height:auto !important;
   min-height:0 !important;
   max-width:100% !important;
-  max-height:100% !important;
-  object-fit:contain !important;
-  object-position:center center !important;
-  margin:0 auto !important;
+  max-height:none !important;
+  aspect-ratio:auto !important;
+  object-fit:initial !important;
+  object-position:center !important;
   transform:none !important;
+  background:transparent !important;
 }
-@media (max-width:780px) {
-  .card-image,.menu-photo { aspect-ratio:4 / 3 !important; }
-  .photo-frame,.hero-image { aspect-ratio:1 / 1 !important; }
-  .story-image { aspect-ratio:4 / 3 !important; }
-}
-
-/* FINAL MOBILE + DESKTOP PHOTO FIT: fill each image frame edge-to-edge. */
 .card-image,
-.menu-photo,
-.photo-frame,
-.hero-image,
-.story-image {
-  display: block !important;
-  width: 100% !important;
-  min-width: 0 !important;
-  overflow: hidden !important;
-  box-sizing: border-box !important;
-}
-.card-image {
-  height: clamp(210px, 30vw, 340px) !important;
-  aspect-ratio: 4 / 3 !important;
-  background: var(--cream2, #f4eee5) !important;
+.books-games-cards .card-image,
+.menu-photo {
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  min-height:0 !important;
+  aspect-ratio:auto !important;
+  overflow:visible !important;
+  box-sizing:border-box !important;
 }
 .card-image img,
-.menu-photo img,
-.photo-frame img {
-  display: block !important;
-  width: 100% !important;
-  height: 100% !important;
-  max-width: 100% !important;
-  max-height: 100% !important;
-  object-fit: cover !important;
-  object-position: center center !important;
-  margin: 0 !important;
-  transform: none !important;
-}
-.menu-photo {
-  height: clamp(220px, 30vw, 340px) !important;
-  aspect-ratio: 4 / 3 !important;
-  padding: 8px !important;
-}
-.photo-frame {
-  height: auto !important;
-  aspect-ratio: 4 / 3 !important;
-}
-.photo-frame img { border-radius: inherit; }
-.hero-image { aspect-ratio: 4 / 3 !important; }
-.story-image { aspect-ratio: 4 / 3 !important; }
-@media (max-width: 780px) {
-  .card-image { height: clamp(220px, 68vw, 340px) !important; }
-  .menu-photo { height: clamp(220px, 68vw, 340px) !important; }
-  .photo-frame { aspect-ratio: 4 / 3 !important; }
-  .hero-image { aspect-ratio: 4 / 3 !important; }
-  .story-image { aspect-ratio: 4 / 3 !important; }
+.books-games-cards .card-image img,
+.menu-photo img {
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  min-height:0 !important;
+  max-width:100% !important;
+  max-height:none !important;
+  aspect-ratio:auto !important;
+  object-fit:initial !important;
+  object-position:center !important;
+  transform:none !important;
+  background:transparent !important;
 }
