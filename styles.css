@@ -440,3 +440,70 @@ body.menu-open { overflow: hidden; }
 .hero-image { aspect-ratio:1/1!important; }
 .story-image { aspect-ratio:4/3!important; }
 @media(max-width:780px){.hero-image{aspect-ratio:1/1!important}.story-image{aspect-ratio:4/3!important}}
+
+/* FINAL IMAGE ALIGNMENT OVERRIDES — fixed frames, centered full-image fit */
+.card-image,
+.menu-photo {
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:100% !important;
+  height:auto !important;
+  aspect-ratio:4 / 3 !important;
+  min-height:0 !important;
+  overflow:hidden !important;
+  box-sizing:border-box !important;
+  background:var(--cream2,#f4eee5) !important;
+}
+.card-image img,
+.menu-photo img {
+  display:block !important;
+  flex:0 0 100% !important;
+  width:100% !important;
+  height:100% !important;
+  min-width:0 !important;
+  min-height:0 !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  object-fit:contain !important;
+  object-position:50% 50% !important;
+  margin:0 auto !important;
+  transform:none !important;
+}
+.photo-frame,
+.hero-image,
+.story-image {
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:100% !important;
+  min-width:0 !important;
+  min-height:0 !important;
+  overflow:hidden !important;
+  box-sizing:border-box !important;
+  background:var(--cream2,#f4eee5) !important;
+}
+.photo-frame { aspect-ratio:1 / 1 !important; }
+.hero-image { aspect-ratio:1 / 1 !important; }
+.story-image { aspect-ratio:4 / 3 !important; }
+.photo-frame img,
+.hero-image img,
+.story-image img {
+  display:block !important;
+  flex:0 0 100% !important;
+  width:100% !important;
+  height:100% !important;
+  min-width:0 !important;
+  min-height:0 !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  margin:0 auto !important;
+  transform:none !important;
+}
+@media (max-width:780px) {
+  .card-image,.menu-photo { aspect-ratio:4 / 3 !important; }
+  .photo-frame,.hero-image { aspect-ratio:1 / 1 !important; }
+  .story-image { aspect-ratio:4 / 3 !important; }
+}
