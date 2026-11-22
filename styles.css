@@ -618,3 +618,33 @@ body.menu-open { overflow: hidden; }
   object-position: center !important;
   transform: none !important;
 }
+
+/* FINAL BOOKS & GAMES PHOTO FIX:
+   Preserve the complete source photograph (including any lettering embedded
+   near its edges). Do not force a crop or a fixed 4:3 viewport on this page. */
+body.books-games-page .cards > .card .card-image {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  overflow: visible !important;
+  margin: 0 0 .9rem !important;
+  padding: 0 !important;
+  background: transparent !important;
+  line-height: 0 !important;
+}
+body.books-games-page .cards > .card .card-image img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  max-width: 100% !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  transform: none !important;
+  background: transparent !important;
+}
