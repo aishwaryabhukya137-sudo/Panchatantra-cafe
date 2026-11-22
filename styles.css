@@ -496,3 +496,40 @@ body.menu-open { overflow: hidden; }
   transform:none !important;
   background:transparent !important;
 }
+
+/* MENU PAGE: three photographs use identical, equal-sized frames on every screen. */
+.menu-gallery {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  align-items: stretch !important;
+  gap: clamp(8px, 1.5vw, 18px) !important;
+}
+.menu-gallery .menu-photo {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  aspect-ratio: 4 / 3 !important;
+  padding: 6px !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+.menu-gallery .menu-photo img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  background: transparent !important;
+}
+@media (max-width: 780px) {
+  .menu-gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+  .menu-gallery .menu-photo { aspect-ratio: 4 / 3 !important; padding: 4px !important; }
+}
