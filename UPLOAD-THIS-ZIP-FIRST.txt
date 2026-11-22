@@ -1,0 +1,1 @@
+Extract this ZIP directly into the website root. The files are already at the ZIP root. Confirm index.html is beside styles.css, menu.html, events.html, images, robots.txt and sitemap.xml. See DEPLOYMENT-AND-TRACKING-CHECKLIST.txt.

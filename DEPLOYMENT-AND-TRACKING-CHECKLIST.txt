@@ -1,0 +1,22 @@
+PANCHATANTRA CAFE — DEPLOYMENT CHECKLIST
+
+IMPORTANT: Upload the CONTENTS of this ZIP directly into the hosting website root (often public_html or the repository root). Do not upload the enclosing ZIP folder as a nested directory. index.html, styles.css, images, sitemap.xml and robots.txt must sit together at the website root.
+
+This package fixes the nested-folder packaging risk, normalizes the Events filename to lowercase, updates local links and sitemap, optimizes JPG photos into WebP, adds image dimensions, and repairs FAQ structured data. Original JPGs are retained as fallbacks.
+
+EXTERNAL ACCOUNT TASKS — require the client's hosting/DNS and analytics account access:
+1. Set the hosting document root to the folder containing index.html.
+2. Configure HTTPS certificate for both panchatantracafe.com and www.panchatantracafe.com; redirect www to the chosen canonical host after certificate issuance.
+3. Submit https://panchatantracafe.com/sitemap.xml in Google Search Console and verify ownership.
+4. Install actual GTM/GA4 and Meta Pixel IDs only after the client provides the IDs. Do not paste passwords or OTPs into this file/chat.
+5. Connect Microsoft Clarity using the client's project ID.
+6. Configure Cloudflare DNS, caching and security headers only after confirming the active hosting origin and DNS records. Do not proxy mail-related DNS records.
+7. Confirm SPF, DKIM and DMARC with the client's email provider before changing mail DNS.
+
+CONTENT LIMITATIONS:
+- The public menu is linked to the existing Petpooja menu; item prices were not supplied for a reliable on-page price list.
+- No confirmed future event dates, ticket prices or seat counts were supplied; the Events page therefore asks visitors to contact the café instead of inventing listings.
+- Analytics IDs and hosting/DNS settings are intentionally not fabricated.
+
+TEST AFTER UPLOAD:
+Open /, /menu.html, /books-and-games.html, /events.html, /pet-friendly.html and /faq.html on Android. Confirm each page loads directly, not only via navigation. Test the Petpooja, WhatsApp, phone and Maps links.
